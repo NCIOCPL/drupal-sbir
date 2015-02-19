@@ -16,7 +16,8 @@
  */
 function sbirtheme_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
-  if (!empty($breadcrumb)) {
+  //dpm(sizeof($breadcrumb));
+  if (!empty($breadcrumb) /*&& sizeof($breadcrumb) > 0*/) {
     // Adding the title of the current page to the breadcrumb.
     $breadcrumb[] = drupal_get_title();
 
@@ -37,3 +38,5 @@ function sbirtheme_form_alter(&$form, &$form_state, $form_id) {
     $form['search_block_form']['#title'] = t('Go'); // Change the text on the label element
   }
 }
+
+
