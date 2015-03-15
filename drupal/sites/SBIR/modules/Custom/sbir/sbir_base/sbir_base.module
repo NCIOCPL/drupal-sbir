@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * Sends a signal to update the array of fields given.
+ * 
+ * @param array $fields Fields to be updated.
+ */
+function sbir_base_update_fields($fields) {
+
+  // For every field, try and create it or update it in the system
+  foreach ($fields as $name => $field) {
+    // Fields must have a name and type
+    if (!array_key_exists('field_name', $field)) {
+      drupal_set_message('Field does not have a field_name. Aborting creation of this particular field.', 'error');
+      watchdog_exception('error', 'Field does not have field_name defined.');
+      continue;
+    }
+    elseif (!array_key_exists('type', $field)) {
+      drupal_set_message('Field "' . $field['field_name'] . '" does not have a type. Aborting creation of this particular field.', 'error');
+      watchdog_exception('error', 'Field "' . $field['field_name'] . '" does not have a type defined.');
+      continue;
+    }
+
+    // Try to update the field if it already exists or try to create it
+    try {
+      // Setup the field
+      $field_info = $field;
+      $field_info['field_name'] = $name;
+      // If the field exists, update it; Log it
+      if (field_read_field($field_info['field_name'])) {
+        field_update_field($field_info);
+      }
+      // If the field doesn't exist, create it; Log it
+      else {
+        field_create_field($field_info);
+      }
+    }
+    // Log any errors to watchdog and our list of malformed fields
+    catch (Exception $e) {
+      watchdog_exception('error', $e);
+    }
+  }
+}

@@ -1,0 +1,181 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function sbir_subscriber_block_info() {
+  $blocks = array();
+  $blocks['email_notification_add_block'] = array(
+    'info' => t('Email Notification Add'),
+  );
+  $blocks['email_notification_update_block'] = array(
+    'info' => t('Email Notification Update'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function sbir_subscriber_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'email_notification_add_block':
+      $block['subject'] = 'Email Notification Add';
+      $block['content'] = _load_subscriber_add_form();
+      break;
+    case 'email_notification_update_block':
+      $block['subject'] = 'Email Notification Update';
+      $block['content'] = _load_subscriber_update_form();
+      break;
+  }
+  return $block;
+}
+
+function _load_subscriber_add_form() {
+
+  $subscriber_node = _create_subscriber_node();
+
+  module_load_include('inc', 'node', 'node.pages');
+  $email_form = drupal_get_form("sbir_subscriber_node_form", $subscriber_node);
+
+  $email_form['field_current_email']['und'][0]['value']['#required'] = 0;
+  $email_form['field_current_email']['und'][0]['#required'] = 0;
+  $email_form['field_current_email']['#required'] = 0;
+
+  unset($email_form['field_current_email']);
+
+  return drupal_render($email_form);
+}
+
+function _load_subscriber_update_form() {
+
+  $subscriber_node = _create_subscriber_node();
+
+  module_load_include('inc', 'node', 'node.pages');
+  $email_form = drupal_get_form("sbir_subscriber_node_form", $subscriber_node);
+
+  return drupal_render($email_form);
+}
+
+function sbir_subscriber_node_submit($node, $form, &$form_state) {
+//_get_subscriber_info
+//_send_notification_email();
+}
+
+/*
+  function sbir_subscriber_node_presave($node) {
+  //validate email
+  //validate website
+  dpm($node);
+  exit;
+  }
+ */
+
+function _get_subscriber_info($email_address) {
+  
+}
+
+function _email_notification_form_submit(&$form, &$form_state) {
+
+  dpm($form_state['values']);
+
+  $to = "cedricpriestley@gmail.com";
+  $from = "cedricpriestley@gmail.com";
+
+  $subject = "SBIR Subscriber";
+  $body = "SBIR has a new subscriber.";
+
+  $params = array(
+    'subject' => $subject,
+    'body' => $body,
+  );
+
+  drupal_mail('sbir_subscriber', 'email_subscription', $to, language_default(), $params, $from);
+  $form_state['redirect'] = 'email-signup-thankyou';
+}
+
+/**
+ * Implements hook_mail().
+ */
+function sbir_subscriber_mail($key, &$message, $params) {
+
+  switch ($key) {
+    case 'email_subscription':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+
+      $message['headers']['Content-Type'] = 'text/html';
+      break;
+  }
+}
+
+function _validate_subscription_input($form, &$form_state) {
+
+  $email_address = $form_state['values']['field_email']['und'][0]['value'];
+
+  if (filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
+    $form_state['values']['title'] = $email_address;
+  }
+  else {
+    form_set_error('Email Validation', "Email is not in the corrent format: jdoe@example.com");
+  }
+
+  //if (isset($form_state['values']['field_current_email']['und'][0]['value'])) {
+  if ($form['#action'] == "/email-change") {
+    $current_email_address = $form_state['values']['field_current_email']['und'][0]['value'];
+
+    if (filter_var($current_email_address, FILTER_VALIDATE_EMAIL)) {
+      $form_state['values']['title'] = $current_email_address;
+    }
+    else {
+      form_set_error('Email Validation', "Current Registered Email Address is not in the correct format: johndoe@example.com");
+    }
+  }
+
+  if (isset($form_state['values']['field_website']['und'][0]['value'])) {
+    $website = $form_state['values']['field_website']['und'][0]['value'];
+    if (!filter_var($website, FILTER_VALIDATE_URL)) {
+      form_set_error('Website Validation', "Website is not in the correct format: www.example.com");
+    }
+  }
+
+  //dpm($form);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function sbir_subscriber_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id == "sbir_subscriber_node_form") {
+    unset($form['actions']['preview']);
+    unset($form['field_other_organization_type']['und'][0]['value']['#title']);
+    $form['title']['#required'] = FALSE;
+
+    if ($form['#action'] == "/email-signup") {
+      $form['field_current_email']['und'][0]['value']['#required'] = 0;
+    }
+
+    $form['#validate'][] = '_validate_subscription_input';
+    $form['actions']['submit']['#submit'][] = '_email_notification_form_submit';
+
+    $form['#attached']['css'] = array(
+      drupal_get_path('module', 'sbir_subscriber') . '/css/sbir_subscriber.css',
+    );
+  }
+}
+
+function _create_subscriber_node() {
+
+  $subscriber_node = new stdClass();
+
+  $subscriber_node->type = "sbir_subscriber";
+  node_object_prepare($subscriber_node);
+  $subscriber_node->uid = 1;
+  $subscriber_node->language = 'und';
+  $subscriber_node->comment = 0;
+  $subscriber_node->status = 0;
+
+  return $subscriber_node;
+}

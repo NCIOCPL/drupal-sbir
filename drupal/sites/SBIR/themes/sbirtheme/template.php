@@ -16,8 +16,12 @@
  */
 function sbirtheme_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
+  if (count($breadcrumb) == 1) {
+    return;
+  }
+  
   //dpm(sizeof($breadcrumb));
-  if (!empty($breadcrumb) /*&& sizeof($breadcrumb) > 0*/) {
+  if (!empty($breadcrumb) /* && sizeof($breadcrumb) > 0 */) {
     // Adding the title of the current page to the breadcrumb.
     $breadcrumb[] = drupal_get_title();
 
@@ -31,12 +35,10 @@ function sbirtheme_breadcrumb($variables) {
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_validate().
  */
-function sbirtheme_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'search_block_form') {
-    $form['search_block_form']['#title'] = t('Go'); // Change the text on the label element
-  }
+function sbirtheme_validate($node, $form, $form_state) {
+  dpm($form);
+exit;
+  
 }
-
-

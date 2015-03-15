@@ -14,11 +14,11 @@ environment = :development
 # In development, we can turn on the FireSass-compatible debug_info.
 firesass = false
 #firesass = true
-
+  
 
 # Location of the theme's resources.
 css_dir         = "css"
-sass_dir        = "sass"
+sass_dir        = "scss"
 extensions_dir  = "sass-extensions"
 images_dir      = "images"
 javascripts_dir = "js"
@@ -26,8 +26,6 @@ javascripts_dir = "js"
 
 # Require any additional compass plugins installed on your system.
 #require 'ninesixty'
-#require 'zen-grids'
-#require 'compass/import-once/activate'
 require 'breakpoint'
 
 # Assuming this theme is in sites/*/themes/THEMENAME, you can add the partials
