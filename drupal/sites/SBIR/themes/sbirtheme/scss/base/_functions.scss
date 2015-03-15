@@ -1,6 +1,0 @@
-// Custom functions
-
-// Convert pixel values to em.
-@function em($px, $base: 16px) {
-  @return ($px / $base) * 1em;
-}

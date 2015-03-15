@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the SBIR Announcements feature.
- */
-
-include_once 'sbir_announcements.features.inc';

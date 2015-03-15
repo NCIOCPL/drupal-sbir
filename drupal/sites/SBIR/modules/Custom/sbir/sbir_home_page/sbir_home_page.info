@@ -1,8 +1,0 @@
-name = SBIR Home Page
-description = Controls the display of the home page
-core = 7.x
-package = SBIR
-version = 7.x-1.0
-timestamp = 1425571758
-
-dependiencies[] = 
