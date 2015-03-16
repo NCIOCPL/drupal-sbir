@@ -1,0 +1,8 @@
+// Helper functions from external libraries.
+//@import 'compass';
+@import 'breakpoint'; // github.com/canarymason/breakpoint
+
+// Custom partials to be shared with all .scss files.
+@import "variables";
+@import "functions";
+@import "mixins";

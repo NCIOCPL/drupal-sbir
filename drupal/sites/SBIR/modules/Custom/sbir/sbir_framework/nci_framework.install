@@ -1,0 +1,21 @@
+<?php
+
+
+function nci_framework_install() {
+    
+}
+
+function nci_framework_uninstall() {
+    
+}
+
+function nci_framework_enable() {
+    
+}
+
+function nci_framework_disable() {
+    
+}
+
+
+?>

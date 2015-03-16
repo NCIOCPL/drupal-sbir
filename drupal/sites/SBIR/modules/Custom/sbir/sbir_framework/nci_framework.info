@@ -1,0 +1,6 @@
+name = NCI Framework
+description = Provides drush commands to check for existence of modules and dependencies.
+package = NCI
+core = 7.x
+version = 7.x-1.0
+

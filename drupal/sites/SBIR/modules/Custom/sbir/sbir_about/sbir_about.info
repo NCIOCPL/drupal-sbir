@@ -1,0 +1,6 @@
+name = SBIR About
+description = A module containing pages, views, template, etc. related to SBIR About pages
+core = 7.x
+package = SBIR
+timestamp = 1426267986
+dependencies[] = 
