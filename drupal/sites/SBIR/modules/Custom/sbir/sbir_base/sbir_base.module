@@ -41,3 +41,90 @@ function sbir_base_update_fields($fields) {
     }
   }
 }
+
+/**
+ * Updates the given instances.
+ * 
+ * @param type $fields Fields that are being turned into instances
+ * @param type $bundle The content type (bundle) for the instance
+ * @param type $entity_type Optional; Assumes node, otherwise an entity type 
+ *      should be specified e.g. taxonomy_term
+ */
+function sbir_base_update_instances($fields, $bundle, $entity_type) {
+// For every instance, try and create it or update it in the system
+  foreach ($fields as $field) {
+
+// An instance must be created from a field
+    if (!array_key_exists('field_name', $field)) {
+      drupal_set_message('Field does not have a field_name. Aborting creation of this particular instance.', 'error');
+      watchdog_exception('error', 'Field does not have field_name defined.');
+      continue;
+    }
+// Try update the instance if it already exists OR try to create it
+    try {
+// Set the type to the field so we can check it
+      $field['entity_type'] = $entity_type;
+// Setup the instance
+      $instance = sbir_base_field_instance_info($field, $bundle);
+
+// If the instance exists, update it; Log it
+      if (field_read_instance($entity_type, $instance['field_name'], $bundle)) {
+        field_update_instance($instance);
+      }
+// If the instance doesn't exist, create it; Log it
+      else {
+        field_create_instance($instance);
+      }
+    }
+// Log any errors to watchdog and our list of malformed instances
+    catch (Exception $e) {
+      watchdog_exception('error', $e);
+    }
+  }
+}
+
+/**
+ * Separates our instance definition into one that Drupal would like to read for 
+ * a field. (It removes all of the field-specific properties).
+ * 
+ * @param type $field
+ * @param type $bundle
+ * @return type 
+ */
+function sbir_base_field_instance_info($field = array(), $bundle = FALSE) {
+  if (empty($field) || !$bundle) {
+    return;
+  }
+  $instance_info = array();
+//required instance fields
+  $instance_info['field_name'] = $field['field_name'];
+  $instance_info['entity_type'] = $field['entity_type'];
+  $instance_info['bundle'] = $bundle;
+
+//optional instance fields
+  if (array_key_exists('label', $field))
+    $instance_info['label'] = $field['label'];
+
+  if (array_key_exists('description', $field))
+    $instance_info['description'] = $field['description'];
+
+  if (array_key_exists('required', $field))
+    $instance_info['required'] = $field['required'];
+
+  if (array_key_exists('default_value', $field))
+    $instance_info['default_value'] = $field['default_value'];
+
+  if (array_key_exists('default_value_function', $field))
+    $instance_info['default_value_function'] = $field['default_value_function'];
+
+  if (array_key_exists('settings', $field))
+    $instance_info['settings'] = $field['settings'];
+
+  if (array_key_exists('widget', $field))
+    $instance_info['widget'] = $field['widget'];
+
+  if (array_key_exists('display', $field))
+    $instance_info['display'] = $field['display'];
+
+  return $instance_info;
+}

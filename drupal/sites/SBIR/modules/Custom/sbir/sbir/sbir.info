@@ -1,0 +1,9 @@
+name = SBIR
+description = The purpose of this module is to install all other SBIR modules.
+core = 7.x
+package = SBIR
+version = 7.x-1.0
+project = sbir
+timestamp = 1426699461
+dependencies[] = sbir_settings
+dependencies[] = sbir_basic_page

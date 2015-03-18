@@ -1,0 +1,12 @@
+name = SBIR Global Template
+description = This module will create the and configure the header and footer for the SBIR site.
+core = 7.x
+package = SBIR
+version = 7.x-1.0
+project = sbir
+timestamp = 1426699461
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = menu
+dependencies[] = search
+dependencies[] = superfish
