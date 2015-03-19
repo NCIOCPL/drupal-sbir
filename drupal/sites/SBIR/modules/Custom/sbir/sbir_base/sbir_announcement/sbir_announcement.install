@@ -1,0 +1,32 @@
+<?php
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_announcement_install() {
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_announcement_enable() {
+
+  variable_set('comment_sbir_announcement', '0');
+  variable_set('node_submitted_sbir_announcement', '0');
+  variable_set('node_preview_sbir_announcement', '1');
+  
+  $menu_options = array(
+    '0' => 'menu-footer-menu',
+    '1' => 'main-menu',
+    '2' => 'menu-social-media');
+
+  variable_set('menu_options_sbir_announcement', $menu_options);  
+
+  module_load_include('inc', 'sbir_announcement', 'includes/sbir_announcement.field_instance');
+  module_load_include('inc', 'sbir_announcement', 'includes/sbir_announcement.field_group');
+
+  announcement_create_field_instances();
+  announcement_create_field_groups();
+}

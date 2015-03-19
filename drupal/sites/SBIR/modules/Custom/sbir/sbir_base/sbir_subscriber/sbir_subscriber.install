@@ -1,0 +1,31 @@
+<?php
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_subscriber_install() {
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_subscriber_enable() {
+
+  variable_set('comment_sbir_subscriber', '0');
+  variable_set('node_submitted_sbir_subscriber', '0');
+  variable_set('node_preview_sbir_subscriber', '1');
+  
+  $menu_options = array(
+    '0' => 'menu-footer-menu',
+    '1' => 'main-menu',
+    '2' => 'menu-social-media');
+
+  variable_set('menu_options_sbir_subscriber', $menu_options);  
+
+  module_load_include('inc', 'sbir_subscriber', 'includes/sbir_subscriber.field_instance');
+  module_load_include('inc', 'sbir_subscriber', 'includes/sbir_subscriber.field_group');
+
+  subscriber_create_field_instances();
+}

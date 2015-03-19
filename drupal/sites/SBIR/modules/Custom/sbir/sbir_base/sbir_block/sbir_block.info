@@ -1,0 +1,7 @@
+name = SBIR Block
+description = This module defines the Block content type and fields
+core = 7.x
+package = SBIR Types
+timestamp = 1426732227
+dependencies[] = sbir_base
+dependencies[] = text

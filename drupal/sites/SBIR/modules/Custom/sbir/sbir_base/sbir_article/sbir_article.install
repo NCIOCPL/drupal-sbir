@@ -1,0 +1,33 @@
+<?php
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_article_install() {
+  node_type_delete('article');
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_article_enable() {
+
+  variable_set('comment_sbir_article', '0');
+  variable_set('node_submitted_sbir_article', '0');
+  variable_set('node_preview_sbir_article', '1');
+  
+  $menu_options = array(
+    '0' => 'menu-footer-menu',
+    '1' => 'main-menu',
+    '2' => 'menu-social-media');
+
+  variable_set('menu_options_sbir_article', $menu_options);  
+
+  module_load_include('inc', 'sbir_article', 'includes/sbir_article.field_instance');
+  module_load_include('inc', 'sbir_article', 'includes/sbir_article.field_group');
+
+  article_create_field_instances();
+  article_create_field_groups();
+}

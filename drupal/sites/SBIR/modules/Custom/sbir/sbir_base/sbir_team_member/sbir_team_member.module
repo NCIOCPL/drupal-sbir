@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function sbir_team_member_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
+}
+
+/**
+ * Implements hook_node_info().
+ */
+function sbir_team_member_node_info() {
+  $items = array(
+    'sbir_team_member' => array(
+      'name' => t('Team Member'),
+      'base' => 'node_content',
+      'description' => t('This content type store data about SBIR team members.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  drupal_alter('node_info', $items);
+  return $items;
+}

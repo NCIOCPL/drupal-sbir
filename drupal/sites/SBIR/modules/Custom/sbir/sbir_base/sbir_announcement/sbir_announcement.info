@@ -1,0 +1,11 @@
+name = SBIR Announcement
+description = This module defines the Announcement content type and fields
+core = 7.x
+package = SBIR Types
+timestamp = 1426731369
+dependencies[] = sbir_base
+dependencies[] = date
+dependencies[] = field_group
+dependencies[] = link
+dependencies[] = metatags_quick
+dependencies[] = text

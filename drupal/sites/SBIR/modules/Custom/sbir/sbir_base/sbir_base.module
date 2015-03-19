@@ -128,3 +128,28 @@ function sbir_base_field_instance_info($field = array(), $bundle = FALSE) {
 
   return $instance_info;
 }
+
+/**
+ * Updates the given vocabulary.
+ * 
+ * @param type $vocabulary: Vocabulary object being created
+ */
+function sbir_base_update_vocabulary($vocabulary) {
+// Try to update the vocabulary if it already exists OR try to create it
+  try {
+// If the vocabulary exists, update it; Log it (for now just doing nothing)
+// Not much that can be updated on a vocabulary, but if there's ever a need we can add
+    $vocab = taxonomy_vocabulary_machine_name_load($vocabulary->machine_name);
+    if (!empty($vocab)) {
+// _update_vocabulary($vocabulary);
+    }
+// If the vocabulary doesn't exist, create it; Log it
+    else {
+      taxonomy_vocabulary_save($vocabulary);
+    }
+  }
+// Log any errors to watchdog and our list of malformed instances
+  catch (Exception $e) {
+    watchdog_exception('error', $e);
+  }
+}

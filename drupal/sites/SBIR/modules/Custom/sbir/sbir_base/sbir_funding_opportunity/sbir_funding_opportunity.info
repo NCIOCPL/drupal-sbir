@@ -1,0 +1,11 @@
+name = SBIR Funding Opportunity
+description = This module defines the Funding Opportunity content type and fields
+core = 7.x
+package = SBIR Types
+timestamp = 1426734232
+dependencies[] = sbir_base
+dependencies[] = field_group
+dependencies[] = list
+dependencies[] = metatags_quick
+dependencies[] = options
+dependencies[] = text
