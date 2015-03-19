@@ -1,5 +1,0 @@
-name = SBIR Subscriber
-description = This module includes functionality to support SBIR email subscriptions.
-core = 7.x
-package = SBIR
-timestamp = 1426017677
