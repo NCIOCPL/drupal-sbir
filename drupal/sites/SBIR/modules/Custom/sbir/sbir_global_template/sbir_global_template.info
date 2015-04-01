@@ -8,5 +8,6 @@ timestamp = 1426699461
 dependencies[] = context
 dependencies[] = ctools
 dependencies[] = menu
+dependencies[] = menu_block
 dependencies[] = search
 dependencies[] = superfish

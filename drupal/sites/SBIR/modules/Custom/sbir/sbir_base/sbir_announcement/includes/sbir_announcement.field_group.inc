@@ -31,5 +31,5 @@ function announcement_create_field_groups() {
   );
   $export['group_announcement_meta|node|sbir_announcement|form'] = $field_group;
 
-  return $export;
+  //field_group_group_save($field_group);
 }

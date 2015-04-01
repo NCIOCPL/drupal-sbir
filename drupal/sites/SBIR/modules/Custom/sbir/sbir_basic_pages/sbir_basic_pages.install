@@ -1,0 +1,21 @@
+<?php
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_basic_pages_install() {
+  variable_set('page_manager_node_view_disabled', FALSE);
+  sbir_basic_pages_create_about_pages();
+  sbir_basic_pages_create_funding_pages();
+  sbir_basic_pages_create_investing_pages();
+  sbir_basic_pages_create_program_pages();
+  sbir_basic_pages_create_events_pages();
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_basic_pages_enable() {
+}

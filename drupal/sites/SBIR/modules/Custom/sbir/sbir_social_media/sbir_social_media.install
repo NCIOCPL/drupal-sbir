@@ -1,0 +1,35 @@
+<?php
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_social_media_install() {
+  $plid = 0;
+  $menu_name = "menu-social-media";
+  $weight = 0;
+
+  $title = 'Sign Up for Updates';
+  $alias = 'emailsignup';
+  $css_class = "email-link";
+  $nid = sbir_basic_pages_create_basic_page($title, $alias);
+  sbir_base_create_menu_link($menu_name, $title, $weight++, $nid, 0, $css_class);
+
+  $path = 'https://www.linkedin.com/company/2472455';
+  $title = "Connect with us on LinkedIn";
+  $css_class = "linkedin-link";
+  sbir_base_create_ext_menu_link($menu_name, $title, $weight++, $path, $plid, $css_class);
+
+  $path = 'http://twitter.com/ncisbir';
+  $title = "Follow us on Twitter";
+  $css_class = "twitter-link";
+  sbir_base_create_ext_menu_link($menu_name, $title, $weight++, $path, $plid, $css_class);
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_social_media_enable() {
+  
+}

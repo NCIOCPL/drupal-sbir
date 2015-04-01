@@ -1,0 +1,23 @@
+<?php
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_wysiwyg_install() {
+  
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_wysiwyg_enable() {
+
+  $settings = 'a:3:{s:12:"allowed_html";s:117:"<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <p> <br/> <h1><h2><h3><h4><h5><h6> <img />";s:16:"filter_html_help";i:1;s:20:"filter_html_nofollow";i:0;}';
+  $format = 'filtered_html';
+
+  sbir_wysiwyg_set_allowed_tags($format, $settings);
+  
+  //sbir_wysiwyg_configure_ckeditor();
+}

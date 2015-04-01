@@ -8,10 +8,152 @@ function sbir_home_page_views_api() {
 }
 
 /**
-* Implementation of hook_ctools_plugin_api().
-*/
+ * Implementation of hook_ctools_plugin_api().
+ */
 function sbir_home_page_ctools_plugin_api($module, $api) {
   if ($module == 'page_manager' && $api == 'pages_default') {
-    return array('version' => 1); 
+    return array('version' => 1);
   }
+}
+
+function sbir_home_page_create_nodequeue() {
+
+  $queue = array(
+    'name' => 'home_page_blocks',
+    'title' => 'Home Page Blocks',
+    'subqueue_title' => '',
+    'size' => 0,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 0,
+    'reference' => 0,
+    'reverse' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'sbir_block',
+    ),
+    'roles' => array(),
+    'count' => 0,
+    'add_subqueue' => array(
+      1 => 'Home Page Blocks',
+    )    
+  );
+
+  $object = sbir_base_convert_array_to_object($queue);
+
+  $qid = nodequeue_save($object);
+  
+  return $qid;
+}
+
+/*
+ * Create the 'What are the NCI SBIR & STTR Programs?' block node for the home page.
+ */
+function create_what_is_node() {
+
+  $node = new stdClass();
+  $node->title = "What are the NCI SBIR & STTR Programs?";
+  $node->type = "sbir_block";
+  node_object_prepare($node);
+  $node->language = LANGUAGE_NONE;
+  $node->uid = 1;
+  $node->status = 1;
+  $node->promote = 0;
+  $node->comment = 0;
+
+  $body_text = '<p>The SBIR &amp; STTR Programs are one of the largest sources of '
+      . 'early-stage technology financing in the United States. '
+      . 'We welcome entrepreneurs and small business leaders to this website '
+      . 'to explore grant and contract funding opportunities and a new spirit of '
+      . 'collaboration with the NCI.</p>'
+      . '<p><a href="/about">Learn more about the programs &gt;</a></p>';
+  $node->body[$node->language][0]['value'] = $body_text;
+  $node->body[$node->language][0]['summary'] = text_summary($body_text);
+
+  node_save($node);
+
+  return $node->nid;
+}
+
+/*
+ * Create the 'Manage Your Content' block node for the home page.
+ */
+
+function create_manage_content_node() {
+ 
+  $node = new stdClass();
+  $node->title = "Manage Your Content";
+  $node->type = "sbir_block";
+  node_object_prepare($node);
+  $node->language = LANGUAGE_NONE;
+  $node->uid = 1;
+  $node->status = 1;
+  $node->promote = 0;
+  $node->comment = 0;
+
+  $body_text = '<p><a href="resources/apply">eRA Commons Tips for Applying</a></p>'
+      . '<p>Learn what the top five tips are for successfully submitting SBIR &amp;'
+      . ' STTR grant applications.</p>';
+  $node->body[$node->language][0]['value'] = $body_text;
+  $node->body[$node->language][0]['summary'] = text_summary($body_text);
+
+  node_save($node);
+
+  return $node->nid;
+}
+
+/*
+ * Create the 'Entrepreneurial Training' block node for the home page.
+ */
+
+function create_entrepreneurial_training_node() {
+
+  $node = new stdClass();
+  $node->title = "Entrepreneurial Training";
+  $node->type = "sbir_block";
+  node_object_prepare($node);
+  $node->language = LANGUAGE_NONE;
+  $node->uid = 1;
+  $node->status = 1;
+  $node->promote = 0;
+  $node->comment = 0;
+
+  $body_text = '<p><a href="/programs/training">Programs &amp; Training</a></p>'
+      . '<p>Learn about the entrepreneurial programs and training available.</p>';
+  $node->body[$node->language][0]['value'] = $body_text;
+  $node->body[$node->language][0]['summary'] = text_summary($body_text);
+
+  node_save($node);
+
+  return $node->nid;
+}
+
+/*
+ * Create the 'Success Stories' block node for the home page.
+ */
+
+function create_success_stories_node() {
+
+  $node = new stdClass();
+  $node->title = "Success Stories";
+  $node->type = "sbir_block";
+  node_object_prepare($node);
+  $node->language = LANGUAGE_NONE;
+  $node->uid = 1;
+  $node->status = 1;
+  $node->promote = 0;
+  $node->comment = 0;
+
+  $body_text = '<p>Learn How NCI SBIR &amp; STTR Programs have helped '
+      . 'small businesses with funding awards &nbsp;that help advance cancer research.</p>';
+  $node->body[$node->language][0]['value'] = $body_text;
+  $node->body[$node->language][0]['summary'] = text_summary($body_text);
+
+  node_save($node);
+
+  return $node->nid;
 }

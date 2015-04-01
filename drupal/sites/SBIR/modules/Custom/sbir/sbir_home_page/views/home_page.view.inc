@@ -20,8 +20,12 @@ $handler->display->display_options['exposed_form']['type'] = 'basic';
 $handler->display->display_options['pager']['type'] = 'some';
 $handler->display->display_options['pager']['options']['items_per_page'] = '5';
 $handler->display->display_options['style_plugin'] = 'default';
-$handler->display->display_options['row_plugin'] = 'panelizer_node_view';
-$handler->display->display_options['row_options']['render_anything'] = 0;
+$handler->display->display_options['row_plugin'] = 'panels_fields';
+$handler->display->display_options['row_options']['regions'] = array(
+  'title' => 'left',
+  'body' => 'left',
+  'field_footer' => 'left',
+);
 /* Relationship: Nodequeue: Queue */
 $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
 $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
@@ -37,8 +41,24 @@ $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['text'] = '<h2>[title]</h2>';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Field: Content: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+/* Field: Content: Footer */
+$handler->display->display_options['fields']['field_footer']['id'] = 'field_footer';
+$handler->display->display_options['fields']['field_footer']['table'] = 'field_data_field_footer';
+$handler->display->display_options['fields']['field_footer']['field'] = 'field_footer';
+$handler->display->display_options['fields']['field_footer']['label'] = '';
+$handler->display->display_options['fields']['field_footer']['element_label_colon'] = FALSE;
 /* Sort criterion: Nodequeue: Position */
 $handler->display->display_options['sorts']['position']['id'] = 'position';
 $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
@@ -56,7 +76,7 @@ $handler->display->display_options['filters']['status']['expose']['operator'] = 
 $handler = $view->new_display('block', 'Block', 'block');
 
 /* Display: Left Blocks */
-$handler = $view->new_display('panel_pane', 'Left Blocks', 'panel_pane_1');
+$handler = $view->new_display('panel_pane', 'Left Blocks', 'left_blocks');
 $handler->display->display_options['display_description'] = 'Left Blocks';
 $handler->display->display_options['pane_category']['name'] = 'SBIR Views';
 $handler->display->display_options['pane_category']['weight'] = '0';

@@ -1,0 +1,13 @@
+<?php
+/**
+ * Implements hook_enable().
+ */
+function sbir_announcements_enable() {
+}
+
+/**
+ * Implements hook_install().
+ */
+function sbir_announcements_install() {
+  //sbir_announcements_save_queue();
+}

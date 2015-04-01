@@ -1,0 +1,11 @@
+name = SBIR WYSIWYG
+description = This module configures the WYSIWYG module as well as Filtered HTML text format.
+core = 7.x
+package = SBIR
+version = 7.x-1.0
+project = sbir_wysiwyg
+timestamp = 1427381523
+dependencies[] = filter
+dependencies[] = wysiwyg
+
+

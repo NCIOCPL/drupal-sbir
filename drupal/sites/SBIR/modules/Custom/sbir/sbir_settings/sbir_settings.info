@@ -4,4 +4,5 @@ core = 7.x
 package = SBIR
 version = 7.x-1.0
 timestamp = 1426698957
-dependencies = 
+dependencies[] = filter
+dependencies[] = wysiwyg

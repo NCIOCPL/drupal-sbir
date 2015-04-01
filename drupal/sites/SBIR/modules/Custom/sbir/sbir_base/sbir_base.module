@@ -153,3 +153,95 @@ function sbir_base_update_vocabulary($vocabulary) {
     watchdog_exception('error', $e);
   }
 }
+
+/**
+ * This function will return a vocabulary object which matches the
+ * given name. Will return null if no such vocabulary exists.
+ *
+ * @param String $vocabulary_name
+ *   This is the name of the section which is required
+ * @return Object
+ *   This is the vocabulary object with the name
+ *   or null if no such vocabulary exists
+ */
+function sbir_base_get_vocabulary_by_name($vocabulary_name) {
+  $vocabs = taxonomy_get_vocabularies(NULL);
+  foreach ($vocabs as $vocab_object) {
+    if ($vocab_object->machine_name == $vocabulary_name) {
+      return $vocab_object;
+    }
+  }
+  return NULL;
+}
+
+/**
+ * Method that updates the block specified by module.delta name.  Providing only
+ * the module and delta parameters will disable the block for the default nhlbitheme
+ * @param type $module The module owning/that created the block
+ * @param type $delta The machine name of the block
+ * @param type $title The blocks title when it is displayed on a page
+ * @param type $status Enabled = 1, disabled = 0
+ * @param type $region The theme region to display the block in; -1 is disabled
+ * @param type $weight The order in which the block displays in the assigned region
+ * @param type $theme The theme inwhich to apply this change; Every block has a unique
+ * instance for each enabled theme
+ */
+function _sbir_base_update_block($module, $delta, $title = '', $status = 0, $region = -1, $weight = 0, $theme = 'sbirtheme') {
+  db_update('block')
+      ->fields(array(
+        'status' => $status,
+        'weight' => $weight,
+        'region' => $region,
+        'title' => $title,
+      ))
+      ->condition('module', $module)
+      ->condition('delta', $delta)
+      ->condition('theme', $theme)
+      ->execute();
+}
+
+/*
+ * Convert exported arrays into objects
+ */
+
+function sbir_base_convert_array_to_object($array) {
+  $object = new stdClass();
+
+  foreach ($array as $key => $value) {
+    $object->$key = $value;
+  }
+
+  return $object;
+}
+
+function sbir_base_create_menu_link($menu_name, $title, $weight, $path, $plid = 0, $is_external = 0, $css_class = '') {
+  $menu_link = array(
+    'menu_name' => $menu_name,
+    'link_path' => $path,
+    'link_title' => $title,
+    'options' => array(
+      'attributes' => array(
+        'title' => $title,
+      ),
+      'item_attributes' => array(
+        'id' => '',
+        'class' => $css_class,
+        'style' => '',
+      ),
+    ),
+    'external' => $is_external,
+    'weight' => $weight,
+    'hidden' => 0,
+    'customized' => 1,
+  );
+
+  if (!$is_external) {
+    $menu_link['router_path'] = 'node/%';
+  }
+
+  $menu_link['plid'] = $plid;
+
+  $plid = menu_link_save($menu_link);
+
+  return $plid;
+}

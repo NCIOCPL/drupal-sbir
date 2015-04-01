@@ -1,1 +1,15 @@
 <?php
+
+/**
+ * Implements hook_enable().
+ */
+function sbir_about_enable() {
+  
+}
+
+/**
+ * Implements hook_install().
+ */
+function sbir_about_install() {
+}
+

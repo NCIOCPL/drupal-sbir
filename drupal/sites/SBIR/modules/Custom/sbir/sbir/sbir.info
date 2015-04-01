@@ -5,5 +5,21 @@ package = SBIR
 version = 7.x-1.0
 project = sbir
 timestamp = 1426699461
-dependencies[] = sbir_settings
+dependencies[] = sbir_base
+dependencies[] = sbir_announcement
+dependencies[] = sbir_article
 dependencies[] = sbir_basic_page
+dependencies[] = sbir_block
+dependencies[] = sbir_event
+dependencies[] = sbir_funding_opportunity
+dependencies[] = sbir_grantee
+dependencies[] = sbir_subscriber
+dependencies[] = sbir_team_member
+
+dependencies[] = sbir_settings
+dependencies[] = sbir_wysiwyg
+dependencies[] = sbir_announcements
+dependencies[] = sbir_global_template
+dependencies[] = sbir_home_page
+
+
