@@ -12,9 +12,9 @@ function sbir_home_page_enable() {
  */
 function sbir_home_page_install() {
   $nodequeue_items[] = create_what_is_node();
+    $nodequeue_items[] = create_success_stories_node();
   $nodequeue_items[] = create_manage_content_node();
   $nodequeue_items[] = create_entrepreneurial_training_node();
-  $nodequeue_items[] = create_success_stories_node();
 
   $qid = sbir_home_page_create_nodequeue($nodequeue_items);
   $nodequeue = nodequeue_load($qid);

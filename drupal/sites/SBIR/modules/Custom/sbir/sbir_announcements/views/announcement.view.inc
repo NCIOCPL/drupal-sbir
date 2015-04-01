@@ -1,4 +1,5 @@
 <?php
+
 $view = new view();
 $view->name = 'announcement';
 $view->description = '';
@@ -103,6 +104,15 @@ $handler->display->display_options['sorts']['field_announcement_date_value']['fi
 $handler->display->display_options['sorts']['field_announcement_date_value']['order'] = 'DESC';
 $handler->display->display_options['pane_category']['name'] = 'SBIR Views';
 $handler->display->display_options['pane_category']['weight'] = '0';
+$handler->display->display_options['allow']['use_pager'] = 0;
+$handler->display->display_options['allow']['items_per_page'] = 0;
+$handler->display->display_options['allow']['offset'] = 0;
+$handler->display->display_options['allow']['link_to_view'] = 0;
+$handler->display->display_options['allow']['more_link'] = 0;
+$handler->display->display_options['allow']['path_override'] = 0;
+$handler->display->display_options['allow']['title_override'] = 'title_override';
+$handler->display->display_options['allow']['exposed_form'] = 0;
+$handler->display->display_options['allow']['fields_override'] = 0;
 
 /* Display: All Announcements */
 $handler = $view->new_display('panel_pane', 'All Announcements', 'all');
@@ -111,5 +121,52 @@ $handler->display->display_options['defaults']['pager'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'none';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['relationships'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Field: Content: Announcement Date */
+$handler->display->display_options['fields']['field_announcement_date']['id'] = 'field_announcement_date';
+$handler->display->display_options['fields']['field_announcement_date']['table'] = 'field_data_field_announcement_date';
+$handler->display->display_options['fields']['field_announcement_date']['field'] = 'field_announcement_date';
+$handler->display->display_options['fields']['field_announcement_date']['label'] = '';
+$handler->display->display_options['fields']['field_announcement_date']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_announcement_date']['settings'] = array(
+  'format_type' => 'sbir_standard',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
+/* Field: Content: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '150',
+);
 $handler->display->display_options['pane_category']['name'] = 'SBIR Views';
 $handler->display->display_options['pane_category']['weight'] = '0';
+$handler->display->display_options['allow']['use_pager'] = 0;
+$handler->display->display_options['allow']['items_per_page'] = 0;
+$handler->display->display_options['allow']['offset'] = 0;
+$handler->display->display_options['allow']['link_to_view'] = 0;
+$handler->display->display_options['allow']['more_link'] = 0;
+$handler->display->display_options['allow']['path_override'] = 0;
+$handler->display->display_options['allow']['title_override'] = 'title_override';
+$handler->display->display_options['allow']['exposed_form'] = 0;
+$handler->display->display_options['allow']['fields_override'] = 0;

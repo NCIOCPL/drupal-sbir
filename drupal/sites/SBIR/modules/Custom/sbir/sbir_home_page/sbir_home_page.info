@@ -5,6 +5,8 @@ package = SBIR
 version = 7.x-1.0
 timestamp = 1425571758
 
+dependencies[] = page_manager
+dependencies[] = panels
 dependencies[] = nodequeue
 dependencies[] = views
 dependencies[] = views_content
