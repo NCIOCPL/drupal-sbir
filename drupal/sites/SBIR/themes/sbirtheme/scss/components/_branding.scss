@@ -21,11 +21,13 @@
   font-size:16px;
   color:#808085;
   text-transform: uppercase;
+  float:right;
 }
 
 .logo-img {
-  float:left;
-  margin-right:15px;
+  img {
+    margin-right:13px;
+  }
 }
 .logo-img img {
   width:86px;

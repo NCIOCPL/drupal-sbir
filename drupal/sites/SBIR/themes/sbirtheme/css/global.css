@@ -76,39 +76,39 @@
   font-size: 16px;
   color: #808085;
   text-transform: uppercase;
+  float: right;
 }
 
-/* line 26, ../scss/components/_branding.scss */
-.logo-img {
-  float: left;
-  margin-right: 15px;
+/* line 28, ../scss/components/_branding.scss */
+.logo-img img {
+  margin-right: 13px;
 }
 
-/* line 30, ../scss/components/_branding.scss */
+/* line 32, ../scss/components/_branding.scss */
 .logo-img img {
   width: 86px;
 }
 
-/* line 35, ../scss/components/_branding.scss */
+/* line 37, ../scss/components/_branding.scss */
 #zone-branding {
   width: auto;
   margin-rigth: auto;
   margin-left: auto;
 }
 
-/* line 41, ../scss/components/_branding.scss */
+/* line 43, ../scss/components/_branding.scss */
 #region-branding {
   width: 100%;
   display: inline-block;
   margin: 0;
 }
 
-/* line 46, ../scss/components/_branding.scss */
+/* line 48, ../scss/components/_branding.scss */
 .branding-data {
   float: left;
 }
 
-/* line 51, ../scss/components/_branding.scss */
+/* line 53, ../scss/components/_branding.scss */
 #institute-name {
   text-transform: uppercase;
   font-weight: bold;
