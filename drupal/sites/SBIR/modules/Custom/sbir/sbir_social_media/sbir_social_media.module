@@ -21,31 +21,3 @@
   }
   }
  */
-
-/*
- * Implements hook_block_view
- */
-
-function sbir_social_media_block_view_alter(&$data, $block) {
-  if ($block->delta == 'menu-social-media') {
-    foreach ($data['content'] as $key => $value) {
-      if (is_numeric($key) && is_array($value)) {
-        $title = $value['#localized_options']['attributes']['title'];
-        if ($title == 'Sign Up for Updates') {
-          $data['content'][$key]['#attributes']['class'][] = 'email-link';
-        }
-        if ($title == 'Connect with us on LinkedIn') {
-          $data['content'][$key]['#attributes']['class'][] = 'linkedin-link';
-        }
-        if ($title == 'Follow us on Twitter') {
-          $data['content'][$key]['#attributes']['class'][] = 'twitter-link';
-        }
-      }
-    }
-    $follow_us = array(
-      '#markup' => '<span class="follow-us-text">Follow Us:</span>'
-    );
-    // $data['content'][] = $follow_us;
-    array_unshift($data['content'], $follow_us);
-  }
-}

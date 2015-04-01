@@ -5,6 +5,17 @@
  */
 
 function sbir_social_media_install() {
+  
+  // create social media menu
+  $menu = array(
+    'menu_name' => 'menu-social-media',
+    'title' => 'Social Media',
+    'description' => 'A list of links pointing to Facebook, LinkedIn, etc.',
+  );
+
+  menu_save($menu);    
+
+  //add links to social media menu
   $plid = 0;
   $menu_name = "menu-social-media";
   $weight = 0;
@@ -13,17 +24,17 @@ function sbir_social_media_install() {
   $alias = 'emailsignup';
   $css_class = "email-link";
   $nid = sbir_basic_pages_create_basic_page($title, $alias);
-  sbir_base_create_menu_link($menu_name, $title, $weight++, $nid, 0, $css_class);
+  sbir_base_create_menu_link($menu_name, $title, $weight++, 'node/' . $nid, $plid, 1, $css_class);
 
   $path = 'https://www.linkedin.com/company/2472455';
   $title = "Connect with us on LinkedIn";
   $css_class = "linkedin-link";
-  sbir_base_create_ext_menu_link($menu_name, $title, $weight++, $path, $plid, $css_class);
+  sbir_base_create_menu_link($menu_name, $title, $weight++, $path, $plid, 1, $css_class);
 
   $path = 'http://twitter.com/ncisbir';
   $title = "Follow us on Twitter";
   $css_class = "twitter-link";
-  sbir_base_create_ext_menu_link($menu_name, $title, $weight++, $path, $plid, $css_class);
+  sbir_base_create_menu_link($menu_name, $title, $weight++, $path, $plid, 1, $css_class);
 }
 
 /*
