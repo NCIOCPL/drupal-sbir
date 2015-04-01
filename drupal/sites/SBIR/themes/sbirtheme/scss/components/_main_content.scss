@@ -1,4 +1,9 @@
 // @main content styling goes here
+#zone-content-wrapper {
+    max-width: 65em;
+  margin-left: auto;
+  margin-right: auto;
+}
 .pane-page-title {
   background-color:#336699;
   padding:15px;

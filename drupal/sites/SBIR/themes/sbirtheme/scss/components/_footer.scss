@@ -1,0 +1,23 @@
+// @footer styling goes here
+#block-menu-menu-footer-menu {
+  background-color:#f8f8f8;
+  ul {
+    li {
+          list-style: none;
+          float:left;
+      a {
+        text-decoration: none;
+        font-weight: normal;
+        font-size:13px;
+        font-family: 'Montserrat', 'Avant Garde';
+        color:#696969;
+      }
+    }
+    li::after {
+    content: " |";
+  }
+      li.last::after {
+    content: "";
+  }
+  }
+}

@@ -1,0 +1,28 @@
+// @block styling goes here
+.pane-home-page-left-blocks {
+
+  .views-field-title {
+    background-color:#0E316A;
+    margin-bottom: 15px;
+    .field-content {
+      h2 {
+        font-family:'Trebuchet MS';
+        color:#fff;
+        font-weight: normal;
+        font-size:13px;
+        padding: 10px;
+      }
+    }
+  }
+}
+.pane-announcement-latest {
+  .pane-title {
+    background-color:#F06B10;
+    margin-bottom: 15px;
+    font-family:'Trebuchet MS';
+    color:#fff;
+    font-weight: normal;
+    font-size:13px;
+    padding: 10px;
+  }
+}

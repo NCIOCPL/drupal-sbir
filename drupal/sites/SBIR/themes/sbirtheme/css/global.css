@@ -26,6 +26,31 @@
 /* ==========================================================================
    Component Styles
    ========================================================================== */
+/* line 4, ../scss/components/_blocks.scss */
+.pane-home-page-left-blocks .views-field-title {
+  background-color: #0E316A;
+  margin-bottom: 15px;
+}
+/* line 8, ../scss/components/_blocks.scss */
+.pane-home-page-left-blocks .views-field-title .field-content h2 {
+  font-family: 'Trebuchet MS';
+  color: #fff;
+  font-weight: normal;
+  font-size: 13px;
+  padding: 10px;
+}
+
+/* line 19, ../scss/components/_blocks.scss */
+.pane-announcement-latest .pane-title {
+  background-color: #F06B10;
+  margin-bottom: 15px;
+  font-family: 'Trebuchet MS';
+  color: #fff;
+  font-weight: normal;
+  font-size: 13px;
+  padding: 10px;
+}
+
 /* line 2, ../scss/components/_branding.scss */
 #zone-branding-wrapper {
   height: 100px;
@@ -107,6 +132,32 @@
   color: #2664ab;
 }
 
+/* line 2, ../scss/components/_footer.scss */
+#block-menu-menu-footer-menu {
+  background-color: #f8f8f8;
+}
+/* line 5, ../scss/components/_footer.scss */
+#block-menu-menu-footer-menu ul li {
+  list-style: none;
+  float: left;
+}
+/* line 8, ../scss/components/_footer.scss */
+#block-menu-menu-footer-menu ul li a {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 13px;
+  font-family: 'Montserrat', 'Avant Garde';
+  color: #696969;
+}
+/* line 16, ../scss/components/_footer.scss */
+#block-menu-menu-footer-menu ul li::after {
+  content: " |";
+}
+/* line 19, ../scss/components/_footer.scss */
+#block-menu-menu-footer-menu ul li.last::after {
+  content: "";
+}
+
 /* line 2, ../scss/components/_header.scss */
 #zone-header-wrapper {
   max-width: 65em;
@@ -179,12 +230,19 @@
 }
 
 /* line 2, ../scss/components/_main_content.scss */
+#zone-content-wrapper {
+  max-width: 65em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 7, ../scss/components/_main_content.scss */
 .pane-page-title {
   background-color: #336699;
   padding: 15px;
 }
 
-/* line 6, ../scss/components/_main_content.scss */
+/* line 11, ../scss/components/_main_content.scss */
 .pane-page-title .pane-content h1 {
   font-family: 'Trebuchet MS';
   font-weight: bold;
@@ -192,51 +250,51 @@
   font-size: 14px;
 }
 
-/* line 13, ../scss/components/_main_content.scss */
+/* line 18, ../scss/components/_main_content.scss */
 .pane-node-body {
   font-family: 'Verdana';
   color: #000;
 }
-/* line 16, ../scss/components/_main_content.scss */
+/* line 21, ../scss/components/_main_content.scss */
 .pane-node-body h1, .pane-node-body h2, .pane-node-body h3, .pane-node-body h4, .pane-node-body h5, .pane-node-body h6 {
   font-weight: bold;
 }
-/* line 19, ../scss/components/_main_content.scss */
+/* line 24, ../scss/components/_main_content.scss */
 .pane-node-body h1 {
   font-size: 24px;
 }
-/* line 22, ../scss/components/_main_content.scss */
+/* line 27, ../scss/components/_main_content.scss */
 .pane-node-body h2 {
   font-size: 22px;
 }
-/* line 25, ../scss/components/_main_content.scss */
+/* line 30, ../scss/components/_main_content.scss */
 .pane-node-body h3 {
   font-size: 18px;
 }
-/* line 28, ../scss/components/_main_content.scss */
+/* line 33, ../scss/components/_main_content.scss */
 .pane-node-body h4 {
   font-size: 16px;
 }
-/* line 31, ../scss/components/_main_content.scss */
+/* line 36, ../scss/components/_main_content.scss */
 .pane-node-body h5 {
   font-size: 14px;
 }
-/* line 34, ../scss/components/_main_content.scss */
+/* line 39, ../scss/components/_main_content.scss */
 .pane-node-body h6 {
   font-size: 13px;
 }
-/* line 37, ../scss/components/_main_content.scss */
+/* line 42, ../scss/components/_main_content.scss */
 .pane-node-body p {
   font-size: 12px;
   line-height: 18px;
 }
-/* line 41, ../scss/components/_main_content.scss */
+/* line 46, ../scss/components/_main_content.scss */
 .pane-node-body a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
-/* line 46, ../scss/components/_main_content.scss */
+/* line 51, ../scss/components/_main_content.scss */
 .pane-node-body a:visited {
   color: #421c89;
 }
