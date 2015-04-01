@@ -17,9 +17,9 @@
 function sbirtheme_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
   if (count($breadcrumb) == 1) {
-    return;
+    //return;
   }
-  
+
   //dpm(sizeof($breadcrumb));
   if (!empty($breadcrumb) /* && sizeof($breadcrumb) > 0 */) {
     // Adding the title of the current page to the breadcrumb.
@@ -29,7 +29,8 @@ function sbirtheme_breadcrumb($variables) {
     // screen-reader users. Make the heading invisible with .element-invisible.
     $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
 
-    $output .= '<div class="breadcrumb">' . implode(' » ', $breadcrumb) . '</div>';
+    //$output .= '<div class="breadcrumb">' . implode(' » ', $breadcrumb) . '</div>';
+    $output .= '<div class="breadcrumb">' . implode(' <b>\</b> ', $breadcrumb) . '</div>';
     return $output;
   }
 }
@@ -38,7 +39,33 @@ function sbirtheme_breadcrumb($variables) {
  * Implements hook_validate().
  */
 function sbirtheme_validate($node, $form, $form_state) {
-  dpm($form);
-exit;
   
+}
+
+/*
+ * Implements hook_block_view
+ */
+
+function sbirtheme_block_view_alter(&$data, $block) {
+  if ($block->delta == 'menu-social-media') {
+    foreach ($data['content'] as $key => $value) {
+      if (is_numeric($key) && is_array($value)) {
+        $title = $value['#localized_options']['attributes']['title'];
+        if ($title == 'Sign Up for Updates') {
+          $data['content'][$key]['#attributes']['class'][] = 'email-link';
+        }
+        if ($title == 'Connect with us on LinkedIn') {
+          $data['content'][$key]['#attributes']['class'][] = 'linkedin-link';
+        }
+        if ($title == 'Follow us on Twitter') {
+          $data['content'][$key]['#attributes']['class'][] = 'twitter-link';
+        }
+      }
+    }
+    $follow_us = array(
+      '#markup' => '<span class="follow-us-text">Follow Us:</span>'
+    );
+    // $data['content'][] = $follow_us;
+    array_unshift($data['content'], $follow_us);
+  }
 }

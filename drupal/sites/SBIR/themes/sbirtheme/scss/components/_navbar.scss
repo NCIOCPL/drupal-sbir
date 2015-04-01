@@ -1,0 +1,108 @@
+// @navbar styling goes here
+#zone-menu-wrapper {
+  background-image: url(../images/blue_nav.png);
+  background-repeat: repeat-x;
+  width:100%; 
+  #zone-menu {
+    max-width: 65em;
+    margin-left: auto;
+    margin-right: auto;
+      #region-menu {
+      margin:0;
+
+      ul#superfish-1 {
+      }
+      #block-superfish-1 {
+      }
+      #block-superfish-1 a {
+        text-decoration: none;
+        font-weight: 400;
+        font-size:12px;
+        font-family: 'Montserrat', 'Avant Garde';
+        color:#fff;
+      }
+      #block-superfish-1 li.sf-depth-1>a {
+        text-transform: uppercase;
+        padding:20px 30px 20px 30px;
+      }
+      #block-superfish-1 li.sf-depth-1>ul {
+        top:52px;
+        /*
+        background-image: url(../images/left_nav.png);
+        background-repeat: repeat-x;
+        */
+      }
+      #block-superfish-1 li.sf-depth-1 ul
+      ,#block-superfish-1 li.sf-depth-2 ul {
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        border:solid #ccc 1px;
+        background-color:#fff;
+        border-top:solid 2px orange;
+      }
+      #block-superfish-1 a.sf-depth-2
+      ,#block-superfish-1 a.sf-depth-3 {
+        font-size:12px;
+        padding:13px;
+        border-bottom:solid 1px #ccc;
+      }
+      #block-superfish-1 li.last a.sf-depth-2
+      ,#block-superfish-1 li.last a.sf-depth-3 {
+        border-bottom:none;
+      }
+      #block-superfish-1 li.active-trail a {
+        color:#294e80;  
+      }
+      .sf-menu.sf-horizontal.sf-shadow ul {
+        background:none;
+        padding:0!important;
+      }
+      #block-superfish-1 li li
+      ,#block-superfish-1 li li li {
+        background-color:#fff;
+      }
+      #block-superfish-1 li li
+      ,#block-superfish-1 li li li {
+        background-color:#fff;
+      }
+      #block-superfish-1 li li a
+      ,#block-superfish-1 li li li a {
+        color:#646363;
+      }
+      #block-superfish-1 li a {
+        padding:20px;
+      }
+      #superfish-1>li.active-trail {
+        background-image: url(../images/white_nav.png); 
+        background-repeat: repeat-x;
+      }
+
+      /*
+      #block-superfish-1 li {
+        background-image: url(../images/blue_nav.png);     
+      }
+      */
+      #superfish-1-toggle span {
+        font-family: 'Montserrat', 'Avant Garde';
+        color:#fff;
+        font-size:12px;
+      }
+      .sf-accordion-toggle {
+        text-align:center;
+        padding:10px;
+      }
+      .sf-sub-indicator {
+        background: none;
+        width:12px;
+        height:21px;
+      }
+      #block-superfish-1 a.sf-depth-2 .sf-sub-indicator
+      ,#block-superfish-1 a.sf-depth-3 .sf-sub-indicator {
+        background: url('../images/chevron.png') no-repeat 0px 0px;
+        width:12px;
+        height:21px;
+      }
+    }
+  }
+}

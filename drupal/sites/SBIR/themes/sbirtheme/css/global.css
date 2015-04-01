@@ -9,112 +9,462 @@
 /* ==========================================================================
    Base Styles
    ========================================================================== */
-/*@import "base/fonts";
+/*
+@font-face {
+    font-family: Montserrat;
+    src: url(http://www.google.com/fonts/specimen/Montserrat);
+    font-weight: bold;
+}
+*/
+/*
 @import "base/normalize";
 */
-/* line 5, ../scss/base/_html-elements.scss */
-* {
-  color: #585858;
-  font-family: Arial, Helvetica, sans-serif;
+/*@import "base/html-elements";*/
+/* ==========================================================================
+   Layout Styles
+   ========================================================================== */
+/* ==========================================================================
+   Component Styles
+   ========================================================================== */
+/* line 2, ../scss/components/_branding.scss */
+#zone-branding-wrapper {
+  height: 100px;
+  max-width: 65em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
 }
 
-/* line 12, ../scss/base/_html-elements.scss */
-h1 {
-  font-family: Arial Bold, Helvetica, sans-serif;
-  font-size: 15px;
-  color: #000;
-  font-weight: bold;
-}
-
-/* line 18, ../scss/base/_html-elements.scss */
-h2 {
-  font-family: Arial Bold, Helvetica, sans-serif;
-  font-size: 18px;
-  color: #000;
-}
-
-/* line 24, ../scss/base/_html-elements.scss */
-h2 a {
-  font-family: Arial Bold, Helvetica, sans-serif;
-  font-size: 18px;
-  color: #2664AB;
-}
-
-/* line 30, ../scss/base/_html-elements.scss */
-h3 {
-  font-family: Arial Bold, Helvetica, sans-serif;
-  font-size: 15px;
-  color: #000;
-}
-
-/* line 36, ../scss/base/_html-elements.scss */
-h3 a {
-  font-family: Arial Bold, Helvetica, sans-serif;
-  font-size: 13px;
-  color: #2664AB;
-}
-
-/* line 42, ../scss/base/_html-elements.scss */
-h3 {
-  font-family: Arial Bold, Helvetica, sans-serif;
-  font-size: 13px;
-  color: #000;
-}
-
-/* line 48, ../scss/base/_html-elements.scss */
-h3 a {
-  font-family: Arial Bold, Helvetica, sans-serif;
-  font-size: 15px;
-  color: #2664AB;
-}
-
-/* line 54, ../scss/base/_html-elements.scss */
-p
-, span {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 74%/1.4em;
-  color: #000;
-  line-height: 150%;
+/* line 10, ../scss/components/_branding.scss */
+.site-name {
   margin-top: 0;
 }
 
-/* line 63, ../scss/base/_html-elements.scss */
-.block-home-page-slider-block .views-field-body p {
-  color: #fff;
+/* line 14, ../scss/components/_branding.scss */
+.site-name a
+, .site-name-slogan {
+  /*
+  text-indent: -9999px;
+  display: block;
+  */
+  font-family: 'Montserrat', 'Avant Garde';
+  font-size: 16px;
+  color: #808085;
+  text-transform: uppercase;
 }
 
-/* line 67, ../scss/base/_html-elements.scss */
-li
-, li span
-, li p
-, li a
-, li a:link
-, li a:visited
-, div {
-  /*
-  font-family: Arial, Helvetica, sans-serif;
+/* line 26, ../scss/components/_branding.scss */
+.logo-img {
+  float: left;
+  margin-right: 15px;
+}
+
+/* line 30, ../scss/components/_branding.scss */
+.logo-img img {
+  width: 86px;
+}
+
+/* line 35, ../scss/components/_branding.scss */
+#zone-branding {
+  width: auto;
+  margin-rigth: auto;
+  margin-left: auto;
+}
+
+/* line 41, ../scss/components/_branding.scss */
+#region-branding {
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+}
+
+/* line 46, ../scss/components/_branding.scss */
+.branding-data {
+  float: left;
+}
+
+/* line 51, ../scss/components/_branding.scss */
+#institute-name {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 22px;
+  color: #c8203f;
+  font-family: 'Montserrat', 'Avant Garde';
+  line-height: 34px;
+}
+
+/* line 2, ../scss/components/_breadcrumb.scss */
+.breadcrumb {
+  font-family: 'Montserrat', 'Avant Garde';
+  font-weight: bold;
+  font-size: 21px;
+  color: #000;
+}
+/* line 7, ../scss/components/_breadcrumb.scss */
+.breadcrumb a {
+  text-decoration: none;
+  font-size: 28px;
+  color: #2664ab;
+}
+
+/* line 2, ../scss/components/_header.scss */
+#zone-header-wrapper {
+  max-width: 65em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 6, ../scss/components/_header.scss */
+#zone-header-wrapper #zone-header {
+  /*text-align:center;*/
+}
+/* line 8, ../scss/components/_header.scss */
+#zone-header-wrapper #zone-header img {
+  width: 65em;
+}
+/* line 11, ../scss/components/_header.scss */
+#zone-header-wrapper #zone-header #region-header-first {
+  margin: 0;
+}
+
+/* line 3, ../scss/components/_leftnav.scss */
+#left-nav .pane-title {
+  color: #fff;
+  background-image: url(../images/left_nav.png);
+  background-repeat: repeat-x;
+  padding: 15px;
+  font-family: 'Trebuchet MS';
+  font-weight: bold;
+  color: #fff;
+  font-size: 14px;
+}
+/* line 13, ../scss/components/_leftnav.scss */
+#left-nav ul {
+  background-color: #f9f9f9;
+}
+/* line 16, ../scss/components/_leftnav.scss */
+#left-nav li {
+  background-color: #fff;
+  padding: 10px 10px 10px 15px;
+  list-style: none;
+  margin: 0;
+}
+/* line 26, ../scss/components/_leftnav.scss */
+#left-nav .menu-level-2 > .menu > li {
+  border-top: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+/* line 30, ../scss/components/_leftnav.scss */
+#left-nav .menu-level-2 > .menu > li.expanded {
+  background-color: #fff;
+}
+/* line 32, ../scss/components/_leftnav.scss */
+#left-nav .menu-level-2 > .menu > li.expanded .menu {
+  margin-top: 10px;
+}
+/* line 36, ../scss/components/_leftnav.scss */
+#left-nav .active-trail {
+  font-weight: bold;
+}
+/* line 39, ../scss/components/_leftnav.scss */
+#left-nav .menu-level-2 > ul.menu > li.expanded > ul.menu li::before {
+  content: " - ";
+}
+/* line 43, ../scss/components/_leftnav.scss */
+#left-nav a {
+  text-decoration: none;
+  font-family: "Verdana";
+  font-weight: normal;
   font-size: 12px;
+  color: #000;
+}
+
+/* line 2, ../scss/components/_main_content.scss */
+.pane-page-title {
+  background-color: #336699;
+  padding: 15px;
+}
+
+/* line 6, ../scss/components/_main_content.scss */
+.pane-page-title .pane-content h1 {
+  font-family: 'Trebuchet MS';
+  font-weight: bold;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* line 13, ../scss/components/_main_content.scss */
+.pane-node-body {
+  font-family: 'Verdana';
+  color: #000;
+}
+/* line 16, ../scss/components/_main_content.scss */
+.pane-node-body h1, .pane-node-body h2, .pane-node-body h3, .pane-node-body h4, .pane-node-body h5, .pane-node-body h6 {
+  font-weight: bold;
+}
+/* line 19, ../scss/components/_main_content.scss */
+.pane-node-body h1 {
+  font-size: 24px;
+}
+/* line 22, ../scss/components/_main_content.scss */
+.pane-node-body h2 {
+  font-size: 22px;
+}
+/* line 25, ../scss/components/_main_content.scss */
+.pane-node-body h3 {
+  font-size: 18px;
+}
+/* line 28, ../scss/components/_main_content.scss */
+.pane-node-body h4 {
+  font-size: 16px;
+}
+/* line 31, ../scss/components/_main_content.scss */
+.pane-node-body h5 {
+  font-size: 14px;
+}
+/* line 34, ../scss/components/_main_content.scss */
+.pane-node-body h6 {
+  font-size: 13px;
+}
+/* line 37, ../scss/components/_main_content.scss */
+.pane-node-body p {
+  font-size: 12px;
+  line-height: 18px;
+}
+/* line 41, ../scss/components/_main_content.scss */
+.pane-node-body a {
+  text-decoration: underline;
+  color: #2664ab;
+  font-size: 12px;
+}
+/* line 46, ../scss/components/_main_content.scss */
+.pane-node-body a:visited {
+  color: #421c89;
+}
+
+/* line 2, ../scss/components/_navbar.scss */
+#zone-menu-wrapper {
+  background-image: url(../images/blue_nav.png);
+  background-repeat: repeat-x;
+  width: 100%;
+}
+/* line 6, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu {
+  max-width: 65em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 10, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu {
+  margin: 0;
+  /*
+  #block-superfish-1 li {
+    background-image: url(../images/blue_nav.png);     
+  }
   */
 }
-
-/* line 84, ../scss/base/_html-elements.scss */
-#zone-content a {
-  margin-bottom: 10px;
+/* line 17, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 12px;
+  font-family: 'Montserrat', 'Avant Garde';
+  color: #fff;
+}
+/* line 24, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 > a {
+  text-transform: uppercase;
+  padding: 20px 30px 20px 30px;
+}
+/* line 28, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 > ul {
+  top: 52px;
+  /*
+  background-image: url(../images/left_nav.png);
+  background-repeat: repeat-x;
+  */
+}
+/* line 35, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 ul
+, #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-2 ul {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border: solid #ccc 1px;
+  background-color: #fff;
+  border-top: solid 2px orange;
+}
+/* line 44, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2
+, #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 {
+  font-size: 12px;
+  padding: 13px;
+  border-bottom: solid 1px #ccc;
+}
+/* line 50, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.last a.sf-depth-2
+, #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.last a.sf-depth-3 {
+  border-bottom: none;
+}
+/* line 54, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.active-trail a {
+  color: #294e80;
+}
+/* line 57, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu .sf-menu.sf-horizontal.sf-shadow ul {
+  background: none;
+  padding: 0 !important;
+}
+/* line 61, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li
+, #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li {
+  background-color: #fff;
+}
+/* line 65, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li
+, #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li {
+  background-color: #fff;
+}
+/* line 69, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li a
+, #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li a {
+  color: #646363;
+}
+/* line 73, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li a {
+  padding: 20px;
+}
+/* line 76, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #superfish-1 > li.active-trail {
+  background-image: url(../images/white_nav.png);
+  background-repeat: repeat-x;
+}
+/* line 86, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #superfish-1-toggle span {
+  font-family: 'Montserrat', 'Avant Garde';
+  color: #fff;
+  font-size: 12px;
+}
+/* line 91, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu .sf-accordion-toggle {
+  text-align: center;
+  padding: 10px;
+}
+/* line 95, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu .sf-sub-indicator {
+  background: none;
+  width: 12px;
+  height: 21px;
+}
+/* line 100, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2 .sf-sub-indicator
+, #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 .sf-sub-indicator {
+  background: url("../images/chevron.png") no-repeat 0px 0px;
+  width: 12px;
+  height: 21px;
 }
 
-/* line 87, ../scss/base/_html-elements.scss */
-a
-, a:link
-, a:visited {
-  color: #2664AB;
+/* line 6, ../scss/components/_search-form.scss */
+#search-block-form .form-submit {
+    /*
+    text-indent: -9999px;
+    display: block;
+    background-repeat: no-repeat;
+    display: block;
+    background-image: url(../images/search_icon.png);
+    background-position: 1px 5px;
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    top: -5px;
+
+    bottom: 0;
+    position: absolute;
+    padding:0;
+    margin:0;
+    border:0;
+    background-color:transparent;
+    */
+  /*
+      cursor: pointer;
+      background-color:#E0EAF1;
+      border-bottom:1px solid #3E6D8E;
+      border-right:1px solid #7F9FB6;
+      color:#3E6D8E;
+      font-size:90%;
+      line-height:2.2;
+      margin:2px 2px 2px 0;
+      padding:3px 4px;
+      text-decoration:none;
+      white-space:nowrap;
+      */
+  /*
+  box-shadow: inset 0px 0px 10px -3px #ABABAB;
+  -webkit-box-shadow: inset 0px 0px 10px -3px #ABABAB;
+  -moz-box-shadow: inset 0px 0px 10px -3px #ABABAB;
+  -o-box-shadow: inset 0px 0px 10px -3px #ABABAB;
+  */
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
+}
+/* line 52, ../scss/components/_search-form.scss */
+#search-block-form input[type=text] {
+  float: left;
 }
 
-/* line 93, ../scss/base/_html-elements.scss */
-ul {
-  padding-left: 15px;
-}
-
-/* line 3, ../scss/components/search-results.scss */
+/* line 4, ../scss/components/_search-results.scss */
 .page-search .pane-page-title .pane-content {
   display: none;
+}
+
+/* line 2, ../scss/components/_social-media.scss */
+#block-menu-menu-social-media {
+  /*float:left;*/
+}
+/* line 4, ../scss/components/_social-media.scss */
+#block-menu-menu-social-media li {
+  width: 30px;
+  float: left;
+  padding: 5px;
+  margin: 0;
+}
+/* line 10, ../scss/components/_social-media.scss */
+#block-menu-menu-social-media .email-link a {
+  background: url(../images/email_icon.png) no-repeat;
+  background-size: 30px 30px;
+  text-indent: -9999px;
+  display: block;
+  height: 38px;
+}
+/* line 17, ../scss/components/_social-media.scss */
+#block-menu-menu-social-media .linkedin-link a {
+  background: url(../images/linkedin_icon.png) no-repeat;
+  background-size: 30px 30px;
+  text-indent: -9999px;
+  display: block;
+  height: 38px;
+}
+/* line 24, ../scss/components/_social-media.scss */
+#block-menu-menu-social-media .twitter-link a {
+  background: url(../images/twitter_icon.png) no-repeat;
+  background-size: 30px 30px;
+  text-indent: -9999px;
+  display: block;
+  height: 38px;
+}
+
+/* line 32, ../scss/components/_social-media.scss */
+#social-media {
+  display: inline-block;
+  float: right;
+}
+
+/* line 37, ../scss/components/_social-media.scss */
+.follow-us-text {
+  float: left;
+  margin-top: 13px;
+  margin-right: 10px;
+  /*font-family: 'Montserrat', 'Avant Garde';*/
 }

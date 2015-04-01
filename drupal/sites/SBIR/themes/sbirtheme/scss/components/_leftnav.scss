@@ -1,0 +1,50 @@
+// @left nav styling goes here
+#left-nav {
+  .pane-title {
+    color:#fff;
+    background-image: url(../images/left_nav.png);
+    background-repeat: repeat-x;
+    padding:15px;
+    font-family:'Trebuchet MS';
+    font-weight:bold;
+    color:#fff;
+    font-size:14px;
+  }
+  ul {
+    background-color:#f9f9f9;
+  }
+  li {
+    background-color:#fff;
+    padding: 10px 10px 10px 15px;
+    list-style: none;
+    margin:0;
+  }
+  .menu-level-2 {
+    .leaf {
+    }
+  }
+  .menu-level-2>.menu>li{
+    border-top: 1px solid #ccc;
+    background-color:#f9f9f9;
+  }
+  .menu-level-2>.menu>li.expanded {
+    background-color:#fff;
+    .menu {
+      margin-top:10px;      
+    } 
+  }
+  .active-trail {
+    font-weight:bold;
+  }
+  .menu-level-2>ul.menu>li.expanded>ul.menu li::before {
+    content: " - ";
+  }
+
+  a {
+    text-decoration: none;
+    font-family: "Verdana";
+    font-weight:normal;
+    font-size:12px;
+    color:#000;
+  }
+}

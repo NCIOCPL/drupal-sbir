@@ -1,0 +1,58 @@
+// @branding styling goes here
+#zone-branding-wrapper  {
+  height:100px;
+  max-width: 65em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top:1em;
+}
+
+.site-name {
+  margin-top:0;
+}
+
+.site-name a
+,.site-name-slogan {
+  /*
+  text-indent: -9999px;
+  display: block;
+  */
+  font-family: 'Montserrat', 'Avant Garde';
+  font-size:16px;
+  color:#808085;
+  text-transform: uppercase;
+}
+
+.logo-img {
+  float:left;
+  margin-right:15px;
+}
+.logo-img img {
+  width:86px;
+
+}
+
+#zone-branding {
+  width: auto;
+  margin-rigth:auto;
+  margin-left:auto;
+}
+
+#region-branding {
+  width:100%;
+  display:inline-block;
+  margin:0;
+}
+.branding-data {
+
+  float:left;
+}
+
+#institute-name {
+  text-transform: uppercase;
+  font-weight:bold;
+  font-size:22px;
+  color:#c8203f;
+  font-family: 'Montserrat', 'Avant Garde';
+    line-height:34px;
+}

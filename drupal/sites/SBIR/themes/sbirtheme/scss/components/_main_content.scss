@@ -1,0 +1,49 @@
+// @main content styling goes here
+.pane-page-title {
+  background-color:#336699;
+  padding:15px;
+}
+.pane-page-title .pane-content h1 {
+  font-family:'Trebuchet MS';
+  font-weight:bold;
+  color:#fff;
+  font-size:14px;
+}
+
+.pane-node-body {
+  font-family:'Verdana';
+  color:#000;
+  h1, h2, h3, h4, h5, h6 {
+    font-weight:bold;
+  }
+  h1 {
+    font-size:24px;
+  }
+  h2 {
+    font-size:22px;
+  }
+  h3 {
+    font-size:18px;
+  }
+  h4 {
+    font-size:16px;
+  }
+  h5 {
+    font-size:14px;
+  }
+  h6 {
+    font-size:13px;
+  }
+  p {
+    font-size:12px;
+    line-height:18px;
+  }
+  a {
+    text-decoration: underline;
+    color:#2664ab;
+    font-size:12px
+  }
+  a:visited {
+    color:#421c89
+  }
+}
