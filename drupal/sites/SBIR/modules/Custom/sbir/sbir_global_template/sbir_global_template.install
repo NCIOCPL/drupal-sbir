@@ -5,7 +5,7 @@
  */
 
 function sbir_global_template_install() {
-  
+    sbir_global_template_create_footer_menu();
 }
 
 /*
