@@ -51,6 +51,11 @@
   padding: 10px;
 }
 
+/* line 31, ../scss/components/_blocks.scss */
+.view-display-id-success_stories .views-field-title {
+  background-color: #fff;
+}
+
 /* line 2, ../scss/components/_branding.scss */
 #zone-branding-wrapper {
   height: 100px;

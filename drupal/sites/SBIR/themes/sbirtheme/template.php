@@ -57,6 +57,7 @@ function sbirtheme_block_view_alter(&$data, $block) {
         }
         if ($title == 'Connect with us on LinkedIn') {
           $data['content'][$key]['#attributes']['class'][] = 'linkedin-link';
+
         }
         if ($title == 'Follow us on Twitter') {
           $data['content'][$key]['#attributes']['class'][] = 'twitter-link';
