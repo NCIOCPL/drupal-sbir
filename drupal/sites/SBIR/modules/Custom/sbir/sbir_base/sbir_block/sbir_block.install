@@ -25,7 +25,6 @@ function sbir_block_enable() {
   variable_set('menu_options_sbir_block', $menu_options);  
 
   module_load_include('inc', 'sbir_block', 'includes/sbir_block.field_instance');
-  module_load_include('inc', 'sbir_block', 'includes/sbir_block.field_group');
 
   block_create_field_instances();
 }

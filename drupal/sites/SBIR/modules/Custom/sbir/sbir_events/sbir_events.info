@@ -1,0 +1,7 @@
+name = SBIR Events
+description = A module containing pages, views, template, etc. related to SBIR events
+core = 7.x
+package = SBIR
+version = 7.x-1.0
+project = sbir_events
+timestamp = 1427913228

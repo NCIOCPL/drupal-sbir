@@ -55,7 +55,7 @@ function block_create_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -71,26 +71,28 @@ function block_create_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_footer',
     'label' => 'Footer',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Comment');
   t('Footer');
 
   sbir_base_update_instances($field_instances, 'sbir_block', 'node');

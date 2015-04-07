@@ -1,7 +1,7 @@
 <?php
 
 function announcement_create_field_instances() {
- $field_instances = array();
+  $field_instances = array();
 
   // Exported field_instance: 'node-sbir_announcement-body'
   $field_instances['node-sbir_announcement-body'] = array(
@@ -61,12 +61,12 @@ function announcement_create_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
-  // Exported field_instance: 'node-sbir_announcement-field_announcement_date'
-  $field_instances['node-sbir_announcement-field_announcement_date'] = array(
+  // Exported field_instance: 'node-sbir_announcement-field_posted_date'
+  $field_instances['node-sbir_announcement-field_posted_date'] = array(
     'bundle' => 'sbir_announcement',
     'deleted' => 0,
     'description' => '',
@@ -82,20 +82,7 @@ function announcement_create_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 9,
-      ),
-      'featured_teaser' => array(
-        'label' => 'hidden',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'sbir_standard',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 10,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -104,23 +91,16 @@ function announcement_create_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'sbir_standard',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 1,
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_announcement_date',
-    'label' => 'Announcement Date',
-    'required' => 1,
+    'field_name' => 'field_posted_date',
+    'label' => 'Posted Date',
+    'required' => FALSE,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'same',
@@ -129,7 +109,6 @@ function announcement_create_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
@@ -141,7 +120,7 @@ function announcement_create_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -190,7 +169,7 @@ function announcement_create_field_instances() {
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textarea',
-      'weight' => 9,
+      'weight' => 4,
     ),
   );
 
@@ -239,7 +218,7 @@ function announcement_create_field_instances() {
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textfield',
-      'weight' => 8,
+      'weight' => 3,
     ),
   );
 
@@ -247,10 +226,11 @@ function announcement_create_field_instances() {
   // Included for use with string extractors like potx.
   t('(Meta)Description');
   t('(Meta)Keywords');
-  t('Announcement Date');
   t('Body');
+  t('Comment');
   t('Enter a description. Limit your description to about 20 words, with a maximum of 255 characters. It should not contain any HTML tags or other formatting.');
   t('Enter a short abstract. Typically it is one sentence.');
+  t('Posted Date');
 
   sbir_base_update_instances($field_instances, 'sbir_announcement', 'node');
 }

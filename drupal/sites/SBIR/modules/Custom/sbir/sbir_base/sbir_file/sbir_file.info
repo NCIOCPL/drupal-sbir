@@ -1,0 +1,7 @@
+name = SBIR File
+description = This content type is used to upload documents.
+core = 7.x
+package = SBIR Types
+project = sbir_file
+timestamp = 1428073790
+dependencies[] = sbir_base

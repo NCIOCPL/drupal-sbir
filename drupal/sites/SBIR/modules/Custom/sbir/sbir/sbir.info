@@ -5,23 +5,36 @@ package = SBIR
 version = 7.x-1.0
 project = sbir
 timestamp = 1426699461
-dependencies[] = sbir_base
+
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = filter
+dependencies[] = menu
+dependencies[] = menu_block
+dependencies[] = nodequeue
+dependencies[] = page_manager
+dependencies[] = panels
+dependencies[] = search
+dependencies[] = superfish
+dependencies[] = views
+dependencies[] = views_content
+dependencies[] = wysiwyg
+
 dependencies[] = sbir_announcement
-dependencies[] = sbir_article
+dependencies[] = sbir_awardee
 dependencies[] = sbir_basic_page
 dependencies[] = sbir_block
 dependencies[] = sbir_event
-dependencies[] = sbir_funding_opportunity
-dependencies[] = sbir_grantee
-dependencies[] = sbir_subscriber
-dependencies[] = sbir_team_member
+dependencies[] = sbir_file
 
 dependencies[] = sbir_settings
 dependencies[] = sbir_wysiwyg
 dependencies[] = sbir_announcements
-dependencies[] = sbir_home_page
+dependencies[] = sbir_events
+dependencies[] = sbir_success_stories
 dependencies[] = sbir_basic_pages
 dependencies[] = sbir_social_media
+dependencies[] = sbir_home_page
 dependencies[] = sbir_global_template
 
 

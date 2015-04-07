@@ -5,5 +5,3 @@ package = SBIR
 version = 7.x-1.0
 project = sbir_basic_pages
 timestamp = 1427390149
-dependencies[] = sbir_base
-dependencies[] = menu

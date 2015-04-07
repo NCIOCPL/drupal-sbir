@@ -11,16 +11,44 @@ function sbir_home_page_enable() {
  * Implements hook_install().
  */
 function sbir_home_page_install() {
-  $nodequeue_items[] = create_what_is_node();
-    $nodequeue_items[] = create_success_stories_node();
-  $nodequeue_items[] = create_manage_content_node();
-  $nodequeue_items[] = create_entrepreneurial_training_node();
 
-  $qid = sbir_home_page_create_nodequeue($nodequeue_items);
-  $nodequeue = nodequeue_load($qid);
-  $subqueue = nodequeue_load_subqueues_by_queue($qid);
+  /* Create the four blocks that appear on the left side of the home page 
+   */
+  $title = 'What are the NCI SBIR & STTR Programs?';
+  $alias = '';
+  $body_text = '<p>The SBIR &amp; STTR Programs are one of the largest sources of '
+      . 'early-stage technology financing in the United States. '
+      . 'We welcome entrepreneurs and small business leaders to this website '
+      . 'to explore grant and contract funding opportunities and a new spirit of '
+      . 'collaboration with the NCI.</p>'
+      . '<p><a href="/about">Learn more about the programs &gt;</a></p>';
+  $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
 
-  foreach ($nodequeue_items as $nodequeue_item) {
-    nodequeue_subqueue_add($nodequeue, $subqueue[$qid], $nodequeue_item);
-  }
+  $title = 'Success Stories';
+  $alias = 'success-stories-block';
+  $body_text = '<p>Learn How NCI SBIR &amp; STTR Programs have helped '
+      . 'small businesses with funding awards &nbsp;that help advance cancer research.</p>';
+  $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
+
+  $title = 'Manage Your Content';
+  $alias = '';
+  $body_text = '<p><a href="resources/apply">eRA Commons Tips for Applying</a></p>'
+      . '<p>Learn what the top five tips are for successfully submitting SBIR &amp;'
+      . ' STTR grant applications.</p>';
+  $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
+
+  $title = 'Entrepreneurial Training';
+  $alias = '';
+  $body_text = '<p><a href="/programs/training">Programs &amp; Training</a></p>'
+      . '<p>Learn about the entrepreneurial programs and training available.</p>';
+  $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
+
+
+  /* Create a queue for the blocks on the left side
+   * of the home page
+   */
+  $types = array(0 => 'sbir_block');
+  $qid = sbir_base_create_nodequeue('home_page_blocks', 'Home Page Blocks', $types);
+
+  sbir_base_add_items_to_subqueue($qid, $nodequeue_items);
 }

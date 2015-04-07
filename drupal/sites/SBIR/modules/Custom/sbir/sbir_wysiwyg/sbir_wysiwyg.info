@@ -5,7 +5,5 @@ package = SBIR
 version = 7.x-1.0
 project = sbir_wysiwyg
 timestamp = 1427381523
-dependencies[] = filter
-dependencies[] = wysiwyg
 
 

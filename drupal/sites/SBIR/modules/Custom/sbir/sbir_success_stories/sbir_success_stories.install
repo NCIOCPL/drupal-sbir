@@ -1,0 +1,22 @@
+<?php
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_success_stories_install() {
+  /* Create the nodequeues for Success stories that appear
+   * on the home page and Success Stories landing page
+   */
+  $types = array(0 => 'sbir_awardee');
+  sbir_base_create_nodequeue('all_success_stories', 'All Success Stories', $types);
+  sbir_base_create_nodequeue('success_stories', 'Success Stories', $types);
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_success_stories_enable() {
+  
+}

@@ -5,7 +5,9 @@
  */
 
 function sbir_basic_page_install() {
+  //delete the default node types
   node_type_delete('page');
+  node_type_delete('article');
 }
 
 /*
@@ -14,20 +16,20 @@ function sbir_basic_page_install() {
 
 function sbir_basic_page_enable() {
 
+  // configure the basic page content type
   variable_set('comment_sbir_basic_page', '0');
   variable_set('node_submitted_sbir_basic_page', '0');
   variable_set('node_preview_sbir_basic_page', '1');
-  
+
+  // set available menus for the basic page content type
   $menu_options = array(
     '0' => 'menu-footer-menu',
     '1' => 'main-menu',
     '2' => 'menu-social-media');
 
-  variable_set('menu_options_sbir_basic_page', $menu_options);  
+  variable_set('menu_options_sbir_basic_page', $menu_options);
 
   module_load_include('inc', 'sbir_basic_page', 'includes/sbir_basic_page.field_instance');
-  module_load_include('inc', 'sbir_basic_page', 'includes/sbir_basic_page.field_group');
 
   basic_page_create_field_instances();
-  basic_page_create_field_groups();
 }

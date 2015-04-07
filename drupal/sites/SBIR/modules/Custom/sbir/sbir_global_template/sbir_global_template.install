@@ -17,13 +17,12 @@ function sbir_global_template_enable() {
   variable_set('superfish_name_1', 'Mega Menu');
   variable_set('superfish_multicolumn_1', '0');
   variable_set('superfish_menu_1', 'main-menu:0');
-  
-  sbir_global_template_create_footer_menu();
+  variable_set('superfish_style_1', 'none');
 
   _sbir_base_update_block('menu', 'menu-footer-menu', '<none>', 0, '', 0);
   _sbir_base_update_block('menu', 'menu-social-media', '<none>', 0, '', 0);
-  _sbir_base_update_block('menu_block', 1, '<none>', 0, '', 0);
-  _sbir_base_update_block('search', 'form', '<none>', 0, '', -1);
+  //_sbir_base_update_block('menu_block', 1, '<none>', 0, '', 0);
+  //_sbir_base_update_block('search', 'form', '<none>', 0, '', -1);
   _sbir_base_update_block('superfish', 1, '<none>', 0, '', 0);
   
 }

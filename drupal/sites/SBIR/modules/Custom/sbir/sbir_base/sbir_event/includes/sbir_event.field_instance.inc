@@ -43,7 +43,7 @@ function event_create_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 1,
     ),
   );
 
@@ -83,7 +83,43 @@ function event_create_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-sbir_event-field_date_display_mode'
+  $field_instances['node-sbir_event-field_date_display_mode'] = array(
+    'bundle' => 'sbir_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_date_display_mode',
+    'label' => 'Date Display Mode',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 9,
     ),
   );
 
@@ -144,12 +180,54 @@ function event_create_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
-  // Exported field_instance: 'node-sbir_event-field_event_deadline_date'
-  $field_instances['node-sbir_event-field_event_deadline_date'] = array(
+  // Exported field_instance: 'node-sbir_event-field_ics_file'
+  $field_instances['node-sbir_event-field_ics_file'] = array(
+    'bundle' => 'sbir_event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ics_file',
+    'label' => 'ICS File',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'ics',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-sbir_event-field_posted_date'
+  $field_instances['node-sbir_event-field_posted_date'] = array(
     'bundle' => 'sbir_event',
     'deleted' => 0,
     'description' => '',
@@ -165,21 +243,74 @@ function event_create_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 5,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_event_deadline_date',
-    'label' => 'Registration Deadline',
+    'field_name' => 'field_posted_date',
+    'label' => 'Posted Date',
+    'required' => FALSE,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-sbir_event-field_reviewed_date'
+  $field_instances['node-sbir_event-field_reviewed_date'] = array(
+    'bundle' => 'sbir_event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_reviewed_date',
+    'label' => 'Reviewed Date',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'blank',
+      'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -198,63 +329,7 @@ function event_create_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-sbir_event-field_external_link'
-  $field_instances['node-sbir_event-field_external_link'] = array(
-    'bundle' => 'sbir_event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_external_link',
-    'label' => 'Event Registration Link',
-    'required' => 0,
-    'settings' => array(
-      'absolute_url' => 1,
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => 'nofollow',
-        'target' => '_blank',
-        'title' => '[node:title]',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'optional',
-      'title_label_use_field_label' => FALSE,
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 4,
+      'weight' => 12,
     ),
   );
 
@@ -267,31 +342,126 @@ function event_create_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 4,
+        'type' => 'text_default',
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_state',
     'label' => 'State',
-    'required' => 1,
+    'required' => FALSE,
     'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-sbir_event-field_street_address'
+  $field_instances['node-sbir_event-field_street_address'] = array(
+    'bundle' => 'sbir_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_street_address',
+    'label' => 'Street Address',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 9,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-sbir_event-field_updated_date'
+  $field_instances['node-sbir_event-field_updated_date'] = array(
+    'bundle' => 'sbir_event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_updated_date',
+    'label' => 'Updated Date',
+    'required' => FALSE,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 11,
     ),
   );
 
@@ -319,13 +489,52 @@ function event_create_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_venue',
     'label' => 'Venue',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-sbir_event-field_zip_code'
+  $field_instances['node-sbir_event-field_zip_code'] = array(
+    'bundle' => 'sbir_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_zip_code',
+    'label' => 'Zip Code',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
       'module' => 'text',
       'settings' => array(
         'size' => 60,
@@ -368,7 +577,7 @@ function event_create_field_instances() {
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textarea',
-      'weight' => 25,
+      'weight' => 14,
     ),
   );
 
@@ -405,7 +614,7 @@ function event_create_field_instances() {
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textfield',
-      'weight' => 24,
+      'weight' => 13,
     ),
   );
 
@@ -415,11 +624,17 @@ function event_create_field_instances() {
   t('(Meta)Keywords');
   t('Body');
   t('City');
+  t('Comment');
+  t('Date Display Mode');
   t('Event Date');
-  t('Event Registration Link');
-  t('Registration Deadline');
+  t('ICS File');
+  t('Posted Date');
+  t('Reviewed Date');
   t('State');
+  t('Street Address');
+  t('Updated Date');
   t('Venue');
+  t('Zip Code');
 
   sbir_base_update_instances($field_instances, 'sbir_event', 'node');
 }

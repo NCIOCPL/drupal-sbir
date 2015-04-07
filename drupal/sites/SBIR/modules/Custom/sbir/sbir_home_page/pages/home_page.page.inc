@@ -9,7 +9,18 @@ $page->admin_title = 'Home Page';
 $page->admin_description = 'Home Page';
 $page->path = 'home';
 $page->access = array();
-$page->menu = array();
+$page->menu = array(
+  'type' => 'none',
+  'title' => 'Home',
+  'name' => 'main-menu',
+  'weight' => '0',
+  'parent' => array(
+    'type' => 'none',
+    'title' => '',
+    'name' => 'navigation',
+    'weight' => '0',
+  ),
+);
 $page->arguments = array();
 $page->conf = array(
   'admin_paths' => FALSE,

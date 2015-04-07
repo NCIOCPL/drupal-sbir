@@ -56,6 +56,49 @@ function basic_page_create_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-sbir_basic_page-field_date_display_mode'
+  $field_instances['node-sbir_basic_page-field_date_display_mode'] = array(
+    'bundle' => 'sbir_basic_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_date_display_mode',
+    'label' => 'Date Display Mode',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-sbir_basic_page-field_footer'
   $field_instances['node-sbir_basic_page-field_footer'] = array(
     'bundle' => 'sbir_basic_page',
@@ -68,7 +111,7 @@ function basic_page_create_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 8,
       ),
       'search_index' => array(
         'label' => 'above',
@@ -86,14 +129,13 @@ function basic_page_create_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_footer',
     'label' => 'Footer',
-    'required' => 0,
+    'required' => FALSE,
     'settings' => array(
       'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
@@ -101,6 +143,183 @@ function basic_page_create_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-sbir_basic_page-field_posted_date'
+  $field_instances['node-sbir_basic_page-field_posted_date'] = array(
+    'bundle' => 'sbir_basic_page',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 5,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_posted_date',
+    'label' => 'Posted Date',
+    'required' => FALSE,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-sbir_basic_page-field_reviewed_date'
+  $field_instances['node-sbir_basic_page-field_reviewed_date'] = array(
+    'bundle' => 'sbir_basic_page',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 7,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_reviewed_date',
+    'label' => 'Reviewed Date',
+    'required' => FALSE,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-sbir_basic_page-field_updated_date'
+  $field_instances['node-sbir_basic_page-field_updated_date'] = array(
+    'bundle' => 'sbir_basic_page',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 6,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_updated_date',
+    'label' => 'Updated Date',
+    'required' => FALSE,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 5,
     ),
   );
 
@@ -144,7 +363,7 @@ function basic_page_create_field_instances() {
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textarea',
-      'weight' => 24,
+      'weight' => 8,
     ),
   );
 
@@ -188,7 +407,7 @@ function basic_page_create_field_instances() {
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textfield',
-      'weight' => 23,
+      'weight' => 7,
     ),
   );
 
@@ -197,9 +416,16 @@ function basic_page_create_field_instances() {
   t('(Meta)Description');
   t('(Meta)Keywords');
   t('Body');
+  t('Comment');
+  t('Date Display Mode');
   t('Enter a description. Limit your description to about 20 words, with a maximum of 255 characters. It should not contain any HTML tags or other formatting.');
   t('Enter a short abstract. Typically it is one sentence.');
   t('Footer');
+  t('Posted Date');
+  t('Reviewed Date');
+  t('Updated Date');
+
+  return $field_instances;
 
   sbir_base_update_instances($field_instances, 'sbir_basic_page', 'node');
 }

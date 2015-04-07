@@ -186,7 +186,7 @@ function sbir_base_get_vocabulary_by_name($vocabulary_name) {
  * @param type $theme The theme inwhich to apply this change; Every block has a unique
  * instance for each enabled theme
  */
-function _sbir_base_update_block($module, $delta, $title = '', $status = 0, $region = -1, $weight = 0, $theme = 'sbirtheme') {
+function _sbir_base_update_block($module, $delta, $title = '', $status = 0, $region = -1, $weight = 0) {
   db_update('block')
       ->fields(array(
         'status' => $status,
@@ -196,7 +196,6 @@ function _sbir_base_update_block($module, $delta, $title = '', $status = 0, $reg
       ))
       ->condition('module', $module)
       ->condition('delta', $delta)
-      ->condition('theme', $theme)
       ->execute();
 }
 
@@ -244,4 +243,52 @@ function sbir_base_create_menu_link($menu_name, $title, $weight, $path, $plid = 
   $plid = menu_link_save($menu_link);
 
   return $plid;
+}
+
+/* Create a nodequeue
+ * @param string $name The machine name for the nodequeue
+ * @param string $title The display name for the nodequeue
+ * @param array $name The node types the can be added
+ * to the nodequeue
+ */
+function sbir_base_create_nodequeue($name, $title, $types) {
+  $queue = array(
+    'name' => $name,
+    'title' => $title,
+    'subqueue_title' => '',
+    'size' => 0,
+    'link' => '',
+    'link_remove' => '',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 0,
+    'reference' => 0,
+    'reverse' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => $types,
+    'roles' => array(),
+    'count' => 0,
+    'add_subqueue' => array(
+      1 => $title,
+    )
+  );
+
+  $object = sbir_base_convert_array_to_object($queue);
+
+  $qid = nodequeue_save($object);
+
+  return $qid;
+}
+
+// Add nodes to a given nodequeue
+function sbir_base_add_items_to_subqueue($qid, $nodequeue_items) {
+
+  $nodequeue = nodequeue_load($qid);
+  $subqueue = nodequeue_load_subqueues_by_queue($qid);
+
+  foreach ($nodequeue_items as $nodequeue_item) {
+    nodequeue_subqueue_add($nodequeue, $subqueue[$qid], $nodequeue_item);
+  }
 }

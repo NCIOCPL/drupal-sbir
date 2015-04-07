@@ -1,13 +1,19 @@
 <?php
-/**
- * Implements hook_enable().
- */
-function sbir_announcements_enable() {
-}
 
 /**
  * Implements hook_install().
  */
 function sbir_announcements_install() {
-  //sbir_announcements_save_queue();
+  /* Create the nodequeues for Announcements that appear
+   * on the home page and Announcements landing page
+   */
+  $types = array(0 => 'sbir_announcement');
+  sbir_base_create_nodequeue('all_announcements', 'All Announcements', $types);
+  sbir_base_create_nodequeue('latest_announcements', 'Latest Announcements', $types);
+}
+
+/**
+ * Implements hook_enable().
+ */
+function sbir_announcements_enable() {
 }

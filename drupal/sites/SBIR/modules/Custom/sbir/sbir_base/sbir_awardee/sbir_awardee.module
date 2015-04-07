@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function sbir_awardee_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
+}
+
+/**
+ * Implements hook_node_info().
+ */
+function sbir_awardee_node_info() {
+  $items = array(
+    'sbir_awardee' => array(
+      'name' => t('Awardee'),
+      'base' => 'node_content',
+      'description' => t('The small business who has been awarded funding'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  drupal_alter('node_info', $items);
+  return $items;
+}

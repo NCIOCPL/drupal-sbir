@@ -1,0 +1,7 @@
+name = SBIR
+description = This modules adds all functionality related to success stories.
+core = 7.x
+package = SBIR
+version = 7.x-1.0
+project = sbir_success_stories
+timestamp = 1428008253

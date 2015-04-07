@@ -1,0 +1,7 @@
+name = SBIR Awardee
+description = This module defines the Awardee content type and fields
+core = 7.x
+package = SBIR Types
+project = sbir_awardee
+timestamp = 1426734928
+dependencies[] = sbir_base
