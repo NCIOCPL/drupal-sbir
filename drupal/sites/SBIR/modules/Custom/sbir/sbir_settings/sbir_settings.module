@@ -4,11 +4,15 @@
  * Implements hook_date_formats().
  */
 function sbir_settings_date_formats() {
-  return [['type' => 'sbir_standard',
+  return array(
+    // Creates a new format for a new, custom format type for the SBIR site.
+    array(
+      //'title' => 'SBIR Standard',
+      'type' => 'sbir_standard',
       'format' => 'F j, Y',
       'locales' => array(),
-      ]
-  ];
+    )
+  );
 }
 
 /**
