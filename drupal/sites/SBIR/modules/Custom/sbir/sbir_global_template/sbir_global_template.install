@@ -24,5 +24,4 @@ function sbir_global_template_enable() {
   //_sbir_base_update_block('menu_block', 1, '<none>', 0, '', 0);
   //_sbir_base_update_block('search', 'form', '<none>', 0, '', -1);
   _sbir_base_update_block('superfish', 1, '<none>', 0, '', 0);
-  
 }

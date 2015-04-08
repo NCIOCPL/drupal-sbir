@@ -1,4 +1,4 @@
-name = SBIR
+name = Success Stories
 description = This modules adds all functionality related to success stories.
 core = 7.x
 package = SBIR

@@ -65,3 +65,18 @@ function sbir_global_template_create_footer_menu() {
   $path = 'http://nih.gov/about/discovery';
   sbir_base_create_menu_link($menu_name, $title, 9, $path, $plid, 1);    
 }
+
+/*
+function sbir_global_template_order_panel_variants() {
+  
+  $variants = array(
+    ''
+  );
+  db_update('page_manager_weights')
+      ->fields(array(
+        'weight' => $weight,
+      ))
+      ->condition('name', 'node_view__panel_context_365430e3-e888-4cca-9f5b-ef52e62462b2')
+      ->execute();
+}
+ */
