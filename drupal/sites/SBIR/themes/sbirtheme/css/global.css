@@ -59,7 +59,7 @@
 /* line 2, ../scss/components/_branding.scss */
 #zone-branding-wrapper {
   height: 100px;
-  max-width: 65em;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 1em;
@@ -127,57 +127,66 @@
 .breadcrumb {
   font-family: 'Montserrat', 'Avant Garde';
   font-weight: bold;
-  font-size: 21px;
+  font-size: 14px;
   color: #000;
 }
 /* line 7, ../scss/components/_breadcrumb.scss */
 .breadcrumb a {
   text-decoration: none;
-  font-size: 28px;
+  font-size: 14px;
   color: #2664ab;
 }
 
 /* line 2, ../scss/components/_footer.scss */
-#block-menu-menu-footer-menu {
+#zone-footer-wrapper {
+  width: 100%;
+  margin-top: 30px;
+  padding: 25px 0 25px 0;
   background-color: #f8f8f8;
+  /*position:fized;
+  bottom:0;*/
+  margin-top: 50px;
 }
-/* line 5, ../scss/components/_footer.scss */
-#block-menu-menu-footer-menu ul li {
+/* line 10, ../scss/components/_footer.scss */
+#zone-footer-wrapper #block-menu-menu-footer-menu {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 15, ../scss/components/_footer.scss */
+#zone-footer-wrapper #block-menu-menu-footer-menu ul li {
   list-style: none;
   float: left;
 }
-/* line 8, ../scss/components/_footer.scss */
-#block-menu-menu-footer-menu ul li a {
+/* line 18, ../scss/components/_footer.scss */
+#zone-footer-wrapper #block-menu-menu-footer-menu ul li a {
   text-decoration: none;
   font-weight: normal;
   font-size: 13px;
   font-family: 'Montserrat', 'Avant Garde';
   color: #696969;
 }
-/* line 16, ../scss/components/_footer.scss */
-#block-menu-menu-footer-menu ul li::after {
+/* line 26, ../scss/components/_footer.scss */
+#zone-footer-wrapper #block-menu-menu-footer-menu ul li::after {
   content: " |";
 }
-/* line 19, ../scss/components/_footer.scss */
-#block-menu-menu-footer-menu ul li.last::after {
+/* line 29, ../scss/components/_footer.scss */
+#zone-footer-wrapper #block-menu-menu-footer-menu ul li.last::after {
   content: "";
 }
 
-/* line 2, ../scss/components/_header.scss */
+/* line 4, ../scss/components/_header.scss */
 #zone-header-wrapper {
-  max-width: 65em;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-}
-/* line 6, ../scss/components/_header.scss */
-#zone-header-wrapper #zone-header {
-  /*text-align:center;*/
-}
-/* line 8, ../scss/components/_header.scss */
-#zone-header-wrapper #zone-header img {
-  width: 65em;
+  margin-bottom: 15px;
 }
 /* line 11, ../scss/components/_header.scss */
+#zone-header-wrapper #zone-header img {
+  width: 960px;
+}
+/* line 14, ../scss/components/_header.scss */
 #zone-header-wrapper #zone-header #region-header-first {
   margin: 0;
 }
@@ -234,20 +243,54 @@
   color: #000;
 }
 
-/* line 2, ../scss/components/_main_content.scss */
+/* line 3, ../scss/components/_main_content.scss */
+.grid-12, .container-12 {
+  max-width: 960px !important;
+  margin: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* line 10, ../scss/components/_main_content.scss */
+.grid-9 {
+  margin-left: 20px !important;
+  max-width: 645px !important;
+}
+
+/* line 14, ../scss/components/_main_content.scss */
+.grid-3 {
+  margin-left: 15px !important;
+}
+
+/* line 18, ../scss/components/_main_content.scss */
 #zone-content-wrapper {
-  max-width: 65em;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
+/* line 22, ../scss/components/_main_content.scss */
+#zone-content-wrapper .grid-9 {
+  max-width: 640px;
+}
 
-/* line 7, ../scss/components/_main_content.scss */
+/* line 27, ../scss/components/_main_content.scss */
+.grid-4 {
+  max-width: 350px !important;
+  float: right !important;
+}
+
+/* line 31, ../scss/components/_main_content.scss */
+.grid-8 {
+  max-width: 580px !important;
+}
+
+/* line 35, ../scss/components/_main_content.scss */
 .pane-page-title {
   background-color: #336699;
   padding: 15px;
 }
 
-/* line 11, ../scss/components/_main_content.scss */
+/* line 39, ../scss/components/_main_content.scss */
 .pane-page-title .pane-content h1 {
   font-family: 'Trebuchet MS';
   font-weight: bold;
@@ -255,51 +298,51 @@
   font-size: 14px;
 }
 
-/* line 18, ../scss/components/_main_content.scss */
+/* line 46, ../scss/components/_main_content.scss */
 .pane-node-body {
   font-family: 'Verdana';
   color: #000;
 }
-/* line 21, ../scss/components/_main_content.scss */
+/* line 49, ../scss/components/_main_content.scss */
 .pane-node-body h1, .pane-node-body h2, .pane-node-body h3, .pane-node-body h4, .pane-node-body h5, .pane-node-body h6 {
   font-weight: bold;
 }
-/* line 24, ../scss/components/_main_content.scss */
+/* line 52, ../scss/components/_main_content.scss */
 .pane-node-body h1 {
   font-size: 24px;
 }
-/* line 27, ../scss/components/_main_content.scss */
+/* line 55, ../scss/components/_main_content.scss */
 .pane-node-body h2 {
   font-size: 22px;
 }
-/* line 30, ../scss/components/_main_content.scss */
+/* line 58, ../scss/components/_main_content.scss */
 .pane-node-body h3 {
   font-size: 18px;
 }
-/* line 33, ../scss/components/_main_content.scss */
+/* line 61, ../scss/components/_main_content.scss */
 .pane-node-body h4 {
   font-size: 16px;
 }
-/* line 36, ../scss/components/_main_content.scss */
+/* line 64, ../scss/components/_main_content.scss */
 .pane-node-body h5 {
   font-size: 14px;
 }
-/* line 39, ../scss/components/_main_content.scss */
+/* line 67, ../scss/components/_main_content.scss */
 .pane-node-body h6 {
   font-size: 13px;
 }
-/* line 42, ../scss/components/_main_content.scss */
+/* line 70, ../scss/components/_main_content.scss */
 .pane-node-body p {
   font-size: 12px;
   line-height: 18px;
 }
-/* line 46, ../scss/components/_main_content.scss */
+/* line 74, ../scss/components/_main_content.scss */
 .pane-node-body a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
-/* line 51, ../scss/components/_main_content.scss */
+/* line 79, ../scss/components/_main_content.scss */
 .pane-node-body a:visited {
   color: #421c89;
 }
@@ -312,9 +355,9 @@
 }
 /* line 6, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu {
-  max-width: 65em;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 960px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 /* line 10, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu {
@@ -421,7 +464,8 @@
 /* line 100, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2 .sf-sub-indicator
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 .sf-sub-indicator {
-  background: url("../images/chevron.png") no-repeat 0px 0px;
+  background: url("../images/chevron.png") no-repeat 0px 4px;
+  background-size: 6px 12px;
   width: 12px;
   height: 21px;
 }

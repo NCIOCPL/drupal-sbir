@@ -49,15 +49,14 @@ function sbirtheme_validate($node, $form, $form_state) {
 function sbirtheme_block_view_alter(&$data, $block) {
   if ($block->delta == 'menu-social-media') {
     foreach ($data['content'] as $key => $value) {
-      if (is_numeric($key) && is_array($value)
-          && isset($value['#localized_options']['attributes']['title'])) {
+      if (is_numeric($key) && is_array($value) && isset($value['#localized_options']['attributes']['title'])) {
         $title = $value['#localized_options']['attributes']['title'];
         if ($title == 'Sign Up for Updates') {
           $data['content'][$key]['#attributes']['class'][] = 'email-link';
+          $data['content'][$key]['#attributes']['target'][] = '_blank';
         }
         if ($title == 'Connect with us on LinkedIn') {
           $data['content'][$key]['#attributes']['class'][] = 'linkedin-link';
-
         }
         if ($title == 'Follow us on Twitter') {
           $data['content'][$key]['#attributes']['class'][] = 'twitter-link';

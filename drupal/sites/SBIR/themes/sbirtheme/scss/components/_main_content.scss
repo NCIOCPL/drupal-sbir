@@ -1,9 +1,37 @@
 // @main content styling goes here
+
+.grid-12, .container-12 {
+  max-width:960px!important;
+  margin:0!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+.grid-9 {
+  margin-left:20px!important;
+  max-width:645px!important;
+}
+.grid-3 {
+  margin-left:15px!important;
+}
+
 #zone-content-wrapper {
-    max-width: 65em;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+  .grid-9 {
+    max-width:640px;
+  }
 }
+
+.grid-4 {
+  max-width:350px!important;
+  float:right!important;
+}
+.grid-8 {
+  max-width:580px!important;
+}
+
 .pane-page-title {
   background-color:#336699;
   padding:15px;

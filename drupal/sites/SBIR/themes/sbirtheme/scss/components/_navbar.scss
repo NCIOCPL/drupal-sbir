@@ -4,10 +4,10 @@
   background-repeat: repeat-x;
   width:100%; 
   #zone-menu {
-    max-width: 65em;
-    margin-left: auto;
-    margin-right: auto;
-      #region-menu {
+    max-width: 960px!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    #region-menu {
       margin:0;
 
       ul#superfish-1 {
@@ -99,7 +99,8 @@
       }
       #block-superfish-1 a.sf-depth-2 .sf-sub-indicator
       ,#block-superfish-1 a.sf-depth-3 .sf-sub-indicator {
-        background: url('../images/chevron.png') no-repeat 0px 0px;
+        background: url('../images/chevron.png') no-repeat 0px 4px;
+        background-size: 6px 12px;
         width:12px;
         height:21px;
       }
