@@ -20,12 +20,7 @@ $handler->display->display_options['exposed_form']['type'] = 'basic';
 $handler->display->display_options['pager']['type'] = 'some';
 $handler->display->display_options['pager']['options']['items_per_page'] = '5';
 $handler->display->display_options['style_plugin'] = 'default';
-$handler->display->display_options['row_plugin'] = 'panels_fields';
-$handler->display->display_options['row_options']['regions'] = array(
-  'title' => 'left',
-  'body' => 'left',
-  'field_footer' => 'left',
-);
+$handler->display->display_options['row_plugin'] = 'fields';
 /* Relationship: Nodequeue: Queue */
 $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
 $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';

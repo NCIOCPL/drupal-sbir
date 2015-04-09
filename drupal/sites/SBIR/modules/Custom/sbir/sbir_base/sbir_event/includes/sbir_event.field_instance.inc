@@ -1,7 +1,7 @@
 <?php
 
 function event_create_field_instances() {
-  $field_instances = array();
+$field_instances = array();
 
   // Exported field_instance: 'node-sbir_event-body'
   $field_instances['node-sbir_event-body'] = array(
@@ -255,15 +255,16 @@ function event_create_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_posted_date',
     'label' => 'Posted Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
@@ -272,7 +273,7 @@ function event_create_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
       'weight' => 10,
@@ -310,7 +311,7 @@ function event_create_field_instances() {
     'label' => 'Reviewed Date',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -326,7 +327,7 @@ function event_create_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
       'weight' => 12,
@@ -441,15 +442,16 @@ function event_create_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_updated_date',
     'label' => 'Updated Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
@@ -458,7 +460,7 @@ function event_create_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
       'weight' => 11,
@@ -567,7 +569,6 @@ function event_create_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'meta_description',
-    'formatter' => 'metatags_quick_default',
     'label' => '(Meta)Description',
     'required' => FALSE,
     'settings' => array(
@@ -604,7 +605,6 @@ function event_create_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'meta_keywords',
-    'formatter' => 'metatags_quick_default',
     'label' => '(Meta)Keywords',
     'required' => FALSE,
     'settings' => array(
@@ -624,7 +624,6 @@ function event_create_field_instances() {
   t('(Meta)Keywords');
   t('Body');
   t('City');
-  t('Comment');
   t('Date Display Mode');
   t('Event Date');
   t('ICS File');

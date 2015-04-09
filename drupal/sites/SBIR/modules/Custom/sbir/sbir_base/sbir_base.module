@@ -237,6 +237,10 @@ function sbir_base_create_menu_link($menu_name, $title, $weight, $path, $plid = 
   if (!$is_external) {
     $menu_link['router_path'] = 'node/%';
   }
+  else {
+    $menu_link['options']['attributes']['rel'] = 'nofollow';
+    $menu_link['options']['attributes']['target'] = '_blank';
+  }
 
   $menu_link['plid'] = $plid;
 
@@ -251,6 +255,7 @@ function sbir_base_create_menu_link($menu_name, $title, $weight, $path, $plid = 
  * @param array $name The node types the can be added
  * to the nodequeue
  */
+
 function sbir_base_create_nodequeue($name, $title, $types) {
   $queue = array(
     'name' => $name,

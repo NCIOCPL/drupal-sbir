@@ -14,6 +14,7 @@ dependencies[] = menu_block
 dependencies[] = nodequeue
 dependencies[] = page_manager
 dependencies[] = panels
+dependencies[] = porterstemmer
 dependencies[] = search
 dependencies[] = superfish
 dependencies[] = views
@@ -21,11 +22,11 @@ dependencies[] = views_content
 dependencies[] = wysiwyg
 
 dependencies[] = sbir_announcement
-dependencies[] = sbir_awardee
 dependencies[] = sbir_basic_page
 dependencies[] = sbir_block
 dependencies[] = sbir_event
 dependencies[] = sbir_file
+dependencies[] = sbir_success_story
 
 dependencies[] = sbir_settings
 dependencies[] = sbir_wysiwyg

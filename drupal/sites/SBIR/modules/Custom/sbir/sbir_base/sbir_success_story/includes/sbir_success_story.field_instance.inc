@@ -1,11 +1,11 @@
 <?php
 
-function awardee_create_field_instances() {
+function success_story_create_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-sbir_awardee-body'
-  $field_instances['node-sbir_awardee-body'] = array(
-    'bundle' => 'sbir_awardee',
+  // Exported field_instance: 'node-sbir_success_story-body'
+  $field_instances['node-sbir_success_story-body'] = array(
+    'bundle' => 'sbir_success_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -67,9 +67,9 @@ function awardee_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_awardee-field_date_display_mode'
-  $field_instances['node-sbir_awardee-field_date_display_mode'] = array(
-    'bundle' => 'sbir_awardee',
+  // Exported field_instance: 'node-sbir_success_story-field_date_display_mode'
+  $field_instances['node-sbir_success_story-field_date_display_mode'] = array(
+    'bundle' => 'sbir_success_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -110,9 +110,9 @@ function awardee_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_awardee-field_posted_date'
-  $field_instances['node-sbir_awardee-field_posted_date'] = array(
-    'bundle' => 'sbir_awardee',
+  // Exported field_instance: 'node-sbir_success_story-field_posted_date'
+  $field_instances['node-sbir_success_story-field_posted_date'] = array(
+    'bundle' => 'sbir_success_story',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -145,15 +145,16 @@ function awardee_create_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_posted_date',
     'label' => 'Posted Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
@@ -162,16 +163,16 @@ function awardee_create_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
       'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-sbir_awardee-field_reviewed_date'
-  $field_instances['node-sbir_awardee-field_reviewed_date'] = array(
-    'bundle' => 'sbir_awardee',
+  // Exported field_instance: 'node-sbir_success_story-field_reviewed_date'
+  $field_instances['node-sbir_success_story-field_reviewed_date'] = array(
+    'bundle' => 'sbir_success_story',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -204,15 +205,16 @@ function awardee_create_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_reviewed_date',
     'label' => 'Reviewed Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
@@ -221,16 +223,16 @@ function awardee_create_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
       'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-sbir_awardee-field_updated_date'
-  $field_instances['node-sbir_awardee-field_updated_date'] = array(
-    'bundle' => 'sbir_awardee',
+  // Exported field_instance: 'node-sbir_success_story-field_updated_date'
+  $field_instances['node-sbir_success_story-field_updated_date'] = array(
+    'bundle' => 'sbir_success_story',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -263,15 +265,16 @@ function awardee_create_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_updated_date',
     'label' => 'Updated Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
@@ -280,16 +283,16 @@ function awardee_create_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
       'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-sbir_awardee-meta_description'
-  $field_instances['node-sbir_awardee-meta_description'] = array(
-    'bundle' => 'sbir_awardee',
+  // Exported field_instance: 'node-sbir_success_story-meta_description'
+  $field_instances['node-sbir_success_story-meta_description'] = array(
+    'bundle' => 'sbir_success_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -321,7 +324,6 @@ function awardee_create_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'meta_description',
-    'formatter' => 'metatags_quick_default',
     'label' => '(Meta)Description',
     'required' => FALSE,
     'settings' => array(
@@ -335,9 +337,9 @@ function awardee_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_awardee-meta_keywords'
-  $field_instances['node-sbir_awardee-meta_keywords'] = array(
-    'bundle' => 'sbir_awardee',
+  // Exported field_instance: 'node-sbir_success_story-meta_keywords'
+  $field_instances['node-sbir_success_story-meta_keywords'] = array(
+    'bundle' => 'sbir_success_story',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -369,7 +371,6 @@ function awardee_create_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'meta_keywords',
-    'formatter' => 'metatags_quick_default',
     'label' => '(Meta)Keywords',
     'required' => FALSE,
     'settings' => array(
@@ -388,11 +389,10 @@ function awardee_create_field_instances() {
   t('(Meta)Description');
   t('(Meta)Keywords');
   t('Body');
-  t('Comment');
   t('Date Display Mode');
   t('Posted Date');
   t('Reviewed Date');
   t('Updated Date');
 
-  sbir_base_update_instances($field_instances, 'sbir_awardee', 'node');
+  sbir_base_update_instances($field_instances, 'sbir_success_story', 'node');
 }

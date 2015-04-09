@@ -1,5 +1,4 @@
 <?php
-
 $view = new view();
 $view->name = 'announcement';
 $view->description = '';

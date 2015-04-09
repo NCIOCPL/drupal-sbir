@@ -1,0 +1,7 @@
+name = SBIR Success Story
+description = This module defines the Success Story content type and fields
+core = 7.x
+package = SBIR Types
+project = sbir_success_story
+timestamp = 1426734928
+dependencies[] = sbir_base

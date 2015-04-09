@@ -1069,6 +1069,6 @@ function sbir_base_enable() {
     'translatable' => 0,
     'type' => 'metatags_quick',
   );
-
-  sbir_base_update_fields($field_bases);  
+  
+  sbir_base_update_fields($field_bases);
 }

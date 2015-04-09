@@ -100,15 +100,16 @@ function announcement_create_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_posted_date',
     'label' => 'Posted Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
@@ -117,7 +118,7 @@ function announcement_create_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
       'weight' => 2,
@@ -159,7 +160,6 @@ function announcement_create_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'meta_description',
-    'formatter' => 'metatags_quick_default',
     'label' => '(Meta)Description',
     'required' => FALSE,
     'settings' => array(
@@ -208,7 +208,6 @@ function announcement_create_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'meta_keywords',
-    'formatter' => 'metatags_quick_default',
     'label' => '(Meta)Keywords',
     'required' => FALSE,
     'settings' => array(
@@ -227,7 +226,6 @@ function announcement_create_field_instances() {
   t('(Meta)Description');
   t('(Meta)Keywords');
   t('Body');
-  t('Comment');
   t('Enter a description. Limit your description to about 20 words, with a maximum of 255 characters. It should not contain any HTML tags or other formatting.');
   t('Enter a short abstract. Typically it is one sentence.');
   t('Posted Date');

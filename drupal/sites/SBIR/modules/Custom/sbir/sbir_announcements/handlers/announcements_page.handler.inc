@@ -3,13 +3,13 @@
 $handler = new stdClass();
 $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
 $handler->api_version = 1;
-$handler->name = 'node_view__panel_context_d04c123e-f72a-4c60-ad61-1092d5eb5b88';
+$handler->name = 'node_view__panel_context_dc0632b8-e6a4-479d-8733-336123de8f6d';
 $handler->task = 'node_view';
 $handler->subtask = '';
 $handler->handler = 'panel_context';
-$handler->weight = -25;
+$handler->weight = -29;
 $handler->conf = array(
-  'title' => 'Basic Page',
+  'title' => 'Announcements Page',
   'no_blocks' => 0,
   'pipeline' => 'standard',
   'body_classes_to_remove' => '',
@@ -31,8 +31,17 @@ $handler->conf = array(
         'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
+      1 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'newsevents/announcements',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
     ),
-    'logic' => 'or',
+    'logic' => 'and',
   ),
 );
 $display = new panels_display();
@@ -63,7 +72,7 @@ $pane->configuration = array(
   'admin_title' => '',
   'level' => '2',
   'follow' => 0,
-  'depth' => '0',
+  'depth' => '2',
   'expanded' => 0,
   'sort' => 0,
   'menu_name' => 'main-menu',
@@ -157,6 +166,29 @@ $pane->uuid = 'd7e94959-eef1-4cd5-87ab-6bed73b69554';
 $display->content['new-d7e94959-eef1-4cd5-87ab-6bed73b69554'] = $pane;
 $display->panels['right'][2] = 'new-d7e94959-eef1-4cd5-87ab-6bed73b69554';
 $pane = new stdClass();
+$pane->pid = 'new-08f94852-25e6-4f75-b631-0bba6682e895';
+$pane->panel = 'right';
+$pane->type = 'views_panes';
+$pane->subtype = 'announcement-all';
+$pane->shown = TRUE;
+$pane->access = array();
+$pane->configuration = array(
+  'override_title' => 1,
+  'override_title_text' => '',
+  'override_title_heading' => 'h2',
+);
+$pane->cache = array();
+$pane->style = array(
+  'settings' => NULL,
+);
+$pane->css = array();
+$pane->extras = array();
+$pane->position = 3;
+$pane->locks = array();
+$pane->uuid = '08f94852-25e6-4f75-b631-0bba6682e895';
+$display->content['new-08f94852-25e6-4f75-b631-0bba6682e895'] = $pane;
+$display->panels['right'][3] = 'new-08f94852-25e6-4f75-b631-0bba6682e895';
+$pane = new stdClass();
 $pane->pid = 'new-4c59ca05-5ae8-4bda-a6c3-07d6b7d2a604';
 $pane->panel = 'right';
 $pane->type = 'entity_field';
@@ -181,11 +213,11 @@ $pane->style = array(
 );
 $pane->css = array();
 $pane->extras = array();
-$pane->position = 3;
+$pane->position = 4;
 $pane->locks = array();
 $pane->uuid = '4c59ca05-5ae8-4bda-a6c3-07d6b7d2a604';
 $display->content['new-4c59ca05-5ae8-4bda-a6c3-07d6b7d2a604'] = $pane;
-$display->panels['right'][3] = 'new-4c59ca05-5ae8-4bda-a6c3-07d6b7d2a604';
+$display->panels['right'][4] = 'new-4c59ca05-5ae8-4bda-a6c3-07d6b7d2a604';
 $display->hide_title = PANELS_TITLE_FIXED;
 $display->title_pane = 'new-5628b969-cd5e-4b07-a260-e9bfd565f698';
 $handler->conf['display'] = $display;

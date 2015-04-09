@@ -1,6 +1,7 @@
 <?php
 
 function basic_page_create_field_instances() {
+
   $field_instances = array();
 
   // Exported field_instance: 'node-sbir_basic_page-body'
@@ -95,7 +96,7 @@ function basic_page_create_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -142,7 +143,7 @@ function basic_page_create_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 7,
     ),
   );
 
@@ -181,15 +182,16 @@ function basic_page_create_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_posted_date',
     'label' => 'Posted Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
@@ -198,7 +200,7 @@ function basic_page_create_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
       'weight' => 4,
@@ -240,15 +242,16 @@ function basic_page_create_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_reviewed_date',
     'label' => 'Reviewed Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
@@ -257,7 +260,7 @@ function basic_page_create_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
       'weight' => 6,
@@ -299,15 +302,16 @@ function basic_page_create_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_updated_date',
     'label' => 'Updated Date',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'date',
       'settings' => array(
         'display_all_day' => 0,
@@ -316,7 +320,7 @@ function basic_page_create_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
       'weight' => 5,
@@ -363,7 +367,7 @@ function basic_page_create_field_instances() {
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textarea',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -407,7 +411,7 @@ function basic_page_create_field_instances() {
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -416,16 +420,14 @@ function basic_page_create_field_instances() {
   t('(Meta)Description');
   t('(Meta)Keywords');
   t('Body');
-  t('Comment');
   t('Date Display Mode');
   t('Enter a description. Limit your description to about 20 words, with a maximum of 255 characters. It should not contain any HTML tags or other formatting.');
   t('Enter a short abstract. Typically it is one sentence.');
+  t('File');
   t('Footer');
   t('Posted Date');
   t('Reviewed Date');
   t('Updated Date');
-
-  return $field_instances;
-
+  
   sbir_base_update_instances($field_instances, 'sbir_basic_page', 'node');
 }

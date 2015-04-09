@@ -13,9 +13,9 @@ function sbir_file_install() {
 
 function sbir_file_enable() {
 
-  variable_set('comment_sbir_basic_page', '0');
-  variable_set('node_submitted_sbir_basic_page', '0');
-  variable_set('node_preview_sbir_basic_page', '1');
+  variable_set('comment_sbir_file', '0');
+  variable_set('node_submitted_sbir_file', '0');
+  variable_set('node_preview_sbir_file', '1');
 
   module_load_include('inc', 'sbir_file', 'includes/sbir_file.field_instance');
 

@@ -3,13 +3,13 @@
 $handler = new stdClass();
 $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
 $handler->api_version = 1;
-$handler->name = 'node_view__panel_context_dc0632b8-e6a4-479d-8733-336123de8f6d';
+$handler->name = 'node_view__panel_context_d7678515-8fe3-4c95-a713-e3e6d5f3362f';
 $handler->task = 'node_view';
 $handler->subtask = '';
 $handler->handler = 'panel_context';
-$handler->weight = -28;
+$handler->weight = -26;
 $handler->conf = array(
-  'title' => 'Announcements Landing Page',
+  'title' => 'Success Stories Page',
   'no_blocks' => 0,
   'pipeline' => 'standard',
   'body_classes_to_remove' => '',
@@ -22,6 +22,15 @@ $handler->conf = array(
   'access' => array(
     'plugins' => array(
       0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'about/successstories',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+      1 => array(
         'name' => 'node_type',
         'settings' => array(
           'type' => array(
@@ -31,17 +40,8 @@ $handler->conf = array(
         'context' => 'argument_entity_id:node_1',
         'not' => FALSE,
       ),
-      1 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'newsevents/announcements',
-        ),
-        'context' => 'empty',
-        'not' => FALSE,
-      ),
     ),
-    'logic' => 'or',
+    'logic' => 'and',
   ),
 );
 $display = new panels_display();
@@ -72,7 +72,7 @@ $pane->configuration = array(
   'admin_title' => '',
   'level' => '2',
   'follow' => 0,
-  'depth' => '0',
+  'depth' => '2',
   'expanded' => 0,
   'sort' => 0,
   'menu_name' => 'main-menu',
@@ -166,16 +166,16 @@ $pane->uuid = 'd7e94959-eef1-4cd5-87ab-6bed73b69554';
 $display->content['new-d7e94959-eef1-4cd5-87ab-6bed73b69554'] = $pane;
 $display->panels['right'][2] = 'new-d7e94959-eef1-4cd5-87ab-6bed73b69554';
 $pane = new stdClass();
-$pane->pid = 'new-08f94852-25e6-4f75-b631-0bba6682e895';
+$pane->pid = 'new-c2dcf2f8-f75b-40a1-b845-5b3e4628cbad';
 $pane->panel = 'right';
 $pane->type = 'views_panes';
-$pane->subtype = 'announcement-all';
+$pane->subtype = 'success_story-all';
 $pane->shown = TRUE;
 $pane->access = array();
 $pane->configuration = array(
   'override_title' => 1,
   'override_title_text' => '',
-  'override_title_heading' => 'h2',
+  'override_title_heading' => 'h1',
 );
 $pane->cache = array();
 $pane->style = array(
@@ -185,9 +185,9 @@ $pane->css = array();
 $pane->extras = array();
 $pane->position = 3;
 $pane->locks = array();
-$pane->uuid = '08f94852-25e6-4f75-b631-0bba6682e895';
-$display->content['new-08f94852-25e6-4f75-b631-0bba6682e895'] = $pane;
-$display->panels['right'][3] = 'new-08f94852-25e6-4f75-b631-0bba6682e895';
+$pane->uuid = 'c2dcf2f8-f75b-40a1-b845-5b3e4628cbad';
+$display->content['new-c2dcf2f8-f75b-40a1-b845-5b3e4628cbad'] = $pane;
+$display->panels['right'][3] = 'new-c2dcf2f8-f75b-40a1-b845-5b3e4628cbad';
 $pane = new stdClass();
 $pane->pid = 'new-4c59ca05-5ae8-4bda-a6c3-07d6b7d2a604';
 $pane->panel = 'right';

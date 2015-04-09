@@ -1,9 +1,0 @@
-name = SBIR Team Member
-description = This module defines the Team Member content type and fields
-core = 7.x
-package = SBIR Types
-timestamp = 1426736686
-dependencies[] = image
-dependencies[] = options
-dependencies[] = taxonomy
-dependencies[] = text

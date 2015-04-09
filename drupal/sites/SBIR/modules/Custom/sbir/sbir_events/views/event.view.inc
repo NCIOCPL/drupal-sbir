@@ -1,5 +1,4 @@
 <?php
-
 $view = new view();
 $view->name = 'event';
 $view->description = 'Includes all view that are related to events';
