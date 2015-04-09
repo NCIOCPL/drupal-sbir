@@ -53,7 +53,6 @@ function sbirtheme_block_view_alter(&$data, $block) {
         $title = $value['#localized_options']['attributes']['title'];
         if ($title == 'Sign Up for Updates') {
           $data['content'][$key]['#attributes']['class'][] = 'email-link';
-          $data['content'][$key]['#attributes']['target'][] = '_blank';
         }
         if ($title == 'Connect with us on LinkedIn') {
           $data['content'][$key]['#attributes']['class'][] = 'linkedin-link';
