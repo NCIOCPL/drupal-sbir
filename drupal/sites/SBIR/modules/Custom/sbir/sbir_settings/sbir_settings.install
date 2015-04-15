@@ -17,5 +17,5 @@ function sbir_settings_enable() {
   variable_set('site_frontpage', 'home');
   variable_set('theme_default', 'sbirtheme');
   
-  setup_workflow_settings();
+  _sbir_settings_setup_workflow_settings();
 }
