@@ -99,6 +99,13 @@ $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Recent Events';
 $handler->display->display_options['display_description'] = 'Recent Events';
 $handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Edit link */
+$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['label'] = '';
+$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['edit_node']['text'] = 'Edit Event';
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -242,6 +249,13 @@ $handler->display->display_options['fields']['field_ics_file']['alter']['text'] 
 $handler->display->display_options['fields']['field_ics_file']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_ics_file']['click_sort_column'] = 'fid';
 $handler->display->display_options['fields']['field_ics_file']['type'] = 'file_url_plain';
+/* Field: Content: Edit link */
+$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['label'] = '';
+$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['edit_node']['text'] = 'Edit Event';
 $handler->display->display_options['defaults']['sorts'] = FALSE;
 /* Sort criterion: Content: Event Date -  start date (field_event_date) */
 $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';

@@ -104,8 +104,8 @@ function _email_notification_form_submit(&$form, &$form_state) {
     'body' => $body,
   );
 
-  drupal_mail('sbir_subscription', 'email_subscription', $to, language_default(), $params, $from);
-  $form_state['redirect'] = 'email-signup-thankyou';
+  drupal_mail('sbir_email_notifications', 'email_subscription', $to, language_default(), $params, $from);
+  $form_state['redirect'] = 'emailsignupthankyou';
 }
 
 /**

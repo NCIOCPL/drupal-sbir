@@ -23,3 +23,20 @@ function sbir_settings_date_format_types() {
     'sbir_standard' => t('SBIR Standard'),
   );
 }
+
+// Configure content types to use workflow revisions
+function _sbir_settings_setup_workflow_settings() {
+  variable_set('node_options_sbir_announcement', array('0' => 'moderation', '1', 'revision'));
+  variable_set('node_options_sbir_basic_page', array('0' => 'moderation', '1', 'revision'));
+  variable_set('node_options_sbir_block', array('0' => 'moderation', '1', 'revision'));
+  variable_set('node_options_sbir_event', array('0' => 'moderation', '1', 'revision'));
+  variable_set('node_options_sbir_file', array('0' => 'moderation', '1', 'revision'));
+  variable_set('node_options_sbir_success_story', array('0' => 'moderation', '1', 'revision'));
+
+  variable_set('workbench_moderation_default_state_sbir_announcement', 'draft');
+  variable_set('workbench_moderation_default_state_sbir_basic_page', 'draft');
+  variable_set('workbench_moderation_default_state_sbir_block', 'draft');
+  variable_set('workbench_moderation_default_state_sbir_event', 'draft');
+  variable_set('workbench_moderation_default_state_sbir_file', 'draft');
+  variable_set('workbench_moderation_default_state_sbir_success_story', 'draft');
+}

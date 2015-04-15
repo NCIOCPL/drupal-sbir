@@ -16,4 +16,6 @@ function sbir_settings_enable() {
   variable_set('date_default_timezone', 'America/New_York');
   variable_set('site_frontpage', 'home');
   variable_set('theme_default', 'sbirtheme');
+  
+  setup_workflow_settings();
 }
