@@ -93,8 +93,6 @@ function _get_subscription_info($email_address) {
 
 function _email_notification_form_submit(&$form, &$form_state) {
 
-  dpm($form_state['values']);
-
   $to = "cedricpriestley@gmail.com";
   $from = "cedricpriestley@gmail.com";
 
@@ -154,8 +152,6 @@ function _validate_subscription_input($form, &$form_state) {
       form_set_error('Website Validation', "Website is not in the correct format: www.example.com");
     }
   }
-
-  dpm($form);
 }
 
 /**
@@ -178,7 +174,7 @@ function sbir_email_notifications_form_alter(&$form, &$form_state, $form_id) {
     $form['actions']['submit']['#submit'][] = '_email_notification_form_submit';
 
     $form['#attached']['css'] = array(
-      drupal_get_path('module', 'sbir_subscription') . '/css/sbir_subscription.css',
+      drupal_get_path('module', 'sbir_subscription') . '/css/sbir_email_notifications.css',
     );
       //dpm($form);
   }
