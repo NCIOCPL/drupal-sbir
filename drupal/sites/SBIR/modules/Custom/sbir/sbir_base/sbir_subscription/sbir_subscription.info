@@ -1,0 +1,7 @@
+name = SBIR Subscription
+description = This module defines the Subscription content type and fields
+core = 7.x
+package = SBIR Types
+project = sbir_subscription
+timestamp = 1429109160
+dependencies[] = sbir_base

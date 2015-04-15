@@ -7,7 +7,7 @@ $handler->name = 'node_view__panel_context_6623be39-9a47-4051-ba3c-7a0a663480fd'
 $handler->task = 'node_view';
 $handler->subtask = '';
 $handler->handler = 'panel_context';
-$handler->weight = -26;
+$handler->weight = -24;
 $handler->conf = array(
   'title' => 'Past Events Page',
   'no_blocks' => 0,
@@ -25,7 +25,7 @@ $handler->conf = array(
         'name' => 'path_visibility',
         'settings' => array(
           'visibility_setting' => '1',
-          'paths' => 'newsevents/events/past',
+          'paths' => 'newsevents/events/pastevents',
         ),
         'context' => 'empty',
         'not' => FALSE,

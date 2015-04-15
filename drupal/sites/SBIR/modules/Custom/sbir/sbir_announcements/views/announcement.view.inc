@@ -33,6 +33,11 @@ $handler->display->display_options['relationships']['nodequeue_rel']['names'] = 
   'home_page_blocks' => 0,
   'team_member' => 0,
 );
+/* Field: Content: Edit link */
+$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['label'] = 'announcement';
 /* Field: Content: Nid */
 $handler->display->display_options['fields']['nid']['id'] = 'nid';
 $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -45,6 +50,19 @@ $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Field: Content: Posted Date */
+$handler->display->display_options['fields']['field_posted_date']['id'] = 'field_posted_date';
+$handler->display->display_options['fields']['field_posted_date']['table'] = 'field_data_field_posted_date';
+$handler->display->display_options['fields']['field_posted_date']['field'] = 'field_posted_date';
+$handler->display->display_options['fields']['field_posted_date']['label'] = '';
+$handler->display->display_options['fields']['field_posted_date']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_posted_date']['settings'] = array(
+  'format_type' => 'sbir_standard',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+);
 /* Field: Content: Body */
 $handler->display->display_options['fields']['body']['id'] = 'body';
 $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -86,7 +104,7 @@ $handler->display->display_options['defaults']['footer'] = FALSE;
 $handler->display->display_options['footer']['area']['id'] = 'area';
 $handler->display->display_options['footer']['area']['table'] = 'views';
 $handler->display->display_options['footer']['area']['field'] = 'area';
-$handler->display->display_options['footer']['area']['content'] = '<p><a title="View All Announcements" href="newsevents/announcements">View All Announcements</a></p>';
+$handler->display->display_options['footer']['area']['content'] = '<p><a title="View All Announcements" href="newsevents/announcements">View All Announcements&nbsp;&gt;</a></p>';
 $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
 $handler->display->display_options['defaults']['relationships'] = FALSE;
 /* Relationship: Nodequeue: Queue */
@@ -101,42 +119,6 @@ $handler->display->display_options['relationships']['nodequeue_rel']['names'] = 
   'home_page_blocks' => 0,
   'all_announcements' => 0,
   'all_success_stories' => 0,
-);
-$handler->display->display_options['defaults']['fields'] = FALSE;
-/* Field: Content: Nid */
-$handler->display->display_options['fields']['nid']['id'] = 'nid';
-$handler->display->display_options['fields']['nid']['table'] = 'node';
-$handler->display->display_options['fields']['nid']['field'] = 'nid';
-$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-/* Field: Content: Title */
-$handler->display->display_options['fields']['title']['id'] = 'title';
-$handler->display->display_options['fields']['title']['table'] = 'node';
-$handler->display->display_options['fields']['title']['field'] = 'title';
-$handler->display->display_options['fields']['title']['label'] = '';
-$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-/* Field: Content: Posted Date */
-$handler->display->display_options['fields']['field_posted_date']['id'] = 'field_posted_date';
-$handler->display->display_options['fields']['field_posted_date']['table'] = 'field_data_field_posted_date';
-$handler->display->display_options['fields']['field_posted_date']['field'] = 'field_posted_date';
-$handler->display->display_options['fields']['field_posted_date']['label'] = '';
-$handler->display->display_options['fields']['field_posted_date']['element_label_colon'] = FALSE;
-$handler->display->display_options['fields']['field_posted_date']['settings'] = array(
-  'format_type' => 'sbir_standard',
-  'fromto' => 'both',
-  'multiple_number' => '',
-  'multiple_from' => '',
-  'multiple_to' => '',
-);
-/* Field: Content: Body */
-$handler->display->display_options['fields']['body']['id'] = 'body';
-$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-$handler->display->display_options['fields']['body']['field'] = 'body';
-$handler->display->display_options['fields']['body']['label'] = '';
-$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-$handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-$handler->display->display_options['fields']['body']['settings'] = array(
-  'trim_length' => '1000',
 );
 $handler->display->display_options['defaults']['sorts'] = FALSE;
 /* Sort criterion: Nodequeue: Position */

@@ -19,13 +19,19 @@ dependencies[] = search
 dependencies[] = superfish
 dependencies[] = views
 dependencies[] = views_content
+dependencies[] = workbench
+dependencies[] = workbench_moderation
 dependencies[] = wysiwyg
+
+dependencies[] = nci_user_roles
+;dependencies[] = nci_SSO
 
 dependencies[] = sbir_announcement
 dependencies[] = sbir_basic_page
 dependencies[] = sbir_block
 dependencies[] = sbir_event
 dependencies[] = sbir_file
+dependencies[] = sbir_subscription
 dependencies[] = sbir_success_story
 
 dependencies[] = sbir_settings
@@ -33,10 +39,12 @@ dependencies[] = sbir_wysiwyg
 dependencies[] = sbir_announcements
 dependencies[] = sbir_events
 dependencies[] = sbir_success_stories
+dependencies[] = sbir_email_notifications
 dependencies[] = sbir_basic_pages
 dependencies[] = sbir_social_media
 dependencies[] = sbir_home_page
 dependencies[] = sbir_global_template
+;dependencies[] = sbir_roles_permissions
 
 
 

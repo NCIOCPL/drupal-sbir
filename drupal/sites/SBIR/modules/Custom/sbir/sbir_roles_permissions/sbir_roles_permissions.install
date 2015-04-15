@@ -1,0 +1,17 @@
+<?php
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_roles_permissions_install() {
+  
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_roles_permissions_enable() {
+  sbir_roles_permissions_set_permissions();
+}

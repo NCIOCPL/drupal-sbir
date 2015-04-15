@@ -1,1 +1,16 @@
 <?php
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_email_notifications_install() {
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_email_notifications_enable() {
+}
+

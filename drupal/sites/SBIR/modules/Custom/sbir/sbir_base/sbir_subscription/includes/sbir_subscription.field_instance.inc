@@ -1,11 +1,12 @@
 <?php
 
-function subscriber_create_field_instances() {
- $field_instances = array();
+function subscription_create_field_instances() {
 
-  // Exported field_instance: 'node-sbir_subscriber-field_areas_of_interest'
-  $field_instances['node-sbir_subscriber-field_areas_of_interest'] = array(
-    'bundle' => 'sbir_subscriber',
+  $field_instances = array();
+
+  // Exported field_instance: 'node-sbir_subscription-field_areas_of_interest'
+  $field_instances['node-sbir_subscription-field_areas_of_interest'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -40,9 +41,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_city'
-  $field_instances['node-sbir_subscriber-field_city'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_city'
+  $field_instances['node-sbir_subscription-field_city'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -80,9 +81,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_country'
-  $field_instances['node-sbir_subscriber-field_country'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_country'
+  $field_instances['node-sbir_subscription-field_country'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -119,9 +120,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_current_email'
-  $field_instances['node-sbir_subscriber-field_current_email'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_current_email'
+  $field_instances['node-sbir_subscription-field_current_email'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -159,9 +160,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_email'
-  $field_instances['node-sbir_subscriber-field_email'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_email'
+  $field_instances['node-sbir_subscription-field_email'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -199,9 +200,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_ever_applied'
-  $field_instances['node-sbir_subscriber-field_ever_applied'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_ever_applied'
+  $field_instances['node-sbir_subscription-field_ever_applied'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -240,9 +241,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_ever_awarded'
-  $field_instances['node-sbir_subscriber-field_ever_awarded'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_ever_awarded'
+  $field_instances['node-sbir_subscription-field_ever_awarded'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -281,9 +282,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_ever_awarded_any'
-  $field_instances['node-sbir_subscriber-field_ever_awarded_any'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_ever_awarded_any'
+  $field_instances['node-sbir_subscription-field_ever_awarded_any'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -322,9 +323,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_first_name'
-  $field_instances['node-sbir_subscriber-field_first_name'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_first_name'
+  $field_instances['node-sbir_subscription-field_first_name'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -362,9 +363,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_last_name'
-  $field_instances['node-sbir_subscriber-field_last_name'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_last_name'
+  $field_instances['node-sbir_subscription-field_last_name'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -402,9 +403,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_organization'
-  $field_instances['node-sbir_subscriber-field_organization'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_organization'
+  $field_instances['node-sbir_subscription-field_organization'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -442,9 +443,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_organization_type'
-  $field_instances['node-sbir_subscriber-field_organization_type'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_organization_type'
+  $field_instances['node-sbir_subscription-field_organization_type'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -479,9 +480,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_other_organization_type'
-  $field_instances['node-sbir_subscriber-field_other_organization_type'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_other_organization_type'
+  $field_instances['node-sbir_subscription-field_other_organization_type'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -524,9 +525,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_phone'
-  $field_instances['node-sbir_subscriber-field_phone'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_phone'
+  $field_instances['node-sbir_subscription-field_phone'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -563,9 +564,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_state_province'
-  $field_instances['node-sbir_subscriber-field_state_province'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_state_province'
+  $field_instances['node-sbir_subscription-field_state_province'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -603,9 +604,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_street_address'
-  $field_instances['node-sbir_subscriber-field_street_address'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_street_address'
+  $field_instances['node-sbir_subscription-field_street_address'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -643,9 +644,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_title_position'
-  $field_instances['node-sbir_subscriber-field_title_position'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_title_position'
+  $field_instances['node-sbir_subscription-field_title_position'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -688,9 +689,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_website'
-  $field_instances['node-sbir_subscriber-field_website'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_website'
+  $field_instances['node-sbir_subscription-field_website'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -745,9 +746,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_your_technologies'
-  $field_instances['node-sbir_subscriber-field_your_technologies'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_your_technologies'
+  $field_instances['node-sbir_subscription-field_your_technologies'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -785,9 +786,9 @@ function subscriber_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_subscriber-field_zip_code'
-  $field_instances['node-sbir_subscriber-field_zip_code'] = array(
-    'bundle' => 'sbir_subscriber',
+  // Exported field_instance: 'node-sbir_subscription-field_zip_code'
+  $field_instances['node-sbir_subscription-field_zip_code'] = array(
+    'bundle' => 'sbir_subscription',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -847,6 +848,6 @@ function subscriber_create_field_instances() {
   t('Title/Position');
   t('Website');
   t('Zip Code');
-
-  sbir_base_update_instances($field_instances, 'sbir_subscriber', 'node');
+  
+  sbir_base_update_instances($field_instances, 'sbir_subscription', 'node');
 }

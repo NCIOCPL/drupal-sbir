@@ -1,0 +1,23 @@
+<?php
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_subscription_install() {
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_subscription_enable() {
+
+  variable_set('comment_sbir_subscription', '0');
+  variable_set('node_submitted_sbir_subscription', '0');
+  variable_set('node_preview_sbir_subscription', '1');
+
+  module_load_include('inc', 'sbir_subscription', 'includes/sbir_subscription.field_instance');
+
+  subscription_create_field_instances();
+}

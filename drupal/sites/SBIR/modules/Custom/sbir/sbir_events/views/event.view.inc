@@ -1,4 +1,5 @@
 <?php
+
 $view = new view();
 $view->name = 'event';
 $view->description = 'Includes all view that are related to events';
@@ -199,7 +200,6 @@ $handler->display->display_options['allow']['fields_override'] = 0;
 /* Display: Upcoming Events */
 $handler = $view->new_display('panel_pane', 'Upcoming Events', 'upcoming');
 $handler->display->display_options['defaults']['title'] = FALSE;
-$handler->display->display_options['title'] = 'Upcoming Events';
 $handler->display->display_options['display_description'] = 'Upcoming Events';
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: Title */

@@ -3,7 +3,7 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function sbir_subscriber_ctools_plugin_api($module = NULL, $api = NULL) {
+function sbir_subscription_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -12,12 +12,12 @@ function sbir_subscriber_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_node_info().
  */
-function sbir_subscriber_node_info() {
+function sbir_subscription_node_info() {
   $items = array(
-    'sbir_subscriber' => array(
-      'name' => t('Subscriber'),
+    'sbir_subscription' => array(
+      'name' => t('Subscription'),
       'base' => 'node_content',
-      'description' => t('This content type is used to store subscriber data.'),
+      'description' => t('This content type is used to capture email signup subscriptions'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
