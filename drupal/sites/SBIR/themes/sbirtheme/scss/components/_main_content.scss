@@ -13,6 +13,7 @@
 }
 .grid-3 {
   margin-left:15px!important;
+  min-height:1px;
 }
 
 #zone-content-wrapper {
@@ -33,7 +34,7 @@
 }
 
 .pane-page-title {
-  background-color:#336699;
+  background-color:#0E316A;
   padding:15px;
 }
 .pane-page-title .pane-content h1 {
@@ -46,6 +47,7 @@
 .pane-node-body {
   font-family:'Verdana';
   color:#000;
+  padding:15px;
   h1, h2, h3, h4, h5, h6 {
     font-weight:bold;
   }
@@ -77,6 +79,14 @@
     font-size:12px
   }
   a:visited {
-    color:#421c89
+    color:#421c89;
   }
+}
+
+.pane-event-upcoming {
+  padding:10px;
+}
+
+.page-node .vertical-tabs {
+  display:none;
 }

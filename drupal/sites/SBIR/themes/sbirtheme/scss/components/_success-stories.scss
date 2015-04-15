@@ -1,0 +1,17 @@
+// @success stories styling goes here
+.view-success-story {
+  .views-field-title {
+    a {
+      font-weight: bold;
+      font-size: 12px;
+    }
+    background-color:#fff;
+  }
+  .views-field-body {
+    padding:0 20px 15px 0px;
+  }
+}
+
+.view-success-story>.view-content>.views-row {
+  padding:0 15px 0 20px;
+}

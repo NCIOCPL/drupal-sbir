@@ -1,0 +1,18 @@
+// @announcement styling goes here
+.view-announcement {
+      padding:0 20px 15px 0px;
+  .views-field-title {
+    a {
+      font-weight: bold;
+      font-size: 12px;
+    }
+    background-color:#fff;
+  }
+  .views-field-body {
+    padding:0 20px 15px 0px;
+  }
+}
+
+.view-announcement>.view-content>.views-row {
+  padding:0 10px 0 10px;
+}

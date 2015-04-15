@@ -19,41 +19,233 @@
 /*
 @import "base/normalize";
 */
-/*@import "base/html-elements";*/
+/* line 5, ../scss/base/_html-elements.scss */
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* line 9, ../scss/base/_html-elements.scss */
+p, span, div {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/*
+h1 {
+  font-family: Arial Bold, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #000;
+  font-weight: bold;
+}
+h2 {
+  font-family: Arial Bold, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #000;
+}
+
+h2 a {
+  font-family: Arial Bold, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #2664AB;  
+}
+
+h3 {
+  font-family: Arial Bold, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #000;  
+}
+
+h3 a {
+  font-family: Arial Bold, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #2664AB;  
+}
+
+h3 {
+  font-family: Arial Bold, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #000;  
+}
+
+h3 a {
+  font-family: Arial Bold, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #2664AB;  
+}
+
+p
+, span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 74%/1.4em;
+  color: #000;
+  line-height: 150%;
+  margin-top: 0;
+}
+
+.block-home-page-slider-block .views-field-body p {
+  color:#fff;
+}
+
+li
+, li span
+, li p
+, li a
+, li a:link
+, li a:visited
+, a
+, a:link
+, a:visited
+, div {
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+
+}
+
+#zone-content a {
+  margin-bottom: 10px;
+}
+a
+, a:link
+, a:visited {
+  color: #2664AB;
+}
+
+ul {
+  padding-left:15px;
+}
+*/
+/* line 101, ../scss/base/_html-elements.scss */
+a {
+  text-decoration: underline;
+  color: #2664ab;
+  font-size: 12px;
+}
+
+/* line 106, ../scss/base/_html-elements.scss */
+a:visited {
+  color: #421c89;
+}
+
 /* ==========================================================================
    Layout Styles
    ========================================================================== */
 /* ==========================================================================
    Component Styles
    ========================================================================== */
-/* line 4, ../scss/components/_blocks.scss */
+/* line 2, ../scss/components/_announcement.scss */
+.view-announcement {
+  padding: 0 20px 15px 0px;
+}
+/* line 4, ../scss/components/_announcement.scss */
+.view-announcement .views-field-title {
+  background-color: #fff;
+}
+/* line 5, ../scss/components/_announcement.scss */
+.view-announcement .views-field-title a {
+  font-weight: bold;
+  font-size: 12px;
+}
+/* line 11, ../scss/components/_announcement.scss */
+.view-announcement .views-field-body {
+  padding: 0 20px 15px 0px;
+}
+
+/* line 16, ../scss/components/_announcement.scss */
+.view-announcement > .view-content > .views-row {
+  padding: 0 10px 0 10px;
+}
+
+/* line 2, ../scss/components/_blocks.scss */
+.view-display-id-left_blocks > .view-content > .views-row {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 3px 4px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 3px 4px;
+  box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 3px 4px;
+  margin-bottom: 20px;
+}
+
+/* line 8, ../scss/components/_blocks.scss */
+.pane-home-page-left-blocks {
+  font-family: 'Verdana';
+}
+/* line 10, ../scss/components/_blocks.scss */
+.pane-home-page-left-blocks .view-announcement {
+  border: solid 10px #FDD8A9;
+}
+/* line 13, ../scss/components/_blocks.scss */
 .pane-home-page-left-blocks .views-field-title {
   background-color: #0E316A;
-  margin-bottom: 15px;
 }
-/* line 8, ../scss/components/_blocks.scss */
+/* line 16, ../scss/components/_blocks.scss */
 .pane-home-page-left-blocks .views-field-title .field-content h2 {
   font-family: 'Trebuchet MS';
   color: #fff;
-  font-weight: normal;
-  font-size: 13px;
-  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 10px 10px 30px;
+  background-image: url(../images/blue-header-bg.png);
+  background-repeat: no-repeat;
+  background-position: 5px 10px;
+  background-size: 18px;
+}
+/* line 30, ../scss/components/_blocks.scss */
+.pane-home-page-left-blocks .views-field-body {
+  padding: 20px 20px 10px 20px;
+}
+/* line 34, ../scss/components/_blocks.scss */
+.pane-home-page-left-blocks .views-field-field-footer, .pane-home-page-left-blocks .view-footer {
+  text-align: right;
+  margin-right: 10px;
+  padding-bottom: 15px;
+}
+/* line 40, ../scss/components/_blocks.scss */
+.pane-home-page-left-blocks a {
+  font-weight: bold;
+  font-size: 12px;
 }
 
-/* line 19, ../scss/components/_blocks.scss */
+/* line 45, ../scss/components/_blocks.scss */
+.pane-announcement-latest {
+  font-family: 'Verdana';
+}
+/* line 47, ../scss/components/_blocks.scss */
+.pane-announcement-latest .view-announcement {
+  border: solid 10px #FDD8A9;
+}
+/* line 50, ../scss/components/_blocks.scss */
+.pane-announcement-latest .views-row {
+  border-bottom: 1px solid #ccc;
+  padding: 0 10px 15px 10px;
+  margin: 10px;
+}
+/* line 55, ../scss/components/_blocks.scss */
 .pane-announcement-latest .pane-title {
   background-color: #F06B10;
-  margin-bottom: 15px;
+  /*margin-bottom: 15px;*/
   font-family: 'Trebuchet MS';
   color: #fff;
-  font-weight: normal;
-  font-size: 13px;
-  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 10px 10px 30px;
+  background-image: url(../images/orange-header-bg.png);
+  background-repeat: no-repeat;
+  background-position: 5px 10px;
+  background-size: 18px;
+}
+/* line 68, ../scss/components/_blocks.scss */
+.pane-announcement-latest .views-field-title {
+  margin-bottom: 10px;
+}
+/* line 71, ../scss/components/_blocks.scss */
+.pane-announcement-latest .view-footer {
+  text-align: right;
+  margin-right: 10px;
+  margin-bottom: 15px;
 }
 
-/* line 31, ../scss/components/_blocks.scss */
-.view-display-id-success_stories .views-field-title {
-  background-color: #fff;
+/* line 78, ../scss/components/_blocks.scss */
+.view-display-id-left_blocks > .view-content > .views-row > .views-field-edit-node {
+  margin-left: 20px;
 }
 
 /* line 2, ../scss/components/_branding.scss */
@@ -137,40 +329,56 @@
   color: #2664ab;
 }
 
+/* line 2, ../scss/components/_dates.scss */
+#sbir-dates {
+  margin-left: 300px;
+  text-align: center;
+}
+/* line 5, ../scss/components/_dates.scss */
+#sbir-dates .sbir-date {
+  display: inline;
+  margin-left: 15px;
+}
+/* line 7, ../scss/components/_dates.scss */
+#sbir-dates .sbir-date span {
+  font-weight: bold;
+}
+
 /* line 2, ../scss/components/_footer.scss */
 #zone-footer-wrapper {
   width: 100%;
   margin-top: 30px;
   padding: 25px 0 25px 0;
   background-color: #f8f8f8;
+  border-top: solid 7px #0e316a;
   /*position:fized;
   bottom:0;*/
   margin-top: 50px;
 }
-/* line 10, ../scss/components/_footer.scss */
+/* line 11, ../scss/components/_footer.scss */
 #zone-footer-wrapper #block-menu-menu-footer-menu {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 15, ../scss/components/_footer.scss */
+/* line 16, ../scss/components/_footer.scss */
 #zone-footer-wrapper #block-menu-menu-footer-menu ul li {
   list-style: none;
   float: left;
 }
-/* line 18, ../scss/components/_footer.scss */
+/* line 19, ../scss/components/_footer.scss */
 #zone-footer-wrapper #block-menu-menu-footer-menu ul li a {
   text-decoration: none;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   font-family: 'Montserrat', 'Avant Garde';
   color: #696969;
 }
-/* line 26, ../scss/components/_footer.scss */
+/* line 27, ../scss/components/_footer.scss */
 #zone-footer-wrapper #block-menu-menu-footer-menu ul li::after {
   content: " |";
 }
-/* line 29, ../scss/components/_footer.scss */
+/* line 30, ../scss/components/_footer.scss */
 #zone-footer-wrapper #block-menu-menu-footer-menu ul li.last::after {
   content: "";
 }
@@ -209,9 +417,9 @@
 /* line 16, ../scss/components/_leftnav.scss */
 #left-nav li {
   background-color: #fff;
-  padding: 10px 10px 10px 15px;
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 /* line 26, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > .menu > li {
@@ -222,25 +430,30 @@
 #left-nav .menu-level-2 > .menu > li.expanded {
   background-color: #fff;
 }
-/* line 32, ../scss/components/_leftnav.scss */
-#left-nav .menu-level-2 > .menu > li.expanded .menu {
-  margin-top: 10px;
-}
 /* line 36, ../scss/components/_leftnav.scss */
-#left-nav .active-trail {
-  font-weight: bold;
+#left-nav .menu-level-2 > .menu > li.expanded > a {
+  border-right: solid 5px #FF8408;
 }
 /* line 39, ../scss/components/_leftnav.scss */
-#left-nav .menu-level-2 > ul.menu > li.expanded > ul.menu li::before {
-  content: " - ";
+#left-nav .active-trail {
+  font-weight: bold !important;
 }
-/* line 43, ../scss/components/_leftnav.scss */
-#left-nav a {
+/* line 42, ../scss/components/_leftnav.scss */
+#left-nav .menu-level-2 > ul.menu > li.expanded > ul.menu li > a {
+  background-image: url(../images/leftnav_bullet.png);
+  background-repeat: no-repeat;
+  background-position: 16px 18px;
+  padding-left: 35px;
+}
+/* line 49, ../scss/components/_leftnav.scss */
+#left-nav .pane-content a {
   text-decoration: none;
   font-family: "Verdana";
   font-weight: normal;
   font-size: 12px;
   color: #000;
+  padding: 10px 10px 10px 15px;
+  display: block;
 }
 
 /* line 3, ../scss/components/_main_content.scss */
@@ -260,37 +473,38 @@
 /* line 14, ../scss/components/_main_content.scss */
 .grid-3 {
   margin-left: 15px !important;
+  min-height: 1px;
 }
 
-/* line 18, ../scss/components/_main_content.scss */
+/* line 19, ../scss/components/_main_content.scss */
 #zone-content-wrapper {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 22, ../scss/components/_main_content.scss */
+/* line 23, ../scss/components/_main_content.scss */
 #zone-content-wrapper .grid-9 {
   max-width: 640px;
 }
 
-/* line 27, ../scss/components/_main_content.scss */
+/* line 28, ../scss/components/_main_content.scss */
 .grid-4 {
   max-width: 350px !important;
   float: right !important;
 }
 
-/* line 31, ../scss/components/_main_content.scss */
+/* line 32, ../scss/components/_main_content.scss */
 .grid-8 {
   max-width: 580px !important;
 }
 
-/* line 35, ../scss/components/_main_content.scss */
+/* line 36, ../scss/components/_main_content.scss */
 .pane-page-title {
-  background-color: #336699;
+  background-color: #0E316A;
   padding: 15px;
 }
 
-/* line 39, ../scss/components/_main_content.scss */
+/* line 40, ../scss/components/_main_content.scss */
 .pane-page-title .pane-content h1 {
   font-family: 'Trebuchet MS';
   font-weight: bold;
@@ -298,53 +512,64 @@
   font-size: 14px;
 }
 
-/* line 46, ../scss/components/_main_content.scss */
+/* line 47, ../scss/components/_main_content.scss */
 .pane-node-body {
   font-family: 'Verdana';
   color: #000;
+  padding: 15px;
 }
-/* line 49, ../scss/components/_main_content.scss */
+/* line 51, ../scss/components/_main_content.scss */
 .pane-node-body h1, .pane-node-body h2, .pane-node-body h3, .pane-node-body h4, .pane-node-body h5, .pane-node-body h6 {
   font-weight: bold;
 }
-/* line 52, ../scss/components/_main_content.scss */
+/* line 54, ../scss/components/_main_content.scss */
 .pane-node-body h1 {
   font-size: 24px;
 }
-/* line 55, ../scss/components/_main_content.scss */
+/* line 57, ../scss/components/_main_content.scss */
 .pane-node-body h2 {
   font-size: 22px;
 }
-/* line 58, ../scss/components/_main_content.scss */
+/* line 60, ../scss/components/_main_content.scss */
 .pane-node-body h3 {
   font-size: 18px;
 }
-/* line 61, ../scss/components/_main_content.scss */
+/* line 63, ../scss/components/_main_content.scss */
 .pane-node-body h4 {
   font-size: 16px;
 }
-/* line 64, ../scss/components/_main_content.scss */
+/* line 66, ../scss/components/_main_content.scss */
 .pane-node-body h5 {
   font-size: 14px;
 }
-/* line 67, ../scss/components/_main_content.scss */
+/* line 69, ../scss/components/_main_content.scss */
 .pane-node-body h6 {
   font-size: 13px;
 }
-/* line 70, ../scss/components/_main_content.scss */
+/* line 72, ../scss/components/_main_content.scss */
 .pane-node-body p {
   font-size: 12px;
   line-height: 18px;
 }
-/* line 74, ../scss/components/_main_content.scss */
+/* line 76, ../scss/components/_main_content.scss */
 .pane-node-body a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
-/* line 79, ../scss/components/_main_content.scss */
+/* line 81, ../scss/components/_main_content.scss */
 .pane-node-body a:visited {
   color: #421c89;
+}
+
+/* line 86, ../scss/components/_main_content.scss */
+.pane-event-upcoming {
+  padding: 10px;
+}
+
+/* line 90, ../scss/components/_main_content.scss */
+.page-node .vertical-tabs {
+  display: none;
 }
 
 /* line 2, ../scss/components/_navbar.scss */
@@ -352,14 +577,15 @@
   background-image: url(../images/blue_nav.png);
   background-repeat: repeat-x;
   width: 100%;
+  border-top: 5px solid #7aaed1;
 }
-/* line 6, ../scss/components/_navbar.scss */
+/* line 7, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu {
   max-width: 960px !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
-/* line 10, ../scss/components/_navbar.scss */
+/* line 11, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu {
   margin: 0;
   /*
@@ -368,7 +594,7 @@
   }
   */
 }
-/* line 17, ../scss/components/_navbar.scss */
+/* line 18, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a {
   text-decoration: none;
   font-weight: 400;
@@ -376,12 +602,12 @@
   font-family: 'Montserrat', 'Avant Garde';
   color: #fff;
 }
-/* line 24, ../scss/components/_navbar.scss */
+/* line 25, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 > a {
   text-transform: uppercase;
   padding: 20px 30px 20px 30px;
 }
-/* line 28, ../scss/components/_navbar.scss */
+/* line 29, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 > ul {
   top: 52px;
   /*
@@ -389,7 +615,7 @@
   background-repeat: repeat-x;
   */
 }
-/* line 35, ../scss/components/_navbar.scss */
+/* line 36, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 ul
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-2 ul {
   -webkit-border-radius: 0px;
@@ -399,69 +625,69 @@
   background-color: #fff;
   border-top: solid 2px orange;
 }
-/* line 44, ../scss/components/_navbar.scss */
+/* line 45, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 {
   font-size: 12px;
   padding: 13px;
   border-bottom: solid 1px #ccc;
 }
-/* line 50, ../scss/components/_navbar.scss */
+/* line 51, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.last a.sf-depth-2
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.last a.sf-depth-3 {
   border-bottom: none;
 }
-/* line 54, ../scss/components/_navbar.scss */
+/* line 55, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.active-trail a {
   color: #294e80;
 }
-/* line 57, ../scss/components/_navbar.scss */
+/* line 58, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-menu.sf-horizontal.sf-shadow ul {
   background: none;
   padding: 0 !important;
 }
-/* line 61, ../scss/components/_navbar.scss */
+/* line 62, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li {
   background-color: #fff;
 }
-/* line 65, ../scss/components/_navbar.scss */
+/* line 66, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li {
   background-color: #fff;
 }
-/* line 69, ../scss/components/_navbar.scss */
+/* line 70, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li a
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li a {
   color: #646363;
 }
-/* line 73, ../scss/components/_navbar.scss */
+/* line 74, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li a {
   padding: 20px;
 }
-/* line 76, ../scss/components/_navbar.scss */
+/* line 77, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #superfish-1 > li.active-trail {
   background-image: url(../images/white_nav.png);
   background-repeat: repeat-x;
 }
-/* line 86, ../scss/components/_navbar.scss */
+/* line 87, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #superfish-1-toggle span {
   font-family: 'Montserrat', 'Avant Garde';
   color: #fff;
   font-size: 12px;
 }
-/* line 91, ../scss/components/_navbar.scss */
+/* line 92, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-accordion-toggle {
   text-align: center;
   padding: 10px;
 }
-/* line 95, ../scss/components/_navbar.scss */
+/* line 96, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-sub-indicator {
   background: none;
   width: 12px;
   height: 21px;
 }
-/* line 100, ../scss/components/_navbar.scss */
+/* line 101, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2 .sf-sub-indicator
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 .sf-sub-indicator {
   background: url("../images/chevron.png") no-repeat 0px 4px;
@@ -472,53 +698,55 @@
 
 /* line 6, ../scss/components/_search-form.scss */
 #search-block-form .form-submit {
-    /*
-    text-indent: -9999px;
-    display: block;
-    background-repeat: no-repeat;
-    display: block;
-    background-image: url(../images/search_icon.png);
-    background-position: 1px 5px;
-    height: 32px;
-    width: 32px;
-    display: inline-block;
-    vertical-align: baseline;
-    zoom: 1;
-    top: -5px;
-
-    bottom: 0;
-    position: absolute;
-    padding:0;
-    margin:0;
-    border:0;
-    background-color:transparent;
-    */
-  /*
-      cursor: pointer;
-      background-color:#E0EAF1;
-      border-bottom:1px solid #3E6D8E;
-      border-right:1px solid #7F9FB6;
-      color:#3E6D8E;
-      font-size:90%;
-      line-height:2.2;
-      margin:2px 2px 2px 0;
-      padding:3px 4px;
-      text-decoration:none;
-      white-space:nowrap;
-      */
-  /*
-  box-shadow: inset 0px 0px 10px -3px #ABABAB;
-  -webkit-box-shadow: inset 0px 0px 10px -3px #ABABAB;
-  -moz-box-shadow: inset 0px 0px 10px -3px #ABABAB;
-  -o-box-shadow: inset 0px 0px 10px -3px #ABABAB;
+  text-indent: -9999px;
+  /*display: block;*/
+  background: none;
+  border: none;
+  background-repeat: no-repeat;
+  background-image: url(../images/search_icon2.png);
+  /*  background-position: 1px 5px;*/
+  height: 32px;
+  width: 32px;
+  /*display: inline-block;
+  top: -5px;
+  position: absolute;
   */
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 0 0;
+  /*
+      bottom: 0;
+      padding:0;
+      margin:0;
+      border:0;
+      background-color:transparent;
+  
+  */
+  cursor: pointer;
+    /*
+    background-color:#E0EAF1;
+    border-bottom:1px solid #3E6D8E;
+    border-right:1px solid #7F9FB6;
+    color:#3E6D8E;
+    font-size:90%;
+    line-height:2.2;
+    margin:2px 2px 2px 0;
+    padding:3px 4px;
+    text-decoration:none;
+    white-space:nowrap;
+
+    box-shadow: inset 0px 0px 10px -3px #ABABAB;
+    -webkit-box-shadow: inset 0px 0px 10px -3px #ABABAB;
+    -moz-box-shadow: inset 0px 0px 10px -3px #ABABAB;
+    -o-box-shadow: inset 0px 0px 10px -3px #ABABAB;
+
+    -webkit-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+    -moz-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+    box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+    */
 }
 /* line 52, ../scss/components/_search-form.scss */
 #search-block-form input[type=text] {
   float: left;
+  height: 19px;
+  width: 157px;
 }
 
 /* line 4, ../scss/components/_search-results.scss */
@@ -529,15 +757,17 @@
 /* line 2, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media {
   /*float:left;*/
+  margin: 0 0 5px 0;
 }
-/* line 4, ../scss/components/_social-media.scss */
+/* line 5, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media li {
-  width: 30px;
+  width: 38px;
   float: left;
-  padding: 5px;
-  margin: 0;
+  list-style: none;
+  margin: 2px;
+  padding: 0;
 }
-/* line 10, ../scss/components/_social-media.scss */
+/* line 12, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .email-link a {
   background: url(../images/email_icon.png) no-repeat;
   background-size: 30px 30px;
@@ -545,7 +775,7 @@
   display: block;
   height: 38px;
 }
-/* line 17, ../scss/components/_social-media.scss */
+/* line 19, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .linkedin-link a {
   background: url(../images/linkedin_icon.png) no-repeat;
   background-size: 30px 30px;
@@ -553,7 +783,7 @@
   display: block;
   height: 38px;
 }
-/* line 24, ../scss/components/_social-media.scss */
+/* line 26, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .twitter-link a {
   background: url(../images/twitter_icon.png) no-repeat;
   background-size: 30px 30px;
@@ -562,16 +792,35 @@
   height: 38px;
 }
 
-/* line 32, ../scss/components/_social-media.scss */
+/* line 34, ../scss/components/_social-media.scss */
 #social-media {
   display: inline-block;
   float: right;
 }
 
-/* line 37, ../scss/components/_social-media.scss */
+/* line 39, ../scss/components/_social-media.scss */
 .follow-us-text {
   float: left;
   margin-top: 13px;
   margin-right: 10px;
   /*font-family: 'Montserrat', 'Avant Garde';*/
+}
+
+/* line 3, ../scss/components/_success-stories.scss */
+.view-success-story .views-field-title {
+  background-color: #fff;
+}
+/* line 4, ../scss/components/_success-stories.scss */
+.view-success-story .views-field-title a {
+  font-weight: bold;
+  font-size: 12px;
+}
+/* line 10, ../scss/components/_success-stories.scss */
+.view-success-story .views-field-body {
+  padding: 0 20px 15px 0px;
+}
+
+/* line 15, ../scss/components/_success-stories.scss */
+.view-success-story > .view-content > .views-row {
+  padding: 0 15px 0 20px;
 }

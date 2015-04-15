@@ -2,13 +2,17 @@
 // send a version of the code below to be cut/pasted in to immediately style
 // all basic elements according to the style guide.
 
-* {
-  color:#585858;
-  font-family:Arial, Helvetica, sans-serif;
+body {
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+p, span, div {
+  font-size:12px;
+  line-height:18px;
 }
 
 // PLACEHOLDERS ----------------------------------------------------------------
-
+/*
 h1 {
   font-family: Arial Bold, Helvetica, sans-serif;
   font-size: 15px;
@@ -70,15 +74,14 @@ li
 , li a
 , li a:link
 , li a:visited
-/*, a
+, a
 , a:link
 , a:visited
-*/
 , div {
-  /*
+
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
-  */
+
 }
 
 #zone-content a {
@@ -93,3 +96,13 @@ a
 ul {
   padding-left:15px;
 }
+*/
+
+  a {
+    text-decoration: underline;
+    color:#2664ab;
+    font-size:12px
+  }
+  a:visited {
+    color:#421c89
+  }

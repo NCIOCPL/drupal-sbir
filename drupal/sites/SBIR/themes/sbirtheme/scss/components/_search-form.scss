@@ -1,33 +1,33 @@
 // @search form styling goes here
 #block-search-form {
-  
+
 }
 #search-block-form {
   .form-submit {
-    /*
+
     text-indent: -9999px;
-    display: block;
+    /*display: block;*/
+    background:none;
+    border:none;
     background-repeat: no-repeat;
-    display: block;
-    background-image: url(../images/search_icon.png);
-    background-position: 1px 5px;
+    background-image: url(../images/search_icon2.png);
+    /*  background-position: 1px 5px;*/
     height: 32px;
     width: 32px;
-    display: inline-block;
-    vertical-align: baseline;
-    zoom: 1;
+    /*display: inline-block;
     top: -5px;
-
-    bottom: 0;
     position: absolute;
-    padding:0;
-    margin:0;
-    border:0;
-    background-color:transparent;
     */
-
-/*
+    /*
+        bottom: 0;
+        padding:0;
+        margin:0;
+        border:0;
+        background-color:transparent;
+    
+    */  
     cursor: pointer;
+    /*
     background-color:#E0EAF1;
     border-bottom:1px solid #3E6D8E;
     border-right:1px solid #7F9FB6;
@@ -38,18 +38,20 @@
     padding:3px 4px;
     text-decoration:none;
     white-space:nowrap;
-    */
-    /*
+
     box-shadow: inset 0px 0px 10px -3px #ABABAB;
     -webkit-box-shadow: inset 0px 0px 10px -3px #ABABAB;
     -moz-box-shadow: inset 0px 0px 10px -3px #ABABAB;
     -o-box-shadow: inset 0px 0px 10px -3px #ABABAB;
-    */
+
     -webkit-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
     -moz-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
     box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+    */
   }
   input[type=text] {
     float:left;
+    height: 19px;
+    width: 157px;
   }
 }

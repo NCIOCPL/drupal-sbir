@@ -1,36 +1,80 @@
 // @block styling goes here
+.view-display-id-left_blocks>.view-content>.views-row {
+  -webkit-box-shadow: rgba(0, 0, 0, .2) 3px 3px 3px 4px;
+  -moz-box-shadow:rgba(0,0,0,0.2) 3px 3px 3px 4px;
+  box-shadow:rgba(0,0,0,0.2) 3px 3px 3px 4px;
+  margin-bottom:20px;
+}
 .pane-home-page-left-blocks {
-
+  font-family:'Verdana';
+  .view-announcement {
+    border:solid 10px #FDD8A9;
+  }
   .views-field-title {
     background-color:#0E316A;
-    margin-bottom: 15px;
     .field-content {
       h2 {
         font-family:'Trebuchet MS';
         color:#fff;
-        font-weight: normal;
-        font-size:13px;
-        padding: 10px;
+        font-weight: bold;
+        font-size:14px;
+        padding: 10px 10px 10px 30px;
+        background-image: url(../images/blue-header-bg.png);
+        background-repeat: no-repeat;
+        background-position: 5px 10px;
+        background-size: 18px;
       }
     }
   }
+
+  .views-field-body {
+    padding:20px 20px 10px 20px;
+  }
+
+  .views-field-field-footer, .view-footer {
+    text-align: right;
+    margin-right: 10px;
+    padding-bottom: 15px;
+  }
+
+  a {
+    font-weight: bold;
+    font-size: 12px;
+  }
 }
 .pane-announcement-latest {
+  font-family:'Verdana';
+  .view-announcement {
+    border:solid 10px #FDD8A9;
+  }
+  .views-row {
+    border-bottom: 1px solid #ccc;
+    padding: 0 10px 15px 10px;
+    margin:10px;
+  }
   .pane-title {
     background-color:#F06B10;
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
     font-family:'Trebuchet MS';
     color:#fff;
-    font-weight: normal;
-    font-size:13px;
-    padding: 10px;
+    font-weight: bold;
+    font-size:14px;
+    padding: 10px 10px 10px 30px;
+    background-image: url(../images/orange-header-bg.png);
+    background-repeat: no-repeat;
+    background-position: 5px 10px;
+    background-size: 18px;
+  }
+  .views-field-title {
+    margin-bottom:10px;
+  }
+  .view-footer {
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 15px;
   }
 }
 
-.view-display-id-success_stories {
-  .views-field-title {
-    a {      
-    }
-    background-color:#fff;
-  }
+.view-display-id-left_blocks>.view-content>.views-row>.views-field-edit-node {
+  margin-left:20px;
 }

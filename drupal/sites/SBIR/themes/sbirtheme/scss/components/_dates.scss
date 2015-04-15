@@ -1,0 +1,12 @@
+// @date styling goes here
+#sbir-dates {
+  margin-left:300px;
+  text-align:center;
+  .sbir-date {
+    display:inline;
+    span {
+      font-weight:bold;
+    }
+    margin-left:15px;
+  }
+}
