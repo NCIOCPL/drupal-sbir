@@ -42,8 +42,8 @@
 
       });
     </script>
-    -->
-<!--<script language="JavaScript" type="text/javascript" src="http://static.cancer.gov/webanalytics/WA_SBIR_PageLoad.js"></script>
-    -->
+
+<script language="JavaScript" type="text/javascript" src="http://static.cancer.gov/webanalytics/WA_SBIR_PageLoad.js"></script>
+-->
   </body>
 </html>
