@@ -1,8 +1,16 @@
 // @search results styling goes here
 .page-search {
-  .pane-page-title {
-    .pane-content {
-      display: none;
-    }
+  h2.search-totals {
+    margin:15px 0 15px 15px!important;
+  }
+  .search-results {
+    list-style:decimal!important;
+    margin-left:35px;
+  }
+  .search-result {
+    list-style: decimal;
+  }
+  .title {
+    margin-left:13px;
   }
 }

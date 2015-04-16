@@ -854,9 +854,22 @@ a:visited {
   width: 157px;
 }
 
-/* line 4, ../scss/components/_search-results.scss */
-.page-search .pane-page-title .pane-content {
-  display: none;
+/* line 3, ../scss/components/_search-results.scss */
+.page-search h2.search-totals {
+  margin: 15px 0 15px 15px !important;
+}
+/* line 6, ../scss/components/_search-results.scss */
+.page-search .search-results {
+  list-style: decimal !important;
+  margin-left: 35px;
+}
+/* line 10, ../scss/components/_search-results.scss */
+.page-search .search-result {
+  list-style: decimal;
+}
+/* line 13, ../scss/components/_search-results.scss */
+.page-search .title {
+  margin-left: 13px;
 }
 
 /* line 2, ../scss/components/_social-media.scss */
