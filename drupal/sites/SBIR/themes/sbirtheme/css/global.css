@@ -156,6 +156,31 @@ a:visited {
   padding: 0 10px 0 10px;
 }
 
+/* line 21, ../scss/components/_announcement.scss */
+.pane-announcement-all .views-row {
+  margin: 0 15px 0 15px;
+  padding: 15px 0 15px 0 !important;
+  border-bottom: solid 1px #ccc;
+}
+/* line 26, ../scss/components/_announcement.scss */
+.pane-announcement-all .views-row-last {
+  border-bottom: none;
+}
+/* line 30, ../scss/components/_announcement.scss */
+.pane-announcement-all .views-field-title span {
+  font-size: 14px;
+  font-weight: bold;
+}
+/* line 37, ../scss/components/_announcement.scss */
+.pane-announcement-all .views-field-field-posted-date {
+  font-size: 11px !important;
+  color: #696969 !important;
+}
+/* line 41, ../scss/components/_announcement.scss */
+.pane-announcement-all .views-field-body {
+  padding: 0 !important;
+}
+
 /* line 2, ../scss/components/_blocks.scss */
 .view-display-id-left_blocks > .view-content > .views-row {
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 3px 4px;
@@ -337,11 +362,96 @@ a:visited {
 /* line 5, ../scss/components/_dates.scss */
 #sbir-dates .sbir-date {
   display: inline;
-  margin-left: 15px;
 }
 /* line 7, ../scss/components/_dates.scss */
 #sbir-dates .sbir-date span {
   font-weight: bold;
+}
+
+/* line 2, ../scss/components/_event.scss */
+.view-event {
+  padding: 0 20px 15px 0px;
+}
+/* line 4, ../scss/components/_event.scss */
+.view-event .views-field-title {
+  background-color: #fff;
+}
+/* line 5, ../scss/components/_event.scss */
+.view-event .views-field-title a {
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+}
+/* line 15, ../scss/components/_event.scss */
+.view-event .views-field-field-ics-file a {
+  background: url(../images/addtocalendar.png) no-repeat;
+  background-size: 22px;
+  text-indent: 30px;
+  display: block;
+  font-size: 12px;
+  text-decoration: none;
+  padding-top: 3px;
+}
+
+/* line 26, ../scss/components/_event.scss */
+.pane-event-upcoming
+, .pane-event-recent {
+  padding: 15px;
+}
+/* line 28, ../scss/components/_event.scss */
+.pane-event-upcoming
+.views-row, .pane-event-recent .views-row {
+  margin: 0 0 15px 0;
+}
+/* line 32, ../scss/components/_event.scss */
+.pane-event-upcoming
+.views-field-field-event-date, .pane-event-recent .views-field-field-event-date {
+  font-size: 11px !important;
+  color: #696969 !important;
+}
+
+/* line 37, ../scss/components/_event.scss */
+.view-display-id-details {
+  padding: 15px 0 0 0;
+}
+/* line 39, ../scss/components/_event.scss */
+.view-display-id-details .views-field-field-event-date {
+  font-weight: bold;
+  float: left;
+  padding-left: 15px;
+}
+/* line 44, ../scss/components/_event.scss */
+.view-display-id-details .views-field-field-ics-file {
+  float: right;
+  margin-right: 15px;
+}
+/* line 47, ../scss/components/_event.scss */
+.view-display-id-details .views-field-field-ics-file a {
+  text-decoration: underline;
+  text-indent: 35px;
+}
+/* line 52, ../scss/components/_event.scss */
+.view-display-id-details .views-field-field-venue {
+  clear: both;
+  padding-left: 15px;
+}
+/* line 56, ../scss/components/_event.scss */
+.view-display-id-details .views-field-field-street-address {
+  padding-left: 15px;
+}
+/* line 59, ../scss/components/_event.scss */
+.view-display-id-details .views-field-nothing {
+  padding-left: 15px;
+}
+/* line 62, ../scss/components/_event.scss */
+.view-display-id-details .views-field-body {
+  margin: 15px 0 15px 0;
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+}
+/* line 64, ../scss/components/_event.scss */
+.view-display-id-details .views-field-body .field-content {
+  padding: 15px;
 }
 
 /* line 2, ../scss/components/_footer.scss */
@@ -431,7 +541,7 @@ a:visited {
   background-color: #fff;
 }
 /* line 36, ../scss/components/_leftnav.scss */
-#left-nav .menu-level-2 > .menu > li.expanded > a {
+#left-nav .menu-level-2 > .menu > li.active-trail > a {
   border-right: solid 5px #FF8408;
 }
 /* line 39, ../scss/components/_leftnav.scss */
@@ -563,11 +673,6 @@ a:visited {
 }
 
 /* line 86, ../scss/components/_main_content.scss */
-.pane-event-upcoming {
-  padding: 10px;
-}
-
-/* line 90, ../scss/components/_main_content.scss */
 .page-node .vertical-tabs {
   display: none;
 }

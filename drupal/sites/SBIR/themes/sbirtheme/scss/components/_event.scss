@@ -1,0 +1,71 @@
+// @event styling goes here
+.view-event {
+  padding:0 20px 15px 0px;
+  .views-field-title {
+    a {
+      font-weight: bold;
+      font-size: 12px;
+      text-decoration: none;
+    }
+    background-color:#fff;
+  }
+  .views-field-body {
+
+  }
+  .views-field-field-ics-file a {
+    background: url(../images/addtocalendar.png) no-repeat;
+    background-size: 22px;
+    text-indent: 30px;
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    padding-top:3px;
+  }  
+}
+
+.pane-event-upcoming
+,.pane-event-recent {
+  .views-row {
+    margin:0 0 15px 0;
+  }
+  padding:15px;
+  .views-field-field-event-date {
+    font-size:11px!important;
+    color:#696969!important;
+  }
+}
+.view-display-id-details {
+  padding: 15px 0 0 0;
+  .views-field-field-event-date {
+    font-weight:bold;
+    float:left;
+    padding-left:15px;
+  }
+  .views-field-field-ics-file {
+    float:right;
+    margin-right:15px;
+    a {
+      text-decoration: underline;
+      text-indent:35px;
+    }
+  }
+  .views-field-field-venue {
+    clear:both;
+    padding-left:15px;
+  }
+  .views-field-field-street-address {
+    padding-left:15px;
+  }
+  .views-field-nothing {
+    padding-left:15px;
+  }
+  .views-field-body {
+    margin: 15px 0 15px 0;
+    .field-content {
+      padding:15px;
+    }
+    border-top:solid 1px #ccc;
+    border-bottom:solid 1px #ccc;
+
+  }
+}

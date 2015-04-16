@@ -1,6 +1,6 @@
 // @announcement styling goes here
 .view-announcement {
-      padding:0 20px 15px 0px;
+  padding:0 20px 15px 0px;
   .views-field-title {
     a {
       font-weight: bold;
@@ -15,4 +15,30 @@
 
 .view-announcement>.view-content>.views-row {
   padding:0 10px 0 10px;
+}
+
+.pane-announcement-all {
+  .views-row {
+    margin: 0 15px 0 15px;
+    padding: 15px 0 15px 0!important;
+    border-bottom:solid 1px #ccc;
+  }
+  .views-row-last {
+    border-bottom:none;
+  }
+  .views-field-title {
+    span {
+      font-size:14px;
+      font-weight:bold;
+    }
+  }
+  .views-field-title {
+  }
+  .views-field-field-posted-date {
+    font-size:11px!important;
+    color:#696969!important;
+  }
+  .views-field-body {
+    padding:0!important;
+  }
 }

@@ -69,3 +69,11 @@ function sbirtheme_block_view_alter(&$data, $block) {
     array_unshift($data['content'], $follow_us);
   }
 }
+
+function sbirtheme_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == "search_form") {
+    unset($form['advanced']);
+    unset($form['basic']);
+        dpm($form);
+  }
+}
