@@ -209,6 +209,13 @@ $handler = $view->new_display('panel_pane', 'Upcoming Events', 'upcoming');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['display_description'] = 'Upcoming Events';
 $handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Edit link */
+$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['label'] = '';
+$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['edit_node']['text'] = 'Edit Event';
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -223,7 +230,7 @@ $handler->display->display_options['fields']['field_event_date']['field'] = 'fie
 $handler->display->display_options['fields']['field_event_date']['label'] = '';
 $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_event_date']['settings'] = array(
-  'format_type' => 'sbir_standard',
+  'format_type' => 'sbir_standard_long',
   'fromto' => 'both',
   'multiple_number' => '',
   'multiple_from' => '',
@@ -249,13 +256,6 @@ $handler->display->display_options['fields']['field_ics_file']['alter']['text'] 
 $handler->display->display_options['fields']['field_ics_file']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_ics_file']['click_sort_column'] = 'fid';
 $handler->display->display_options['fields']['field_ics_file']['type'] = 'file_url_plain';
-/* Field: Content: Edit link */
-$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
-$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
-$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-$handler->display->display_options['fields']['edit_node']['label'] = '';
-$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-$handler->display->display_options['fields']['edit_node']['text'] = 'Edit Event';
 $handler->display->display_options['defaults']['sorts'] = FALSE;
 /* Sort criterion: Content: Event Date -  start date (field_event_date) */
 $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
@@ -345,19 +345,29 @@ $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
 $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
 $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
 $handler->display->display_options['fields']['field_city']['label'] = '';
+$handler->display->display_options['fields']['field_city']['exclude'] = TRUE;
 $handler->display->display_options['fields']['field_city']['element_label_colon'] = FALSE;
 /* Field: Content: State */
 $handler->display->display_options['fields']['field_state']['id'] = 'field_state';
 $handler->display->display_options['fields']['field_state']['table'] = 'field_data_field_state';
 $handler->display->display_options['fields']['field_state']['field'] = 'field_state';
 $handler->display->display_options['fields']['field_state']['label'] = '';
+$handler->display->display_options['fields']['field_state']['exclude'] = TRUE;
 $handler->display->display_options['fields']['field_state']['element_label_colon'] = FALSE;
 /* Field: Content: Zip Code */
 $handler->display->display_options['fields']['field_zip_code']['id'] = 'field_zip_code';
 $handler->display->display_options['fields']['field_zip_code']['table'] = 'field_data_field_zip_code';
 $handler->display->display_options['fields']['field_zip_code']['field'] = 'field_zip_code';
 $handler->display->display_options['fields']['field_zip_code']['label'] = '';
+$handler->display->display_options['fields']['field_zip_code']['exclude'] = TRUE;
 $handler->display->display_options['fields']['field_zip_code']['element_label_colon'] = FALSE;
+/* Field: Global: Custom text */
+$handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['table'] = 'views';
+$handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+$handler->display->display_options['fields']['nothing']['label'] = '';
+$handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_city], [field_state] [field_zip_code]';
+$handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 /* Field: Content: Body */
 $handler->display->display_options['fields']['body']['id'] = 'body';
 $handler->display->display_options['fields']['body']['table'] = 'field_data_body';

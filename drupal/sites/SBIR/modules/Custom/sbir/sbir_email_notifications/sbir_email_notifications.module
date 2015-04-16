@@ -112,7 +112,7 @@ function _email_notification_form_submit(&$form, &$form_state) {
     foreach ($form_state['values'] as $key => $value) {
       if ($subject == "SBIR & STTR Email Change") {
         if ($key == 'field_current_email') {
-          $line[$i++] .= "Current Email: " . $value['und'][0]['value'];
+          $line[-1] .= "Current Email: " . $value['und'][0]['value'];
         }
       }
       if ($key == 'field_first_name') {
