@@ -1,11 +1,11 @@
 <?php
 
 /*
- * Implements hook_enable
+ * Implements hook_install
  */
 
 function sbir_roles_permissions_install() {
-  
+  //set_sbir_permissions();
 }
 
 /*
@@ -13,5 +13,5 @@ function sbir_roles_permissions_install() {
  */
 
 function sbir_roles_permissions_enable() {
-  sbir_roles_permissions_set_permissions();
+  
 }

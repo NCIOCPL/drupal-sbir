@@ -44,7 +44,7 @@ dependencies[] = sbir_basic_pages
 dependencies[] = sbir_social_media
 dependencies[] = sbir_home_page
 dependencies[] = sbir_global_template
-;dependencies[] = sbir_roles_permissions
+dependencies[] = sbir_roles_permissions
 
 
 

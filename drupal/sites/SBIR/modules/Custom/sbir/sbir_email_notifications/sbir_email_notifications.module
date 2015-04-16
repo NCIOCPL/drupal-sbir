@@ -39,12 +39,12 @@ function sbir_email_notifications_block_view($delta = '') {
     case 'email_notification_add_block':
       $block['subject'] = 'Email Notification Add';
       $block['content'] = _load_subscription_add_form();
-      $_SESSION['sbir_email_subsject'] = 'SBIR & STTR Email Signup';
+      $_SESSION['sbir_email_subject'] = 'SBIR & STTR Email Signup';
       break;
     case 'email_notification_update_block':
       $block['subject'] = 'Email Notification Update';
       $block['content'] = _load_subscription_update_form();
-      $_SESSION['sbir_email_subsject'] = 'SBIR & STTR Email Change';
+      $_SESSION['sbir_email_subject'] = 'SBIR & STTR Email Change';
       break;
   }
   return $block;
@@ -97,50 +97,107 @@ function _get_subscription_info($email_address) {
 }
 
 function _email_notification_form_submit(&$form, &$form_state) {
-  //dpm($form_state);
 
   if (isset($form_state['nid']) && is_numeric($form_state['nid'])) {
     $to = "cedricpriestley@gmail.com";
     $from = "cedricpriestley@gmail.com";
 
-    $subject = $_SESSION['sbir_email_subsject'];
+    $subject = $_SESSION['sbir_email_subject'];
 
-    $subscription_node = node_load($form_state['nid']);
-    $node_view = node_view($subscription_node);
-    $body = render($node_view);
-    
-    // remove the header and links from the subscription node's rendered output
-    $body = preg_replace('#(<h2.*?>).*?(</h2>)#', '$1$2', $body);
-    $body = preg_replace('#(<ul.*?>).*?(</ul>)#', '$1$2', $body);
+    dpm($form_state['values']);
 
+    $body = '';
+    $line = array();
+
+    foreach ($form_state['values'] as $key => $value) {
+      if ($subject == "SBIR & STTR Email Change") {
+        if ($key == 'field_current_email') {
+          $line[$i++] .= 'Current Email: ' . $value['und'][0]['value'];
+        }
+      }
+      if ($key == 'field_first_name') {
+        $line[0] = 'First Name: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_last_name') {
+        $line[1] = 'Last Name: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_email') {
+        $line[2] = 'Email: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_title_position') {
+        $line[3] = 'Title/Position: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_organization') {
+        $line[4] = 'Organization: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_street_address') {
+        $line[5] = 'Street Address: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_city') {
+        $line[6] = 'City: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_state_province') {
+        $line[7] = 'State/Province: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_zip_code') {
+        $line[8] = 'Zip Code: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_country') {
+        $line[9] = 'Country: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_phone') {
+        $line[10] = 'Phone: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_website') {
+        $line[11] = 'Website: ' . $value['und'][0]['url'];
+      }
+      if ($key == 'field_organization_type') {
+        $type = '';
+
+        foreach ($value['und'] as $v) {
+          $type .= $v['value'] . ',';
+        }
+
+        $type = trim($type, ',');
+        $line[12] = 'Organization Type: ' . $type;
+      }
+      if ($key == 'field_other_organization_type') {
+        $line[13] = 'Other Organization Type: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_areas_of_interest') {
+        $area = '';
+
+        foreach ($value['und'] as $v) {
+          $area .= $v['value'] . ',';
+        }
+
+        $area = trim($area, ',');
+        $line[14] = 'Areas Of Interest: ' . $area;
+      }
+      if ($key == 'field_your_technologies') {
+        $line[15] = 'Describe your technology: ' . $value['und'][0]['value'];
+      }
+      if ($key == 'field_ever_applied') {
+        $v = $value['und'][0]['value'] == '0' ? 'No' : 'Yes';
+        $line[16] = 'Ever Applied: ' . $v;
+      }
+      if ($key == 'field_ever_awarded') {
+        $v = $value['und'][0]['value'] == '0' ? 'No' : 'Yes';
+        $line[17] = 'Ever Awarded from SBIR?: ' . $v;
+      }
+      if ($key == 'field_ever_awarded_any') {
+        $v = $value['und'][0]['value'] == '0' ? 'No' : 'Yes';
+        $line[18] = 'Ever Awarded from any agency?: ' . $v;
+      }
+    }
+
+    ksort($line);
+
+    //dpm($line);
+
+    $body = implode('\n\r', $line);
     //dpm($body);
-
-
-    /*
-      // example of how to modify anchor innerText
-      include('simple_html_dom.php');
-
-      // get DOM from URL or file
-      $html = file_get_html('http://www.example.com/');
-
-      //set innerText to null for each anchor
-      foreach ($html->find('a') as $e) {
-      $e->innerText = null;
-      }
-
-      // dump contents
-      echo $html;
-
-      $item = array($subscription_node);
-
-      foreach ($item['0'] as $field => $value) {
-      if (is_array($value) && substr($field, 0, 5) == 'field') {
-      //$label =
-      dsm($value);
-      }
-      }
-     */
-
+    
     $params = array(
       'subject' => $subject,
       'body' => $body,

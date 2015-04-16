@@ -174,31 +174,6 @@ function sbir_base_get_vocabulary_by_name($vocabulary_name) {
   return NULL;
 }
 
-/**
- * Method that updates the block specified by module.delta name.  Providing only
- * the module and delta parameters will disable the block for the default nhlbitheme
- * @param type $module The module owning/that created the block
- * @param type $delta The machine name of the block
- * @param type $title The blocks title when it is displayed on a page
- * @param type $status Enabled = 1, disabled = 0
- * @param type $region The theme region to display the block in; -1 is disabled
- * @param type $weight The order in which the block displays in the assigned region
- * @param type $theme The theme inwhich to apply this change; Every block has a unique
- * instance for each enabled theme
- */
-function _sbir_base_update_block($module, $delta, $title = '', $status = 0, $region = -1, $weight = 0) {
-  db_update('block')
-      ->fields(array(
-        'status' => $status,
-        'weight' => $weight,
-        'region' => $region,
-        'title' => $title,
-      ))
-      ->condition('module', $module)
-      ->condition('delta', $delta)
-      ->execute();
-}
-
 /*
  * Convert exported arrays into objects
  */
@@ -296,4 +271,29 @@ function sbir_base_add_items_to_subqueue($qid, $nodequeue_items) {
   foreach ($nodequeue_items as $nodequeue_item) {
     nodequeue_subqueue_add($nodequeue, $subqueue[$qid], $nodequeue_item);
   }
+}
+
+/**
+ * Method that updates the block specified by module.delta name.  Providing only
+ * the module and delta parameters will disable the block for the default nhlbitheme
+ * @param type $module The module owning/that created the block
+ * @param type $delta The machine name of the block
+ * @param type $title The blocks title when it is displayed on a page
+ * @param type $status Enabled = 1, disabled = 0
+ * @param type $region The theme region to display the block in; -1 is disabled
+ * @param type $weight The order in which the block displays in the assigned region
+ * @param type $theme The theme inwhich to apply this change; Every block has a unique
+ * instance for each enabled theme
+ */
+function update_sbir_block($module, $delta, $title = '', $status = 0, $region = -1, $weight = 0) {
+  db_update('block')
+      ->fields(array(
+        'status' => $status,
+        'weight' => $weight,
+        'region' => $region,
+        'title' => $title,
+      ))
+      ->condition('module', $module)
+      ->condition('delta', $delta)
+      ->execute();
 }

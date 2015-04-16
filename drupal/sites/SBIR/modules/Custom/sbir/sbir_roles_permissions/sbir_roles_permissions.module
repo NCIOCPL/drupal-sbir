@@ -1,408 +1,185 @@
 <?php
+function set_sbir_permissions() {
 
-function sbir_roles_permissions_permission() {
-  $permissions = array();
+  // Create the role if necessary.
+  $role = user_role_load_by_name('content author');
+  if (!$role) {
+    $role = new stdClass();
+    $role->name = 'content author';
+    user_role_save($role);
+  }
 
-  // Exported permission: 'access content'.
-  $permissions['access content'] = array(
-    'name' => 'access content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'advanced content editor' => 'advanced content editor',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-      'site manager' => 'site manager',
-      'site moderator' => 'site moderator',
-    ),
-    'module' => 'node',
+  // Add the permissions to the role.
+  $permissions = array(
+    'access toolbar',
+    'create sbir_announcement content',
+    'create sbir_basic_page content',
+    'create sbir_block content',
+    'create sbir_event content',
+    'create sbir_file content',
+    'create sbir_success_story content',
+    'delete any sbir_announcement content',
+    'delete any sbir_basic_page content',
+    'delete any sbir_block content',
+    'delete any sbir_event content',
+    'delete any sbir_file content',
+    'delete any sbir_success_story content',
+    'edit any sbir_announcement content',
+    'edit any sbir_basic_page content',
+    'edit any sbir_block content',
+    'edit any sbir_event content',
+    'edit any sbir_file content',
+    'edit any sbir_success_story content',
+    'manipulate all queues',
+    'manipulate queues',
+    'moderate content from draft to needs_review',
+    'moderate content from needs_review to draft',
+    'moderate content from needs_review to published',
   );
+  user_role_grant_permissions($role->rid, $permissions);
 
-  // Exported permission: 'access content overview'.
-  $permissions['access content overview'] = array(
-    'name' => 'access content overview',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'advanced content editor' => 'advanced content editor',
-      'site manager' => 'site manager',
-      'site moderator' => 'site moderator',
-    ),
-    'module' => 'node',
-  );
+  // Create the role if necessary.
+  $role = user_role_load_by_name('content editor');
+  if (!$role) {
+    $role = new stdClass();
+    $role->name = 'content editor';
+    user_role_save($role);
+  }
 
-  // Exported permission: 'administer content types'.
-  $permissions['administer content types'] = array(
-    'name' => 'administer content types',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
+  // Add the permissions to the role.
+  $permissions = array(
+    'access toolbar',
+    'create sbir_announcement content',
+    'create sbir_basic_page content',
+    'create sbir_block content',
+    'create sbir_event content',
+    'create sbir_file content',
+    'create sbir_success_story content',
+    'delete any sbir_announcement content',
+    'delete any sbir_basic_page content',
+    'delete any sbir_block content',
+    'delete any sbir_event content',
+    'delete any sbir_file content',
+    'delete any sbir_success_story content',
+    'edit any sbir_announcement content',
+    'edit any sbir_basic_page content',
+    'edit any sbir_block content',
+    'edit any sbir_event content',
+    'edit any sbir_file content',
+    'edit any sbir_success_story content',
+    'moderate content from draft to needs_review',
+    'moderate content from needs_review to draft',
   );
+  user_role_grant_permissions($role->rid, $permissions);
 
-  // Exported permission: 'administer nodes'.
-  $permissions['administer nodes'] = array(
-    'name' => 'administer nodes',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'advanced content editor' => 'advanced content editor',
-      'site manager' => 'site manager',
-    ),
-    'module' => 'node',
-  );
+  // Create the role if necessary.
+  $role = user_role_load_by_name('site moderator');
+  if (!$role) {
+    $role = new stdClass();
+    $role->name = 'site moderator';
+    user_role_save($role);
+  }
 
-  // Exported permission: 'bypass node access'.
-  $permissions['bypass node access'] = array(
-    'name' => 'bypass node access',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
+  // Add the permissions to the role.
+  $permissions = array(
+    'access toolbar',
+    'create sbir_announcement content',
+    'create sbir_basic_page content',
+    'create sbir_block content',
+    'create sbir_event content',
+    'create sbir_file content',
+    'create sbir_success_story content',
+    'delete any sbir_announcement content',
+    'delete any sbir_basic_page content',
+    'delete any sbir_block content',
+    'delete any sbir_event content',
+    'delete any sbir_file content',
+    'delete any sbir_success_story content',
+    'edit any sbir_announcement content',
+    'edit any sbir_basic_page content',
+    'edit any sbir_block content',
+    'edit any sbir_event content',
+    'edit any sbir_file content',
+    'edit any sbir_success_story content',
+    'manipulate all queues',
+    'manipulate queues',
+    'moderate content from draft to needs_review',
+    'moderate content from needs_review to draft',
+    'moderate content from needs_review to published',
   );
+  user_role_grant_permissions($role->rid, $permissions);
 
-  // Exported permission: 'create sbir_announcement content'.
-  $permissions['create sbir_announcement content'] = array(
-    'name' => 'create sbir_announcement content',
-    'roles' => array(),
-    'module' => 'node',
-  );
+  // Create the role if necessary.
+  $role = user_role_load_by_name('advanced content editor');
+  if (!$role) {
+    $role = new stdClass();
+    $role->name = 'advanced content editor';
+    user_role_save($role);
+  }
 
-  // Exported permission: 'create sbir_basic_page content'.
-  $permissions['create sbir_basic_page content'] = array(
-    'name' => 'create sbir_basic_page content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
+  // Add the permissions to the role.
+  $permissions = array(
+    'access toolbar',
+    'create sbir_announcement content',
+    'create sbir_basic_page content',
+    'create sbir_block content',
+    'create sbir_event content',
+    'create sbir_file content',
+    'create sbir_success_story content',
+    'delete any sbir_announcement content',
+    'delete any sbir_basic_page content',
+    'delete any sbir_block content',
+    'delete any sbir_event content',
+    'delete any sbir_file content',
+    'delete any sbir_success_story content',
+    'edit any sbir_announcement content',
+    'edit any sbir_basic_page content',
+    'edit any sbir_block content',
+    'edit any sbir_event content',
+    'edit any sbir_file content',
+    'edit any sbir_success_story content',
+    'manipulate all queues',
+    'manipulate queues',
+    'moderate content from draft to needs_review',
+    'moderate content from needs_review to draft',
+    'moderate content from needs_review to published',
   );
+  user_role_grant_permissions($role->rid, $permissions);
 
-  // Exported permission: 'create sbir_block content'.
-  $permissions['create sbir_block content'] = array(
-    'name' => 'create sbir_block content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
+  // Create the role if necessary.
+  $role = user_role_load_by_name('site manager');
+  if (!$role) {
+    $role = new stdClass();
+    $role->name = 'site manager';
+    user_role_save($role);
+  }
 
-  // Exported permission: 'create sbir_event content'.
-  $permissions['create sbir_event content'] = array(
-    'name' => 'create sbir_event content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
+  // Add the permissions to the role.
+  $permissions = array(
+    'access toolbar',
+    'create sbir_announcement content',
+    'create sbir_basic_page content',
+    'create sbir_block content',
+    'create sbir_event content',
+    'create sbir_file content',
+    'create sbir_success_story content',
+    'delete any sbir_announcement content',
+    'delete any sbir_basic_page content',
+    'delete any sbir_block content',
+    'delete any sbir_event content',
+    'delete any sbir_file content',
+    'delete any sbir_success_story content',
+    'edit any sbir_announcement content',
+    'edit any sbir_basic_page content',
+    'edit any sbir_block content',
+    'edit any sbir_event content',
+    'edit any sbir_file content',
+    'edit any sbir_success_story content',
+    'manipulate all queues',
+    'manipulate queues',
+    'moderate content from draft to needs_review',
+    'moderate content from needs_review to draft',
+    'moderate content from needs_review to published',
   );
-
-  // Exported permission: 'create sbir_file content'.
-  $permissions['create sbir_file content'] = array(
-    'name' => 'create sbir_file content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'create sbir_subscriber content'.
-  $permissions['create sbir_subscriber content'] = array(
-    'name' => 'create sbir_subscriber content',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'create sbir_success_story content'.
-  $permissions['create sbir_success_story content'] = array(
-    'name' => 'create sbir_success_story content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any sbir_announcement content'.
-  $permissions['delete any sbir_announcement content'] = array(
-    'name' => 'delete any sbir_announcement content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any sbir_basic_page content'.
-  $permissions['delete any sbir_basic_page content'] = array(
-    'name' => 'delete any sbir_basic_page content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any sbir_block content'.
-  $permissions['delete any sbir_block content'] = array(
-    'name' => 'delete any sbir_block content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any sbir_event content'.
-  $permissions['delete any sbir_event content'] = array(
-    'name' => 'delete any sbir_event content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any sbir_file content'.
-  $permissions['delete any sbir_file content'] = array(
-    'name' => 'delete any sbir_file content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any sbir_subscriber content'.
-  $permissions['delete any sbir_subscriber content'] = array(
-    'name' => 'delete any sbir_subscriber content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any sbir_success_story content'.
-  $permissions['delete any sbir_success_story content'] = array(
-    'name' => 'delete any sbir_success_story content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own sbir_announcement content'.
-  $permissions['delete own sbir_announcement content'] = array(
-    'name' => 'delete own sbir_announcement content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own sbir_basic_page content'.
-  $permissions['delete own sbir_basic_page content'] = array(
-    'name' => 'delete own sbir_basic_page content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own sbir_block content'.
-  $permissions['delete own sbir_block content'] = array(
-    'name' => 'delete own sbir_block content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own sbir_event content'.
-  $permissions['delete own sbir_event content'] = array(
-    'name' => 'delete own sbir_event content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own sbir_file content'.
-  $permissions['delete own sbir_file content'] = array(
-    'name' => 'delete own sbir_file content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own sbir_subscriber content'.
-  $permissions['delete own sbir_subscriber content'] = array(
-    'name' => 'delete own sbir_subscriber content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own sbir_success_story content'.
-  $permissions['delete own sbir_success_story content'] = array(
-    'name' => 'delete own sbir_success_story content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete revisions'.
-  $permissions['delete revisions'] = array(
-    'name' => 'delete revisions',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any sbir_announcement content'.
-  $permissions['edit any sbir_announcement content'] = array(
-    'name' => 'edit any sbir_announcement content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any sbir_basic_page content'.
-  $permissions['edit any sbir_basic_page content'] = array(
-    'name' => 'edit any sbir_basic_page content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any sbir_block content'.
-  $permissions['edit any sbir_block content'] = array(
-    'name' => 'edit any sbir_block content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any sbir_event content'.
-  $permissions['edit any sbir_event content'] = array(
-    'name' => 'edit any sbir_event content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any sbir_file content'.
-  $permissions['edit any sbir_file content'] = array(
-    'name' => 'edit any sbir_file content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any sbir_subscriber content'.
-  $permissions['edit any sbir_subscriber content'] = array(
-    'name' => 'edit any sbir_subscriber content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any sbir_success_story content'.
-  $permissions['edit any sbir_success_story content'] = array(
-    'name' => 'edit any sbir_success_story content',
-    'roles' => array(
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own sbir_announcement content'.
-  $permissions['edit own sbir_announcement content'] = array(
-    'name' => 'edit own sbir_announcement content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own sbir_basic_page content'.
-  $permissions['edit own sbir_basic_page content'] = array(
-    'name' => 'edit own sbir_basic_page content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own sbir_block content'.
-  $permissions['edit own sbir_block content'] = array(
-    'name' => 'edit own sbir_block content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own sbir_event content'.
-  $permissions['edit own sbir_event content'] = array(
-    'name' => 'edit own sbir_event content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own sbir_file content'.
-  $permissions['edit own sbir_file content'] = array(
-    'name' => 'edit own sbir_file content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own sbir_subscriber content'.
-  $permissions['edit own sbir_subscriber content'] = array(
-    'name' => 'edit own sbir_subscriber content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own sbir_success_story content'.
-  $permissions['edit own sbir_success_story content'] = array(
-    'name' => 'edit own sbir_success_story content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'revert revisions'.
-  $permissions['revert revisions'] = array(
-    'name' => 'revert revisions',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'advanced content editor' => 'advanced content editor',
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-      'site manager' => 'site manager',
-      'site moderator' => 'site moderator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'view own unpublished content'.
-  $permissions['view own unpublished content'] = array(
-    'name' => 'view own unpublished content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'advanced content editor' => 'advanced content editor',
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-      'site manager' => 'site manager',
-      'site moderator' => 'site moderator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'view revisions'.
-  $permissions['view revisions'] = array(
-    'name' => 'view revisions',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'advanced content editor' => 'advanced content editor',
-      'content author' => 'content author',
-      'content editor' => 'content editor',
-      'site manager' => 'site manager',
-      'site moderator' => 'site moderator',
-    ),
-    'module' => 'node',
-  );
-  
-  return $permissions;
+  user_role_grant_permissions($role->rid, $permissions);
 }

@@ -216,7 +216,7 @@ function subscription_create_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -257,7 +257,7 @@ function subscription_create_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -298,7 +298,7 @@ function subscription_create_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -758,7 +758,7 @@ function subscription_create_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 19,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -848,6 +848,6 @@ function subscription_create_field_instances() {
   t('Title/Position');
   t('Website');
   t('Zip Code');
-  
+
   sbir_base_update_instances($field_instances, 'sbir_subscription', 'node');
 }
