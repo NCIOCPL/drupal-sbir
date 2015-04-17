@@ -41,6 +41,13 @@
         border:solid #ccc 1px;
         background-color:#fff;
         border-top:solid 2px orange;
+        margin-top:-2px;
+      }
+      #block-superfish-1 li.sf-depth-1 ul {
+        margin-top:0;
+      }
+      #block-superfish-1 li.sf-depth-2 ul {
+        margin-top:-2px
       }
       #block-superfish-1 a.sf-depth-2
       ,#block-superfish-1 a.sf-depth-3 {
@@ -48,8 +55,8 @@
         padding:13px;
         border-bottom:solid 1px #ccc;
       }
-      #block-superfish-1 li.last a.sf-depth-2
-      ,#block-superfish-1 li.last a.sf-depth-3 {
+      #block-superfish-1 li.last>a.sf-depth-2
+      ,#block-superfish-1 li.last>a.sf-depth-3 {
         border-bottom:none;
       }
       #block-superfish-1 li.active-trail a {
@@ -102,6 +109,7 @@
       ,#block-superfish-1 a.sf-depth-3 .sf-sub-indicator {
         background: url('../images/chevron.png') no-repeat 0px 4px;
         background-size: 6px 12px;
+        background-position-x: 5px;
         width:12px;
         height:21px;
       }

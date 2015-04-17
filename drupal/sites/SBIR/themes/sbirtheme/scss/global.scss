@@ -21,14 +21,17 @@
 /* ==========================================================================
    Component Styles
    ========================================================================== */
+
 @import "components/announcement";
 @import "components/blocks";
 @import "components/branding";
 @import "components/breadcrumb";
 @import "components/dates";
 @import "components/event";
+@import "components/email_updates";
 @import "components/footer";
 @import "components/header";
+@import "components/home-page";
 @import "components/leftnav";
 @import "components/main_content";
 @import "components/navbar";
@@ -36,3 +39,4 @@
 @import "components/search-results";
 @import "components/social-media";
 @import "components/success-stories";
+@import "components/omega-css-hack";

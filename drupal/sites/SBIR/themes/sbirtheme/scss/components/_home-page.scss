@@ -1,0 +1,45 @@
+// @homepage styling goes here
+#resources-for {
+  margin-left:35px;
+  text-align:center;
+  div {
+    display:inline-block;
+    width:30%;
+  }
+  a {
+    text-decoration: none;
+  }
+  .applicants {
+    a {
+      background: url(../images/applicantsicon.png) no-repeat;
+      background-size:66%;
+      background-position:21px center;
+      height: 90px;
+      width: 94px;
+      display: block;
+      line-height: 175px;
+    }
+  }
+  .awardees {
+    a {
+      background: url(../images/awardeesicon.png) no-repeat;
+      background-size:63%;
+      background-position:center 10px;
+      height: 107px;
+      width: 79px;
+      display: block;
+      line-height: 175px;
+    }
+  }  
+  .investors {
+    a {
+      background: url(../images/investorsicon.png) no-repeat;
+      background-size:66%;
+      background-position:center 22px;
+      height: 72px;
+      width: 124px;
+      display: block;
+      line-height: 175px;
+    }
+  }
+}

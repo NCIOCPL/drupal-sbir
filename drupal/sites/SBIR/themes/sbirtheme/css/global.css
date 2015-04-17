@@ -134,26 +134,26 @@ a:visited {
    Component Styles
    ========================================================================== */
 /* line 2, ../scss/components/_announcement.scss */
-.view-announcement {
-  padding: 0 20px 15px 0px;
+.view-display-id-all {
+  padding: 0;
 }
 /* line 4, ../scss/components/_announcement.scss */
-.view-announcement .views-field-title {
+.view-display-id-all .views-field-title {
   background-color: #fff;
 }
 /* line 5, ../scss/components/_announcement.scss */
-.view-announcement .views-field-title a {
+.view-display-id-all .views-field-title a {
   font-weight: bold;
   font-size: 12px;
 }
 /* line 11, ../scss/components/_announcement.scss */
-.view-announcement .views-field-body {
+.view-display-id-all .views-field-body {
   padding: 0 20px 15px 0px;
 }
 
 /* line 16, ../scss/components/_announcement.scss */
 .view-announcement > .view-content > .views-row {
-  padding: 0 10px 0 10px;
+  margin: 0 15px;
 }
 
 /* line 21, ../scss/components/_announcement.scss */
@@ -207,43 +207,42 @@ a:visited {
   color: #fff;
   font-weight: bold;
   font-size: 14px;
-  padding: 10px 10px 10px 30px;
+  padding: 10px 10px 10px 25px;
   background-image: url(../images/blue-header-bg.png);
   background-repeat: no-repeat;
-  background-position: 5px 10px;
-  background-size: 18px;
+  background-position: 5px 11px;
+  background-size: 16px;
 }
 /* line 30, ../scss/components/_blocks.scss */
 .pane-home-page-left-blocks .views-field-body {
-  padding: 20px 20px 10px 20px;
+  padding: 15px;
 }
 /* line 34, ../scss/components/_blocks.scss */
 .pane-home-page-left-blocks .views-field-field-footer, .pane-home-page-left-blocks .view-footer {
   text-align: right;
-  margin-right: 10px;
-  padding-bottom: 15px;
+  padding: 0 15px 15px;
 }
-/* line 40, ../scss/components/_blocks.scss */
+/* line 39, ../scss/components/_blocks.scss */
 .pane-home-page-left-blocks a {
   font-weight: bold;
   font-size: 12px;
 }
 
-/* line 45, ../scss/components/_blocks.scss */
+/* line 44, ../scss/components/_blocks.scss */
 .pane-announcement-latest {
   font-family: 'Verdana';
 }
-/* line 47, ../scss/components/_blocks.scss */
+/* line 46, ../scss/components/_blocks.scss */
 .pane-announcement-latest .view-announcement {
   border: solid 10px #FDD8A9;
 }
-/* line 50, ../scss/components/_blocks.scss */
+/* line 49, ../scss/components/_blocks.scss */
 .pane-announcement-latest .views-row {
   border-bottom: 1px solid #ccc;
-  padding: 0 10px 15px 10px;
+  padding: 10px 0;
   margin: 10px;
 }
-/* line 55, ../scss/components/_blocks.scss */
+/* line 54, ../scss/components/_blocks.scss */
 .pane-announcement-latest .pane-title {
   background-color: #F06B10;
   /*margin-bottom: 15px;*/
@@ -251,26 +250,35 @@ a:visited {
   color: #fff;
   font-weight: bold;
   font-size: 14px;
-  padding: 10px 10px 10px 30px;
+  padding: 10px 10px 10px 25px;
   background-image: url(../images/orange-header-bg.png);
   background-repeat: no-repeat;
-  background-position: 5px 10px;
-  background-size: 18px;
+  background-position: 5px 11px;
+  background-size: 16px;
 }
-/* line 68, ../scss/components/_blocks.scss */
+/* line 67, ../scss/components/_blocks.scss */
 .pane-announcement-latest .views-field-title {
   margin-bottom: 10px;
 }
-/* line 71, ../scss/components/_blocks.scss */
+/* line 70, ../scss/components/_blocks.scss */
 .pane-announcement-latest .view-footer {
   text-align: right;
-  margin-right: 10px;
-  margin-bottom: 15px;
+  margin: 10px;
+}
+/* line 73, ../scss/components/_blocks.scss */
+.pane-announcement-latest .view-footer a {
+  font-weight: bold;
+  font-size: 12px;
 }
 
-/* line 78, ../scss/components/_blocks.scss */
+/* line 80, ../scss/components/_blocks.scss */
 .view-display-id-left_blocks > .view-content > .views-row > .views-field-edit-node {
-  margin-left: 20px;
+  margin: 10px 0 0 15px;
+}
+
+/* line 84, ../scss/components/_blocks.scss */
+.views-field-edit-node span a {
+  font-size: 10px;
 }
 
 /* line 2, ../scss/components/_branding.scss */
@@ -382,7 +390,7 @@ a:visited {
   font-size: 12px;
   text-decoration: none;
 }
-/* line 15, ../scss/components/_event.scss */
+/* line 16, ../scss/components/_event.scss */
 .view-event .views-field-field-ics-file a {
   background: url(../images/addtocalendar.png) no-repeat;
   background-size: 22px;
@@ -393,65 +401,75 @@ a:visited {
   padding-top: 3px;
 }
 
-/* line 26, ../scss/components/_event.scss */
+/* line 27, ../scss/components/_event.scss */
 .pane-event-upcoming
 , .pane-event-recent {
   padding: 15px;
 }
-/* line 28, ../scss/components/_event.scss */
+/* line 29, ../scss/components/_event.scss */
 .pane-event-upcoming
 .views-row, .pane-event-recent .views-row {
   margin: 0 0 15px 0;
 }
-/* line 32, ../scss/components/_event.scss */
+/* line 33, ../scss/components/_event.scss */
 .pane-event-upcoming
 .views-field-field-event-date, .pane-event-recent .views-field-field-event-date {
   font-size: 11px !important;
   color: #696969 !important;
 }
-
 /* line 37, ../scss/components/_event.scss */
+.pane-event-upcoming
+.views-field-field-ics-file, .pane-event-recent .views-field-field-ics-file {
+  margin-top: 5px;
+}
+
+/* line 41, ../scss/components/_event.scss */
 .view-display-id-details {
   padding: 15px 0 0 0;
 }
-/* line 39, ../scss/components/_event.scss */
+/* line 43, ../scss/components/_event.scss */
 .view-display-id-details .views-field-field-event-date {
   font-weight: bold;
   float: left;
   padding-left: 15px;
 }
-/* line 44, ../scss/components/_event.scss */
+/* line 48, ../scss/components/_event.scss */
 .view-display-id-details .views-field-field-ics-file {
   float: right;
   margin-right: 15px;
 }
-/* line 47, ../scss/components/_event.scss */
+/* line 51, ../scss/components/_event.scss */
 .view-display-id-details .views-field-field-ics-file a {
   text-decoration: underline;
   text-indent: 35px;
 }
-/* line 52, ../scss/components/_event.scss */
+/* line 56, ../scss/components/_event.scss */
 .view-display-id-details .views-field-field-venue {
   clear: both;
   padding-left: 15px;
 }
-/* line 56, ../scss/components/_event.scss */
+/* line 60, ../scss/components/_event.scss */
 .view-display-id-details .views-field-field-street-address {
   padding-left: 15px;
 }
-/* line 59, ../scss/components/_event.scss */
+/* line 63, ../scss/components/_event.scss */
 .view-display-id-details .views-field-nothing {
   padding-left: 15px;
 }
-/* line 62, ../scss/components/_event.scss */
+/* line 66, ../scss/components/_event.scss */
 .view-display-id-details .views-field-body {
   margin: 15px 0 15px 0;
   border-top: solid 1px #ccc;
   border-bottom: solid 1px #ccc;
 }
-/* line 64, ../scss/components/_event.scss */
+/* line 68, ../scss/components/_event.scss */
 .view-display-id-details .views-field-body .field-content {
   padding: 15px;
+}
+
+/* line 2, ../scss/components/_email_updates.scss */
+.node-sbir_subscription-form {
+  margin-left: 15px;
 }
 
 /* line 2, ../scss/components/_footer.scss */
@@ -509,6 +527,51 @@ a:visited {
   margin: 0;
 }
 
+/* line 2, ../scss/components/_home-page.scss */
+#resources-for {
+  margin-left: 35px;
+  text-align: center;
+}
+/* line 5, ../scss/components/_home-page.scss */
+#resources-for div {
+  display: inline-block;
+  width: 30%;
+}
+/* line 9, ../scss/components/_home-page.scss */
+#resources-for a {
+  text-decoration: none;
+}
+/* line 13, ../scss/components/_home-page.scss */
+#resources-for .applicants a {
+  background: url(../images/applicantsicon.png) no-repeat;
+  background-size: 66%;
+  background-position: 21px center;
+  height: 90px;
+  width: 94px;
+  display: block;
+  line-height: 175px;
+}
+/* line 24, ../scss/components/_home-page.scss */
+#resources-for .awardees a {
+  background: url(../images/awardeesicon.png) no-repeat;
+  background-size: 63%;
+  background-position: center 10px;
+  height: 107px;
+  width: 79px;
+  display: block;
+  line-height: 175px;
+}
+/* line 35, ../scss/components/_home-page.scss */
+#resources-for .investors a {
+  background: url(../images/investorsicon.png) no-repeat;
+  background-size: 66%;
+  background-position: center 22px;
+  height: 72px;
+  width: 124px;
+  display: block;
+  line-height: 175px;
+}
+
 /* line 3, ../scss/components/_leftnav.scss */
 #left-nav .pane-title {
   color: #fff;
@@ -556,6 +619,10 @@ a:visited {
   padding-left: 35px;
 }
 /* line 49, ../scss/components/_leftnav.scss */
+#left-nav .menu-level-2 > ul.menu > li.expanded > ul.menu li > a.active {
+  background-position: 16px 8px;
+}
+/* line 53, ../scss/components/_leftnav.scss */
 #left-nav .pane-content a {
   text-decoration: none;
   font-family: "Verdana";
@@ -564,6 +631,10 @@ a:visited {
   color: #000;
   padding: 10px 10px 10px 15px;
   display: block;
+}
+/* line 62, ../scss/components/_leftnav.scss */
+#left-nav .pane-content li.active-trail ul > li.active-trail > a.active-trail {
+  padding: 0;
 }
 
 /* line 3, ../scss/components/_main_content.scss */
@@ -729,74 +800,84 @@ a:visited {
   border: solid #ccc 1px;
   background-color: #fff;
   border-top: solid 2px orange;
+  margin-top: -2px;
 }
-/* line 45, ../scss/components/_navbar.scss */
+/* line 46, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 ul {
+  margin-top: 0;
+}
+/* line 49, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-2 ul {
+  margin-top: -2px;
+}
+/* line 52, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 {
   font-size: 12px;
   padding: 13px;
   border-bottom: solid 1px #ccc;
 }
-/* line 51, ../scss/components/_navbar.scss */
-#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.last a.sf-depth-2
-, #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.last a.sf-depth-3 {
+/* line 58, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.last > a.sf-depth-2
+, #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.last > a.sf-depth-3 {
   border-bottom: none;
 }
-/* line 55, ../scss/components/_navbar.scss */
+/* line 62, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.active-trail a {
   color: #294e80;
 }
-/* line 58, ../scss/components/_navbar.scss */
+/* line 65, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-menu.sf-horizontal.sf-shadow ul {
   background: none;
   padding: 0 !important;
 }
-/* line 62, ../scss/components/_navbar.scss */
+/* line 69, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li {
   background-color: #fff;
 }
-/* line 66, ../scss/components/_navbar.scss */
+/* line 73, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li {
   background-color: #fff;
 }
-/* line 70, ../scss/components/_navbar.scss */
+/* line 77, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li a
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li a {
   color: #646363;
 }
-/* line 74, ../scss/components/_navbar.scss */
+/* line 81, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li a {
   padding: 20px;
 }
-/* line 77, ../scss/components/_navbar.scss */
+/* line 84, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #superfish-1 > li.active-trail {
   background-image: url(../images/white_nav.png);
   background-repeat: repeat-x;
 }
-/* line 87, ../scss/components/_navbar.scss */
+/* line 94, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #superfish-1-toggle span {
   font-family: 'Montserrat', 'Avant Garde';
   color: #fff;
   font-size: 12px;
 }
-/* line 92, ../scss/components/_navbar.scss */
+/* line 99, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-accordion-toggle {
   text-align: center;
   padding: 10px;
 }
-/* line 96, ../scss/components/_navbar.scss */
+/* line 103, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-sub-indicator {
   background: none;
   width: 12px;
   height: 21px;
 }
-/* line 101, ../scss/components/_navbar.scss */
+/* line 108, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2 .sf-sub-indicator
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 .sf-sub-indicator {
   background: url("../images/chevron.png") no-repeat 0px 4px;
   background-size: 6px 12px;
+  background-position-x: 5px;
   width: 12px;
   height: 21px;
 }
@@ -940,5 +1021,16 @@ a:visited {
 
 /* line 15, ../scss/components/_success-stories.scss */
 .view-success-story > .view-content > .views-row {
-  padding: 0 15px 0 20px;
+  padding: 0 15px;
+}
+
+/* fixing clearfix issues with padding at bottom of page */
+/* line 4, ../scss/components/_omega-css-hack.scss */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "";
+  clear: both;
+  height: 0;
 }

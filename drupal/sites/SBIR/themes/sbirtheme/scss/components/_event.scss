@@ -12,6 +12,7 @@
   .views-field-body {
 
   }
+
   .views-field-field-ics-file a {
     background: url(../images/addtocalendar.png) no-repeat;
     background-size: 22px;
@@ -33,6 +34,9 @@
     font-size:11px!important;
     color:#696969!important;
   }
+  .views-field-field-ics-file {
+    margin-top: 5px;
+  }   
 }
 .view-display-id-details {
   padding: 15px 0 0 0;
