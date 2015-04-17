@@ -104,7 +104,7 @@ function _email_notification_form_submit(&$form, &$form_state) {
 
     $subject = $_SESSION['sbir_email_subject'];
 
-    dpm($form_state['values']);
+    //dpm($form_state['values']);
 
     $body = "";
     $line = array();
