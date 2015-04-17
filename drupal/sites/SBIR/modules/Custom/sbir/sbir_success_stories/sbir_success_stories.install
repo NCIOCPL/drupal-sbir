@@ -10,7 +10,7 @@ function sbir_success_stories_install() {
    */
   $types = array(0 => 'sbir_success_story');
   sbir_base_create_nodequeue('all_success_stories', 'All Success Stories', $types);
-  sbir_base_create_nodequeue('success_stories', 'Success Stories', $types);
+  sbir_base_create_nodequeue('featured_success_stories', 'Featured Success Stories', $types);
 }
 
 /*

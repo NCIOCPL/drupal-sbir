@@ -17,9 +17,18 @@ function sbir_home_page_install() {
   $title = 'What are the NCI SBIR & STTR Programs?';
   $alias = '';
   $body_text = '<p>Learn How NCI SBIR &amp; STTR Programs have helped '
-      . 'small businesses with funding awards &nbsp;that help advance cancer research.</p>';
+      . 'small businesses with funding awards that help advance cancer research.</p>';
   $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
 
+  $title = 'Resources For';
+  $alias = '';  
+  $body_text = '<div id="resources-for">'
+      . '<div class="applicants"><a href="/resources/forapplicants" title="Applicants Resources">Applicants</a></div>'
+      . '<div class="awardees"><a href="/resources/foraawardees" title="Awardees Resources">Awardees</a></div>'
+      . '<div class="investors"><a href="/resources/forinvestors" title="Investors Resources">Investors</a></div>'
+      . '</div>';
+  $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
+  
   $title = 'Success Stories';
   $alias = 'success-stories-block';
   $body_text = '<p>The SBIR &amp; STTR Programs are one of the largest sources of '

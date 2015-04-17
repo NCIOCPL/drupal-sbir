@@ -10,6 +10,7 @@ function sbir_basic_pages_install() {
   sbir_basic_pages_create_funding_pages();
   sbir_basic_pages_create_investing_pages();
   sbir_basic_pages_create_program_pages();
+  sbir_basic_pages_create_resources_pages();
   sbir_basic_pages_create_events_pages();
 }
 

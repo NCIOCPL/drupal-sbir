@@ -80,8 +80,11 @@ $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 
 $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
 $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
 $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-  'success_stories' => 'success_stories',
+  'featured_success_stories' => 'featured_success_stories',
   'home_page_blocks' => 0,
+  'all_announcements' => 0,
+  'all_success_stories' => 0,
+  'latest_announcements' => 0,
 );
 $handler->display->display_options['defaults']['sorts'] = FALSE;
 /* Sort criterion: Nodequeue: Position */
@@ -119,6 +122,30 @@ $handler->display->display_options['relationships']['nodequeue_rel']['names'] = 
   'home_page_blocks' => 0,
   'announcement' => 0,
   'all_announcements' => 0,
+);
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Edit link */
+$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['label'] = '';
+$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['edit_node']['text'] = 'Edit Success Story';
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+/* Field: Content: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['body']['settings'] = array(
+  'trim_length' => '1000',
 );
 $handler->display->display_options['defaults']['sorts'] = FALSE;
 /* Sort criterion: Nodequeue: Position */

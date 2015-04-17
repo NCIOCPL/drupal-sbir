@@ -195,7 +195,7 @@ function _email_notification_form_submit(&$form, &$form_state) {
 
     //dpm($line);
 
-    $body = "" . implode("\n\r", $line) . "";
+    $body = "" . implode("\n\r\n\r", $line) . "";
     //dpm($body);
     
     $params = array(
