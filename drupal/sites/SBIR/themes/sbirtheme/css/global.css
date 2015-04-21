@@ -583,7 +583,11 @@ a:visited {
   display: block;
   line-height: 175px;
 }
-/* line 24, ../scss/components/_home-page.scss */
+/* line 23, ../scss/components/_home-page.scss */
+#resources-for .awardees {
+  margin-left: 25px;
+}
+/* line 25, ../scss/components/_home-page.scss */
 #resources-for .awardees a {
   background: url(../images/awardeesicon.png) no-repeat;
   background-size: 63%;
@@ -593,7 +597,7 @@ a:visited {
   display: block;
   line-height: 175px;
 }
-/* line 35, ../scss/components/_home-page.scss */
+/* line 36, ../scss/components/_home-page.scss */
 #resources-for .investors a {
   background: url(../images/investorsicon.png) no-repeat;
   background-size: 66%;
