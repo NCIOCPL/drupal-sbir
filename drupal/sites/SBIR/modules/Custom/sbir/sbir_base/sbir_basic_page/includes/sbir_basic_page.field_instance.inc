@@ -57,6 +57,62 @@ function basic_page_create_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-sbir_basic_page-field_banner'
+  $field_instances['node-sbir_basic_page-field_banner'] = array(
+    'bundle' => 'sbir_basic_page',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 9,
+      ),
+      'search_index' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_banner',
+    'label' => 'Banner',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-sbir_basic_page-field_date_display_mode'
   $field_instances['node-sbir_basic_page-field_date_display_mode'] = array(
     'bundle' => 'sbir_basic_page',
@@ -96,7 +152,7 @@ function basic_page_create_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -143,7 +199,7 @@ function basic_page_create_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -203,7 +259,7 @@ function basic_page_create_field_instances() {
         'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -263,7 +319,7 @@ function basic_page_create_field_instances() {
         'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -323,7 +379,7 @@ function basic_page_create_field_instances() {
         'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -419,15 +475,15 @@ function basic_page_create_field_instances() {
   // Included for use with string extractors like potx.
   t('(Meta)Description');
   t('(Meta)Keywords');
+  t('Banner');
   t('Body');
   t('Date Display Mode');
   t('Enter a description. Limit your description to about 20 words, with a maximum of 255 characters. It should not contain any HTML tags or other formatting.');
   t('Enter a short abstract. Typically it is one sentence.');
-  t('File');
   t('Footer');
   t('Posted Date');
   t('Reviewed Date');
   t('Updated Date');
-  
+
   sbir_base_update_instances($field_instances, 'sbir_basic_page', 'node');
 }

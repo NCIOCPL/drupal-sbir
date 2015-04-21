@@ -1,7 +1,7 @@
 <?php
 
 function file_create_field_instances() {
-$field_instances = array();
+  $field_instances = array();
 
   // Exported field_instance: 'node-sbir_file-field_file'
   $field_instances['node-sbir_file-field_file'] = array(

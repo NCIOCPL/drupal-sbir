@@ -16,6 +16,31 @@ function sbir_home_page_ctools_plugin_api($module, $api) {
   }
 }
 
+/**
+ * Implements hook_block_info().
+ */
+function sbir_home_page_block_info() {
+  $blocks = array();
+  $blocks['home_page_banner'] = array(
+    'info' => t('Home Page Banner'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function sbir_home_page_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'home_page_banner':
+      $block['subject'] = 'Home Page Banner';
+      $block['content'] = _get_home_page_banner_content();
+      break;
+  }
+  return $block;
+}
+
 function sbir_home_page_create_nodequeue() {
 
   $queue = array(
@@ -40,12 +65,32 @@ function sbir_home_page_create_nodequeue() {
     'count' => 0,
     'add_subqueue' => array(
       1 => 'Home Page Blocks',
-    )    
+    )
   );
 
   $object = sbir_base_convert_array_to_object($queue);
 
   $qid = nodequeue_save($object);
-  
+
   return $qid;
+}
+
+function _get_home_page_banner_content() {
+  $output = "";
+
+  if (drupal_is_front_page()) {
+    $path = drupal_lookup_path("source", "home-page-banner");
+    $node = menu_get_object('node', 1, $path);
+
+
+    $array = array($node->nid);
+    $view = views_get_view('banner');
+    $view->set_display("banner");
+    $view->set_arguments($array);
+    $view->pre_execute();
+    $view->execute();
+    $content = $view->render();
+    $output = $content;
+  }
+  return $output;
 }

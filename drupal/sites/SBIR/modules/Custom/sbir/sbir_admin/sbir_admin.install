@@ -4,7 +4,7 @@
  * Implements hook_install
  */
 
-function sbir_install() {
+function sbir_admin_install() {
   
 }
 
@@ -12,5 +12,5 @@ function sbir_install() {
  * Implements hook_enable
  */
 
-function sbir_enable() {
+function sbir_admin_enable() {
 }

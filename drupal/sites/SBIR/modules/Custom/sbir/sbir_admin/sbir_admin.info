@@ -1,0 +1,7 @@
+name = SBIR Admin
+description = A module to configure various settings for the SBIR site
+core = 7.x
+package = SBIR
+version = 7.x-1.0
+project = sbir_admin
+timestamp = 1429377844

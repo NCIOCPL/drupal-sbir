@@ -1,0 +1,7 @@
+name = SBIR Search
+description = This module customizes search results
+core = 7.x
+package = SBIR
+version = 7.x-1.0
+project = sbir_search
+timestamp = 1429400579

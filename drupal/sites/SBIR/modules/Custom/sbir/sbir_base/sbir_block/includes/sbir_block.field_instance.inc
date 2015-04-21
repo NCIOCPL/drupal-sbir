@@ -92,7 +92,6 @@ function block_create_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Comment');
   t('Footer');
 
   sbir_base_update_instances($field_instances, 'sbir_block', 'node');

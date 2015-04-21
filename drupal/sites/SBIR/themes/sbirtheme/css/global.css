@@ -781,7 +781,7 @@ a:visited {
 /* line 25, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 > a {
   text-transform: uppercase;
-  padding: 20px 30px 20px 30px;
+  padding: 20px 25px 20px 30px;
 }
 /* line 29, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 > ul {
@@ -951,6 +951,21 @@ a:visited {
 /* line 13, ../scss/components/_search-results.scss */
 .page-search .title {
   margin-left: 13px;
+}
+/* line 16, ../scss/components/_search-results.scss */
+.page-search ul.pager {
+  text-align: left;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+/* line 21, ../scss/components/_search-results.scss */
+.page-search li.pager-item
+, .page-search li.pager-next
+, .page-search li.pager-last
+, .page-search li.pager-previous
+, .page-search li.pager-first
+, .page-search li.pager-current {
+  margin-left: 0;
 }
 
 /* line 2, ../scss/components/_social-media.scss */

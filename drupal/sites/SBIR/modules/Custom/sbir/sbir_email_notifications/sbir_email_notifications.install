@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Implements hook_enable
+ * Implements hook_install
  */
 
 function sbir_email_notifications_install() {

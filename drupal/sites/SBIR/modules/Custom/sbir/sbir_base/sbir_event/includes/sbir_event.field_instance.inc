@@ -1,7 +1,7 @@
 <?php
 
 function event_create_field_instances() {
-$field_instances = array();
+  $field_instances = array();
 
   // Exported field_instance: 'node-sbir_event-body'
   $field_instances['node-sbir_event-body'] = array(
@@ -44,6 +44,55 @@ $field_instances = array();
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-sbir_event-field_banner'
+  $field_instances['node-sbir_event-field_banner'] = array(
+    'bundle' => 'sbir_event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 20,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_banner',
+    'label' => 'Banner',
+    'required' => FALSE,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 13,
     ),
   );
 
@@ -578,7 +627,7 @@ $field_instances = array();
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textarea',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -614,7 +663,7 @@ $field_instances = array();
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textfield',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -622,6 +671,7 @@ $field_instances = array();
   // Included for use with string extractors like potx.
   t('(Meta)Description');
   t('(Meta)Keywords');
+  t('Banner');
   t('Body');
   t('City');
   t('Date Display Mode');

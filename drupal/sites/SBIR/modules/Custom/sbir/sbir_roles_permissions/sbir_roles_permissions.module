@@ -12,6 +12,7 @@ function set_sbir_permissions() {
   // Add the permissions to the role.
   $permissions = array(
     'access toolbar',
+    /*'administer sbir_admin',*/
     'create sbir_announcement content',
     'create sbir_basic_page content',
     'create sbir_block content',

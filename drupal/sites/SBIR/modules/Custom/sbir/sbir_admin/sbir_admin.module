@@ -1,0 +1,110 @@
+<?php
+
+/*
+ * Implements hook_permission
+ */
+
+function sbir_admin_permission() {
+  $permissions = array(
+    'administer sbir' => array(
+      'title' => t('SBIR'),
+      'restrict access' => TRUE,
+    ),
+  );
+  return $permissions;
+}
+
+/*
+ * Implements hook_menu
+ */
+
+function sbir_admin_menu() {
+  $items['admin/config/sbir/admin'] = array(
+    'title' => 'SBIR',
+    'description' => 'Administer SBIR',
+    'position' => 'right',
+    'weight' => 0,
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('administer sbir'),
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system')
+  );
+  $items['admin/config/sbir/admin/settings'] = array(
+    'title' => 'Settings',
+    'description' => t('Configure SBIR'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sbir_admin_settings_form'),
+    'access arguments' => array('administer sbir'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+function sbir_admin_settings_form($form_state) {
+/*
+  // Content Settings
+  $form['content'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Content'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['content']['upload'] = array(
+    '#name' => 'files[' . implode('_', $form['#parents']) . ']',
+    '#type' => 'file',
+    '#title' => t('Home page banner'),
+    '#required' => TRUE,
+    //'#title_display' => 'invisible',
+    '#size' => 22,
+    '#theme_wrappers' => array(),
+    //'#weight' => -10,
+    '#description' => 'This banner appears on the home page.',
+  );
+*/
+  // Email Subscription Settings
+  $form['email'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Email Subscription'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['email']['from'] = array(
+    '#type' => 'textfield',
+    '#title' => t('From Address'),
+    '#required' => TRUE,
+    '#default_value' => 'cedric.priestley@nih.gov',
+    "#description" => "This is be used as the 'from' address for signup notifications"
+  );
+  $form['email']['to'] = array(
+    '#type' => 'textfield',
+    '#title' => t('To Address'),
+    '#required' => TRUE,
+    '#default_value' => 'cedric.priestley@nih.gov',
+    '#description' => 'Signup notifications are sent to this email address',
+  );
+  $form['email']['new_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('New Subscription Subject'),
+    '#required' => TRUE,
+    '#default_value' => 'SBIR & STTR Email Signup',
+    '#description' => 'This subject is used for new signup subscriptions',
+  );
+  $form['email']['change_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Change Subscription Subject'),
+    '#required' => TRUE,
+    '#default_value' => 'SBIR & STTR Email Change',
+    '#description' => 'This subject is used for updated email subscriptions',
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Save',
+  );
+  return $form;
+}
+
+function sbir_admin_settings_form_submit($form, &$form_state) {
+  dpm($form_state);
+}

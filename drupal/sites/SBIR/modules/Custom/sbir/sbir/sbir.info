@@ -19,8 +19,6 @@ dependencies[] = search
 dependencies[] = superfish
 dependencies[] = views
 dependencies[] = views_content
-dependencies[] = workbench
-dependencies[] = workbench_moderation
 dependencies[] = wysiwyg
 
 dependencies[] = nci_user_roles
@@ -44,7 +42,11 @@ dependencies[] = sbir_basic_pages
 dependencies[] = sbir_social_media
 dependencies[] = sbir_home_page
 dependencies[] = sbir_global_template
+dependencies[] = sbir_search
+dependencies[] = workbench
+dependencies[] = workbench_moderation
 dependencies[] = sbir_roles_permissions
+;dependencies[] = sbir_admin
 
 
 

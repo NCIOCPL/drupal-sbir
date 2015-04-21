@@ -6,6 +6,7 @@
 
 function sbir_basic_pages_install() {
   variable_set('page_manager_node_view_disabled', FALSE);
+  sbir_basic_pages_create_home_page();
   sbir_basic_pages_create_about_pages();
   sbir_basic_pages_create_funding_pages();
   sbir_basic_pages_create_investing_pages();

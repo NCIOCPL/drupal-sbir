@@ -1,7 +1,7 @@
 <?php
 
 function announcement_create_field_instances() {
-  $field_instances = array();
+$field_instances = array();
 
   // Exported field_instance: 'node-sbir_announcement-body'
   $field_instances['node-sbir_announcement-body'] = array(

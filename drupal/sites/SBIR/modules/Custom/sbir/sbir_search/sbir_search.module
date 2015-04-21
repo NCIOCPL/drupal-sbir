@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_query_alter
+ */
+function sbir_search_query_alter(&$query) {
+
+  // This is a search result query and we want to change the
+  // number of search results per page to 16.
+  if ($query instanceof PagerDefault
+    && ($tables = $query->getTables())
+    && isset($tables['i']['table'])
+    && $tables['i']['table'] === 'search_index') {
+    $query->limit(20);
+  }
+}

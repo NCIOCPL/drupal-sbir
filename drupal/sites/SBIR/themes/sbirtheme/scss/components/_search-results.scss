@@ -13,4 +13,17 @@
   .title {
     margin-left:13px;
   }
+  ul.pager {
+    text-align: left;
+    margin-top: 30px;
+    margin-left:10px;
+  }
+  li.pager-item 
+  , li.pager-next
+  , li.pager-last
+  , li.pager-previous
+  , li.pager-first
+  , li.pager-current {
+    margin-left:0;
+  }
 }

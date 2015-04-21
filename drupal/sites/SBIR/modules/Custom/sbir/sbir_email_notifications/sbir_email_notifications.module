@@ -88,7 +88,6 @@ function sbir_email_notifications_node_submit($node, $form, &$form_state) {
   //validate email
   //validate website
   dpm($node);
-  exit;
   }
  */
 

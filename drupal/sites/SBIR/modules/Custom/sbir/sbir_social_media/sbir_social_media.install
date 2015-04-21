@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Implements hook_enable
+ * Implements hook_install
  */
 
 function sbir_social_media_install() {

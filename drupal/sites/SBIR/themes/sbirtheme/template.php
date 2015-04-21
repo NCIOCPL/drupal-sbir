@@ -53,12 +53,15 @@ function sbirtheme_block_view_alter(&$data, $block) {
         $title = $value['#localized_options']['attributes']['title'];
         if ($title == 'Sign Up for Updates') {
           $data['content'][$key]['#attributes']['class'][] = 'email-link';
+          $data['content'][$key]['#attributes']['class'][] = 'social-media-link';
         }
         if ($title == 'Connect with us on LinkedIn') {
           $data['content'][$key]['#attributes']['class'][] = 'linkedin-link';
+          $data['content'][$key]['#attributes']['class'][] = 'social-media-link';
         }
         if ($title == 'Follow us on Twitter') {
           $data['content'][$key]['#attributes']['class'][] = 'twitter-link';
+          $data['content'][$key]['#attributes']['class'][] = 'social-media-link';
         }
       }
     }

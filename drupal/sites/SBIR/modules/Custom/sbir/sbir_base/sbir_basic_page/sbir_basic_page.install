@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Implements hook_enable
+ * Implements hook_install
  */
 
 function sbir_basic_page_install() {
@@ -22,10 +22,7 @@ function sbir_basic_page_enable() {
   variable_set('node_preview_sbir_basic_page', '1');
 
   // set available menus for the basic page content type
-  $menu_options = array(
-    '0' => 'menu-footer-menu',
-    '1' => 'main-menu',
-    '2' => 'menu-social-media');
+  $menu_options = array('0' => 'main-menu');
 
   variable_set('menu_options_sbir_basic_page', $menu_options);
 

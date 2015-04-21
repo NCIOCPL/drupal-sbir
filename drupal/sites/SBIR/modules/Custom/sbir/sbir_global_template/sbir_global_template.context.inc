@@ -4,7 +4,7 @@
  * Implements hook_context_default_contexts().
  */
 function sbir_global_template_context_default_contexts() {
-  $export = array();
+ $export = array();
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -40,11 +40,17 @@ function sbir_global_template_context_default_contexts() {
           'region' => 'menu',
           'weight' => '-9',
         ),
-        'block-1' => array(
-          'module' => 'block',
-          'delta' => '1',
+        'sbir_home_page-home_page_banner' => array(
+          'module' => 'sbir_home_page',
+          'delta' => 'home_page_banner',
           'region' => 'header_first',
           'weight' => '-10',
+        ),
+        'views-banner-banner' => array(
+          'module' => 'views',
+          'delta' => 'banner-banner',
+          'region' => 'header_first',
+          'weight' => '-9',
         ),
         'menu-menu-footer-menu' => array(
           'module' => 'menu',
@@ -57,10 +63,9 @@ function sbir_global_template_context_default_contexts() {
   );
   $context->condition_mode = 1;
 
-// Translatables
-// Included for use with string extractors like potx.
+  // Translatables
+  // Included for use with string extractors like potx.
   t('Global');
-
   $export['global'] = $context;
 
   return $export;
