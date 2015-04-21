@@ -473,7 +473,11 @@ a:visited {
 }
 
 /* line 2, ../scss/components/_footer.scss */
-#zone-footer-wrapper {
+#section-footer {
+  margin-top: 50px;
+}
+/* line 4, ../scss/components/_footer.scss */
+#section-footer #zone-footer-wrapper {
   width: 100%;
   margin-top: 30px;
   padding: 25px 0 25px 0;
@@ -483,46 +487,70 @@ a:visited {
   bottom:0;*/
   margin-top: 50px;
 }
-/* line 11, ../scss/components/_footer.scss */
-#zone-footer-wrapper #block-menu-menu-footer-menu {
+/* line 13, ../scss/components/_footer.scss */
+#section-footer #zone-footer-wrapper #block-menu-menu-footer-menu {
+  /*
   max-width: 960px;
   margin-left: auto;
-  margin-right: auto;
-}
-/* line 16, ../scss/components/_footer.scss */
-#zone-footer-wrapper #block-menu-menu-footer-menu ul li {
-  list-style: none;
-  float: left;
+  margin-right: auto; 
+  */
 }
 /* line 19, ../scss/components/_footer.scss */
-#zone-footer-wrapper #block-menu-menu-footer-menu ul li a {
+#section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul {
+  text-align: center;
+}
+/* line 21, ../scss/components/_footer.scss */
+#section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0 !important;
+}
+/* line 26, ../scss/components/_footer.scss */
+#section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul li a {
   text-decoration: none;
   font-weight: normal;
   font-size: 14px;
   font-family: 'Montserrat', 'Avant Garde';
   color: #696969;
 }
-/* line 27, ../scss/components/_footer.scss */
-#zone-footer-wrapper #block-menu-menu-footer-menu ul li::after {
-  content: " |";
+/* line 34, ../scss/components/_footer.scss */
+#section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul li::after {
+  content: "   |";
 }
-/* line 30, ../scss/components/_footer.scss */
-#zone-footer-wrapper #block-menu-menu-footer-menu ul li.last::after {
+/* line 37, ../scss/components/_footer.scss */
+#section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul li.last::after {
   content: "";
+}
+/* line 42, ../scss/components/_footer.scss */
+#section-footer #zone-footer-wrapper #zone-footer {
+  width: 960px;
+  max-width: 960 !important;
 }
 
 /* line 4, ../scss/components/_header.scss */
 #zone-header-wrapper {
-  max-width: 960px;
+  /*max-width: 960px;*/
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15px;
 }
-/* line 11, ../scss/components/_header.scss */
-#zone-header-wrapper #zone-header img {
-  width: 960px;
+/* line 10, ../scss/components/_header.scss */
+#zone-header-wrapper #zone-header {
+  width: 100%;
+  max-width: 100% !important;
+  margin: 0 !important;
 }
 /* line 14, ../scss/components/_header.scss */
+#zone-header-wrapper #zone-header .grid-12 {
+  width: 100%;
+  max-width: 100% !important;
+}
+/* line 18, ../scss/components/_header.scss */
+#zone-header-wrapper #zone-header img {
+  width: 100%;
+}
+/* line 21, ../scss/components/_header.scss */
 #zone-header-wrapper #zone-header #region-header-first {
   margin: 0;
 }

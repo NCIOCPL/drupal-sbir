@@ -2,14 +2,21 @@
 
 
 #zone-header-wrapper {
-  max-width: 960px;
+  /*max-width: 960px;*/
 
   margin-left: auto;
   margin-right: auto;
   margin-bottom :15px;
   #zone-header {
+    width: 100%;
+    max-width: 100%!important;
+    margin: 0!important;    
+    .grid-12 {
+      width: 100%;
+      max-width: 100%!important;
+    }
     img {
-      width:960px;
+      width:100%;
     }
     #region-header-first {
       margin:0;
