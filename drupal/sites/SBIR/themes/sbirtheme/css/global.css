@@ -514,8 +514,9 @@ a:visited {
   display: inline-block;
   padding: 0;
   margin: 0 !important;
+  margin-left: 3px !important;
 }
-/* line 29, ../scss/components/_footer.scss */
+/* line 30, ../scss/components/_footer.scss */
 #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul li a {
   text-decoration: none;
   font-weight: normal;
@@ -523,16 +524,16 @@ a:visited {
   font-family: 'Montserrat', 'Avant Garde';
   color: #696969;
 }
-/* line 37, ../scss/components/_footer.scss */
+/* line 38, ../scss/components/_footer.scss */
 #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul li::after {
   content: "   |";
 }
-/* line 40, ../scss/components/_footer.scss */
+/* line 41, ../scss/components/_footer.scss */
 #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul li.last::after
 , #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul li.no-ext-icon:after {
   content: "";
 }
-/* line 46, ../scss/components/_footer.scss */
+/* line 47, ../scss/components/_footer.scss */
 #section-footer #zone-footer-wrapper #zone-footer {
   width: 960px;
   max-width: 960 !important;
