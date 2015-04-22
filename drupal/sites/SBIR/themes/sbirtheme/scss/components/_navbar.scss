@@ -18,13 +18,13 @@
       #block-superfish-1 a {
         text-decoration: none;
         font-weight: 400;
-        font-size:12px;
+        font-size:14px;
         font-family: 'Montserrat', 'Avant Garde';
         color:#fff;
       }
       #block-superfish-1 li.sf-depth-1>a {
         text-transform: uppercase;
-        padding:20px 25px 20px 30px;
+        padding: 20px;
       }
       #block-superfish-1 li.sf-depth-1>ul {
         top:52px;
@@ -44,14 +44,14 @@
         margin-top:-2px;
       }
       #block-superfish-1 li.sf-depth-1 ul {
-        margin-top:0;
+        margin-top:2px;
       }
       #block-superfish-1 li.sf-depth-2 ul {
         margin-top:-2px
       }
       #block-superfish-1 a.sf-depth-2
       ,#block-superfish-1 a.sf-depth-3 {
-        font-size:12px;
+        font-size:14px;
         padding:13px;
         border-bottom:solid 1px #ccc;
       }

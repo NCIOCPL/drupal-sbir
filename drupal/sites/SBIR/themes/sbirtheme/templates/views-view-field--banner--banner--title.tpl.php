@@ -23,5 +23,5 @@
  */
 ?>
 <?php if (drupal_is_front_page()): ?>
-  <?php //print $output; ?>
+  <?php print $output; ?>
 <?php endif; ?>

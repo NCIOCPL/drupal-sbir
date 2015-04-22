@@ -1,4 +1,7 @@
 // @homepage styling goes here
+#resources-for:parent div:parent {
+  padding:0;
+}
 #resources-for {
   margin-left:35px;
   text-align:center;
@@ -12,7 +15,7 @@
   .applicants {
     a {
       background: url(../images/applicantsicon.png) no-repeat;
-      background-size:66%;
+      background-size:60%;
       background-position:21px center;
       height: 90px;
       width: 94px;
@@ -24,7 +27,7 @@
     margin-left:25px;
     a {
       background: url(../images/awardeesicon.png) no-repeat;
-      background-size:63%;
+      background-size:60%;
       background-position:center 10px;
       height: 107px;
       width: 79px;
@@ -35,12 +38,28 @@
   .investors {
     a {
       background: url(../images/investorsicon.png) no-repeat;
-      background-size:66%;
+      background-size:60%;
       background-position:center 22px;
       height: 72px;
       width: 124px;
       display: block;
       line-height: 175px;
+    }
+  }
+}
+
+.view-banner {
+  .views-field-title {
+    width: 312px;    
+    position: relative;
+    top: -191px;
+    left: 112px;
+    height:0;
+    span {
+      color: #0E316A;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: 'Montserrat', 'Avant Garde';
     }
   }
 }

@@ -1,5 +1,8 @@
 // @footer styling goes here
 #section-footer {
+  span.ext {
+    display:none;
+  }
   margin-top: 50px;
   #zone-footer-wrapper {
     width: 100%;
@@ -34,7 +37,8 @@
         li::after {
           content: "   |";
         }
-        li.last::after {
+        li.last::after
+        ,li.no-ext-icon:after {
           content: "";
         }
       }

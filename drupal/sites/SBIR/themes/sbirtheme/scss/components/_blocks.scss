@@ -17,7 +17,7 @@
         font-family:'Trebuchet MS';
         color:#fff;
         font-weight: bold;
-        font-size:14px;
+        font-size:16px;
         padding: 10px 10px 10px 25px;
         background-image: url(../images/blue-header-bg.png);
         background-repeat: no-repeat;
@@ -28,12 +28,12 @@
   }
 
   .views-field-body {
-    padding:15px;
+    padding: 20px;
   }
 
   .views-field-field-footer, .view-footer {
     text-align: right;
-    padding: 0 15px 15px;
+    padding: 20px;
   }
 
   a {
@@ -48,7 +48,7 @@
   }
   .views-row {
     border-bottom: 1px solid #ccc;
-    padding: 10px 0;
+    padding: 15px 0;
     margin:10px;
   }
   .pane-title {
@@ -57,7 +57,7 @@
     font-family:'Trebuchet MS';
     color:#fff;
     font-weight: bold;
-    font-size:14px;
+    font-size:16px;
     padding: 10px 10px 10px 25px;
     background-image: url(../images/orange-header-bg.png);
     background-repeat: no-repeat;
@@ -69,7 +69,7 @@
   }
   .view-footer {
     text-align: right;
-    margin:10px;
+    margin:15px 20px;
     a {
       font-weight: bold;
       font-size: 12px;
@@ -78,7 +78,7 @@
 }
 
 .view-display-id-left_blocks>.view-content>.views-row>.views-field-edit-node {
-  margin: 10px 0 0 15px;
+  margin: 10px 0 0 20px;
 }
 
 .views-field-edit-node span a {

@@ -47,10 +47,11 @@ function sbirtheme_validate($node, $form, $form_state) {
  */
 
 function sbirtheme_block_view_alter(&$data, $block) {
+  //dpm($block->delta);
   if ($block->delta == 'menu-social-media') {
     foreach ($data['content'] as $key => $value) {
-      if (is_numeric($key) && is_array($value) && isset($value['#localized_options']['attributes']['title'])) {
-        $title = $value['#localized_options']['attributes']['title'];
+      if (is_numeric($key) && is_array($value) && isset($value['#title'])) {
+        $title = $value['#title'];
         if ($title == 'Sign Up for Updates') {
           $data['content'][$key]['#attributes']['class'][] = 'email-link';
           $data['content'][$key]['#attributes']['class'][] = 'social-media-link';
@@ -65,19 +66,74 @@ function sbirtheme_block_view_alter(&$data, $block) {
         }
       }
     }
+
     $follow_us = array(
       '#markup' => '<span class="follow-us-text">Follow Us:</span>'
     );
     // $data['content'][] = $follow_us;
     array_unshift($data['content'], $follow_us);
   }
+
+  if ($block->delta == 'menu-footer-menu') {
+    foreach ($data['content'] as $key => $value) {
+      if (is_numeric($key) && is_array($value) && isset($value['#title'])) {
+        //dpm($value);
+        $title = $value['#title'];
+        if ($title == 'Site Map' || $title == 'USA.gov') {
+          $data['content'][$key]['#attributes']['class'][] = 'no-ext-icon';
+        }
+      }
+    }
+  }
 }
 
 function sbirtheme_form_alter(&$form, &$form_state, $form_id) {
+
   if ($form_id == "search_form") {
     unset($form['advanced']);
     unset($form['basic']);
     //dpm($form);
+  }
+
+//make local copy of form_id
+  $test_form_id = $form_id;
+
+  //overwrite all different node type forms to "node_form"
+  //so only nodes will have this checkbox
+  if (substr($test_form_id, -10) == '_node_form') {
+    $test_form_id = 'node_form';
+  }
+
+  //Also this variant was proposed
+  /*
+    if( $form['#id'] == 'node-form' ){
+    $test_form_id = 'node_form';
+    }
+   */
+
+  switch ($test_form_id) {
+
+    case 'node_form':
+
+      //get mlid, if mlid captured
+      //this is node editing action
+      $mlid = 0;
+      if (isset($form['menu']['#item']['mlid']) &&
+          $form['menu']['#item']['mlid'] > 0) {
+        $mlid = $form['menu']['#item']['mlid'];
+        $menuItem = menu_link_load($mlid);
+      }
+
+      //add dummy hidden/enabled checkbox and
+      //use previous value for checkbox status if available
+      $form['menu']['d6_enabled'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('enabled'),
+        '#default_value' => ($mlid == 0 ? 1 : ($menuItem['hidden'] ? 0 : 1) ),
+        '#description' =>
+        t('Menu items that are not enabled will not be listed in any menu.'),
+      );
+      break;
   }
 }
 
@@ -93,7 +149,7 @@ function sbirtheme_preprocess_search_results(&$vars) {
   $currentPage = (isset($_REQUEST['page']) ? $_REQUEST['page'] : 0) + 1;
 
   // Get the total number of results from the global pager
-  $total = $GLOBALS['pager_total_items'][0];
+  $total = $GLOBALS['pager_total_items'] [0];
 
   // get search term
   $searchTerm = request_path();
@@ -107,20 +163,24 @@ function sbirtheme_preprocess_search_results(&$vars) {
 
   // If there is more than one page of results:
   if ($total > $itemsPerPage) {
-    $vars['search_totals'] = t('Results !start - !end of !total for: !term', array(
+    $vars['search_totals'] = t('Results !start - !end of !total for:', array(
       '!start' => $start,
       '!end' => $end,
-      '!total' => $total,
-      '!term' => $searchTerm,
+      '!total' => $total
+    ));
+    $vars['search_term'] = t(' !term', array(
+      '!term' => $searchTerm
     ));
   }
   else {
     // Only one page of results, so make it simpler
-    $vars['search_totals'] = t('Results !start - !end of !total for: !term', array(
+    $vars['search_totals'] = t('Results !start - !end of !total for:', array(
       '!start' => $start,
       '!end' => $end,
-      '!total' => $total,
-      '!term' => $searchTerm,
+      '!total' => $total
+    ));
+    $vars['search_term'] = t(' !term', array(
+      '!term' => $searchTerm
     ));
   }
 }

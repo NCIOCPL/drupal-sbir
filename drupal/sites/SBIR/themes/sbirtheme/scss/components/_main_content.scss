@@ -1,36 +1,17 @@
 // @main content styling goes here
-
-.grid-12, .container-12 {
-  max-width:960px!important;
-  margin:0!important;
-  margin-left:auto!important;
-  margin-right:auto!important;
-}
-
-.grid-9 {
-  margin-left:20px!important;
-  max-width:645px!important;
-}
-.grid-3 {
-  margin-left:15px!important;
-  min-height:1px;
-}
-
 #zone-content-wrapper {
+  /*
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  .grid-9 {
-    max-width:640px;
-  }
+  */
 }
 
 .grid-4 {
-  max-width:350px!important;
-  float:right!important;
+  margin: 0 0 0 20px!important;
 }
 .grid-8 {
-  max-width:580px!important;
+  margin: 0 20px 0 0!important;
 }
 
 .pane-page-title {
@@ -41,7 +22,7 @@
   font-family:'Trebuchet MS';
   font-weight:bold;
   color:#fff;
-  font-size:14px;
+  font-size:16px;
 }
 
 .pane-node-body {
