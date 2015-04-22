@@ -181,18 +181,6 @@ $handler->display->display_options['defaults']['pager'] = FALSE;
 $handler->display->display_options['pager']['type'] = 'none';
 $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['defaults']['relationships'] = FALSE;
-/* Relationship: Nodequeue: Queue */
-$handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
-$handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
-$handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
-$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
-$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
-$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-  'all_announcements' => 'all_announcements',
-  'success_stories' => 0,
-  'home_page_blocks' => 0,
-  'announcement' => 0,
-);
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: Edit link */
 $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
@@ -237,6 +225,13 @@ $handler->display->display_options['fields']['body']['element_label_colon'] = FA
 $handler->display->display_options['fields']['body']['settings'] = array(
   'trim_length' => '150',
 );
+$handler->display->display_options['defaults']['sorts'] = FALSE;
+/* Sort criterion: Content: Post date */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+$handler->display->display_options['sorts']['created']['granularity'] = 'day';
 $handler->display->display_options['pane_category']['name'] = 'SBIR Views';
 $handler->display->display_options['pane_category']['weight'] = '0';
 $handler->display->display_options['allow']['use_pager'] = 0;

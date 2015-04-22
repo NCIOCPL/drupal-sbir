@@ -42,15 +42,15 @@ function sbir_admin_menu() {
 }
 
 function sbir_admin_settings_form($form_state) {
-/*
-  // Content Settings
-  $form['content'] = array(
+  /*
+    // Content Settings
+    $form['content'] = array(
     '#type' => 'fieldset',
     '#title' => t('Content'),
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
-  );
-  $form['content']['upload'] = array(
+    );
+    $form['content']['upload'] = array(
     '#name' => 'files[' . implode('_', $form['#parents']) . ']',
     '#type' => 'file',
     '#title' => t('Home page banner'),
@@ -60,8 +60,8 @@ function sbir_admin_settings_form($form_state) {
     '#theme_wrappers' => array(),
     //'#weight' => -10,
     '#description' => 'This banner appears on the home page.',
-  );
-*/
+    );
+   */
   // Email Subscription Settings
   $form['email'] = array(
     '#type' => 'fieldset',
@@ -105,6 +105,70 @@ function sbir_admin_settings_form($form_state) {
   return $form;
 }
 
+/*
+ * Implements hook_form_submit
+ */
+
 function sbir_admin_settings_form_submit($form, &$form_state) {
-  dpm($form_state);
+  
+}
+
+/*
+ * Implements hook_form_alter
+ */
+
+function sbir_admin_form_alter(&$form, &$form_state, $form_id) {
+
+//make local copy of form_id
+  $node_form_id = $form_id;
+
+  //overwrite all different node type forms to "node_form"
+  //so only nodes will have this checkbox
+  if (substr($node_form_id, -10) == '_node_form') {
+    $node_form_id = 'node_form';
+  }
+
+  //dpm($test_form_id);
+  //Also this variant was proposed
+  /*
+    if( $form['#id'] == 'node-form' ){
+    $test_form_id = 'node_form';
+    }
+   */
+
+  switch ($node_form_id) {
+
+    case 'node_form':
+      //get mlid, if mlid captured
+      //this is node editing action
+      $mlid = 0;
+      //dpm($form['menu']);
+      if (isset($form['menu']['link']['mlid']['#value']) && $form['menu']['link']['mlid']['#value'] > 0) {
+        $mlid = $form['menu']['link']['mlid']['#value'];
+        $menuItem = menu_link_load($mlid);
+        //dpm($menuItem);
+      }
+
+      //add dummy hidden/enabled checkbox and
+      //use previous value for checkbox status if available
+      $form['menu']['link']['sbir_menu_item_enabled'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Enabled'),
+        '#default_value' => ($mlid == 0 ? 1 : ($menuItem['hidden'] ? 0 : 1) ),
+        '#description' =>
+        t('Menu items that are not enabled will appear in any menus.'),
+      );
+
+      //hide the banner upload field (we don't want content editors to upload new ones)
+      $form['field_banner']['#attributes']['style'] = 'display:none';
+      break;
+  }
+}
+
+/*
+ * Implements hook_node_presave
+ */
+
+function sbir_admin_node_presave($node) {
+  $node->menu['hidden'] = $node->menu['sbir_menu_item_enabled'] == 1 ? 0 : 1;
 }

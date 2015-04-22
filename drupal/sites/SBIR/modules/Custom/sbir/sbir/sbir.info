@@ -8,6 +8,7 @@ timestamp = 1426699461
 
 dependencies[] = context
 dependencies[] = ctools
+dependencies[] = extlink
 dependencies[] = filter
 dependencies[] = menu
 dependencies[] = menu_block
@@ -16,6 +17,7 @@ dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = porterstemmer
 dependencies[] = search
+dependencies[] = securepages
 dependencies[] = superfish
 dependencies[] = views
 dependencies[] = views_content
@@ -46,7 +48,7 @@ dependencies[] = sbir_search
 dependencies[] = workbench
 dependencies[] = workbench_moderation
 dependencies[] = sbir_roles_permissions
-;dependencies[] = sbir_admin
+dependencies[] = sbir_admin
 
 
 
