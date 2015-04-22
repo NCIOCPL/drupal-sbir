@@ -1,4 +1,5 @@
-#drush dis admin -y
+drush vset maintenance_mode 1
+drush dis admin -y
 drush dis sbir_roles_permissions -y
 drush dis sbir_search -y
 drush dis sbir_global_template -y
@@ -11,6 +12,7 @@ drush dis sbir_events -y
 drush dis sbir_announcements -y
 drush dis sbir_wysiwyg -y
 drush dis sbir_settings -y
+drush dis sbir_base -y
 drush dis sbir_subscription -y
 drush dis sbir_success_story -y
 drush dis sbir_file -y
@@ -28,11 +30,4 @@ drush php-eval 'update_sbir_block("sbir_home_page", "home_page_banner", "<none>"
 drush php-eval 'set_sbir_permissions()'
 
 drush cc all
-
-
-
-
-
-
-
-
+drush vset maintenance_mode 0
