@@ -1,0 +1,25 @@
+<?php
+
+/*
+ * Implements hook_install
+ */
+
+function sbir_error_pages_install() {
+  $title = '403 Error';
+  $alias = '403';
+  $nid = sbir_basic_pages_create_basic_page($title, $alias);
+  variable_set('site_403', 'node/' . $nid);
+
+  $title = '404 Error';
+  $alias = '404';
+  $nid = sbir_basic_pages_create_basic_page($title, $alias);
+  variable_set('site_404', 'node/' . $nid);
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_error_pages_enable() {
+  
+}

@@ -1,4 +1,5 @@
 <?php
+
 function set_sbir_permissions() {
 
   // Create the role if necessary.
@@ -11,8 +12,13 @@ function set_sbir_permissions() {
 
   // Add the permissions to the role.
   $permissions = array(
+    'administer menu',
     'access toolbar',
-    /*'administer sbir_admin',*/
+    'administer sbir',
+    'create url aliases',
+    'display site configuration menu',
+    'display site configuration menu',
+    'display site building menu',
     'create sbir_announcement content',
     'create sbir_basic_page content',
     'create sbir_block content',
@@ -32,7 +38,6 @@ function set_sbir_permissions() {
     'edit any sbir_file content',
     'edit any sbir_success_story content',
     'manipulate all queues',
-    'manipulate queues',
     'moderate content from draft to needs_review',
     'moderate content from needs_review to draft',
     'moderate content from needs_review to published',
@@ -49,7 +54,9 @@ function set_sbir_permissions() {
 
   // Add the permissions to the role.
   $permissions = array(
+    'administer menu',
     'access toolbar',
+    'create url aliases',
     'create sbir_announcement content',
     'create sbir_basic_page content',
     'create sbir_block content',
@@ -83,7 +90,12 @@ function set_sbir_permissions() {
 
   // Add the permissions to the role.
   $permissions = array(
+    'administer menu',
     'access toolbar',
+    'administer sbir',
+    'create url aliases',
+    'display site configuration menu',
+    'display site building menu',
     'create sbir_announcement content',
     'create sbir_basic_page content',
     'create sbir_block content',
@@ -103,7 +115,6 @@ function set_sbir_permissions() {
     'edit any sbir_file content',
     'edit any sbir_success_story content',
     'manipulate all queues',
-    'manipulate queues',
     'moderate content from draft to needs_review',
     'moderate content from needs_review to draft',
     'moderate content from needs_review to published',
@@ -120,7 +131,12 @@ function set_sbir_permissions() {
 
   // Add the permissions to the role.
   $permissions = array(
+    'administer menu',
     'access toolbar',
+    'administer sbir',
+    'create url aliases',
+    'display site configuration menu',
+    'display site building menu',
     'create sbir_announcement content',
     'create sbir_basic_page content',
     'create sbir_block content',
@@ -140,7 +156,6 @@ function set_sbir_permissions() {
     'edit any sbir_file content',
     'edit any sbir_success_story content',
     'manipulate all queues',
-    'manipulate queues',
     'moderate content from draft to needs_review',
     'moderate content from needs_review to draft',
     'moderate content from needs_review to published',
@@ -157,7 +172,12 @@ function set_sbir_permissions() {
 
   // Add the permissions to the role.
   $permissions = array(
+    'administer menu',
     'access toolbar',
+    'administer sbir',
+    'create url aliases',
+    'display site configuration menu',
+    'display site building menu',
     'create sbir_announcement content',
     'create sbir_basic_page content',
     'create sbir_block content',
@@ -177,7 +197,6 @@ function set_sbir_permissions() {
     'edit any sbir_file content',
     'edit any sbir_success_story content',
     'manipulate all queues',
-    'manipulate queues',
     'moderate content from draft to needs_review',
     'moderate content from needs_review to draft',
     'moderate content from needs_review to published',

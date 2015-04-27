@@ -7,7 +7,7 @@
 function sbir_admin_permission() {
   $permissions = array(
     'administer sbir' => array(
-      'title' => t('SBIR'),
+      'title' => t('Administer SBIR'),
       'restrict access' => TRUE,
     ),
   );

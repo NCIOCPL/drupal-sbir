@@ -1,5 +1,6 @@
 name = SBIR Email Notifications
 description = This module includes functionality to support SBIR email subscriptions.
 core = 7.x
+version = 7.x-1.0
 package = SBIR
 timestamp = 1426017677

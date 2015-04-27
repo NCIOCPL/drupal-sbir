@@ -6,6 +6,7 @@ version = 7.x-1.0
 project = sbir
 timestamp = 1426699461
 
+dependencies[] = captcha
 dependencies[] = context
 dependencies[] = ctools
 dependencies[] = extlink
@@ -16,6 +17,7 @@ dependencies[] = nodequeue
 dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = porterstemmer
+dependencies[] = recaptcha
 dependencies[] = search
 dependencies[] = securepages
 dependencies[] = superfish
@@ -24,7 +26,7 @@ dependencies[] = views_content
 dependencies[] = wysiwyg
 
 dependencies[] = nci_user_roles
-;dependencies[] = nci_SSO
+dependencies[] = nci_SSO
 
 dependencies[] = sbir_announcement
 dependencies[] = sbir_basic_page
@@ -49,6 +51,7 @@ dependencies[] = workbench
 dependencies[] = workbench_moderation
 dependencies[] = sbir_roles_permissions
 dependencies[] = sbir_admin
+dependencies[] = sbir_error_pages
 
 
 

@@ -1,0 +1,7 @@
+name = SBIR Error Pages
+description = The purpose of this module is to create the 403 and 404 error pages.
+core = 7.x
+package = SBIR
+version = 7.x-1.0
+project = sbir_error_pages
+timestamp = 1429733123

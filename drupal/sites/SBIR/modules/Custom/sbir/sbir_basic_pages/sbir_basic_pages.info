@@ -1,5 +1,5 @@
 name = SBIR Basic Pages
-description = The purpose of this module is to create the Basic Page template and to create instances of the basic page nodes that are part of the navigation bar and the footer.
+description = The purpose of this module is to create the Basic Page template and to create instances of the basic pages for the main menu and the footer menu.
 core = 7.x
 package = SBIR
 version = 7.x-1.0
