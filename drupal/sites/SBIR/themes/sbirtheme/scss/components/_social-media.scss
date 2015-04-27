@@ -1,7 +1,6 @@
 // @social media styling goes here
 #block-menu-menu-social-media {
-    float: right;
-  margin-bottom: 10px;
+  margin:10px 30px;
   li {
     width:36px;
     float:left;
@@ -11,10 +10,13 @@
   }
   .email-link a {
     background: url(../images/email_icon.png) no-repeat;
-    background-size: 25px 25px;
+    background-size: contain;
+    /*background-size: 25px 25px;*/
     text-indent: -9999px;
     display: block;
     height:25px;
+    -ms-behavior: url(../htc/backgroundsize.min.htc);
+    
   }
   .linkedin-link a {
     background: url(../images/linkedin_icon.png) no-repeat;

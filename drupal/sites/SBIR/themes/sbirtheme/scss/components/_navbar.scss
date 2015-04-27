@@ -72,6 +72,10 @@
       ,#block-superfish-1 li li li {
         background-color:#fff;
       }
+      #block-superfish-1 li li:hover
+        ,#block-superfish-1 li li li:hover {
+        background-color:#f1f1ef;
+      }
       #block-superfish-1 li li a
       ,#block-superfish-1 li li li a {
         color:#646363;

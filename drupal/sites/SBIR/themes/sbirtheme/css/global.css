@@ -356,14 +356,14 @@ a:visited {
 /* line 2, ../scss/components/_breadcrumb.scss */
 .breadcrumb {
   font-family: 'Montserrat', 'Avant Garde';
-  font-size: 14px;
+  font-size: 13px;
   color: #000;
   padding: 3px 0 13px 0;
 }
 /* line 7, ../scss/components/_breadcrumb.scss */
 .breadcrumb a {
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   color: #2664ab;
 }
 
@@ -647,6 +647,14 @@ a:visited {
   -moz-box-shadow: inset 0px 0px 10px -3px #ababab;
   -o-box-shadow: inset 0px 0px 10px -3px #ababab;
 }
+/* line 74, ../scss/components/_home-page.scss */
+.front .grid-8 {
+  width: 570px !important;
+}
+/* line 77, ../scss/components/_home-page.scss */
+.front .grid-4 {
+  width: 350px !important;
+}
 
 /* line 3, ../scss/components/_leftnav.scss */
 #left-nav .pane-title {
@@ -699,19 +707,20 @@ a:visited {
 /* line 49, ../scss/components/_leftnav.scss */
 #left-nav .active-trail {
   font-weight: bold !important;
+  padding-bottom: 5px;
 }
-/* line 52, ../scss/components/_leftnav.scss */
+/* line 53, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > ul.menu > li.expanded > ul.menu li > a {
   background-image: url(../images/leftnav_bullet.png);
   background-repeat: no-repeat;
   background-position: 16px 18px;
   padding-left: 35px;
 }
-/* line 59, ../scss/components/_leftnav.scss */
+/* line 60, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > ul.menu > li.expanded > ul.menu li > a.active {
   background-position: 16px 8px;
 }
-/* line 63, ../scss/components/_leftnav.scss */
+/* line 64, ../scss/components/_leftnav.scss */
 #left-nav .pane-content a {
   text-decoration: none;
   font-family: "Verdana";
@@ -721,7 +730,7 @@ a:visited {
   padding: 10px 10px 10px 15px;
   display: block;
 }
-/* line 72, ../scss/components/_leftnav.scss */
+/* line 73, ../scss/components/_leftnav.scss */
 #left-nav .pane-content li.active-trail ul > li.active-trail > a.active-trail {
   padding: 0;
 }
@@ -923,37 +932,42 @@ a:visited, .pane-node-field-footer a:visited {
   background-color: #fff;
 }
 /* line 75, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li:hover
+, #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li:hover {
+  background-color: #f1f1ef;
+}
+/* line 79, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li a
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li a {
   color: #646363;
 }
-/* line 79, ../scss/components/_navbar.scss */
+/* line 83, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li a {
   padding: 20px;
 }
-/* line 82, ../scss/components/_navbar.scss */
+/* line 86, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #superfish-1 > li.active-trail {
   background-image: url(../images/white_nav.png);
   background-repeat: repeat-x;
 }
-/* line 92, ../scss/components/_navbar.scss */
+/* line 96, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #superfish-1-toggle span {
   font-family: 'Montserrat', 'Avant Garde';
   color: #fff;
   font-size: 12px;
 }
-/* line 97, ../scss/components/_navbar.scss */
+/* line 101, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-accordion-toggle {
   text-align: center;
   padding: 10px;
 }
-/* line 101, ../scss/components/_navbar.scss */
+/* line 105, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-sub-indicator {
   background: none;
   width: 12px;
   height: 21px;
 }
-/* line 106, ../scss/components/_navbar.scss */
+/* line 110, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2 .sf-sub-indicator
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 .sf-sub-indicator {
   background: url("../images/chevron.png") no-repeat 0px 4px;
@@ -1021,7 +1035,7 @@ a:visited, .pane-node-field-footer a:visited {
   float: left;
   height: 25px;
   width: 165px;
-  font-size: 14px;
+  font-size: 11px;
   padding: 1px 4px;
   box-shadow: inset 0px 0px 10px -3px #ababab;
   -webkit-box-shadow: inset 0px 0px 10px -3px #ababab;
@@ -1092,10 +1106,9 @@ a:visited, .pane-node-field-footer a:visited {
 
 /* line 2, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media {
-  float: right;
-  margin-bottom: 10px;
+  margin: 10px 30px;
 }
-/* line 5, ../scss/components/_social-media.scss */
+/* line 4, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media li {
   width: 36px;
   float: left;
@@ -1103,15 +1116,17 @@ a:visited, .pane-node-field-footer a:visited {
   padding: 0 !important;
   margin-left: 0;
 }
-/* line 12, ../scss/components/_social-media.scss */
+/* line 11, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .email-link a {
   background: url(../images/email_icon.png) no-repeat;
-  background-size: 25px 25px;
+  background-size: contain;
+  /*background-size: 25px 25px;*/
   text-indent: -9999px;
   display: block;
   height: 25px;
+  -ms-behavior: url(../htc/backgroundsize.min.htc);
 }
-/* line 19, ../scss/components/_social-media.scss */
+/* line 21, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .linkedin-link a {
   background: url(../images/linkedin_icon.png) no-repeat;
   background-size: 25px 25px;
@@ -1119,7 +1134,7 @@ a:visited, .pane-node-field-footer a:visited {
   display: block;
   height: 25px;
 }
-/* line 26, ../scss/components/_social-media.scss */
+/* line 28, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .twitter-link a {
   background: url(../images/twitter_icon.png) no-repeat;
   background-size: 25px 25px;
@@ -1128,13 +1143,13 @@ a:visited, .pane-node-field-footer a:visited {
   height: 25px;
 }
 
-/* line 34, ../scss/components/_social-media.scss */
+/* line 36, ../scss/components/_social-media.scss */
 #social-media {
   display: inline-block;
   float: right;
 }
 
-/* line 39, ../scss/components/_social-media.scss */
+/* line 41, ../scss/components/_social-media.scss */
 .follow-us-text {
   float: left;
   margin-top: 4px;
