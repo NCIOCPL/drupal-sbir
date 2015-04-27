@@ -48,18 +48,28 @@
   }
 }
 
-.view-banner {
-  .views-field-title {
-    width: 312px;    
-    position: relative;
-    top: -191px;
-    left: 112px;
-    height:0;
-    span {
-      color: #0E316A;
-      font-size: 18px;
-      font-weight: bold;
-      font-family: 'Montserrat', 'Avant Garde';
+.front {
+  .view-banner {
+    .views-field-title {
+      width: 294px;    
+      position: relative;
+      top: -191px;
+      left: 112px;
+      height:0;
+      span {
+        color: #12588e;
+        font-size: 17px;
+        line-height: 22px;
+        font-weight: bold;
+        font-family: 'Montserrat', 'Avant Garde';
+      }
+    }
+    img {
+      box-shadow: inset 0px 0px 10px -3px #ababab;
+      -webkit-box-shadow: inset 0px 0px 10px -3px #ababab;
+      -moz-box-shadow: inset 0px 0px 10px -3px #ababab;
+      -o-box-shadow: inset 0px 0px 10px -3px #ababab;
     }
   }
+
 }

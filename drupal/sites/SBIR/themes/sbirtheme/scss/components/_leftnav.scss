@@ -23,10 +23,20 @@
     .leaf {
     }
   }
-  .menu-level-2>.menu>li{
-    border-top: 1px solid #ccc;
+  .menu-level-2>.menu>li {
+    border-top: 1px solid #e0e0e0;
     background-color:#f9f9f9;
   }
+  .menu-level-2>.menu>li a:hover {
+    background-color:#fff;
+  }
+  .menu-level-2 > .menu > li.active {
+    background-color:#fff;
+  }
+  .menu-level-2>.menu>li.first {
+    border-top: none;
+    background-color:#f9f9f9;
+  }  
   .menu-level-2>.menu>li.expanded {
     background-color:#fff;
     .menu {   
@@ -45,10 +55,10 @@
     background-position: 16px 18px;
     padding-left:35px;
   }
-  
-    .menu-level-2>ul.menu>li.expanded>ul.menu li>a.active {
+
+  .menu-level-2>ul.menu>li.expanded>ul.menu li>a.active {
     background-position: 16px 8px;
-    }
+  }
 
   .pane-content a {
     text-decoration: none;
@@ -56,10 +66,10 @@
     font-weight:normal;
     font-size:12px;
     color:#000;
-        padding: 10px 10px 10px 15px;
+    padding: 10px 10px 10px 15px;
     display:block;
   }
   .pane-content li.active-trail ul>li.active-trail>a.active-trail {
-        padding: 0;
+    padding: 0;
   }
 }

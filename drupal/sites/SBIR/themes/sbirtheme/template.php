@@ -23,14 +23,27 @@ function sbirtheme_breadcrumb($variables) {
   //dpm(sizeof($breadcrumb));
   if (!empty($breadcrumb) /* && sizeof($breadcrumb) > 0 */) {
     // Adding the title of the current page to the breadcrumb.
-    $breadcrumb[] = drupal_get_title();
+
+    if (isset($GLOBALS['_GET']['q'])) {
+      $q = $GLOBALS['_GET']['q'];
+      $menu_item = menu_get_item($q);
+      if (isset($menu_item['title'])) {
+        $breadcrumb[] = $menu_item['title'];
+      }
+      else {
+        $breadcrumb[] = drupal_get_title();
+      }
+    }
+    else {
+      $breadcrumb[] = drupal_get_title();
+    }
 
     // Provide a navigational heading to give context for breadcrumb links to
     // screen-reader users. Make the heading invisible with .element-invisible.
     $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
 
     //$output .= '<div class="breadcrumb">' . implode(' » ', $breadcrumb) . '</div>';
-    $output .= '<div class="breadcrumb">' . implode(' <b>\</b> ', $breadcrumb) . '</div>';
+    $output .= '<div class="breadcrumb">' . implode('&nbsp;&nbsp;\&nbsp;&nbsp;', $breadcrumb) . '</div>';
     return $output;
   }
 }

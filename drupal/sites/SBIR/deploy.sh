@@ -1,4 +1,5 @@
 drush vset maintenance_mode 1
+drush dis error_pages -y
 drush dis admin -y
 drush dis sbir_roles_permissions -y
 drush dis sbir_search -y

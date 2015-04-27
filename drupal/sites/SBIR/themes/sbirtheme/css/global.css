@@ -356,9 +356,9 @@ a:visited {
 /* line 2, ../scss/components/_breadcrumb.scss */
 .breadcrumb {
   font-family: 'Montserrat', 'Avant Garde';
-  font-weight: bold;
   font-size: 14px;
   color: #000;
+  padding: 3px 0 13px 0;
 }
 /* line 7, ../scss/components/_breadcrumb.scss */
 .breadcrumb a {
@@ -369,7 +369,7 @@ a:visited {
 
 /* line 2, ../scss/components/_dates.scss */
 #sbir-dates {
-  margin-left: 300px;
+  margin-left: 40px;
   text-align: center;
 }
 /* line 5, ../scss/components/_dates.scss */
@@ -624,20 +624,28 @@ a:visited {
   line-height: 175px;
 }
 
-/* line 52, ../scss/components/_home-page.scss */
-.view-banner .views-field-title {
-  width: 312px;
+/* line 53, ../scss/components/_home-page.scss */
+.front .view-banner .views-field-title {
+  width: 294px;
   position: relative;
   top: -191px;
   left: 112px;
   height: 0;
 }
-/* line 58, ../scss/components/_home-page.scss */
-.view-banner .views-field-title span {
-  color: #0E316A;
-  font-size: 18px;
+/* line 59, ../scss/components/_home-page.scss */
+.front .view-banner .views-field-title span {
+  color: #12588e;
+  font-size: 17px;
+  line-height: 22px;
   font-weight: bold;
   font-family: 'Montserrat', 'Avant Garde';
+}
+/* line 67, ../scss/components/_home-page.scss */
+.front .view-banner img {
+  box-shadow: inset 0px 0px 10px -3px #ababab;
+  -webkit-box-shadow: inset 0px 0px 10px -3px #ababab;
+  -moz-box-shadow: inset 0px 0px 10px -3px #ababab;
+  -o-box-shadow: inset 0px 0px 10px -3px #ababab;
 }
 
 /* line 3, ../scss/components/_leftnav.scss */
@@ -664,33 +672,46 @@ a:visited {
 }
 /* line 26, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > .menu > li {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #e0e0e0;
   background-color: #f9f9f9;
 }
 /* line 30, ../scss/components/_leftnav.scss */
-#left-nav .menu-level-2 > .menu > li.expanded {
+#left-nav .menu-level-2 > .menu > li a:hover {
+  background-color: #fff;
+}
+/* line 33, ../scss/components/_leftnav.scss */
+#left-nav .menu-level-2 > .menu > li.active {
   background-color: #fff;
 }
 /* line 36, ../scss/components/_leftnav.scss */
+#left-nav .menu-level-2 > .menu > li.first {
+  border-top: none;
+  background-color: #f9f9f9;
+}
+/* line 40, ../scss/components/_leftnav.scss */
+#left-nav .menu-level-2 > .menu > li.expanded {
+  background-color: #fff;
+}
+/* line 46, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > .menu > li.active-trail > a {
   border-right: solid 5px #FF8408;
 }
-/* line 39, ../scss/components/_leftnav.scss */
+/* line 49, ../scss/components/_leftnav.scss */
 #left-nav .active-trail {
   font-weight: bold !important;
 }
-/* line 42, ../scss/components/_leftnav.scss */
+/* line 52, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > ul.menu > li.expanded > ul.menu li > a {
   background-image: url(../images/leftnav_bullet.png);
   background-repeat: no-repeat;
   background-position: 16px 18px;
   padding-left: 35px;
 }
-/* line 49, ../scss/components/_leftnav.scss */
+/* line 59, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > ul.menu > li.expanded > ul.menu li > a.active {
   background-position: 16px 8px;
 }
-/* line 53, ../scss/components/_leftnav.scss */
+/* line 63, ../scss/components/_leftnav.scss */
 #left-nav .pane-content a {
   text-decoration: none;
   font-family: "Verdana";
@@ -700,7 +721,7 @@ a:visited {
   padding: 10px 10px 10px 15px;
   display: block;
 }
-/* line 62, ../scss/components/_leftnav.scss */
+/* line 72, ../scss/components/_leftnav.scss */
 #left-nav .pane-content li.active-trail ul > li.active-trail > a.active-trail {
   padding: 0;
 }
@@ -715,22 +736,27 @@ a:visited {
 }
 
 /* line 10, ../scss/components/_main_content.scss */
+.grid-9 {
+  min-height: 350px;
+}
+
+/* line 13, ../scss/components/_main_content.scss */
 .grid-4 {
   margin: 0 0 0 20px !important;
 }
 
-/* line 13, ../scss/components/_main_content.scss */
+/* line 16, ../scss/components/_main_content.scss */
 .grid-8 {
   margin: 0 20px 0 0 !important;
 }
 
-/* line 17, ../scss/components/_main_content.scss */
+/* line 20, ../scss/components/_main_content.scss */
 .pane-page-title {
   background-color: #0E316A;
   padding: 15px;
 }
 
-/* line 21, ../scss/components/_main_content.scss */
+/* line 24, ../scss/components/_main_content.scss */
 .pane-page-title .pane-content h1 {
   font-family: 'Trebuchet MS';
   font-weight: bold;
@@ -738,57 +764,73 @@ a:visited {
   font-size: 16px;
 }
 
-/* line 28, ../scss/components/_main_content.scss */
-.pane-node-body {
+/* line 31, ../scss/components/_main_content.scss */
+.pane-node-body
+, .pane-node-field-footer {
   font-family: 'Verdana';
   color: #000;
-  padding: 15px;
+  padding: 20px;
 }
-/* line 32, ../scss/components/_main_content.scss */
-.pane-node-body h1, .pane-node-body h2, .pane-node-body h3, .pane-node-body h4, .pane-node-body h5, .pane-node-body h6 {
+/* line 36, ../scss/components/_main_content.scss */
+.pane-node-body
+h1, .pane-node-body
+h2, .pane-node-body
+h3, .pane-node-body
+h4, .pane-node-body
+h5, .pane-node-body
+h6, .pane-node-field-footer h1, .pane-node-field-footer h2, .pane-node-field-footer h3, .pane-node-field-footer h4, .pane-node-field-footer h5, .pane-node-field-footer h6 {
   font-weight: bold;
 }
-/* line 35, ../scss/components/_main_content.scss */
-.pane-node-body h1 {
+/* line 39, ../scss/components/_main_content.scss */
+.pane-node-body
+h1, .pane-node-field-footer h1 {
   font-size: 24px;
 }
-/* line 38, ../scss/components/_main_content.scss */
-.pane-node-body h2 {
+/* line 42, ../scss/components/_main_content.scss */
+.pane-node-body
+h2, .pane-node-field-footer h2 {
   font-size: 22px;
 }
-/* line 41, ../scss/components/_main_content.scss */
-.pane-node-body h3 {
+/* line 45, ../scss/components/_main_content.scss */
+.pane-node-body
+h3, .pane-node-field-footer h3 {
   font-size: 18px;
 }
-/* line 44, ../scss/components/_main_content.scss */
-.pane-node-body h4 {
+/* line 48, ../scss/components/_main_content.scss */
+.pane-node-body
+h4, .pane-node-field-footer h4 {
   font-size: 16px;
 }
-/* line 47, ../scss/components/_main_content.scss */
-.pane-node-body h5 {
+/* line 51, ../scss/components/_main_content.scss */
+.pane-node-body
+h5, .pane-node-field-footer h5 {
   font-size: 14px;
 }
-/* line 50, ../scss/components/_main_content.scss */
-.pane-node-body h6 {
+/* line 54, ../scss/components/_main_content.scss */
+.pane-node-body
+h6, .pane-node-field-footer h6 {
   font-size: 13px;
 }
-/* line 53, ../scss/components/_main_content.scss */
-.pane-node-body p {
+/* line 57, ../scss/components/_main_content.scss */
+.pane-node-body
+p, .pane-node-field-footer p {
   font-size: 12px;
   line-height: 18px;
 }
-/* line 57, ../scss/components/_main_content.scss */
-.pane-node-body a {
+/* line 61, ../scss/components/_main_content.scss */
+.pane-node-body
+a, .pane-node-field-footer a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
-/* line 62, ../scss/components/_main_content.scss */
-.pane-node-body a:visited {
+/* line 66, ../scss/components/_main_content.scss */
+.pane-node-body
+a:visited, .pane-node-field-footer a:visited {
   color: #421c89;
 }
 
-/* line 67, ../scss/components/_main_content.scss */
+/* line 71, ../scss/components/_main_content.scss */
 .page-node .vertical-tabs {
   display: none;
 }
@@ -842,82 +884,76 @@ a:visited {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
-  border: solid #ccc 1px;
   background-color: #fff;
-  border-top: solid 2px orange;
+  border-top: solid 5px orange;
   margin-top: -2px;
 }
-/* line 46, ../scss/components/_navbar.scss */
+/* line 45, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 ul {
   margin-top: 2px;
 }
-/* line 49, ../scss/components/_navbar.scss */
+/* line 48, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-2 ul {
   margin-top: -2px;
 }
-/* line 52, ../scss/components/_navbar.scss */
+/* line 51, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 {
   font-size: 14px;
   padding: 13px;
-  border-bottom: solid 1px #ccc;
+  border-bottom: solid 1px #e0e0e0;
 }
-/* line 58, ../scss/components/_navbar.scss */
-#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.last > a.sf-depth-2
-, #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.last > a.sf-depth-3 {
-  border-bottom: none;
-}
-/* line 62, ../scss/components/_navbar.scss */
+/* line 60, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.active-trail a {
   color: #294e80;
 }
-/* line 65, ../scss/components/_navbar.scss */
+/* line 63, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-menu.sf-horizontal.sf-shadow ul {
   background: none;
   padding: 0 !important;
 }
-/* line 69, ../scss/components/_navbar.scss */
+/* line 67, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li {
   background-color: #fff;
 }
-/* line 73, ../scss/components/_navbar.scss */
+/* line 71, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li {
   background-color: #fff;
 }
-/* line 77, ../scss/components/_navbar.scss */
+/* line 75, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li a
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li a {
   color: #646363;
 }
-/* line 81, ../scss/components/_navbar.scss */
+/* line 79, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li a {
   padding: 20px;
 }
-/* line 84, ../scss/components/_navbar.scss */
+/* line 82, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #superfish-1 > li.active-trail {
   background-image: url(../images/white_nav.png);
   background-repeat: repeat-x;
 }
-/* line 94, ../scss/components/_navbar.scss */
+/* line 92, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #superfish-1-toggle span {
   font-family: 'Montserrat', 'Avant Garde';
   color: #fff;
   font-size: 12px;
 }
-/* line 99, ../scss/components/_navbar.scss */
+/* line 97, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-accordion-toggle {
   text-align: center;
   padding: 10px;
 }
-/* line 103, ../scss/components/_navbar.scss */
+/* line 101, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-sub-indicator {
   background: none;
   width: 12px;
   height: 21px;
 }
-/* line 108, ../scss/components/_navbar.scss */
+/* line 106, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2 .sf-sub-indicator
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 .sf-sub-indicator {
   background: url("../images/chevron.png") no-repeat 0px 4px;
@@ -986,9 +1022,9 @@ a:visited {
   font-size: 14px;
   padding: 1px 4px;
   box-shadow: inset 0px 0px 10px -3px #ABABAB;
-  -webkit-box-shadow: inset 0px 0px 10px -3px #ABABAB;
-  -moz-box-shadow: inset 0px 0px 10px -3px #ABABAB;
-  -o-box-shadow: inset 0px 0px 10px -3px #ABABAB;
+  -webkit-box-shadow: inset 0px 0px 10px -3px #ababab;
+  -moz-box-shadow: inset 0px 0px 10px -3px #ababab;
+  -o-box-shadow: inset 0px 0px 10px -3px #ababab;
   border-width: 0;
 }
 
