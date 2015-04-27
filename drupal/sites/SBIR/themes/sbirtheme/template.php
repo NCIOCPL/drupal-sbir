@@ -23,12 +23,16 @@ function sbirtheme_breadcrumb($variables) {
   //dpm(sizeof($breadcrumb));
   if (!empty($breadcrumb) /* && sizeof($breadcrumb) > 0 */) {
     // Adding the title of the current page to the breadcrumb.
-
     if (isset($GLOBALS['_GET']['q'])) {
       $q = $GLOBALS['_GET']['q'];
       $menu_item = menu_get_item($q);
-      if (isset($menu_item['title'])) {
-        $breadcrumb[] = $menu_item['title'];
+      $menu_item = db_query('SELECT link_title FROM {menu_links}'
+          . ' WHERE link_path = :path'
+          . ' LIMIT 0, 1', array(':path' => $q))->fetchAssoc();
+
+      if (isset($menu_item['link_title'])) {
+        $breadcrumb[] = $menu_item['link_title'];
+        //print $menu_item['title'];exit;
       }
       else {
         $breadcrumb[] = drupal_get_title();
