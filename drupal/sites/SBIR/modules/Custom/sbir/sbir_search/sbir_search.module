@@ -4,13 +4,21 @@
  * Implements hook_query_alter
  */
 function sbir_search_query_alter(&$query) {
-
+  //dpm($query);
   // This is a search result query and we want to change the
   // number of search results per page to 16.
-  if ($query instanceof PagerDefault
-    && ($tables = $query->getTables())
-    && isset($tables['i']['table'])
-    && $tables['i']['table'] === 'search_index') {
+  if ($query instanceof PagerDefault && ($tables = $query->getTables()) && isset($tables['i']['table']) && $tables['i']['table'] === 'search_index') {
     $query->limit(20);
+  }
+}
+
+/**
+ * Implements hook_form_alter
+ */
+function sbir_search_form_alter(&$form, &$form_state, $form_id) {
+  if (in_array($form_id, array('search_block_form'))) {
+    
+    // Adding placeholders to fields
+    $form['search_block_form']['#attributes']['placeholder'] = t('Search...');
   }
 }

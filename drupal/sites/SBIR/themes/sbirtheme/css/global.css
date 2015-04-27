@@ -292,7 +292,7 @@ a:visited {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 1em;
+  padding-top: 25px;
 }
 
 /* line 10, ../scss/components/_branding.scss */
@@ -343,7 +343,7 @@ a:visited {
   float: left;
 }
 
-/* line 53, ../scss/components/_branding.scss */
+/* line 52, ../scss/components/_branding.scss */
 #institute-name {
   text-transform: uppercase;
   font-weight: bold;
@@ -861,14 +861,14 @@ a:visited, .pane-node-field-footer a:visited {
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a {
   text-decoration: none;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'Montserrat', 'Avant Garde';
   color: #fff;
 }
 /* line 25, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 > a {
   text-transform: uppercase;
-  padding: 20px;
+  padding: 15px 17px;
 }
 /* line 29, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 > ul {
@@ -890,7 +890,7 @@ a:visited, .pane-node-field-footer a:visited {
 }
 /* line 45, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 ul {
-  margin-top: 2px;
+  margin-top: -7px;
 }
 /* line 48, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-2 ul {
@@ -970,6 +970,7 @@ a:visited, .pane-node-field-footer a:visited {
 
 /* line 6, ../scss/components/_search-form.scss */
 #search-block-form .form-submit {
+  margin-top: -1px;
   text-indent: -9999px;
   /*display: block;*/
   background: none;
@@ -977,8 +978,9 @@ a:visited, .pane-node-field-footer a:visited {
   background-repeat: no-repeat;
   background-image: url(../images/search_icon2.png);
   /*  background-position: 1px 5px;*/
-  height: 32px;
-  width: 32px;
+  background-size: 30px;
+  height: 30px;
+  width: 30px;
   /*display: inline-block;
   top: -5px;
   position: absolute;
@@ -1014,18 +1016,41 @@ a:visited, .pane-node-field-footer a:visited {
     box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
     */
 }
-/* line 52, ../scss/components/_search-form.scss */
+/* line 53, ../scss/components/_search-form.scss */
 #search-block-form input[type=text] {
   float: left;
-  height: 23px;
-  width: 152px;
+  height: 25px;
+  width: 165px;
   font-size: 14px;
   padding: 1px 4px;
-  box-shadow: inset 0px 0px 10px -3px #ABABAB;
+  box-shadow: inset 0px 0px 10px -3px #ababab;
   -webkit-box-shadow: inset 0px 0px 10px -3px #ababab;
   -moz-box-shadow: inset 0px 0px 10px -3px #ababab;
   -o-box-shadow: inset 0px 0px 10px -3px #ababab;
-  border-width: 0;
+  border: solid 1px #ababab;
+  border-right: none;
+}
+
+/* line 69, ../scss/components/_search-form.scss */
+::-webkit-input-placeholder {
+  font-size: 11px;
+}
+
+/* line 73, ../scss/components/_search-form.scss */
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 11px;
+}
+
+/* line 77, ../scss/components/_search-form.scss */
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 11px;
+}
+
+/* line 81, ../scss/components/_search-form.scss */
+:-ms-input-placeholder {
+  font-size: 11px;
 }
 
 /* line 3, ../scss/components/_search-results.scss */
@@ -1065,14 +1090,20 @@ a:visited, .pane-node-field-footer a:visited {
   font-weight: normal;
 }
 
-/* line 3, ../scss/components/_social-media.scss */
+/* line 2, ../scss/components/_social-media.scss */
+#block-menu-menu-social-media {
+  float: right;
+  margin-bottom: 10px;
+}
+/* line 5, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media li {
   width: 36px;
   float: left;
   list-style: none;
   padding: 0 !important;
+  margin-left: 0;
 }
-/* line 9, ../scss/components/_social-media.scss */
+/* line 12, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .email-link a {
   background: url(../images/email_icon.png) no-repeat;
   background-size: 25px 25px;
@@ -1080,7 +1111,7 @@ a:visited, .pane-node-field-footer a:visited {
   display: block;
   height: 25px;
 }
-/* line 16, ../scss/components/_social-media.scss */
+/* line 19, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .linkedin-link a {
   background: url(../images/linkedin_icon.png) no-repeat;
   background-size: 25px 25px;
@@ -1088,7 +1119,7 @@ a:visited, .pane-node-field-footer a:visited {
   display: block;
   height: 25px;
 }
-/* line 23, ../scss/components/_social-media.scss */
+/* line 26, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .twitter-link a {
   background: url(../images/twitter_icon.png) no-repeat;
   background-size: 25px 25px;
@@ -1097,18 +1128,20 @@ a:visited, .pane-node-field-footer a:visited {
   height: 25px;
 }
 
-/* line 31, ../scss/components/_social-media.scss */
+/* line 34, ../scss/components/_social-media.scss */
 #social-media {
   display: inline-block;
   float: right;
 }
 
-/* line 36, ../scss/components/_social-media.scss */
+/* line 39, ../scss/components/_social-media.scss */
 .follow-us-text {
   float: left;
   margin-top: 4px;
   margin-right: 10px;
-  /*font-family: 'Montserrat', 'Avant Garde';*/
+  font-family: 'Montserrat', 'Avant Garde';
+  color: #535353;
+  font-size: 11px;
 }
 
 /* line 3, ../scss/components/_success-stories.scss */

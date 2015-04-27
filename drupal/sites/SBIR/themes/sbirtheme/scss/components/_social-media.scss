@@ -1,10 +1,13 @@
 // @social media styling goes here
 #block-menu-menu-social-media {
+    float: right;
+  margin-bottom: 10px;
   li {
     width:36px;
     float:left;
     list-style:none;
     padding:0!important;
+    margin-left:0;
   }
   .email-link a {
     background: url(../images/email_icon.png) no-repeat;
@@ -37,5 +40,7 @@
   float:left;
   margin-top: 4px;
   margin-right: 10px;
-  /*font-family: 'Montserrat', 'Avant Garde';*/
+  font-family: 'Montserrat', 'Avant Garde';
+  color:#535353;
+  font-size:11px;
 }

@@ -4,7 +4,7 @@
 }
 #search-block-form {
   .form-submit {
-
+   margin-top:-1px;
     text-indent: -9999px;
     /*display: block;*/
     background:none;
@@ -12,8 +12,9 @@
     background-repeat: no-repeat;
     background-image: url(../images/search_icon2.png);
     /*  background-position: 1px 5px;*/
-    height: 32px;
-    width: 32px;
+    background-size:30px;
+    height: 30px;
+    width: 30px;
     /*display: inline-block;
     top: -5px;
     position: absolute;
@@ -51,14 +52,32 @@
   }
   input[type=text] {
     float:left;
-    height: 23px;
-    width: 152px;
+    height: 25px;
+    width: 165px;
     font-size: 14px;
     padding: 1px 4px;    
-    box-shadow: inset 0px 0px 10px -3px #ABABAB;
+    box-shadow: inset 0px 0px 10px -3px #ababab;
     -webkit-box-shadow: inset 0px 0px 10px -3px #ababab;
     -moz-box-shadow: inset 0px 0px 10px -3px #ababab;
     -o-box-shadow: inset 0px 0px 10px -3px #ababab;
-    border-width:0;
+    border: solid 1px #ababab;
+    border-right:none;
   }
+}
+
+
+::-webkit-input-placeholder {
+  font-size:11px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  font-size:11px;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  font-size:11px;
+}
+
+:-ms-input-placeholder {  
+  font-size:11px;
 }
