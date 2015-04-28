@@ -32,11 +32,12 @@
             font-weight: normal;
             font-size:14px;
             font-family: 'Montserrat', 'Avant Garde';
-            color:#696969;
+            color:#888;
           }
         }
         li::after {
-          content: "   |";
+          content: "  | ";
+          color: #aaa;
         }
         li.last::after
         ,li.no-ext-icon:after {

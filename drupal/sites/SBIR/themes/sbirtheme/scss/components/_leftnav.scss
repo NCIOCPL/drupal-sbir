@@ -23,9 +23,14 @@
     .leaf {
     }
   }
+  .active-trail {
+    font-weight:bold!important;
+    padding-bottom:8px;
+  }
   .menu-level-2>.menu>li {
     border-top: 1px solid #e0e0e0;
     background-color:#f9f9f9;
+    padding-bottom:0;
   }
   .menu-level-2>.menu>li a:hover {
     background-color:#fff;
@@ -45,10 +50,6 @@
 
   .menu-level-2>.menu>li.active-trail>a {
     border-right: solid 5px #FF8408;
-  }
-  .active-trail {
-    font-weight:bold!important;
-    padding-bottom:5px;
   }
   .menu-level-2>ul.menu>li.expanded>ul.menu li>a {
     background-image: url(../images/leftnav_bullet.png);

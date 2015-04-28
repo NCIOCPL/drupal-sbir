@@ -44,15 +44,15 @@
       }
       #block-superfish-1 li.sf-depth-1 ul {
         margin-top:-7px;
+        width: 200px!important;
       }
       #block-superfish-1 li.sf-depth-2 ul {
         margin-top:-2px
       }
       #block-superfish-1 a.sf-depth-2
       ,#block-superfish-1 a.sf-depth-3 {
-        font-size:14px;
-        padding:13px;
-        border-bottom:solid 1px #e0e0e0;
+        font-size: 14px;
+        padding: 13px;
       }
       #block-superfish-1 li.last>a.sf-depth-2
       ,#block-superfish-1 li.last>a.sf-depth-3 {
@@ -67,6 +67,7 @@
       #block-superfish-1 li li
       ,#block-superfish-1 li li li {
         background-color:#fff;
+        border-bottom: solid 1px #e0e0e0;
       }
       #block-superfish-1 li li
       ,#block-superfish-1 li li li {

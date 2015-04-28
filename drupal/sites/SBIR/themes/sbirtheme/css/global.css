@@ -522,18 +522,19 @@ a:visited {
   font-weight: normal;
   font-size: 14px;
   font-family: 'Montserrat', 'Avant Garde';
-  color: #696969;
+  color: #888;
 }
 /* line 38, ../scss/components/_footer.scss */
 #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul li::after {
-  content: "   |";
+  content: "  | ";
+  color: #aaa;
 }
-/* line 41, ../scss/components/_footer.scss */
+/* line 42, ../scss/components/_footer.scss */
 #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul li.last::after
 , #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul li.no-ext-icon:after {
   content: "";
 }
-/* line 47, ../scss/components/_footer.scss */
+/* line 48, ../scss/components/_footer.scss */
 #section-footer #zone-footer-wrapper #zone-footer {
   width: 960px;
   max-width: 960 !important;
@@ -679,48 +680,49 @@ a:visited {
   padding: 0;
 }
 /* line 26, ../scss/components/_leftnav.scss */
+#left-nav .active-trail {
+  font-weight: bold !important;
+  padding-bottom: 8px;
+}
+/* line 30, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > .menu > li {
   border-top: 1px solid #e0e0e0;
   background-color: #f9f9f9;
+  padding-bottom: 0;
 }
-/* line 30, ../scss/components/_leftnav.scss */
+/* line 35, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > .menu > li a:hover {
   background-color: #fff;
 }
-/* line 33, ../scss/components/_leftnav.scss */
+/* line 38, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > .menu > li.active {
   background-color: #fff;
 }
-/* line 36, ../scss/components/_leftnav.scss */
+/* line 41, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > .menu > li.first {
   border-top: none;
   background-color: #f9f9f9;
 }
-/* line 40, ../scss/components/_leftnav.scss */
+/* line 45, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > .menu > li.expanded {
   background-color: #fff;
 }
-/* line 46, ../scss/components/_leftnav.scss */
+/* line 51, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > .menu > li.active-trail > a {
   border-right: solid 5px #FF8408;
 }
-/* line 49, ../scss/components/_leftnav.scss */
-#left-nav .active-trail {
-  font-weight: bold !important;
-  padding-bottom: 5px;
-}
-/* line 53, ../scss/components/_leftnav.scss */
+/* line 54, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > ul.menu > li.expanded > ul.menu li > a {
   background-image: url(../images/leftnav_bullet.png);
   background-repeat: no-repeat;
   background-position: 16px 18px;
   padding-left: 35px;
 }
-/* line 60, ../scss/components/_leftnav.scss */
+/* line 61, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > ul.menu > li.expanded > ul.menu li > a.active {
   background-position: 16px 8px;
 }
-/* line 64, ../scss/components/_leftnav.scss */
+/* line 65, ../scss/components/_leftnav.scss */
 #left-nav .pane-content a {
   text-decoration: none;
   font-family: "Verdana";
@@ -730,7 +732,7 @@ a:visited {
   padding: 10px 10px 10px 15px;
   display: block;
 }
-/* line 73, ../scss/components/_leftnav.scss */
+/* line 74, ../scss/components/_leftnav.scss */
 #left-nav .pane-content li.active-trail ul > li.active-trail > a.active-trail {
   padding: 0;
 }
@@ -900,17 +902,17 @@ a:visited, .pane-node-field-footer a:visited {
 /* line 45, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 ul {
   margin-top: -7px;
+  width: 200px !important;
 }
-/* line 48, ../scss/components/_navbar.scss */
+/* line 49, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-2 ul {
   margin-top: -2px;
 }
-/* line 51, ../scss/components/_navbar.scss */
+/* line 52, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 {
   font-size: 14px;
   padding: 13px;
-  border-bottom: solid 1px #e0e0e0;
 }
 /* line 60, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.active-trail a {
@@ -925,49 +927,50 @@ a:visited, .pane-node-field-footer a:visited {
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li {
   background-color: #fff;
+  border-bottom: solid 1px #e0e0e0;
 }
-/* line 71, ../scss/components/_navbar.scss */
+/* line 72, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li {
   background-color: #fff;
 }
-/* line 75, ../scss/components/_navbar.scss */
+/* line 76, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li:hover
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li:hover {
   background-color: #f1f1ef;
 }
-/* line 79, ../scss/components/_navbar.scss */
+/* line 80, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li a
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li li li a {
   color: #646363;
 }
-/* line 83, ../scss/components/_navbar.scss */
+/* line 84, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li a {
   padding: 20px;
 }
-/* line 86, ../scss/components/_navbar.scss */
+/* line 87, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #superfish-1 > li.active-trail {
   background-image: url(../images/white_nav.png);
   background-repeat: repeat-x;
 }
-/* line 96, ../scss/components/_navbar.scss */
+/* line 97, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #superfish-1-toggle span {
   font-family: 'Montserrat', 'Avant Garde';
   color: #fff;
   font-size: 12px;
 }
-/* line 101, ../scss/components/_navbar.scss */
+/* line 102, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-accordion-toggle {
   text-align: center;
   padding: 10px;
 }
-/* line 105, ../scss/components/_navbar.scss */
+/* line 106, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu .sf-sub-indicator {
   background: none;
   width: 12px;
   height: 21px;
 }
-/* line 110, ../scss/components/_navbar.scss */
+/* line 111, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2 .sf-sub-indicator
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 .sf-sub-indicator {
   background: url("../images/chevron.png") no-repeat 0px 4px;
