@@ -626,7 +626,7 @@ a:visited {
 }
 
 /* line 53, ../scss/components/_home-page.scss */
-.front .view-banner .views-field-title {
+.front .view-banner .views-field-body {
   width: 294px;
   position: relative;
   top: -191px;
@@ -634,7 +634,7 @@ a:visited {
   height: 0;
 }
 /* line 59, ../scss/components/_home-page.scss */
-.front .view-banner .views-field-title span {
+.front .view-banner .views-field-body p {
   color: #12588e;
   font-size: 17px;
   line-height: 22px;
