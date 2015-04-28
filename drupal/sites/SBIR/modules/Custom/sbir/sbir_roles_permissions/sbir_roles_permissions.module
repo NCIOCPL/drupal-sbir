@@ -14,6 +14,7 @@ function set_sbir_permissions() {
   $permissions = array(
     'administer menu',
     'access toolbar',
+    'administer nodequeue',
     'administer sbir',
     'create url aliases',
     'display site configuration menu',
@@ -92,6 +93,7 @@ function set_sbir_permissions() {
   $permissions = array(
     'administer menu',
     'access toolbar',
+        'administer nodequeue',
     'administer sbir',
     'create url aliases',
     'display site configuration menu',
@@ -133,6 +135,7 @@ function set_sbir_permissions() {
   $permissions = array(
     'administer menu',
     'access toolbar',
+        'administer nodequeue',
     'administer sbir',
     'create url aliases',
     'display site configuration menu',
@@ -174,6 +177,7 @@ function set_sbir_permissions() {
   $permissions = array(
     'administer menu',
     'access toolbar',
+        'administer nodequeue',
     'administer sbir',
     'create url aliases',
     'display site configuration menu',

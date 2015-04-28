@@ -70,7 +70,7 @@ function sbir_global_template_create_footer_menu() {
   $path = 'http://www.usa.gov/';
   sbir_base_create_menu_link($menu_name, $title, 10, $path, $plid, 1);  
   
-  $title = 'NIH...Turning Discovery Into Health';
+  $title = 'NIH ... Turning Discovery Into Health®';
   $path = 'http://nih.gov/about/discovery';
   sbir_base_create_menu_link($menu_name, $title, 11, $path, $plid, 1);    
 }
