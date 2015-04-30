@@ -61,10 +61,10 @@
       }
     }
     img {
-      box-shadow: 0 0 15px 0 #ccc;
-      -webkit-box-shadow: 0 0 15px 0 #ccc;
-      -moz-box-shadow: 0 0 15px 0 #ccc;
-      -o-box-shadow: 0 0 15px 0 #ccc;
+      box-shadow: 5px 3px 10px #e9e9e9, -5px 3px 10px #e9e9e9;
+      -webkit-box-shadow: 5px 3px 10px #e9e9e9, -5px 3px 10px #e9e9e9;
+      -moz-box-shadow: 5px 3px 10px #e9e9e9, -5px 3px 10px #e9e9e9;
+      -o-box-shadow: 5px 3px 10px #e9e9e9, -5px 3px 10px #e9e9e9;
     }
   }
   .grid-8 {

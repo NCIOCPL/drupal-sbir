@@ -97,7 +97,7 @@ function sbirtheme_block_view_alter(&$data, $block) {
         //dpm($value);
         $title = $value['#title'];
         if ($title == 'Site Map' || $title == 'USA.gov') {
-          $data['content'][$key]['#attributes']['class'][] = 'no-ext-icon';
+          $data['content'][$key]['#attributes']['class'][] = 'footer-break-point';
         }
       }
     }
@@ -201,3 +201,9 @@ function sbirtheme_preprocess_search_results(&$vars) {
     ));
   }
 }
+
+/*
+function sbirtheme_menu_link__menu_footer_menu(array $variables) {
+  dpm($variables);
+}
+*/

@@ -40,7 +40,7 @@
           color: #aaa;
         }
         li.last::after
-        ,li.no-ext-icon:after {
+        ,li.footer-break-point:after {
           content: "";
         }
       }
