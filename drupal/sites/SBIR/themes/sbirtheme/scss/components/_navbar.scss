@@ -111,11 +111,16 @@
       #block-superfish-1 a.sf-depth-2 .sf-sub-indicator
       ,#block-superfish-1 a.sf-depth-3 .sf-sub-indicator {
         background: url('../images/chevron.png') no-repeat 0px 4px;
+        background-position-x: 5px;
+      }
+      #block-superfish-1 a.sf-depth-2:hover .sf-sub-indicator
+      ,#block-superfish-1 a.sf-depth-3:hover .sf-sub-indicator {
+        background: url('../images/chevron_hover.png') no-repeat 0px 4px;
         background-size: 6px 12px;
         background-position-x: 5px;
         width:12px;
         height:21px;
-      }
+      }      
     }
   }
 }

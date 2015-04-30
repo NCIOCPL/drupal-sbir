@@ -186,27 +186,30 @@ a:visited {
   padding: 0 !important;
 }
 
-/* line 2, ../scss/components/_blocks.scss */
-.view-display-id-left_blocks > .view-content > .views-row {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 3px 4px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 3px 4px;
-  box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 3px 4px;
+/*.view-display-id-left_blocks>.view-content>.views-row {*/
+/* line 3, ../scss/components/_blocks.scss */
+.home-left-block-body {
+  webkit-box-shadow: inset 0 0 15px 0px #e9e9e9;
+  -moz-box-shadow: inset 0 0 15px 0px #e9e9e9;
+  box-shadow: inset 0 0 15px 0px #e9e9e9;
+  -o-box-shadow: inset 0 0 15px 0px #e9e9e9;
+  border: 1px solid #e9e9e9;
   margin-bottom: 20px;
 }
 
-/* line 8, ../scss/components/_blocks.scss */
+/* line 11, ../scss/components/_blocks.scss */
 .pane-home-page-left-blocks {
   font-family: 'Verdana';
 }
-/* line 10, ../scss/components/_blocks.scss */
+/* line 13, ../scss/components/_blocks.scss */
 .pane-home-page-left-blocks .view-announcement {
   border: solid 10px #FDD8A9;
 }
-/* line 13, ../scss/components/_blocks.scss */
+/* line 16, ../scss/components/_blocks.scss */
 .pane-home-page-left-blocks .views-field-title {
   background-color: #0E316A;
 }
-/* line 16, ../scss/components/_blocks.scss */
+/* line 19, ../scss/components/_blocks.scss */
 .pane-home-page-left-blocks .views-field-title .field-content h2 {
   font-family: 'Trebuchet MS';
   color: #fff;
@@ -216,38 +219,37 @@ a:visited {
   background-image: url(../images/blue-header-bg.png);
   background-repeat: no-repeat;
   background-position: 5px 11px;
-  background-size: 16px;
 }
-/* line 30, ../scss/components/_blocks.scss */
+/* line 32, ../scss/components/_blocks.scss */
 .pane-home-page-left-blocks .views-field-body {
-  padding: 20px;
+  padding: 15px 20px 20px 20px;
 }
-/* line 34, ../scss/components/_blocks.scss */
+/* line 36, ../scss/components/_blocks.scss */
 .pane-home-page-left-blocks .views-field-field-footer, .pane-home-page-left-blocks .view-footer {
   text-align: right;
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
 }
-/* line 39, ../scss/components/_blocks.scss */
+/* line 41, ../scss/components/_blocks.scss */
 .pane-home-page-left-blocks a {
   font-weight: bold;
   font-size: 12px;
 }
 
-/* line 44, ../scss/components/_blocks.scss */
+/* line 46, ../scss/components/_blocks.scss */
 .pane-announcement-latest {
   font-family: 'Verdana';
 }
-/* line 46, ../scss/components/_blocks.scss */
+/* line 48, ../scss/components/_blocks.scss */
 .pane-announcement-latest .view-announcement {
   border: solid 10px #FDD8A9;
 }
-/* line 49, ../scss/components/_blocks.scss */
+/* line 51, ../scss/components/_blocks.scss */
 .pane-announcement-latest .views-row {
   border-bottom: 1px solid #ccc;
   padding: 15px 0;
   margin: 10px;
 }
-/* line 54, ../scss/components/_blocks.scss */
+/* line 56, ../scss/components/_blocks.scss */
 .pane-announcement-latest .pane-title {
   background-color: #F06B10;
   /*margin-bottom: 15px;*/
@@ -259,29 +261,29 @@ a:visited {
   background-image: url(../images/orange-header-bg.png);
   background-repeat: no-repeat;
   background-position: 5px 11px;
-  background-size: 16px;
 }
-/* line 67, ../scss/components/_blocks.scss */
+/* line 68, ../scss/components/_blocks.scss */
 .pane-announcement-latest .views-field-title {
   margin-bottom: 10px;
 }
-/* line 70, ../scss/components/_blocks.scss */
+/* line 71, ../scss/components/_blocks.scss */
 .pane-announcement-latest .view-footer {
   text-align: right;
   margin: 15px 20px;
 }
-/* line 73, ../scss/components/_blocks.scss */
+/* line 74, ../scss/components/_blocks.scss */
 .pane-announcement-latest .view-footer a {
   font-weight: bold;
   font-size: 12px;
 }
 
-/* line 80, ../scss/components/_blocks.scss */
-.view-display-id-left_blocks > .view-content > .views-row > .views-field-edit-node {
-  margin: 10px 0 0 20px;
+/* line 81, ../scss/components/_blocks.scss */
+.view-display-id-left_blocks > .view-content > .views-row > .home-left-block-body > .views-field-edit-node {
+  margin: 0px 0 0 20px;
+  padding-top: 10px;
 }
 
-/* line 84, ../scss/components/_blocks.scss */
+/* line 86, ../scss/components/_blocks.scss */
 .views-field-edit-node span a {
   font-size: 10px;
 }
@@ -593,47 +595,43 @@ a:visited {
 /* line 16, ../scss/components/_home-page.scss */
 #resources-for .applicants a {
   background: url(../images/applicantsicon.png) no-repeat;
-  background-size: 60%;
   background-position: 21px center;
   height: 90px;
   width: 94px;
   display: block;
   line-height: 175px;
 }
-/* line 26, ../scss/components/_home-page.scss */
+/* line 25, ../scss/components/_home-page.scss */
 #resources-for .awardees {
   margin-left: 25px;
 }
-/* line 28, ../scss/components/_home-page.scss */
+/* line 27, ../scss/components/_home-page.scss */
 #resources-for .awardees a {
   background: url(../images/awardeesicon.png) no-repeat;
-  background-size: 60%;
-  background-position: center 10px;
+  background-position: center 20px;
   height: 107px;
   width: 79px;
   display: block;
   line-height: 175px;
 }
-/* line 39, ../scss/components/_home-page.scss */
+/* line 37, ../scss/components/_home-page.scss */
 #resources-for .investors a {
   background: url(../images/investorsicon.png) no-repeat;
-  background-size: 60%;
-  background-position: center 22px;
+  background-position: center 30px;
   height: 72px;
   width: 124px;
   display: block;
   line-height: 175px;
 }
 
-/* line 53, ../scss/components/_home-page.scss */
+/* line 50, ../scss/components/_home-page.scss */
 .front .view-banner .views-field-body {
-  width: 294px;
   position: relative;
   top: -191px;
   left: 112px;
   height: 0;
 }
-/* line 59, ../scss/components/_home-page.scss */
+/* line 55, ../scss/components/_home-page.scss */
 .front .view-banner .views-field-body p {
   color: #12588e;
   font-size: 17px;
@@ -641,18 +639,18 @@ a:visited {
   font-weight: bold;
   font-family: 'Montserrat', 'Avant Garde';
 }
-/* line 67, ../scss/components/_home-page.scss */
+/* line 63, ../scss/components/_home-page.scss */
 .front .view-banner img {
-  box-shadow: inset 0px 0px 10px -3px #ababab;
-  -webkit-box-shadow: inset 0px 0px 10px -3px #ababab;
-  -moz-box-shadow: inset 0px 0px 10px -3px #ababab;
-  -o-box-shadow: inset 0px 0px 10px -3px #ababab;
+  box-shadow: 0 0 15px 0 #ccc;
+  -webkit-box-shadow: 0 0 15px 0 #ccc;
+  -moz-box-shadow: 0 0 15px 0 #ccc;
+  -o-box-shadow: 0 0 15px 0 #ccc;
 }
-/* line 74, ../scss/components/_home-page.scss */
+/* line 70, ../scss/components/_home-page.scss */
 .front .grid-8 {
   width: 570px !important;
 }
-/* line 77, ../scss/components/_home-page.scss */
+/* line 73, ../scss/components/_home-page.scss */
 .front .grid-4 {
   width: 350px !important;
 }
@@ -974,6 +972,12 @@ a:visited, .pane-node-field-footer a:visited {
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2 .sf-sub-indicator
 , #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3 .sf-sub-indicator {
   background: url("../images/chevron.png") no-repeat 0px 4px;
+  background-position-x: 5px;
+}
+/* line 116, ../scss/components/_navbar.scss */
+#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-2:hover .sf-sub-indicator
+, #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 a.sf-depth-3:hover .sf-sub-indicator {
+  background: url("../images/chevron_hover.png") no-repeat 0px 4px;
   background-size: 6px 12px;
   background-position-x: 5px;
   width: 12px;
@@ -982,22 +986,25 @@ a:visited, .pane-node-field-footer a:visited {
 
 /* line 2, ../scss/components/_search-form.scss */
 #block-search-form {
+  /*display: inline-block;*/
   margin-top: 15px;
 }
 
-/* line 6, ../scss/components/_search-form.scss */
+/* line 7, ../scss/components/_search-form.scss */
 #search-block-form .form-submit {
   margin-top: -1px;
   text-indent: -9999px;
   /*display: block;*/
   background: none;
-  border: none;
+  border: 1px #e9e9e9 solid;
   background-repeat: no-repeat;
-  background-image: url(../images/search_icon2.png);
-  /*  background-position: 1px 5px;*/
-  background-size: 30px;
-  height: 30px;
-  width: 30px;
+  background-image: url(../images/search_icon.png);
+  background-position: center;
+  background-color: #0C2F68;
+  /*padding:5px;*/
+  /*background-size: 30px;*/
+  height: 26px;
+  width: 26px;
   /*display: inline-block;
   top: -5px;
   position: absolute;
@@ -1033,39 +1040,39 @@ a:visited, .pane-node-field-footer a:visited {
     box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
     */
 }
-/* line 53, ../scss/components/_search-form.scss */
+/* line 56, ../scss/components/_search-form.scss */
 #search-block-form input[type=text] {
   float: left;
-  height: 25px;
-  width: 165px;
+  height: 20px;
+  width: 150px;
   font-size: 11px;
   padding: 1px 4px;
   box-shadow: inset 0px 0px 10px -3px #ababab;
   -webkit-box-shadow: inset 0px 0px 10px -3px #ababab;
   -moz-box-shadow: inset 0px 0px 10px -3px #ababab;
   -o-box-shadow: inset 0px 0px 10px -3px #ababab;
-  border: solid 1px #ababab;
+  border: solid 1px #e9e9e9;
   border-right: none;
 }
 
-/* line 69, ../scss/components/_search-form.scss */
+/* line 72, ../scss/components/_search-form.scss */
 ::-webkit-input-placeholder {
   font-size: 11px;
 }
 
-/* line 73, ../scss/components/_search-form.scss */
+/* line 76, ../scss/components/_search-form.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   font-size: 11px;
 }
 
-/* line 77, ../scss/components/_search-form.scss */
+/* line 80, ../scss/components/_search-form.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   font-size: 11px;
 }
 
-/* line 81, ../scss/components/_search-form.scss */
+/* line 84, ../scss/components/_search-form.scss */
 :-ms-input-placeholder {
   font-size: 11px;
 }
@@ -1109,54 +1116,47 @@ a:visited, .pane-node-field-footer a:visited {
 
 /* line 2, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media {
-  margin: 10px 30px;
+  margin-bottom: 15px;
 }
 /* line 4, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media li {
-  width: 36px;
+  width: 24px;
   float: left;
   list-style: none;
   padding: 0 !important;
-  margin-left: 0;
+  margin-left: 18px;
 }
 /* line 11, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .email-link a {
   background: url(../images/email_icon.png) no-repeat;
-  background-size: contain;
-  /*background-size: 25px 25px;*/
   text-indent: -9999px;
   display: block;
-  height: 25px;
-  -ms-behavior: url(../htc/backgroundsize.min.htc);
+  height: 24px;
 }
-/* line 21, ../scss/components/_social-media.scss */
+/* line 17, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .linkedin-link a {
   background: url(../images/linkedin_icon.png) no-repeat;
-  background-size: 25px 25px;
   text-indent: -9999px;
   display: block;
-  height: 25px;
+  height: 24px;
 }
-/* line 28, ../scss/components/_social-media.scss */
+/* line 23, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .twitter-link a {
   background: url(../images/twitter_icon.png) no-repeat;
-  background-size: 25px 25px;
   text-indent: -9999px;
   display: block;
-  height: 25px;
+  height: 24px;
 }
 
-/* line 36, ../scss/components/_social-media.scss */
+/* line 30, ../scss/components/_social-media.scss */
 #social-media {
-  display: inline-block;
   float: right;
 }
 
-/* line 41, ../scss/components/_social-media.scss */
+/* line 34, ../scss/components/_social-media.scss */
 .follow-us-text {
   float: left;
   margin-top: 4px;
-  margin-right: 10px;
   font-family: 'Montserrat', 'Avant Garde';
   color: #535353;
   font-size: 11px;

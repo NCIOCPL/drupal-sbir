@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default simple view template to all the fields as a row.
@@ -34,14 +33,18 @@
   <?php if (!empty($field->separator)): ?>
     <?php print $field->separator; ?>
   <?php endif; ?>
-
   <?php print $field->wrapper_prefix; ?>
   <?php print $field->label_html; ?>
   <?php print $field->content; ?>
   <?php print $field->wrapper_suffix; ?>
-
-  <?php if ($id == "body" && $is_success_stories): ?>
-    <?php print views_embed_view('success_story', 'success_stories'); ?>
+  <?php if ($id == "title"): ?>
+    <div class="home-left-block-body">
+    <?php endif; ?>
+    <?php if ($id == "body" && $is_success_stories): ?>
+      <?php print views_embed_view('success_story', 'success_stories'); ?>
+    <?php endif; ?>
+    <?php if ($id == "field_footer"): ?>
+    </div>
   <?php endif; ?>
 
 <?php endforeach; ?>

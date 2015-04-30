@@ -1,47 +1,39 @@
 // @social media styling goes here
 #block-menu-menu-social-media {
-  margin:10px 30px;
+  margin-bottom:15px;
   li {
-    width:36px;
+    width:24px;
     float:left;
     list-style:none;
     padding:0!important;
-    margin-left:0;
+    margin-left:18px;
   }
   .email-link a {
     background: url(../images/email_icon.png) no-repeat;
-    background-size: contain;
-    /*background-size: 25px 25px;*/
     text-indent: -9999px;
     display: block;
-    height:25px;
-    -ms-behavior: url(../htc/backgroundsize.min.htc);
-    
+    height:24px;
   }
   .linkedin-link a {
     background: url(../images/linkedin_icon.png) no-repeat;
-    background-size: 25px 25px;
     text-indent: -9999px;
     display: block;
-    height:25px;
+    height:24px;
   }
   .twitter-link a {
     background: url(../images/twitter_icon.png) no-repeat;
-    background-size: 25px 25px;
     text-indent: -9999px;
     display: block;
-    height:25px;
+    height:24px;
   }
 }
 #social-media {
-  display:inline-block;
-  float:right;
+  float: right;
 }
 
 .follow-us-text {
   float:left;
   margin-top: 4px;
-  margin-right: 10px;
   font-family: 'Montserrat', 'Avant Garde';
   color:#535353;
   font-size:11px;

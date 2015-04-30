@@ -15,7 +15,6 @@
   .applicants {
     a {
       background: url(../images/applicantsicon.png) no-repeat;
-      background-size:60%;
       background-position:21px center;
       height: 90px;
       width: 94px;
@@ -27,8 +26,7 @@
     margin-left:25px;
     a {
       background: url(../images/awardeesicon.png) no-repeat;
-      background-size:60%;
-      background-position:center 10px;
+      background-position:center 20px;
       height: 107px;
       width: 79px;
       display: block;
@@ -38,8 +36,7 @@
   .investors {
     a {
       background: url(../images/investorsicon.png) no-repeat;
-      background-size:60%;
-      background-position:center 22px;
+      background-position:center 30px;
       height: 72px;
       width: 124px;
       display: block;
@@ -50,8 +47,7 @@
 
 .front {
   .view-banner {
-    .views-field-body {
-      width: 294px;    
+    .views-field-body { 
       position: relative;
       top: -191px;
       left: 112px;
@@ -65,10 +61,10 @@
       }
     }
     img {
-      box-shadow: inset 0px 0px 10px -3px #ababab;
-      -webkit-box-shadow: inset 0px 0px 10px -3px #ababab;
-      -moz-box-shadow: inset 0px 0px 10px -3px #ababab;
-      -o-box-shadow: inset 0px 0px 10px -3px #ababab;
+      box-shadow: 0 0 15px 0 #ccc;
+      -webkit-box-shadow: 0 0 15px 0 #ccc;
+      -moz-box-shadow: 0 0 15px 0 #ccc;
+      -o-box-shadow: 0 0 15px 0 #ccc;
     }
   }
   .grid-8 {
