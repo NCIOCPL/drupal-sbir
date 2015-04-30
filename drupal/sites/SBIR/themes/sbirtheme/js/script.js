@@ -9,8 +9,6 @@
     });
     $('#resources-for').parent().parent().css('padding', '0 20px 10px 20px');
 
-    $('<br /><br />').insertAfter('.footer-break-point');
-
     //dropdown menu should be at least as wide
     // as the top level menu item
     dropdown_menus = $('#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 ul');
@@ -21,5 +19,10 @@
       //console.log(width);
       $(this).css('width', width);
     });
+
+    // massage the footer menu
+    $('<br /><br />').insertAfter('.footer-break-point');
+    $('<sup class="sup">&reg;</sup>').insertAfter('a[title="NIH ... Turning Discovery Into Health"]');
+    $('a[title="NIH ... Turning Discovery Into Health"]').parent('padding-top', '13px');
   });
 }(jQuery));

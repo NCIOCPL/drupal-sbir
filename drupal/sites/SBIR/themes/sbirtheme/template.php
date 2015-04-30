@@ -99,6 +99,11 @@ function sbirtheme_block_view_alter(&$data, $block) {
         if ($title == 'Site Map' || $title == 'USA.gov') {
           $data['content'][$key]['#attributes']['class'][] = 'footer-break-point';
         }
+        /*
+        if ($title == 'NIH ... Turning Discovery Into Health') {
+           $data['content'][$key]['#attributes']['class'][] = 'discovery';
+        }
+         */
       }
     }
   }

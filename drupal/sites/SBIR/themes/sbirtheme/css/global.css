@@ -491,9 +491,9 @@ a:visited {
 #section-footer #zone-footer-wrapper {
   width: 100%;
   margin-top: 30px;
-  padding: 25px 0 25px 0;
+  padding: 30px 0 80px 0;
   background-color: #f8f8f8;
-  border-top: solid 7px #0e316a;
+  border-top: solid 8px #0e316a;
   /*position:fized;
   bottom:0;*/
   margin-top: 50px;
@@ -540,6 +540,12 @@ a:visited {
 #section-footer #zone-footer-wrapper #zone-footer {
   width: 960px;
   max-width: 960 !important;
+}
+
+/* line 54, ../scss/components/_footer.scss */
+.sup {
+  font-size: smaller;
+  vertical-align: super;
 }
 
 /* line 3, ../scss/components/_header.scss */
