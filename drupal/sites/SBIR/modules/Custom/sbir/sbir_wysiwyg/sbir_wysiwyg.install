@@ -14,7 +14,7 @@ function sbir_wysiwyg_install() {
 
 function sbir_wysiwyg_enable() {
 
-  $settings = 'a:3:{s:12:"allowed_html";s:123:"<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <p> <br/> <h1><h2><h3><h4><h5><h6> <img /> <div>";s:16:"filter_html_help";i:1;s:20:"filter_html_nofollow";i:0;}';
+  $settings = 'a:3:{s:12:"allowed_html";s:124:"<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <p> <br /> <h1><h2><h3><h4><h5><h6> <img /> <div>";s:16:"filter_html_help";i:1;s:20:"filter_html_nofollow";i:0;}';
 
   sbir_wysiwyg_set_allowed_tags($format, $settings);
   
