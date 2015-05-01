@@ -43,7 +43,13 @@
       });
     </script>
     -->
-
-    <script language="JavaScript" type="text/javascript" src="http://static.cancer.gov/webanalytics/WA_SBIR_PageLoad.js"></script>
+    <?php global $base_url; ?>
+    <?php if ($base_url == 'http://sbir.cancer.gov'
+      || $base_url == 'https://sbir.cancer.gov'
+      || $base_url == 'http://www.sbir.cancer.gov'
+      || $base_url == 'https://www.sbir.cancer.gov'        
+      ):?>
+      <script language="JavaScript" type="text/javascript" src="http://static.cancer.gov/webanalytics/WA_SBIR_PageLoad.js"></script>
+    <?php endif; ?>
   </body>
 </html>
