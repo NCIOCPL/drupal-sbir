@@ -1,7 +1,7 @@
 // @branding styling goes here
 #zone-branding-wrapper  {
   height:100px;
-  max-width: 960px;
+  width: 960px;
   margin-left: auto;
   margin-right: auto;
   padding-top:25px;
@@ -31,18 +31,10 @@
 }
 .logo-img img {
   width:86px;
-
-}
-
-#zone-branding {
-  width: auto;
-  margin-rigth:auto;
-  margin-left:auto;
 }
 
 #region-branding {
-  width:100%;
-  display:inline-block;
+  width:960px;
   margin:0;
 }
 .branding-data {
