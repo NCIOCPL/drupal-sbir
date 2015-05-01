@@ -257,9 +257,8 @@ function sbir_email_notifications_form_alter(&$form, &$form_state, $form_id) {
     $form['my_captcha_element'] = array(
       '#type' => 'captcha',
       '#captcha_type' => 'recaptcha/reCAPTCHA',
+      '#weight' => 100
     );
-
-    dpm($form);
   }
 }
 
