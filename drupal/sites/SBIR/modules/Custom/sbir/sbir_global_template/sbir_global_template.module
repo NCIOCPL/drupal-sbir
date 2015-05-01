@@ -32,10 +32,12 @@ function sbir_global_template_create_footer_menu() {
   sbir_base_create_menu_link($menu_name, $title, 1, $path, $plid, 0);
 
   $title = 'Contact Us';
-  $alias = 'contactus';
-  $nid = sbir_basic_pages_create_basic_page($title, $alias);
+  $alias = "about/contactus";
+  $path = drupal_lookup_path("source", $alias);
+  $parts = explode('/', $path);
+  $nid = $parts[1];
   sbir_base_create_menu_link($menu_name, $title, 2, 'node/' . $nid, $plid, 0);
-  
+
   $title = 'Policies';
   $alias = 'policies';
   $nid = sbir_basic_pages_create_basic_page($title, $alias);
@@ -53,26 +55,26 @@ function sbir_global_template_create_footer_menu() {
   $alias = 'sitemap';
   $nid = sbir_basic_pages_create_basic_page($title, $alias);
   sbir_base_create_menu_link($menu_name, $title, 6, 'node/' . $nid, $plid, 0);
-  
+
   $title = 'U.S. Department of Health and Human Services';
   $path = 'http://www.hhs.gov';
   sbir_base_create_menu_link($menu_name, $title, 7, $path, $plid, 1);
-  
+
   $title = 'National Institutes of Health';
   $path = 'http://www.nih.gov';
   sbir_base_create_menu_link($menu_name, $title, 8, $path, $plid, 1);
-  
+
   $title = 'National Cancer Institute';
   $path = 'http://www.cancer.gov';
   sbir_base_create_menu_link($menu_name, $title, 9, $path, $plid, 1);
-  
+
   $title = 'USA.gov';
   $path = 'http://www.usa.gov/';
-  sbir_base_create_menu_link($menu_name, $title, 10, $path, $plid, 1);  
-  
-  $title = 'NIH ... Turning Discovery Into Health®';
+  sbir_base_create_menu_link($menu_name, $title, 10, $path, $plid, 1);
+
+  $title = 'NIH ... Turning Discovery Into Health';
   $path = 'http://nih.gov/about/discovery';
-  sbir_base_create_menu_link($menu_name, $title, 11, $path, $plid, 1);    
+  sbir_base_create_menu_link($menu_name, $title, 11, $path, $plid, 1);
 }
 
 /*
