@@ -60,7 +60,7 @@ function workbench_content() {
       // Build contextual links.
       if (module_exists('contextual')) {
         $output[$key] += contextual_element_info();
-        views_add_contextual_links($output[$key]['contextual_links'], 'block', $view, $display_id);
+        views_add_contextual_links($output[$key]['#contextual_links'], 'block', $view, $display_id);
       }
 
       if ($view->access($display_id)) {

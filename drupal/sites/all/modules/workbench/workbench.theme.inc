@@ -20,8 +20,8 @@ function theme_workbench_element($variables) {
   }
 
   $contextual = '';
-  if (!empty($element['contextual_links'])) {
-    $contextual = drupal_render($element['contextual_links']);
+  if (!empty($element['#contextual_links'])) {
+    $contextual = drupal_render($element['#contextual_links']);
     $element['#attributes']['class'][] = 'contextual-links-region';
   }
 
