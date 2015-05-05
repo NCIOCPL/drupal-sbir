@@ -74,3 +74,49 @@
     width:350px!important;
   }
 }
+
+#era-commons {
+  display:inline-block;
+  #era-logo {
+    float:left;
+    margin-right:25px;
+    a  {
+      background: url(../images/era_home.png) no-repeat;
+      text-indent: -9999px;
+      display: block;
+      height:120px;
+      width:157px;  
+    }
+  }
+  #era-commons-text {
+    display: inline-block;
+    width: 64%;
+    margin-top: 20px;  
+  }
+  #link-title {
+    margin-bottom:5px;
+  }
+}
+
+#icorp {
+  display:inline-block;
+  #icorp-logo {
+    float:left;
+    margin-right:25px;
+    a  {
+      background: url(../images/icorp_home.png) no-repeat;
+      text-indent: -9999px;
+      display: block;
+      height: 86px;
+      width: 157px;
+    }
+  }
+  #icorp-text {
+    display: inline-block;
+    width: 64%;
+    margin-top: 5px; 
+  }
+  #link-title {
+    margin-bottom:5px;
+  }
+}

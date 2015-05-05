@@ -28,6 +28,7 @@ body {
 p, span, div {
   font-size: 12px;
   line-height: 18px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 /*
@@ -115,14 +116,14 @@ ul {
   padding-left:15px;
 }
 */
-/* line 101, ../scss/base/_html-elements.scss */
+/* line 102, ../scss/base/_html-elements.scss */
 a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
 
-/* line 106, ../scss/base/_html-elements.scss */
+/* line 107, ../scss/base/_html-elements.scss */
 a:visited {
   color: #421c89;
 }
@@ -264,26 +265,31 @@ a:visited {
 }
 /* line 68, ../scss/components/_blocks.scss */
 .pane-announcement-latest .views-field-title {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
-/* line 71, ../scss/components/_blocks.scss */
+/* line 70, ../scss/components/_blocks.scss */
+.pane-announcement-latest .views-field-title a {
+  font-weight: bold;
+  font-size: 12px;
+}
+/* line 75, ../scss/components/_blocks.scss */
 .pane-announcement-latest .view-footer {
   text-align: right;
   margin: 15px 20px;
 }
-/* line 74, ../scss/components/_blocks.scss */
+/* line 78, ../scss/components/_blocks.scss */
 .pane-announcement-latest .view-footer a {
   font-weight: bold;
   font-size: 12px;
 }
 
-/* line 81, ../scss/components/_blocks.scss */
+/* line 85, ../scss/components/_blocks.scss */
 .view-display-id-left_blocks > .view-content > .views-row > .home-left-block-body > .views-field-edit-node {
   margin: 0px 0 0 20px;
   padding-top: 10px;
 }
 
-/* line 86, ../scss/components/_blocks.scss */
+/* line 90, ../scss/components/_blocks.scss */
 .views-field-edit-node span a {
   font-size: 10px;
 }
@@ -646,6 +652,62 @@ a:visited {
 /* line 73, ../scss/components/_home-page.scss */
 .front .grid-4 {
   width: 350px !important;
+}
+
+/* line 78, ../scss/components/_home-page.scss */
+#era-commons {
+  display: inline-block;
+}
+/* line 80, ../scss/components/_home-page.scss */
+#era-commons #era-logo {
+  float: left;
+  margin-right: 25px;
+}
+/* line 83, ../scss/components/_home-page.scss */
+#era-commons #era-logo a {
+  background: url(../images/era_home.png) no-repeat;
+  text-indent: -9999px;
+  display: block;
+  height: 120px;
+  width: 157px;
+}
+/* line 91, ../scss/components/_home-page.scss */
+#era-commons #era-commons-text {
+  display: inline-block;
+  width: 64%;
+  margin-top: 20px;
+}
+/* line 96, ../scss/components/_home-page.scss */
+#era-commons #link-title {
+  margin-bottom: 5px;
+}
+
+/* line 101, ../scss/components/_home-page.scss */
+#icorp {
+  display: inline-block;
+}
+/* line 103, ../scss/components/_home-page.scss */
+#icorp #icorp-logo {
+  float: left;
+  margin-right: 25px;
+}
+/* line 106, ../scss/components/_home-page.scss */
+#icorp #icorp-logo a {
+  background: url(../images/icorp_home.png) no-repeat;
+  text-indent: -9999px;
+  display: block;
+  height: 86px;
+  width: 157px;
+}
+/* line 114, ../scss/components/_home-page.scss */
+#icorp #icorp-text {
+  display: inline-block;
+  width: 64%;
+  margin-top: 5px;
+}
+/* line 119, ../scss/components/_home-page.scss */
+#icorp #link-title {
+  margin-bottom: 5px;
 }
 
 /* line 3, ../scss/components/_leftnav.scss */

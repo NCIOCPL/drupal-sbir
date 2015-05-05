@@ -66,7 +66,11 @@
     background-position: 5px 11px;
   }
   .views-field-title {
-    margin-bottom:10px;
+    margin-bottom:5px;
+    a {
+      font-weight: bold;
+      font-size: 12px;
+    }    
   }
   .view-footer {
     text-align: right;

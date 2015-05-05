@@ -9,12 +9,11 @@
     });
     $('#resources-for').parent().parent().css('padding', '0 20px 10px 20px');
 
-    //dropdown menu should be at least as wide
+    // dropdown menu should be at least as wide
     // as the top level menu item
     dropdown_menus = $('#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 ul');
     $(dropdown_menus).each(function () {
       level_one_menu_item = $(this).prev();
-      //console.log(level_one_menu_item.css('width'));
       width = level_one_menu_item.css('width');
       //console.log(width);
       $(this).css('width', width);
