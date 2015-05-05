@@ -93,7 +93,7 @@ function set_sbir_permissions() {
   $permissions = array(
     'administer menu',
     'access toolbar',
-        'administer nodequeue',
+    'administer nodequeue',
     'administer sbir',
     'create url aliases',
     'display site configuration menu',
@@ -135,7 +135,7 @@ function set_sbir_permissions() {
   $permissions = array(
     'administer menu',
     'access toolbar',
-        'administer nodequeue',
+    'administer nodequeue',
     'administer sbir',
     'create url aliases',
     'display site configuration menu',
@@ -177,7 +177,7 @@ function set_sbir_permissions() {
   $permissions = array(
     'administer menu',
     'access toolbar',
-        'administer nodequeue',
+    'administer nodequeue',
     'administer sbir',
     'create url aliases',
     'display site configuration menu',
@@ -206,4 +206,21 @@ function set_sbir_permissions() {
     'moderate content from needs_review to published',
   );
   user_role_grant_permissions($role->rid, $permissions);
+}
+
+function sbir_create_users($name, $pass, $email) {
+  $new_user = array(
+    'name' => $name,
+    'pass' => $sifra, // note: do not md5 the password
+    'mail' => $email,
+    'status' => 1,
+    'init' => $email,
+    'roles' => array(
+      DRUPAL_AUTHENTICATED_RID => 'authenticated user',
+      3 => 'custom role',
+    ),
+  );
+
+// The first parameter is sent blank so a new user is created.
+  user_save('', $new_user);
 }

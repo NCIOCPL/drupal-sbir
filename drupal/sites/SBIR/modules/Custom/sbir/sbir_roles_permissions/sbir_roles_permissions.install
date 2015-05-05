@@ -6,6 +6,7 @@
 
 function sbir_roles_permissions_install() {
   //set_sbir_permissions();
+  sbir_create_users();
 }
 
 /*

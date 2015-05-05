@@ -21,14 +21,14 @@ function sbir_home_page_install() {
   $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
 
   $title = 'Resources For';
-  $alias = '';  
+  $alias = '';
   $body_text = '<div id="resources-for">'
       . '<div class="applicants"><a href="/resources/forapplicants" title="Applicants Resources">Applicants</a></div>'
       . '<div class="awardees"><a href="/resources/foraawardees" title="Awardees Resources">Awardees</a></div>'
       . '<div class="investors"><a href="/resources/forinvestors" title="Investors Resources">Investors</a></div>'
       . '</div>';
   $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
-  
+
   $title = 'Success Stories';
   $alias = 'success-stories-block';
   $body_text = '<p>The SBIR &amp; STTR Programs are one of the largest sources of '
@@ -36,21 +36,26 @@ function sbir_home_page_install() {
       . 'We welcome entrepreneurs and small business leaders to this website '
       . 'to explore grant and contract funding opportunities and a new spirit of '
       . 'collaboration with the NCI.</p>'
-      . '<p><a href="/about">Learn more about the programs &gt;</a></p>';  
-  $footer_text = '<p><a href="about/successstories">View More Success Stories&nbsp;&gt;</a></p>';  
+      . '<p><a href="/about">Learn more about the programs &gt;</a></p>';
+  $footer_text = '<p><a href="about/successstories">View More Success Stories&nbsp;&gt;</a></p>';
   $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text, $footer_text);
 
-  $title = 'Manage Your Content';
+  $title = 'Manage Your Grant';
   $alias = '';
-  $body_text = '<p><a href="resources/apply">eRA Commons Tips for Applying</a></p>'
-      . '<p>Learn what the top five tips are for successfully submitting SBIR &amp;'
-      . ' STTR grant applications.</p>';
+  $body_text = '<div id="era-commons"><div id="era-logo">'
+      . '<a href="/resources/apply" title="eRA Commons">eRA Commons</a></div>'
+      . '<div id="era-commons-text">'
+      . '<p id="link-title"><a href="resources/apply">eRA Commons Tips for Applying</a></p>'
+      . '<p>Learn what the top five tips are for successfully submitting SBIR &amp; STTR grant applications.</p></div></div>';
   $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
 
   $title = 'Entrepreneurial Training';
   $alias = '';
-  $body_text = '<p><a href="/programs/training">Programs &amp; Training</a></p>'
-      . '<p>Learn about the entrepreneurial programs and training available.</p>';
+  $body_text = '<div id="icorp"><div id="icorp-logo">'
+      . '<a href="/programs/training" id="link-title" title="Entrepreneurial Training">Entrepreneurial Training</a></div>'
+      . '<div id="icorp-text">'
+      . '<p id="link-title"><a href="/programs/training">Programs &amp; Training</a></p>'
+      . '<p>Learn about the entrepreneurial programs and training available.</p></div></div>';
   $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
 
 
