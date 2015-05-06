@@ -226,12 +226,11 @@ $handler->display->display_options['fields']['body']['settings'] = array(
   'trim_length' => '150',
 );
 $handler->display->display_options['defaults']['sorts'] = FALSE;
-/* Sort criterion: Content: Post date */
-$handler->display->display_options['sorts']['created']['id'] = 'created';
-$handler->display->display_options['sorts']['created']['table'] = 'node';
-$handler->display->display_options['sorts']['created']['field'] = 'created';
-$handler->display->display_options['sorts']['created']['order'] = 'DESC';
-$handler->display->display_options['sorts']['created']['granularity'] = 'day';
+/* Sort criterion: Content: Posted Date (field_posted_date) */
+$handler->display->display_options['sorts']['field_posted_date_value']['id'] = 'field_posted_date_value';
+$handler->display->display_options['sorts']['field_posted_date_value']['table'] = 'field_data_field_posted_date';
+$handler->display->display_options['sorts']['field_posted_date_value']['field'] = 'field_posted_date_value';
+$handler->display->display_options['sorts']['field_posted_date_value']['order'] = 'DESC';
 $handler->display->display_options['pane_category']['name'] = 'SBIR Views';
 $handler->display->display_options['pane_category']['weight'] = '0';
 $handler->display->display_options['allow']['use_pager'] = 0;

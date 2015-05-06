@@ -17,5 +17,8 @@ function sbir_settings_enable() {
   variable_set('site_frontpage', 'home');
   variable_set('theme_default', 'sbirtheme');
   
+  // Do not create a default view for each nodequeue
+  variable_set('nodequeue_view_per_queue', 0);
+  
   _sbir_settings_setup_workflow_settings();
 }

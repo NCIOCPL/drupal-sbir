@@ -16,10 +16,6 @@ function sbir_block_enable() {
   variable_set('comment_sbir_block', '0');
   variable_set('node_submitted_sbir_block', '0');
   variable_set('node_preview_sbir_block', '1');
-  
-  $menu_options = array('0' => 'main-menu');
-
-  variable_set('menu_options_sbir_block', $menu_options);  
 
   module_load_include('inc', 'sbir_block', 'includes/sbir_block.field_instance');
 

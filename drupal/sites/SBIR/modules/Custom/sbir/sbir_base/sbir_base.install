@@ -5,6 +5,12 @@
  */
 
 function sbir_base_enable() {
+  
+  // Attach default banner to banner field
+  $image_path = DRUPAL_ROOT . "/" . drupal_get_path('theme', 'sbirtheme') . '/images/page-banner.png';
+  $file = file_save_data(file_get_contents($image_path), file_default_scheme() . '://' . basename($image_path));  
+  $page_banner_fid = $file->fid;
+  
   $field_bases = array();
 
   // Exported field_base: 'body'
@@ -128,7 +134,7 @@ function sbir_base_enable() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 17,
+      'default_image' => $page_banner_fid,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,

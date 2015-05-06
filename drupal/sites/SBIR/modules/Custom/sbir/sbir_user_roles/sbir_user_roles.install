@@ -1,0 +1,17 @@
+<?php
+
+/*
+ * Implements hook_install
+ */
+
+function sbir_user_roles_install() {
+  set_sbir_permissions();  
+  //sbir_create_users('SBIR Editor', '', '');
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_user_roles_enable() {
+}

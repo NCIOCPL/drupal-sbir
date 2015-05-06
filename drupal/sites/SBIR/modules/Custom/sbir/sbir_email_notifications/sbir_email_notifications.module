@@ -39,12 +39,12 @@ function sbir_email_notifications_block_view($delta = '') {
     case 'email_notification_add_block':
       $block['subject'] = 'Email Notification Add';
       $block['content'] = _load_subscription_add_form();
-      $_SESSION['sbir_email_subject'] = 'SBIR & STTR Email Signup';
+      $_SESSION['sbir_email_type'] = 'new';
       break;
     case 'email_notification_update_block':
       $block['subject'] = 'Email Notification Update';
       $block['content'] = _load_subscription_update_form();
-      $_SESSION['sbir_email_subject'] = 'SBIR & STTR Email Change';
+      $_SESSION['sbir_email_type'] = 'change';
       break;
   }
   return $block;
@@ -79,16 +79,28 @@ function _load_subscription_update_form() {
 function _email_notification_form_submit(&$form, &$form_state) {
 
   if (isset($form_state['nid']) && is_numeric($form_state['nid'])) {
-    $to = "cedricpriestley@gmail.com";
-    $from = "cedricpriestley@gmail.com";
 
-    $subject = $_SESSION['sbir_email_subject'];
+    variable_set('sbir_admin_to_email', $form['email']['to']['#value']);
+    variable_set('sbir_admin_from_email', $form['email']['from']['#value']);
+    variable_set('sbir_admin_new_subject', $form['email']['change_subject']['#value']);
+    variable_set('sbir_admin_change_subject', $form['email']['new_subject']['#value']);
+
+    $to = variable_get('sbir_admin_to_email', '');
+    $from = variable_get('sbir_admin_from_email', '');
 
     $body = "";
     $line = array();
 
+    if ($_SESSION['sbir_email_type'] == 'new') {
+      $subject = variable_get('sbir_admin_new_subject', '');
+    }
+
+    if ($_SESSION['sbir_email_type'] == 'change') {
+      $subject = variable_get('sbir_admin_change_subject', '');
+    }
+
     foreach ($form_state['values'] as $key => $value) {
-      if ($subject == "SBIR & STTR Email Change") {
+      if ($_SESSION['sbir_email_type'] == "change") {
         if ($key == 'field_current_email') {
           $line[-1] .= "Current Email: " . $value['und'][0]['value'];
         }
@@ -253,7 +265,7 @@ function sbir_email_notifications_form_alter(&$form, &$form_state, $form_id) {
     $form['#attached']['css'] = array(
       drupal_get_path('module', 'sbir_subscription') . '/css/sbir_email_notifications.css',
     );
-    
+
     $form['my_captcha_element'] = array(
       '#type' => 'captcha',
       '#captcha_type' => 'recaptcha/reCAPTCHA',

@@ -26,7 +26,7 @@ dependencies[] = views_content
 dependencies[] = wysiwyg
 
 dependencies[] = nci_user_roles
-dependencies[] = nci_SSO
+;dependencies[] = nci_SSO
 
 dependencies[] = sbir_announcement
 dependencies[] = sbir_basic_page
@@ -49,8 +49,8 @@ dependencies[] = sbir_global_template
 dependencies[] = sbir_search
 dependencies[] = workbench
 dependencies[] = workbench_moderation
-dependencies[] = sbir_roles_permissions
 dependencies[] = sbir_admin
+dependencies[] = sbir_user_roles
 dependencies[] = sbir_error_pages
 
 

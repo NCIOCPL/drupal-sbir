@@ -2,6 +2,11 @@
 
 function set_sbir_permissions() {
 
+  // Log message to console and watchdog
+  $message = 'Resetting SBIR user permissions';
+  watchdog('sbir_user_roles', $message, array(), WATCHDOG_NOTICE);
+  drupal_set_message($message);
+
   // Create the role if necessary.
   $role = user_role_load_by_name('content author');
   if (!$role) {
@@ -12,12 +17,15 @@ function set_sbir_permissions() {
 
   // Add the permissions to the role.
   $permissions = array(
+    //'administer recaptcha',
+    'use workbench_moderation needs review tab',
+    'use workbench_moderation my drafts tab',
     'administer menu',
     'access toolbar',
     'administer nodequeue',
-    'administer sbir',
+    'administer sbir_admin',
     'create url aliases',
-    'display site configuration menu',
+    'edit metatags_quick',
     'display site configuration menu',
     'display site building menu',
     'create sbir_announcement content',
@@ -39,10 +47,13 @@ function set_sbir_permissions() {
     'edit any sbir_file content',
     'edit any sbir_success_story content',
     'manipulate all queues',
+    'manipulate queues',
     'moderate content from draft to needs_review',
     'moderate content from needs_review to draft',
     'moderate content from needs_review to published',
   );
+
+  user_role_revoke_permissions($role->rid, $permissions);
   user_role_grant_permissions($role->rid, $permissions);
 
   // Create the role if necessary.
@@ -58,6 +69,7 @@ function set_sbir_permissions() {
     'administer menu',
     'access toolbar',
     'create url aliases',
+    'edit metatags_quick',
     'create sbir_announcement content',
     'create sbir_basic_page content',
     'create sbir_block content',
@@ -79,6 +91,8 @@ function set_sbir_permissions() {
     'moderate content from draft to needs_review',
     'moderate content from needs_review to draft',
   );
+
+  user_role_revoke_permissions($role->rid, $permissions);
   user_role_grant_permissions($role->rid, $permissions);
 
   // Create the role if necessary.
@@ -91,11 +105,15 @@ function set_sbir_permissions() {
 
   // Add the permissions to the role.
   $permissions = array(
+    //'administer recaptcha',
+    'use workbench_moderation needs review tab',
+    'use workbench_moderation my drafts tab',
     'administer menu',
     'access toolbar',
     'administer nodequeue',
-    'administer sbir',
+    'administer sbir_admin',
     'create url aliases',
+    'edit metatags_quick',
     'display site configuration menu',
     'display site building menu',
     'create sbir_announcement content',
@@ -117,10 +135,13 @@ function set_sbir_permissions() {
     'edit any sbir_file content',
     'edit any sbir_success_story content',
     'manipulate all queues',
+    'manipulate queues',
     'moderate content from draft to needs_review',
     'moderate content from needs_review to draft',
     'moderate content from needs_review to published',
   );
+
+  user_role_revoke_permissions($role->rid, $permissions);
   user_role_grant_permissions($role->rid, $permissions);
 
   // Create the role if necessary.
@@ -133,11 +154,15 @@ function set_sbir_permissions() {
 
   // Add the permissions to the role.
   $permissions = array(
+    //'administer recaptcha',
+    'use workbench_moderation needs review tab',
+    'use workbench_moderation my drafts tab',
     'administer menu',
     'access toolbar',
     'administer nodequeue',
-    'administer sbir',
+    'administer sbir_admin',
     'create url aliases',
+    'edit metatags_quick',
     'display site configuration menu',
     'display site building menu',
     'create sbir_announcement content',
@@ -159,10 +184,13 @@ function set_sbir_permissions() {
     'edit any sbir_file content',
     'edit any sbir_success_story content',
     'manipulate all queues',
+    'manipulate queues',
     'moderate content from draft to needs_review',
     'moderate content from needs_review to draft',
     'moderate content from needs_review to published',
   );
+
+  user_role_revoke_permissions($role->rid, $permissions);
   user_role_grant_permissions($role->rid, $permissions);
 
   // Create the role if necessary.
@@ -175,11 +203,15 @@ function set_sbir_permissions() {
 
   // Add the permissions to the role.
   $permissions = array(
+    'administer recaptcha',
+    'use workbench_moderation needs review tab',
+    'use workbench_moderation my drafts tab',
     'administer menu',
     'access toolbar',
     'administer nodequeue',
-    'administer sbir',
+    'administer sbir_admin',
     'create url aliases',
+    'edit metatags_quick',
     'display site configuration menu',
     'display site building menu',
     'create sbir_announcement content',
@@ -201,10 +233,13 @@ function set_sbir_permissions() {
     'edit any sbir_file content',
     'edit any sbir_success_story content',
     'manipulate all queues',
+    'manipulate queues',
     'moderate content from draft to needs_review',
     'moderate content from needs_review to draft',
     'moderate content from needs_review to published',
   );
+
+  user_role_revoke_permissions($role->rid, $permissions);
   user_role_grant_permissions($role->rid, $permissions);
 }
 
@@ -223,4 +258,20 @@ function sbir_create_users($name, $pass, $email) {
 
 // The first parameter is sent blank so a new user is created.
   user_save('', $new_user);
+}
+
+/*
+ * Implements hook_modules_enabled
+ */
+
+function sbir_user_roles_modules_enabled($modules) {
+  set_sbir_permissions();
+}
+
+/*
+ * Implements hook_modules_disabled
+ */
+
+function sbir_user_roles_modules_disabled($modules) {
+  set_sbir_permissions();
 }

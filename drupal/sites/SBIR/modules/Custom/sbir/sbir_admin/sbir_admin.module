@@ -6,7 +6,7 @@
 
 function sbir_admin_permission() {
   $permissions = array(
-    'administer sbir' => array(
+    'administer sbir_admin' => array(
       'title' => t('Administer SBIR'),
       'restrict access' => TRUE,
     ),
@@ -19,22 +19,22 @@ function sbir_admin_permission() {
  */
 
 function sbir_admin_menu() {
-  $items['admin/config/sbir/admin'] = array(
+  $items['admin/sbir/admin'] = array(
     'title' => 'SBIR',
     'description' => 'Administer SBIR',
     'position' => 'right',
     'weight' => 0,
     'page callback' => 'system_admin_menu_block_page',
-    'access arguments' => array('administer sbir'),
+    'access arguments' => array('administer sbir_admin'),
     'file' => 'system.admin.inc',
     'file path' => drupal_get_path('module', 'system')
   );
-  $items['admin/config/sbir/admin/settings'] = array(
+  $items['admin/sbir/admin/settings'] = array(
     'title' => 'Settings',
     'description' => t('Configure SBIR'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('sbir_admin_settings_form'),
-    'access arguments' => array('administer sbir'),
+    'access arguments' => array('administer sbir_admin'),
     'type' => MENU_NORMAL_ITEM,
   );
 
@@ -42,6 +42,12 @@ function sbir_admin_menu() {
 }
 
 function sbir_admin_settings_form($form_state) {
+
+  $to_email = variable_get('sbir_admin_to_email', '');
+  $from_email = variable_get('sbir_admin_from_email', '');
+  $new_subject = variable_get('sbir_admin_new_subject', '');
+  $change_subject = variable_get('sbir_admin_change_subject', '');
+
   /*
     // Content Settings
     $form['content'] = array(
@@ -73,30 +79,32 @@ function sbir_admin_settings_form($form_state) {
     '#type' => 'textfield',
     '#title' => t('From Address'),
     '#required' => TRUE,
-    '#default_value' => 'cedric.priestley@nih.gov',
+    '#default_value' => $from_email,
     "#description" => "This is be used as the 'from' address for signup notifications"
   );
   $form['email']['to'] = array(
     '#type' => 'textfield',
     '#title' => t('To Address'),
     '#required' => TRUE,
-    '#default_value' => 'cedric.priestley@nih.gov',
+    '#default_value' => $to_email,
     '#description' => 'Signup notifications are sent to this email address',
   );
   $form['email']['new_subject'] = array(
     '#type' => 'textfield',
     '#title' => t('New Subscription Subject'),
     '#required' => TRUE,
-    '#default_value' => 'SBIR & STTR Email Signup',
+    '#default_value' => $new_subject,
     '#description' => 'This subject is used for new signup subscriptions',
   );
   $form['email']['change_subject'] = array(
     '#type' => 'textfield',
     '#title' => t('Change Subscription Subject'),
     '#required' => TRUE,
-    '#default_value' => 'SBIR & STTR Email Change',
+    '#default_value' => $change_subject,
     '#description' => 'This subject is used for updated email subscriptions',
   );
+
+  $form['#validate'][] = '_validate_email_settings_input';
 
   $form['submit'] = array(
     '#type' => 'submit',
@@ -110,7 +118,13 @@ function sbir_admin_settings_form($form_state) {
  */
 
 function sbir_admin_settings_form_submit($form, &$form_state) {
+
+  variable_set('sbir_admin_to_email', $form['email']['to']['#value']);
+  variable_set('sbir_admin_from_email', $form['email']['from']['#value']);
+  variable_set('sbir_admin_new_subject', $form['email']['change_subject']['#value']);
+  variable_set('sbir_admin_change_subject', $form['email']['new_subject']['#value']);
   
+  drupal_set_message('Email settings have been successfully saved.');
 }
 
 /*
@@ -138,15 +152,16 @@ function sbir_admin_form_alter(&$form, &$form_state, $form_id) {
 
   switch ($node_form_id) {
 
+    // Add a checkbox to all node edit forms that allows user to 
+    // enable/disable the menu item
     case 'node_form':
       //get mlid, if mlid captured
       //this is node editing action
       $mlid = 0;
-      //dpm($form['menu']);
+
       if (isset($form['menu']['link']['mlid']['#value']) && $form['menu']['link']['mlid']['#value'] > 0) {
         $mlid = $form['menu']['link']['mlid']['#value'];
         $menuItem = menu_link_load($mlid);
-        //dpm($menuItem);
       }
 
       //add dummy hidden/enabled checkbox and
@@ -170,5 +185,25 @@ function sbir_admin_form_alter(&$form, &$form_state, $form_id) {
  */
 
 function sbir_admin_node_presave($node) {
-  $node->menu['hidden'] = $node->menu['sbir_menu_item_enabled'] == 1 ? 0 : 1;
+  if (isset($node->menu['sbir_menu_item_enabled'])) {
+    $node->menu['hidden'] = $node->menu['sbir_menu_item_enabled'] == 1 ? 0 : 1;
+  }
+}
+
+// Validate form input for SBIR Email Signup
+function _validate_email_settings_input($form, &$form_state) {
+
+  $from_email = check_plain($form_state['input']['from']);
+  $to_email = check_plain($form_state['input']['to']);
+
+  $new_subject = check_plain($form_state['input']['new_subject']);
+  $change_subject = check_plain($form_state['input']['change_subject']);
+
+  if (!filter_var($from_email, FILTER_VALIDATE_EMAIL)) {
+    form_set_error('Email Validation', "From Address is not in the corrent format: jdoe@example.com");
+  }
+
+  if (!filter_var($to_email, FILTER_VALIDATE_EMAIL)) {
+    form_set_error('Email Validation', "To Address is not in the corrent format: jdoe@example.com");
+  }
 }

@@ -1,192 +1,34 @@
 <?php
+
 /**
  * Configure the WYSIWYG CkEditor for the Filtered HTML text format.
+ * @param type $format The text format being updated
+ * @param type $editor The name of the HTML WYSIWYG editor
+ * @param type $settings Defines what buttons should appear on the WYSIWYG editor
  */
-function sbir_wysiwyg_configure_ckeditor() {
-
-  $profile = array(
-    'format' => 'filtered_html',
-    'editor' => 'ckeditor',
-    'settings' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 1,
-      'theme' => 'advanced',
-      'language' => 'en',
-      'buttons' => array(
-        'default' => array(
-          'Bold' => 1,
-          'Italic' => 1,
-          'JustifyLeft' => 1,
-          'JustifyCenter' => 1,
-          'JustifyRight' => 1,
-          'JustifyBlock' => 1,
-          'BidiLtr' => 1,
-          'BulletedList' => 1,
-          'NumberedList' => 1,
-          'Indent' => 1,
-          'Undo' => 1,
-          'Link' => 1,
-          'Unlink' => 1,
-          'Image' => 1,
-          'TextColor' => 1,
-          'Cut' => 1,
-          'Copy' => 1,
-          'Paste' => 1,
-          'PasteText' => 1,
-          'Format' => 1,
-          'Font' => 1,
-          'Styles' => 1,
-        ),
-      ),
-      'toolbar_loc' => 'top',
-      'toolbar_align' => 'left',
-      'path_loc' => 'bottom',
-      'resizing' => 1,
-      'verify_html' => 1,
-      'preformatted' => 0,
-      'convert_fonts_to_spans' => 1,
-      'remove_linebreaks' => 1,
-      'apply_source_formatting' => 0,
-      'paste_auto_cleanup_on_paste' => 0,
-      'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
-      'css_setting' => 'theme',
-      'css_path' => '',
-      'css_classes' => '',
-    ),
-    'rdf_mapping' => array(),
-  );
-  
-  $profile_obj = sbir_base_convert_array_to_object($profile);
-
-  wysiwyg_add_editor_settings($profile_obj, 'sbirtheme');
+function sbir_wysiwyg_configure_ckeditor($format, $editor, $settings) {
+  db_insert('wysiwyg')
+      ->fields(array(
+        'format' => $format,
+        'editor' => $editor,        
+        'settings' => $settings,
+      ))
+      ->execute();
 }
-
-/**
- * Implements hook_filter_default_formats().
- */
-/*
-function sbir_wysiwyg_filter_default_formats() {
-  $formats = array();
-
-  // Exported format: Filtered HTML.
-  $formats['filtered_html'] = array(
-    'format' => 'filtered_html',
-    'name' => 'Filtered HTML',
-    'cache' => 1,
-    'status' => 1,
-    'weight' => 0,
-    'filters' => array(
-      'filter_url' => array(
-        'weight' => 0,
-        'status' => 1,
-        'settings' => array(
-          'filter_url_length' => 72,
-        ),
-      ),
-      'filter_html' => array(
-        'weight' => 1,
-        'status' => 1,
-        'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <p> <br /> <h1><h2><h3><h4><h5><h6> <img />',
-          'filter_html_help' => 1,
-          'filter_html_nofollow' => 0,
-        ),
-      ),
-      'filter_autop' => array(
-        'weight' => 2,
-        'status' => 1,
-        'settings' => array(),
-      ),
-      'filter_htmlcorrector' => array(
-        'weight' => 10,
-        'status' => 1,
-        'settings' => array(),
-      ),
-    ),
-  );
-
-  return $fo
- * rmats;
-}
-*/
 
 /**
  * Method that updates allowed HTML tags for a given text format
  * @param type $format The text format being updated
+ * @param type $name The name of the format being updated
  * @param type $settings The tags that a content editor is allowed to input
  */
-
-function sbir_wysiwyg_set_allowed_tags($format, $settings) {
+function sbir_wysiwyg_set_allowed_tags($format, $name, $settings) {
 
   db_update('filter')
       ->fields(array(
         'settings' => $settings,
       ))
-      ->condition('format', $format)      
-      ->condition('name', 'filter_html')
+      ->condition('format', $format)
+      ->condition('name', $name)
       ->execute();
-}
-
-/**
- * Implements hook_wysiwyg_default_profiles().
- */
-function sbir_wysiwyg_wysiwyg_default_profiles() {
-  $profiles = array();
-
-  // Exported profile: filtered_html
-  $profiles['filtered_html'] = array(
-    'format' => 'filtered_html',
-    'editor' => 'ckeditor',
-    'settings' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 1,
-      'theme' => 'advanced',
-      'language' => 'en',
-      'buttons' => array(
-        'default' => array(
-          'Bold' => 1,
-          'Italic' => 1,
-          'JustifyLeft' => 1,
-          'JustifyCenter' => 1,
-          'JustifyRight' => 1,
-          'JustifyBlock' => 1,
-          'BidiLtr' => 1,
-          'BulletedList' => 1,
-          'NumberedList' => 1,
-          'Indent' => 1,
-          'Undo' => 1,
-          'Link' => 1,
-          'Unlink' => 1,
-          'Image' => 1,
-          'TextColor' => 1,
-          'Cut' => 1,
-          'Copy' => 1,
-          'Paste' => 1,
-          'PasteText' => 1,
-          'Format' => 1,
-          'Font' => 1,
-          'Styles' => 1,
-        ),
-      ),
-      'toolbar_loc' => 'top',
-      'toolbar_align' => 'left',
-      'path_loc' => 'bottom',
-      'resizing' => 1,
-      'verify_html' => 1,
-      'preformatted' => 0,
-      'convert_fonts_to_spans' => 1,
-      'remove_linebreaks' => 1,
-      'apply_source_formatting' => 0,
-      'paste_auto_cleanup_on_paste' => 0,
-      'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
-      'css_setting' => 'theme',
-      'css_path' => '',
-      'css_classes' => '',
-    ),
-    'rdf_mapping' => array(),
-  );
-
-  return $profiles;
 }
