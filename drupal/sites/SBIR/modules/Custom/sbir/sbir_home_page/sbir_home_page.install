@@ -24,7 +24,7 @@ function sbir_home_page_install() {
   $alias = '';
   $body_text = '<div id="resources-for">'
       . '<div class="applicants"><a href="/resources/forapplicants" title="Applicants Resources">Applicants</a></div>'
-      . '<div class="awardees"><a href="/resources/foraawardees" title="Awardees Resources">Awardees</a></div>'
+      . '<div class="awardees"><a href="/resources/forawardees" title="Awardees Resources">Awardees</a></div>'
       . '<div class="investors"><a href="/resources/forinvestors" title="Investors Resources">Investors</a></div>'
       . '</div>';
   $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
@@ -43,18 +43,18 @@ function sbir_home_page_install() {
   $title = 'Manage Your Grant';
   $alias = '';
   $body_text = '<div id="era-commons"><div id="era-logo">'
-      . '<a href="/resources/apply" title="eRA Commons">eRA Commons</a></div>'
+      . '<a href="/resources/forapplicants" title="eRA Commons">eRA Commons</a></div>'
       . '<div id="era-commons-text">'
-      . '<p id="link-title"><a href="resources/apply">eRA Commons Tips for Applying</a></p>'
+      . '<p id="link-title"><a href="resources/forapplicants">eRA Commons Tips for Applying</a></p>'
       . '<p>Learn what the top five tips are for successfully submitting SBIR &amp; STTR grant applications.</p></div></div>';
   $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
 
   $title = 'Entrepreneurial Training';
   $alias = '';
   $body_text = '<div id="icorp"><div id="icorp-logo">'
-      . '<a href="/programs/training" id="link-title" title="Entrepreneurial Training">Entrepreneurial Training</a></div>'
+      . '<a href="/programseducation" id="link-title" title="Entrepreneurial Training">Entrepreneurial Training</a></div>'
       . '<div id="icorp-text">'
-      . '<p id="link-title"><a href="/programs/training">Programs &amp; Training</a></p>'
+      . '<p id="link-title"><a href="/programseducation">Programs &amp; Training</a></p>'
       . '<p>Learn about the entrepreneurial programs and training available.</p></div></div>';
   $nodequeue_items[] = sbir_basic_pages_create_basic_page($title, $alias, 'sbir_block', $body_text);
 

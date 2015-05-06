@@ -26,7 +26,6 @@ function set_sbir_permissions() {
     'administer sbir_admin',
     'create url aliases',
     'edit metatags_quick',
-    'display site configuration menu',
     'display site building menu',
     'create sbir_announcement content',
     'create sbir_basic_page content',
