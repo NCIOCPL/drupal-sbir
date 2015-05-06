@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Default simple view template to all the fields as a row.
@@ -23,31 +24,17 @@
  * @ingroup views_templates
  */
 ?>
-<?php $is_success_stories = false; ?>
+<?php global $user; ?>
 <?php foreach ($fields as $id => $field): ?>
   <?php if (in_array('anonymous user', $user->roles) && $id == 'edit_node'): ?>
     <?php continue; ?>
   <?php endif; ?>
-  <?php if ($id == "title"): ?>
-    <?php if ($field->raw == "Success Stories"): ?>
-      <?php $is_success_stories = true; ?>
-    <?php endif; ?>
-  <?php endif; ?>
   <?php if (!empty($field->separator)): ?>
     <?php print $field->separator; ?>
   <?php endif; ?>
+
   <?php print $field->wrapper_prefix; ?>
   <?php print $field->label_html; ?>
   <?php print $field->content; ?>
   <?php print $field->wrapper_suffix; ?>
-  <?php if ($id == "title"): ?>
-    <div class="home-left-block-body">
-    <?php endif; ?>
-    <?php if ($id == "body" && $is_success_stories): ?>
-      <?php print views_embed_view('success_story', 'success_stories'); ?>
-    <?php endif; ?>
-    <?php if ($id == "field_footer"): ?>
-    </div>
-  <?php endif; ?>
-
 <?php endforeach; ?>

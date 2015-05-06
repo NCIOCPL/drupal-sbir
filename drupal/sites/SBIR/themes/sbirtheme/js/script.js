@@ -22,6 +22,6 @@
     // massage the footer menu
     $('<br /><br />').insertAfter('.footer-break-point');
     $('<sup class="sup">&reg;</sup>').insertAfter('a[title="NIH ... Turning Discovery Into Health"]');
-    $('a[title="NIH ... Turning Discovery Into Health"]').parent('padding-top', '13px');
+    $('a[title="NIH ... Turning Discovery Into Health"]').parent().css('padding-top', '25px');
   });
 }(jQuery));

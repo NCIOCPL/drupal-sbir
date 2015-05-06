@@ -653,17 +653,21 @@ a:visited {
 .front .grid-4 {
   width: 350px !important;
 }
+/* line 76, ../scss/components/_home-page.scss */
+.front #block-views-banner-banner {
+  display: none;
+}
 
-/* line 78, ../scss/components/_home-page.scss */
+/* line 81, ../scss/components/_home-page.scss */
 #era-commons {
   display: inline-block;
 }
-/* line 80, ../scss/components/_home-page.scss */
+/* line 83, ../scss/components/_home-page.scss */
 #era-commons #era-logo {
   float: left;
   margin-right: 25px;
 }
-/* line 83, ../scss/components/_home-page.scss */
+/* line 86, ../scss/components/_home-page.scss */
 #era-commons #era-logo a {
   background: url(../images/era_home.png) no-repeat;
   text-indent: -9999px;
@@ -671,27 +675,27 @@ a:visited {
   height: 120px;
   width: 157px;
 }
-/* line 91, ../scss/components/_home-page.scss */
+/* line 94, ../scss/components/_home-page.scss */
 #era-commons #era-commons-text {
   display: inline-block;
   width: 64%;
   margin-top: 20px;
 }
-/* line 96, ../scss/components/_home-page.scss */
+/* line 99, ../scss/components/_home-page.scss */
 #era-commons #link-title {
   margin-bottom: 5px;
 }
 
-/* line 101, ../scss/components/_home-page.scss */
+/* line 104, ../scss/components/_home-page.scss */
 #icorp {
   display: inline-block;
 }
-/* line 103, ../scss/components/_home-page.scss */
+/* line 106, ../scss/components/_home-page.scss */
 #icorp #icorp-logo {
   float: left;
   margin-right: 25px;
 }
-/* line 106, ../scss/components/_home-page.scss */
+/* line 109, ../scss/components/_home-page.scss */
 #icorp #icorp-logo a {
   background: url(../images/icorp_home.png) no-repeat;
   text-indent: -9999px;
@@ -699,13 +703,13 @@ a:visited {
   height: 86px;
   width: 157px;
 }
-/* line 114, ../scss/components/_home-page.scss */
+/* line 117, ../scss/components/_home-page.scss */
 #icorp #icorp-text {
   display: inline-block;
   width: 64%;
   margin-top: 5px;
 }
-/* line 119, ../scss/components/_home-page.scss */
+/* line 122, ../scss/components/_home-page.scss */
 #icorp #link-title {
   margin-bottom: 5px;
 }
