@@ -28,9 +28,7 @@ $handler->display->display_options['empty']['area']['field'] = 'area';
 $handler->display->display_options['empty']['area']['label'] = 'Default Page Banner';
 $handler->display->display_options['empty']['area']['empty'] = TRUE;
 $handler->display->display_options['empty']['area']['content'] = '<div class="block block-views contextual-links-region block-banner-banner block-views-banner-banner odd block-without-title" id="block-views-banner-banner">
-  <div class="block-inner clearfix">
-    <div class="contextual-links-wrapper contextual-links-processed"><a class="contextual-links-trigger" href="#">Configure</a><ul class="contextual-links"><li class="views-ui-edit first"><a href="/admin/structure/views/view/banner/edit/banner?destination=node/1">Edit view</a></li><li class="layout"><a href="/context-ui/activate?destination=node/1">Configure Layout</a></li><li class="block-configure last"><a href="/admin/structure/block/manage/views/banner-banner/configure?destination=node/1">Configure block</a></li></ul></div>    
-    <div class="content clearfix">
+  <div class="block-inner clearfix"><div class="content clearfix">
       <div class="view view-banner view-id-banner view-display-id-banner view-dom-id-e0b8442e78f4eb03434c71c7a12886d6">
         <div class="view-content">
           <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
