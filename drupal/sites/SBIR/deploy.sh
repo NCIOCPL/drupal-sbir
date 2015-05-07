@@ -1,5 +1,5 @@
 drush vset maintenance_mode 1
-drush php-eval 'drupal_message("Putting SBIR site into maintenance mode")'
+
 drush dis error_pages -y
 drush dis sbir_admin -y
 drush dis sbir_user_roles -y
@@ -24,11 +24,6 @@ drush dis sbir_basic_page -y
 drush dis sbir_announcement -y
 
 drush en sbir -y
-
-drush php-eval 'update_sbir_block("menu", "menu-footer-menu", "<none>", 0, "", 0)'
-drush php-eval 'update_sbir_block("menu", "menu-social-media", "<none>", 0, "", 0)'
-drush php-eval 'update_sbir_block("superfish", 1, "<none>", 0, "", 0)'
-drush php-eval 'update_sbir_block("sbir_home_page", "home_page_banner", "<none>", 0, "", 0)'
 
 drush cron
 

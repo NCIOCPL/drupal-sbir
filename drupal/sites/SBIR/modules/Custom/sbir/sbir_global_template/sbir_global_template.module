@@ -31,12 +31,12 @@ function sbir_global_template_create_footer_menu() {
   $path = '<front>';
   sbir_base_create_menu_link($menu_name, $title, 1, $path, $plid, 0);
 
-  $title = 'Contact Us';
-  $alias = "about/contactus";
-  $path = drupal_lookup_path("source", $alias);
-  $parts = explode('/', $path);
-  $nid = $parts[1];
-  sbir_base_create_menu_link($menu_name, $title, 2, 'node/' . $nid, $plid, 0);
+  //$title = 'Contact Us';
+  //$alias = "about/contactus";
+  //$path = drupal_lookup_path("source", $alias);
+  //$parts = explode('/', $path);
+  //$nid = $parts[1];
+  //sbir_base_create_menu_link($menu_name, $title, 2, 'node/' . $nid, $plid, 0);
 
   $title = 'Policies';
   $alias = 'policies';

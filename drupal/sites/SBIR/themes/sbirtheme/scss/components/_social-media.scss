@@ -1,6 +1,9 @@
 // @social media styling goes here
 #block-menu-menu-social-media {
   margin-bottom:15px;
+  .block-title {
+    display:none;
+  }
   ul.menu li {
     width:24px;
     float:left;
