@@ -375,15 +375,11 @@ a:visited {
   color: #2664ab;
 }
 
-/* line 2, ../scss/components/_dates.scss */
-#sbir-dates {
-  margin-left: 475px;
-}
-/* line 4, ../scss/components/_dates.scss */
+/* line 3, ../scss/components/_dates.scss */
 #sbir-dates .sbir-date {
   display: inline;
 }
-/* line 6, ../scss/components/_dates.scss */
+/* line 5, ../scss/components/_dates.scss */
 #sbir-dates .sbir-date span {
   font-weight: bold;
 }
@@ -1026,7 +1022,7 @@ a:visited, .pane-node-field-footer a:visited {
 }
 /* line 49, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 ul {
-  margin-top: -7px;
+  margin-top: -3px;
   width: 200px !important;
 }
 /* line 53, ../scss/components/_navbar.scss */
