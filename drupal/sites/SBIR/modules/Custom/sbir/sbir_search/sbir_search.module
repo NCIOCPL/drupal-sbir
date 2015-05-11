@@ -16,6 +16,7 @@ function sbir_search_query_alter(&$query) {
  * Implements hook_form_alter
  */
 function sbir_search_form_alter(&$form, &$form_state, $form_id) {
+
   if (in_array($form_id, array('search_block_form'))) {
     
     // Adding placeholders to fields

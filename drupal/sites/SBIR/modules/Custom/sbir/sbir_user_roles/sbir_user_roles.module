@@ -18,6 +18,7 @@ function set_sbir_permissions() {
   // Add the permissions to the role.
   $permissions = array(
     //'administer recaptcha',
+    'access content overview',
     'use workbench_moderation needs review tab',
     'use workbench_moderation my drafts tab',
     'administer menu',
@@ -65,6 +66,7 @@ function set_sbir_permissions() {
 
   // Add the permissions to the role.
   $permissions = array(
+    'access content overview',    
     'administer menu',
     'access toolbar',
     'create url aliases',

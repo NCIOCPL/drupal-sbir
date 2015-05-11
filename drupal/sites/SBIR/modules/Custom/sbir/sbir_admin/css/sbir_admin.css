@@ -1,0 +1,11 @@
+.node-form {
+  .hide {
+    display:none;
+  }
+  .field-type-text-with-summary span.field-edit-link {
+    display:none;
+  }
+  #edit-field-banner {
+    display:none;
+  }
+}

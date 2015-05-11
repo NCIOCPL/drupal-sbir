@@ -32,15 +32,15 @@ function sbir_social_media_install() {
   $body_text = '<p>Fill out the form below to change your current personal and profile information. Please provide your current registered email address in the first field followed by your updated information.</p><p>( * indicates required fields )</p>';
   $nid = sbir_basic_pages_create_basic_page($title, $alias, "sbir_basic_page", $body_text, "");
 
-  $path = 'https://www.linkedin.com/company/2472455';
-  $title = "Connect with us on LinkedIn";
-  $css_class = "linkedin-link";
-  sbir_base_create_menu_link($menu_name, $title, $weight++, $path, $plid, 1, $css_class);
-
   $path = 'http://twitter.com/ncisbir';
   $title = "Follow us on Twitter";
   $css_class = "twitter-link";
   sbir_base_create_menu_link($menu_name, $title, $weight++, $path, $plid, 1, $css_class);
+  
+  $path = 'https://www.linkedin.com/company/2472455';
+  $title = "Connect with us on LinkedIn";
+  $css_class = "linkedin-link";
+  sbir_base_create_menu_link($menu_name, $title, $weight++, $path, $plid, 1, $css_class);  
   
   $title = 'Sign Up for Updates';
   $alias = 'emailsignup';

@@ -39,12 +39,11 @@ function sbir_global_template_create_footer_menu() {
   sbir_base_create_menu_link($menu_name, $title, 2, 'node/' . $nid, $plid, 0);
 
   $title = 'Policies';
-  $alias = 'policies';
-  $nid = sbir_basic_pages_create_basic_page($title, $alias);
-  sbir_base_create_menu_link($menu_name, $title, 3, 'node/' . $nid, $plid, 0);
+  $path = ' http://www.cancer.gov/global/web/policies';
+  sbir_base_create_menu_link($menu_name, $title, 3, $path, $plid, 1);
 
   $title = 'Accessibility';
-  $path = 'http://sbir.cancer.gov/accessibility.asp';
+  $path = 'http://www.cancer.gov/global/web/policies/accessibility';
   sbir_base_create_menu_link($menu_name, $title, 4, $path, $plid, 1);
 
   $title = 'Site Map';
