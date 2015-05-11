@@ -31,15 +31,15 @@ function sbirtheme_breadcrumb($variables) {
           . ' LIMIT 0, 1', array(':path' => $q))->fetchAssoc();
 
       if (isset($menu_item['link_title'])) {
-        $breadcrumb[] = $menu_item['link_title'];
+        $breadcrumb[] = '<span>' . $menu_item['link_title'] . '</span>';
         //print $menu_item['title'];exit;
       }
       else {
-        $breadcrumb[] = drupal_get_title();
+        $breadcrumb[] = '<span>' . drupal_get_title() . '</span>';
       }
     }
     else {
-      $breadcrumb[] = drupal_get_title();
+      $breadcrumb[] = '<span>' . drupal_get_title() . '</span>';
     }
 
     // Provide a navigational heading to give context for breadcrumb links to
