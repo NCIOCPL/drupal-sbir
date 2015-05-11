@@ -546,6 +546,7 @@ a:visited {
 .sup {
   font-size: smaller;
   vertical-align: super;
+  color: #888;
 }
 
 /* line 3, ../scss/components/_header.scss */
