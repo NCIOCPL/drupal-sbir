@@ -9,3 +9,19 @@
     display:none;
   }
 }
+
+.node-type-sbir-basic-page #edit-body label .field-edit-link {
+  display:none;
+}
+
+.node-type-sbir-basic-page .field-name-body .text-summary-wrapper {
+  display:none; 
+}
+
+.node-type-sbir-block #edit-body label .field-edit-link {
+  display:none;
+}
+
+.node-type-sbir-block .field-name-body .text-summary-wrapper {
+  display:none; 
+}
