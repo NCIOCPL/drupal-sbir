@@ -38,6 +38,7 @@ css[global.css][name] = css/global.css
 css[global.css][description] = 'This file holds all the globally active custom CSS of your theme.'
 css[global.css][options][weight] = '10'
 scripts[] = js/script.js
+scripts[] = js/toptoc.js
 settings[toggle_logo] = '1'
 settings[toggle_name] = '0'
 settings[toggle_slogan] = '0'
