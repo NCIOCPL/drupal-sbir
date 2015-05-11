@@ -1,16 +1,20 @@
 // @left nav styling goes here
 #left-nav {
   .pane-title {
-    color:#fff;
     background-image: url(../images/left_nav.png);
     background-repeat: repeat-x;
-    padding:15px;
+    margin-bottom:0;
+    height: 40px;
+    padding: 0px 15px;
+    line-height: 40px;
     font-family:'Trebuchet MS';
     font-weight:bold;
     color:#fff;
     font-size:16px;
   }
   ul {
+    margin-top:0;
+    padding-left:0;
     background-color:#f9f9f9;
   }
   li {
@@ -50,17 +54,38 @@
 
   .menu-level-2>.menu>li.active-trail>a {
     border-right: solid 5px #FF8408;
+    background-image: url(../images/left_nav.png);
+    background-repeat-x: no-repeat;
+    background-position-x: 225px;
+    background-size: 5px;
+    padding-bottom:5px;
   }
+  .menu-level-2>.menu>li.active-trail>ul.menu>li.active {
+    padding-top: 10px
+  }
+
   .menu-level-2>ul.menu>li.expanded>ul.menu li>a {
     background-image: url(../images/leftnav_bullet.png);
     background-repeat: no-repeat;
     background-position: 16px 18px;
     padding-left:35px;
+    padding-bottom:5px;
   }
 
   .menu-level-2>ul.menu>li.expanded>ul.menu li>a.active {
     background-position: 16px 8px;
   }
+  
+.menu-level-2>ul.menu>li.expanded>ul.menu li.last>a {
+    padding-bottom:15px;
+  }  
+  .menu-level-2>ul.menu>li.expanded>ul.menu li.last>a.active {
+    padding-bottom:10px;
+  }  
+  
+  .menu-level-2>ul.menu>li.expanded>ul.menu li.first>a.active {
+    padding-bottom:0;
+  }    
 
   .pane-content a {
     text-decoration: none;

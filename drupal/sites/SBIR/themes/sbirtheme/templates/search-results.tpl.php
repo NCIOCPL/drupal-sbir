@@ -28,7 +28,7 @@
       <h1><?php print t('Search Results'); ?></h1>
     </div>
   </div>
-<h2 class="search-totals"><span id="search-total"><?php print $search_totals; ?></span><span id="search-term"><?php print $search_term; ?></span></h2>
+  <h2 class="search-totals"><span id="search-total"><?php print $search_totals; ?></span><span id="search-term"><?php print $search_term; ?></span></h2>
   <ol class="search-results <?php print $module; ?>-results">
     <?php print $search_results; ?>
   </ol>

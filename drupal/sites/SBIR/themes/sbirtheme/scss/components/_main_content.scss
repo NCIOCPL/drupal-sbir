@@ -7,27 +7,40 @@
   */
 }
 
+.grid-12 {
+  margin:0!important; 
+}
+.container-12 .grid-12 {
+  width:960px!important;
+}
+.zone-header .grid-12 {
+  width:100%;
+}
 .grid-9 {
   min-height:350px;
 }
-.grid-4 {
-  margin: 0 0 0 20px!important;
+.container-12 .grid-9 {
+  margin:0;
 }
-.grid-8 {
-  margin: 0 20px 0 0!important;
+.grid-3 {
+  margin:0!important;
+  width:230px!important;
 }
-
-.pane-page-title {
-  background-color:#0E316A;
-  padding:15px;
+.container-12 .grid-3 {
+  margin-right:30px!important;
 }
 .pane-page-title .pane-content h1 {
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;  
   font-family:'Trebuchet MS';
   font-weight:bold;
   color:#fff;
   font-size:16px;
+  background-image: url(../images/blue_nav.png);
+  background-repeat: repeat-x;  
 }
-
 .pane-node-body
 ,.pane-node-field-footer {
   font-family:'Verdana';

@@ -22,6 +22,14 @@
     // massage the footer menu
     $('<br /><br />').insertAfter('.footer-break-point');
     $('<sup class="sup">&reg;</sup>').insertAfter('a[title="NIH ... Turning Discovery Into Health"]');
-    $('a[title="NIH ... Turning Discovery Into Health"]').parent().css('padding-top', '25px');
+    $('a[title="NIH ... Turning Discovery Into Health"]').parent().css('padding-top', '15px');
+
+    // adjust width of grid-9 to 960px if there is no left nav
+    if (jQuery('.grid-3').children().html() == "") {
+      $('.grid-9').css('width', '960px');
+      
+      // adjust the position of the bottom dates
+      $('div#sbir-dates').css('margin-left', '200px');
+    }
   });
 }(jQuery));

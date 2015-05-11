@@ -91,6 +91,18 @@ function sbirtheme_block_view_alter(&$data, $block) {
     array_unshift($data['content'], $follow_us);
   }
 
+  if ($block->delta == 'menu-social-media') {
+    foreach ($data['content'] as $key => $value) {
+      if (is_numeric($key) && is_array($value) && isset($value['#title'])) {
+        //dpm($value);
+        $title = $value['#title'];
+        if ($title == 'Site Map' || $title == 'Connect with us on LinkedIn') {
+          $data['content'][$key]['#attributes']['class'][] = 'with-image';
+        }
+      }
+    }
+  }
+
   if ($block->delta == 'menu-footer-menu') {
     foreach ($data['content'] as $key => $value) {
       if (is_numeric($key) && is_array($value) && isset($value['#title'])) {
@@ -100,9 +112,9 @@ function sbirtheme_block_view_alter(&$data, $block) {
           $data['content'][$key]['#attributes']['class'][] = 'footer-break-point';
         }
         /*
-        if ($title == 'NIH ... Turning Discovery Into Health') {
-           $data['content'][$key]['#attributes']['class'][] = 'discovery';
-        }
+          if ($title == 'NIH ... Turning Discovery Into Health') {
+          $data['content'][$key]['#attributes']['class'][] = 'discovery';
+          }
          */
       }
     }
@@ -171,7 +183,7 @@ function sbirtheme_preprocess_search_results(&$vars) {
   $currentPage = (isset($_REQUEST['page']) ? $_REQUEST['page'] : 0) + 1;
 
   // Get the total number of results from the global pager
-  $total = $GLOBALS['pager_total_items'] [0];
+  $total = isset($GLOBALS['pager_total_items'][0]) ? $GLOBALS['pager_total_items'][0] : 0;
 
   // get search term
   $searchTerm = request_path();

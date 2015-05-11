@@ -24,7 +24,7 @@
       }
       #block-superfish-1 li.sf-depth-1>a {
         text-transform: uppercase;
-        padding: 15px 17px;
+        padding: 17px 19px;
       }
       #block-superfish-1 li.sf-depth-1>ul {
         top:52px;
@@ -41,10 +41,10 @@
         background-color:#fff;
         border-top:solid 5px orange;
         margin-top:-2px;
-        box-shadow: 1px 1px 1px #e9e9e9, -1px 1px 1px #e9e9e9;
-        -webkit-box-shadow: 1px 1px 1px #e9e9e9, -1px 1px 1px #e9e9e9;
-        -moz-box-shadow: 1px 1px 1px #e9e9e9, -1px 1px 1px #e9e9e9;
-        -o-box-shadow: 1px 1px 1px #e9e9e9, -1px 1px 1px #e9e9e9;        
+        box-shadow: 0 5px 15px #777;
+        -webkit-box-shadow: 0 5px 15px #777;
+        -moz-box-shadow: 0 5px 15px #777;
+        -o-box-shadow: 0 5px 15px #777;    
       }
       #block-superfish-1 li.sf-depth-1 ul {
         margin-top:-7px;
@@ -61,10 +61,10 @@
       #block-superfish-1 li.last>a.sf-depth-2
       ,#block-superfish-1 li.last>a.sf-depth-3 {
       }
-      #block-superfish-1 li.active-trail a {
+      #block-superfish-1 li.active-trail>a {
         color:#294e80;  
       }
-      #block-superfish-1 li:hover a {
+      #block-superfish-1 li.sf-depth-1:hover>a {
         color:#294e80;  
       }      
       .sf-menu.sf-horizontal.sf-shadow ul {
@@ -80,6 +80,11 @@
       ,#block-superfish-1 li li li {
         background-color:#fff;
       }
+
+      #block-superfish-1 li li.last
+      ,#block-superfish-1 li li li.last {
+        border:none;
+      }
       #block-superfish-1 li li:hover
         ,#block-superfish-1 li li li:hover {
         background-color:#f1f1ef;
@@ -88,6 +93,10 @@
       ,#block-superfish-1 li li li a {
         color:#646363;
       }
+      #block-superfish-1 li li a:hover
+      ,#block-superfish-1 li li li a:hover {
+        color:#646363;
+      }      
       #block-superfish-1 li a {
         padding:20px;
       }

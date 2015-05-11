@@ -1,15 +1,16 @@
 // @social media styling goes here
 #block-menu-menu-social-media {
-  margin-bottom:15px;
   .block-title {
     display:none;
+  }
+  ul.menu {
+    float:right;
   }
   ul.menu li {
     width:24px;
     float:left;
     list-style:none;
     padding:0!important;
-    margin-left:18px;
   }
   .email-link a {
     background: url(../images/email_icon.png) no-repeat;
@@ -17,21 +18,32 @@
     display: block;
     height:24px;
   }
-  .linkedin-link a {
+  .linkedin-link a[target="_blank"] {
     background: url(../images/linkedin_icon.png) no-repeat;
     text-indent: -9999px;
     display: block;
     height:24px;
   }
-  .twitter-link a {
+  /*
+  .linkedin-link a.exitNotification {
+    display:none;
+  }
+  */
+  .twitter-link a[target="_blank"] {
     background: url(../images/twitter_icon.png) no-repeat;
     text-indent: -9999px;
     display: block;
     height:24px;
   }
+  /*
+  .twitter-link a.exitNotification {
+    display:none;
+  }
+  */
 }
 #social-media {
   float: right;
+    margin-top: 10px;
 }
 
 .follow-us-text {

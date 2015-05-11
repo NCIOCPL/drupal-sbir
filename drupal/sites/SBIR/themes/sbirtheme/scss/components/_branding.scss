@@ -2,12 +2,11 @@
 #zone-branding-wrapper  {
   height:100px;
   width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top:25px;
+  margin: 5px auto 20px;
 }
 
 .site-name {
+  font-size:16px;
   margin-top:0;
 }
 
@@ -25,12 +24,12 @@
 }
 
 .logo-img {
+  margin-left:-20px;
   img {
     margin-right:13px;
   }
 }
 .logo-img img {
-  width:86px;
 }
 
 #region-branding {
