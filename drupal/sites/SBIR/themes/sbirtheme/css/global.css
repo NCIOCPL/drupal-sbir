@@ -374,10 +374,6 @@ a:visited {
   color: #2664ab;
   font-weight: bold;
 }
-/* line 13, ../scss/components/_breadcrumb.scss */
-.breadcrumb span {
-  font-weight: bold;
-}
 
 /* line 3, ../scss/components/_dates.scss */
 #sbir-dates .sbir-date {
