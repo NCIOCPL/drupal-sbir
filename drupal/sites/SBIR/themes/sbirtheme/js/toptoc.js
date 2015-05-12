@@ -1,8 +1,8 @@
 (function ($) {
   $(document).ready(function () {
     function toggleSection(currentIndex) {
-      jQuery('#toptoc ul li a').removeClass('active');
-      jQuery('#toptoc ul li a[href="#section_' + currentIndex + '"]').addClass('active');
+      jQuery('#toptoc ul li a').parent().removeClass('active');
+      jQuery('#toptoc ul li a[href="#section_' + currentIndex + '"]').parent().addClass('active');
       jQuery('.accordion>section').hide();
       jQuery('.accordion>section').removeClass('active');
       jQuery('#section_' + currentIndex).show();
@@ -65,10 +65,10 @@
     });
 
     // append 'view all' link to the toc
-    jQuery('#toptoc>ul').append('<li><a id="toptoc-view-all" href="#">View All Sections</a></li>');
+    jQuery('#toptoc>ul').append('<li  id="toptoc-view-all"><a href="#">View All Sections</a></li>');
 
     // bind click event to 'view all' link
-    jQuery('#toptoc-view-all').click(function () {
+    jQuery('#toptoc-view-all a').click(function () {
       jQuery('.accordion>section').show();
       jQuery('.toptoc-pager').remove();
     })
@@ -76,5 +76,8 @@
     // setup initial state of the sections and toc
     jQuery('.accordion>section').hide();
     jQuery('.accordion>section').first().show();
+    
+    // made the first item in the toc active upon page load
+    jQuery('#toptoc ul li').first().addClass('active');    
   });
 }(jQuery));

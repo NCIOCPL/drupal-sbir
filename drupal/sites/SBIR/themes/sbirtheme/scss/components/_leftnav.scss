@@ -54,10 +54,12 @@
 
   .menu-level-2>.menu>li.active-trail>a {
     border-right: solid 5px #FF8408;
+    /*
     background-image: url(../images/left_nav.png);
     background-repeat-x: no-repeat;
     background-position-x: 225px;
     background-size: 5px;
+    */
     padding-bottom:5px;
   }
   .menu-level-2>.menu>li.active-trail>ul.menu>li.active {
