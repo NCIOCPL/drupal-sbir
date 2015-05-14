@@ -142,7 +142,6 @@ function sbir_admin_form_alter(&$form, &$form_state, $form_id) {
     $node_form_type = 'node_form';
   }
 
-  //dpm($test_form_id);
   //Also this variant was proposed
   /*
     if( $form['#id'] == 'node-form' ){
@@ -155,40 +154,46 @@ function sbir_admin_form_alter(&$form, &$form_state, $form_id) {
     // Add a checkbox to all node edit forms that allows user to 
     // enable/disable the menu item
     case 'node_form':
-      //dpm($form['menu']['link']);
-      //get mlid, if mlid captured
-      //this is node editing action
-      $mlid = 0;
 
-      if (isset($form['menu']['link']['mlid']['#value']) && $form['menu']['link']['mlid']['#value'] > 0) {
-        $mlid = $form['menu']['link']['mlid']['#value'];
-        $menuItem = menu_link_load($mlid);
+      if ($form_id != 'sbir_subscription_node_form') {
+        //dpm($form['menu']['link']);
+        //get mlid, if mlid captured
+        //this is node editing action
+        $mlid = 0;
+
+        if (isset($form['menu']['link'] ['mlid']['#value']) &&
+            $form['menu']['link']['mlid']['#value'] > 0) {
+          $mlid = $form['menu']['link']['mlid']['#value'];
+          $menuItem = menu_link_load($mlid);
+        }
+
+        //add dummy hidden/enabled checkbox and
+        //use previous value for checkbox status if available
+        $form['menu']['link']['sbir_menu_item_enabled'] = array(
+          '#type' => 'checkbox',
+          '#title' => t('Enabled'),
+          '#default_value' => ($mlid == 0 ? 1 : ($menuItem['hidden'] ? 0 : 1)),
+          '#description' =>
+          t('Menu items that are not enabled will appear in any menus.'),
+        );
       }
-
-      //add dummy hidden/enabled checkbox and
-      //use previous value for checkbox status if available
-      $form['menu']['link']['sbir_menu_item_enabled'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Enabled'),
-        '#default_value' => ($mlid == 0 ? 1 : ($menuItem['hidden'] ? 0 : 1) ),
-        '#description' =>
-        t('Menu items that are not enabled will appear in any menus.'),
-      );
 
       //hide the banner upload field (we don't want content editors to upload new ones)
       $form['field_banner']['#attributes']['style'] = 'display:none';
-      $form['#attached']['css'] = array(drupal_get_path('module', 'sbir_admin') . '/css/sbir_admin.css');
+      $form ['#attached']['css'] = array(drupal_get_path('module', 'sbir_admin') . '/css/sbir_admin.css');
       $form['#attached']['js'] = array(drupal_get_path('module', 'sbir_admin') . '/js/sbir_admin.js');
 
       //$form['menu']['link']['description']['#attributes']['style'] = 'display:none';
-      if ($form['type']['#value'] == 'sbir_block' ||
-          $form['type']['#value'] == 'sbir_file' ||
+      if ($form['type'] ['#value'] == 'sbir_block' ||
+          $form ['type']['#value'] == 'sbir_file' ||
           $form['type']['#value'] == 'sbir_subscription') {
         unset($form['menu']);
         unset($form['options']['promote']);
         unset($form['options']['sticky']);
         unset($form['body']['#attributes']['class'][0]);
-        unset($form['path']);
+        unset($form['path'])
+
+        ;
       }
       break;
   }

@@ -1,0 +1,7 @@
+name = SBIR Image
+description = This content type is used to upload images.
+core = 7.x
+package = SBIR Types
+project = sbir_image
+timestamp = 1431630740
+dependencies[] = sbir_base

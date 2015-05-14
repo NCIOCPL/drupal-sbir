@@ -1,0 +1,23 @@
+<?php
+
+/*
+ * Implements hook_install
+ */
+
+function sbir_image_install() {
+}
+
+/*
+ * Implements hook_enable
+ */
+
+function sbir_image_enable() {
+
+  variable_set('comment_sbir_image', '0');
+  variable_set('node_submitted_sbir_image', '0');
+  variable_set('node_preview_sbir_image', '1');
+
+  module_load_include('inc', 'sbir_image', 'includes/sbir_image.field_instance');
+
+  file_create_field_instances();
+}

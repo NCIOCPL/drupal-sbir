@@ -33,6 +33,7 @@ dependencies[] = sbir_basic_page
 dependencies[] = sbir_block
 dependencies[] = sbir_event
 dependencies[] = sbir_file
+dependencies[] = sbir_image
 dependencies[] = sbir_subscription
 dependencies[] = sbir_success_story
 

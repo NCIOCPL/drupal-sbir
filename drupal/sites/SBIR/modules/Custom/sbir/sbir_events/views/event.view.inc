@@ -99,13 +99,6 @@ $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['title'] = 'Recent Events';
 $handler->display->display_options['display_description'] = 'Recent Events';
 $handler->display->display_options['defaults']['fields'] = FALSE;
-/* Field: Content: Edit link */
-$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
-$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
-$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-$handler->display->display_options['fields']['edit_node']['label'] = '';
-$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-$handler->display->display_options['fields']['edit_node']['text'] = 'Edit Event';
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -209,13 +202,6 @@ $handler = $view->new_display('panel_pane', 'Upcoming Events', 'upcoming');
 $handler->display->display_options['defaults']['title'] = FALSE;
 $handler->display->display_options['display_description'] = 'Upcoming Events';
 $handler->display->display_options['defaults']['fields'] = FALSE;
-/* Field: Content: Edit link */
-$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
-$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
-$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-$handler->display->display_options['fields']['edit_node']['label'] = '';
-$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-$handler->display->display_options['fields']['edit_node']['text'] = 'Edit Event';
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
