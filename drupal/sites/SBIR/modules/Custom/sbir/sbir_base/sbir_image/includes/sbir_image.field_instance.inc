@@ -1,6 +1,6 @@
 <?php
 
-function file_create_field_instances() {
+function image_create_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-sbir_image-field_image'

@@ -19,5 +19,5 @@ function sbir_image_enable() {
 
   module_load_include('inc', 'sbir_image', 'includes/sbir_image.field_instance');
 
-  file_create_field_instances();
+  image_create_field_instances();
 }
