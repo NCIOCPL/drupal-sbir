@@ -20,7 +20,7 @@
     global $base_url;
     $theme_path = $base_url . "/" . drupal_get_path('theme', 'sbirtheme');
     ?>
-    <!--
+
     <script>
       // Exit Disclaimer Adder
       //  This script looks for urls where the href points to websites not in the federal domain (.gov) and if it finds one, it appends an image to the link.  The image itself links to the exit disclaimer page.
@@ -42,7 +42,7 @@
 
       });
     </script>
-    -->
+
     <?php global $base_url; ?>
     <?php if ($base_url == 'http://sbir.cancer.gov'
       || $base_url == 'https://sbir.cancer.gov'

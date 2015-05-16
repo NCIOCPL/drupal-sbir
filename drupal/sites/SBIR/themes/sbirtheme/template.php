@@ -76,10 +76,12 @@ function sbirtheme_block_view_alter(&$data, $block) {
         if ($title == 'Connect with us on LinkedIn') {
           $data['content'][$key]['#attributes']['class'][] = 'linkedin-link';
           $data['content'][$key]['#attributes']['class'][] = 'social-media-link';
+          $data['content'][$key]['#localized_options']['attributes']['class'][] = 'no-exit-notification';
         }
         if ($title == 'Follow us on Twitter') {
           $data['content'][$key]['#attributes']['class'][] = 'twitter-link';
           $data['content'][$key]['#attributes']['class'][] = 'social-media-link';
+          $data['content'][$key]['#localized_options']['attributes']['class'][] = 'no-exit-notification';
         }
       }
     }

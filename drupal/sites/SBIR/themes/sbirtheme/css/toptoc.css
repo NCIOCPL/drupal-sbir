@@ -1,7 +1,11 @@
 #toptoc {
-  width: 24%;
+  width: 25%;
   float: right;
   margin: 0px -1.2em 3em 2em;
+}
+
+#toptoc h3 {
+  margin:0;
 }
 
 #toptoc ul {
@@ -9,24 +13,41 @@
 }
 #toptoc li {
   list-style: none;
-  height: 17px;
   border-top: 1px solid #e9e9e9;
-  padding: 5px 0;
+  padding: 5px 13px;
 }
 #toptoc li.active {
+  /*
   background-image: url(../images/localnavcarrot.png);
+  */
+  border-left: solid 5px #FF8408;
   background-repeat: no-repeat;
   font-weight:bold;
+  padding:5px 8px;
 }
-#toptoc a {
-  text-decoration:none;
+#toptoc span {
   font-size:11px;
   color:#000;
-  padding-left: 15px;
+  padding:0;
 }
 
 #toptoc-view-all {
   background-image: url(../images/localnavsearch.png);
   background-repeat: no-repeat;
-  background-position: 0px 10px;
+  background-position: 10px;
+}
+
+#toptoc-view-all span {
+  padding-left:20px;
+}
+
+.toptoclink:hover, #toptoc-view-all span:hover {
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+.toptoc-pager .toptoclink {
+    text-decoration: underline;
+    color:#2664ab;
+    font-size:12px
 }
