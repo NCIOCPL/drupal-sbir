@@ -20,6 +20,7 @@
   min-height:350px;
 }
 .container-12 .grid-9 {
+  width:700px!important;
   margin:0;
 }
 .grid-3 {
@@ -84,4 +85,10 @@
 
 .page-node .vertical-tabs {
   display:none;
+}
+
+.grid-9 {
+  .pane-node-body {
+    /*padding:10px 20px;*/
+  }
 }

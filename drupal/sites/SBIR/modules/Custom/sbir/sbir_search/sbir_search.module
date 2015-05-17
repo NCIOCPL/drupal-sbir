@@ -10,6 +10,22 @@ function sbir_search_query_alter(&$query) {
   if ($query instanceof PagerDefault && ($tables = $query->getTables()) && isset($tables['i']['table']) && $tables['i']['table'] === 'search_index') {
     $query->limit(20);
   }
+    $is_search = FALSE;
+  foreach ($query->getTables() as $table) {
+    if ($table['table'] == 'search_index') {
+      $is_search = TRUE;
+    }
+  }
+
+  if ($is_search) {
+    $query->condition('n.type', 'sbir_announcement', '<>');
+    
+    $query->condition('n.type', 'sbir_block', '<>');
+    $query->condition('n.type', 'sbir_file', '<>');
+    $query->condition('n.type', 'sbir_image', '<>');
+    $query->condition('n.type', 'sbir_subscription', '<>');
+    $query->condition('n.title', '%Home Page', 'NOT LIKE');
+  }
 }
 
 /**
@@ -18,7 +34,7 @@ function sbir_search_query_alter(&$query) {
 function sbir_search_form_alter(&$form, &$form_state, $form_id) {
 
   if (in_array($form_id, array('search_block_form'))) {
-    
+
     // Adding placeholders to fields
     $form['search_block_form']['#attributes']['placeholder'] = t('Search...');
   }

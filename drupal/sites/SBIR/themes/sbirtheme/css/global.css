@@ -787,17 +787,20 @@ a:visited {
 /* line 55, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > .menu > li.active-trail > a {
   border-right: solid 5px #FF8408;
-  /*
-  background-image: url(../images/left_nav.png);
-  background-repeat-x: no-repeat;
-  background-position-x: 225px;
-  background-size: 5px;
-  */
+  padding-bottom: 10px;
+}
+/* line 59, ../scss/components/_leftnav.scss */
+#left-nav .menu-level-2 > .menu > li.expanded.active-trail > a {
   padding-bottom: 5px;
+}
+/* line 62, ../scss/components/_leftnav.scss */
+#left-nav .menu-level-2 > .menu > li.active-trail > ul.menu > li.last.active {
+  padding-bottom: 15px;
 }
 /* line 65, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > .menu > li.active-trail > ul.menu > li.active {
   padding-top: 10px;
+  padding-bottom: 5px;
 }
 /* line 69, ../scss/components/_leftnav.scss */
 #left-nav .menu-level-2 > ul.menu > li.expanded > ul.menu li > a {
@@ -835,6 +838,7 @@ a:visited {
 }
 /* line 101, ../scss/components/_leftnav.scss */
 #left-nav .pane-content li.active-trail ul > li.active-trail > a.active-trail {
+  padding-bottom: 0px !important;
   padding: 0;
 }
 
@@ -869,21 +873,22 @@ a:visited {
 
 /* line 22, ../scss/components/_main_content.scss */
 .container-12 .grid-9 {
+  width: 700px !important;
   margin: 0;
 }
 
-/* line 25, ../scss/components/_main_content.scss */
+/* line 26, ../scss/components/_main_content.scss */
 .grid-3 {
   margin: 0 !important;
   width: 230px !important;
 }
 
-/* line 29, ../scss/components/_main_content.scss */
+/* line 30, ../scss/components/_main_content.scss */
 .container-12 .grid-3 {
   margin-right: 30px !important;
 }
 
-/* line 32, ../scss/components/_main_content.scss */
+/* line 33, ../scss/components/_main_content.scss */
 .pane-page-title .pane-content h1 {
   margin: 0;
   height: 40px;
@@ -897,14 +902,14 @@ a:visited {
   background-repeat: repeat-x;
 }
 
-/* line 44, ../scss/components/_main_content.scss */
+/* line 45, ../scss/components/_main_content.scss */
 .pane-node-body
 , .pane-node-field-footer {
   font-family: 'Verdana';
   color: #000;
   padding: 20px;
 }
-/* line 49, ../scss/components/_main_content.scss */
+/* line 50, ../scss/components/_main_content.scss */
 .pane-node-body
 h1, .pane-node-body
 h2, .pane-node-body
@@ -915,58 +920,63 @@ h6, .pane-node-field-footer h1, .pane-node-field-footer h2, .pane-node-field-foo
   font-weight: bold;
   margin: 0;
 }
-/* line 53, ../scss/components/_main_content.scss */
+/* line 54, ../scss/components/_main_content.scss */
 .pane-node-body
 h1, .pane-node-field-footer h1 {
   font-size: 24px;
 }
-/* line 56, ../scss/components/_main_content.scss */
+/* line 57, ../scss/components/_main_content.scss */
 .pane-node-body
 h2, .pane-node-field-footer h2 {
   font-size: 22px;
 }
-/* line 59, ../scss/components/_main_content.scss */
+/* line 60, ../scss/components/_main_content.scss */
 .pane-node-body
 h3, .pane-node-field-footer h3 {
   font-size: 18px;
 }
-/* line 62, ../scss/components/_main_content.scss */
+/* line 63, ../scss/components/_main_content.scss */
 .pane-node-body
 h4, .pane-node-field-footer h4 {
   font-size: 16px;
 }
-/* line 65, ../scss/components/_main_content.scss */
+/* line 66, ../scss/components/_main_content.scss */
 .pane-node-body
 h5, .pane-node-field-footer h5 {
   font-size: 14px;
 }
-/* line 68, ../scss/components/_main_content.scss */
+/* line 69, ../scss/components/_main_content.scss */
 .pane-node-body
 h6, .pane-node-field-footer h6 {
   font-size: 13px;
 }
-/* line 71, ../scss/components/_main_content.scss */
+/* line 72, ../scss/components/_main_content.scss */
 .pane-node-body
 p, .pane-node-field-footer p {
   font-size: 12px;
   line-height: 18px;
 }
-/* line 75, ../scss/components/_main_content.scss */
+/* line 76, ../scss/components/_main_content.scss */
 .pane-node-body
 a, .pane-node-field-footer a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
-/* line 80, ../scss/components/_main_content.scss */
+/* line 81, ../scss/components/_main_content.scss */
 .pane-node-body
 a:visited, .pane-node-field-footer a:visited {
   color: #421c89;
 }
 
-/* line 85, ../scss/components/_main_content.scss */
+/* line 86, ../scss/components/_main_content.scss */
 .page-node .vertical-tabs {
   display: none;
+}
+
+/* line 91, ../scss/components/_main_content.scss */
+.grid-9 .pane-node-body {
+  /*padding:10px 20px;*/
 }
 
 /* line 2, ../scss/components/_navbar.scss */
