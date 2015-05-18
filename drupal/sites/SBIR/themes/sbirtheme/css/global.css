@@ -918,68 +918,67 @@ h4, .pane-node-body
 h5, .pane-node-body
 h6, .pane-node-field-footer h1, .pane-node-field-footer h2, .pane-node-field-footer h3, .pane-node-field-footer h4, .pane-node-field-footer h5, .pane-node-field-footer h6 {
   font-weight: bold;
-  margin: 0;
 }
-/* line 54, ../scss/components/_main_content.scss */
+/* line 53, ../scss/components/_main_content.scss */
 .pane-node-body
 h1, .pane-node-field-footer h1 {
   font-size: 24px;
 }
-/* line 57, ../scss/components/_main_content.scss */
+/* line 56, ../scss/components/_main_content.scss */
 .pane-node-body
 h2, .pane-node-field-footer h2 {
   font-size: 22px;
 }
-/* line 60, ../scss/components/_main_content.scss */
+/* line 59, ../scss/components/_main_content.scss */
 .pane-node-body
 h3, .pane-node-field-footer h3 {
   font-size: 18px;
 }
-/* line 63, ../scss/components/_main_content.scss */
+/* line 62, ../scss/components/_main_content.scss */
 .pane-node-body
 h4, .pane-node-field-footer h4 {
   font-size: 16px;
 }
-/* line 66, ../scss/components/_main_content.scss */
+/* line 65, ../scss/components/_main_content.scss */
 .pane-node-body
 h5, .pane-node-field-footer h5 {
   font-size: 14px;
 }
-/* line 69, ../scss/components/_main_content.scss */
+/* line 68, ../scss/components/_main_content.scss */
 .pane-node-body
 h6, .pane-node-field-footer h6 {
   font-size: 13px;
 }
-/* line 72, ../scss/components/_main_content.scss */
+/* line 71, ../scss/components/_main_content.scss */
 .pane-node-body
 p, .pane-node-field-footer p {
   font-size: 12px;
   line-height: 18px;
 }
-/* line 76, ../scss/components/_main_content.scss */
+/* line 75, ../scss/components/_main_content.scss */
 .pane-node-body
 a, .pane-node-field-footer a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
-/* line 81, ../scss/components/_main_content.scss */
+/* line 80, ../scss/components/_main_content.scss */
 .pane-node-body
 a:visited, .pane-node-field-footer a:visited {
   color: #421c89;
 }
 
-/* line 86, ../scss/components/_main_content.scss */
+/* line 85, ../scss/components/_main_content.scss */
 .page-node .vertical-tabs {
   display: none;
 }
 
-/* line 91, ../scss/components/_main_content.scss */
+/* line 90, ../scss/components/_main_content.scss */
 .grid-9 .pane-node-body {
   /*padding:10px 20px;*/
 }
 
-/* line 96, ../scss/components/_main_content.scss */
+/* line 95, ../scss/components/_main_content.scss */
 .image {
   border-top: 4px #0c386c solid;
   border-bottom: 4px #0c386c solid;
@@ -989,18 +988,18 @@ a:visited, .pane-node-field-footer a:visited {
   margin: 0 0 15px 30px;
   clear: both;
 }
-/* line 104, ../scss/components/_main_content.scss */
+/* line 103, ../scss/components/_main_content.scss */
 .image p {
   margin: 0;
 }
-/* line 107, ../scss/components/_main_content.scss */
+/* line 106, ../scss/components/_main_content.scss */
 .image .caption {
   font-size: 7pt;
   padding: 0 5px;
   line-height: initial;
 }
 
-/* line 115, ../scss/components/_main_content.scss */
+/* line 114, ../scss/components/_main_content.scss */
 .pane-node-body h3 p {
   clear: both;
 }
