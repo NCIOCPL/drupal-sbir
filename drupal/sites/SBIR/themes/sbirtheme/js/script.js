@@ -29,13 +29,15 @@
       $('.grid-9').css('width', '960px');
     }
 
-    if ($('.grid-9').length ) {
+    if ($('.grid-9').length) {
       var offset = $('.grid-9').offset().left;
       $('div#sbir-dates').css('margin-left', offset + 20 + 'px');
     }
-    
+
     $('#zone-footer-wrapper a').attr('target', '');
-    
-    $('.image').css('width', $('.image img').css('width'));
+
+    $('.image').each(function () {
+      $(this).css('width', $(this).find('img').css('width'));
+    });
   });
 }(jQuery));
