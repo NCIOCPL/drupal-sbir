@@ -93,23 +93,21 @@
   }
 }
 
-.pane-node-body {
-  .image {
-    border-top: 4px #0c386c solid;
-    border-bottom: 4px #0c386c solid;
-    padding: 7px;
-    background-color: #eee;
-    float:right;
-    margin:0 0 15px 30px;
-    clear:both;
-    p {
-      margin:0;
-    }
-    .caption {
-      font-size: 7pt;
-      padding: 0 5px;
-      line-height:initial;
-    }
+.image {
+  border-top: 4px #0c386c solid;
+  border-bottom: 4px #0c386c solid;
+  padding: 7px;
+  background-color: #eee;
+  float:right;
+  margin:0 0 15px 30px;
+  clear:both;
+  p {
+    margin:0;
+  }
+  .caption {
+    font-size: 7pt;
+    padding: 0 5px;
+    line-height:initial;
   }
 }
 

@@ -979,8 +979,8 @@ a:visited, .pane-node-field-footer a:visited {
   /*padding:10px 20px;*/
 }
 
-/* line 97, ../scss/components/_main_content.scss */
-.pane-node-body .image {
+/* line 96, ../scss/components/_main_content.scss */
+.image {
   border-top: 4px #0c386c solid;
   border-bottom: 4px #0c386c solid;
   padding: 7px;
@@ -989,18 +989,18 @@ a:visited, .pane-node-field-footer a:visited {
   margin: 0 0 15px 30px;
   clear: both;
 }
-/* line 105, ../scss/components/_main_content.scss */
-.pane-node-body .image p {
+/* line 104, ../scss/components/_main_content.scss */
+.image p {
   margin: 0;
 }
-/* line 108, ../scss/components/_main_content.scss */
-.pane-node-body .image .caption {
+/* line 107, ../scss/components/_main_content.scss */
+.image .caption {
   font-size: 7pt;
   padding: 0 5px;
   line-height: initial;
 }
 
-/* line 117, ../scss/components/_main_content.scss */
+/* line 115, ../scss/components/_main_content.scss */
 .pane-node-body h3 p {
   clear: both;
 }
