@@ -26,7 +26,7 @@
 
     // adjust width of grid-9 to 960px if there is no left nav
     if ($('.grid-3').children().html() == "") {
-      $('.grid-9').css('width', '960px');
+      $('.grid-9').css('width', '960px!important');
     }
 
     if ($('.grid-9').length) {

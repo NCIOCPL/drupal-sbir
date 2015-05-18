@@ -332,7 +332,10 @@ $handler->display->display_options['fields']['field_city']['table'] = 'field_dat
 $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
 $handler->display->display_options['fields']['field_city']['label'] = '';
 $handler->display->display_options['fields']['field_city']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_city']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['field_city']['alter']['text'] = '[field_city], ';
 $handler->display->display_options['fields']['field_city']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_city']['hide_empty'] = TRUE;
 /* Field: Content: State */
 $handler->display->display_options['fields']['field_state']['id'] = 'field_state';
 $handler->display->display_options['fields']['field_state']['table'] = 'field_data_field_state';
@@ -352,7 +355,7 @@ $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
 $handler->display->display_options['fields']['nothing']['table'] = 'views';
 $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
 $handler->display->display_options['fields']['nothing']['label'] = '';
-$handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_city], [field_state] [field_zip_code]';
+$handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_city][field_state] [field_zip_code]';
 $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
 /* Field: Content: Body */
 $handler->display->display_options['fields']['body']['id'] = 'body';
