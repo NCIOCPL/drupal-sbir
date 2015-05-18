@@ -25,15 +25,17 @@
     $('a[title="NIH ... Turning Discovery Into Health"]').parent().css('padding-top', '15px');
 
     // adjust width of grid-9 to 960px if there is no left nav
-    if (jQuery('.grid-3').children().html() == "") {
+    if ($('.grid-3').children().html() == "") {
       $('.grid-9').css('width', '960px');
     }
 
-    if (jQuery('.grid-9').length ) {
+    if ($('.grid-9').length ) {
       var offset = $('.grid-9').offset().left;
       $('div#sbir-dates').css('margin-left', offset + 20 + 'px');
     }
     
-    jQuery('#zone-footer-wrapper a').attr('target', '');
+    $('#zone-footer-wrapper a').attr('target', '');
+    
+    $('.image').css('width', $('.image img').css('width'));
   });
 }(jQuery));

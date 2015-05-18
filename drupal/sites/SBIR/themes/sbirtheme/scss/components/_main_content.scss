@@ -92,3 +92,19 @@
     /*padding:10px 20px;*/
   }
 }
+
+.pane-node-body {
+  .image {
+    border-top: 4px #421c89 solid;
+    border-bottom: 4px #421c89 solid;
+    padding: 7px;
+    background-color: #eee;
+    p {
+      margin:0;
+    }
+    .caption {
+      font-size: 11px;
+      padding: 5px;
+    }
+  }
+}
