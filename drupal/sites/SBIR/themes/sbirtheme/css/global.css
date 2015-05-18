@@ -986,20 +986,21 @@ a:visited, .pane-node-field-footer a:visited {
   padding: 7px;
   background-color: #eee;
   float: right;
-  margin: 15px 0 15px 15px;
+  margin: 0 0 15px 30px;
+  clear: both;
 }
-/* line 104, ../scss/components/_main_content.scss */
+/* line 105, ../scss/components/_main_content.scss */
 .pane-node-body .image p {
   margin: 0;
 }
-/* line 107, ../scss/components/_main_content.scss */
+/* line 108, ../scss/components/_main_content.scss */
 .pane-node-body .image .caption {
   font-size: 7pt;
   padding: 0 5px;
   line-height: initial;
 }
 
-/* line 116, ../scss/components/_main_content.scss */
+/* line 117, ../scss/components/_main_content.scss */
 .pane-node-body h3 p {
   clear: both;
 }
