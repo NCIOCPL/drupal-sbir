@@ -981,20 +981,27 @@ a:visited, .pane-node-field-footer a:visited {
 
 /* line 97, ../scss/components/_main_content.scss */
 .pane-node-body .image {
-  border-top: 4px #421c89 solid;
-  border-bottom: 4px #421c89 solid;
+  border-top: 4px #0c386c solid;
+  border-bottom: 4px #0c386c solid;
   padding: 7px;
   background-color: #eee;
   float: right;
+  margin: 15px 0 15px 15px;
 }
-/* line 103, ../scss/components/_main_content.scss */
+/* line 104, ../scss/components/_main_content.scss */
 .pane-node-body .image p {
   margin: 0;
 }
-/* line 106, ../scss/components/_main_content.scss */
+/* line 107, ../scss/components/_main_content.scss */
 .pane-node-body .image .caption {
   font-size: 7pt;
   padding: 0 5px;
+  line-height: initial;
+}
+
+/* line 116, ../scss/components/_main_content.scss */
+.pane-node-body h3 p {
+  clear: both;
 }
 
 /* line 2, ../scss/components/_navbar.scss */
