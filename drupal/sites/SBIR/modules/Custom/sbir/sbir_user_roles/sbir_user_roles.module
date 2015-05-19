@@ -66,7 +66,7 @@ function set_sbir_permissions() {
 
   // Add the permissions to the role.
   $permissions = array(
-    'access content overview',    
+    'access content overview',
     'administer menu',
     'access toolbar',
     'create url aliases',
@@ -275,4 +275,17 @@ function sbir_user_roles_modules_enabled($modules) {
 
 function sbir_user_roles_modules_disabled($modules) {
   set_sbir_permissions();
+}
+
+/*
+ * Implements hook_form_alter
+ */
+
+function sbir_user_roles_form_alter(&$form, &$form_state, $form_id) {
+
+  // disable autocomple for login form
+  if ($form_id == "user_login") {
+    $form['#attributes']['autocomplete'] = "off";
+    $form['pass']['#attributes']['autocomplete'] = "off";
+  }
 }
