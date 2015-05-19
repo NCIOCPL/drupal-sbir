@@ -52,7 +52,7 @@
     font-size:12px
 }
 
-#accordion {
+.accordion {
   width:70%;
   display:inline-block;
 }
