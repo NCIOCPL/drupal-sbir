@@ -288,4 +288,10 @@ function sbir_user_roles_form_alter(&$form, &$form_state, $form_id) {
     $form['#attributes']['autocomplete'] = "off";
     $form['pass']['#attributes']['autocomplete'] = "off";
   }
+    // disable autocomple for user profile form
+  if ($form_id == "user_profile_form") { 
+    $form['#attributes']['autocomplete'] = "off";
+    $form['account']['pass']['#attributes']['autocomplete'] = "off";    
+    $form['account']['current_pass']['#attributes']['autocomplete'] = "off";        
+  }
 }
