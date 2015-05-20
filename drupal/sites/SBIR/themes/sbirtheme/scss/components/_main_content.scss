@@ -82,6 +82,10 @@
   a:visited {
     color:#421c89;
   }
+
+  ul {
+    list-style-image: url('../images/uo_bullet.png');
+  }
 }
 
 .page-node .vertical-tabs {
