@@ -1,5 +1,6 @@
 (function ($) {
   $(document).ready(function () {
+    
     // remove footer field from left home page block if the
     // footer is empty
     $('.home-left-block-body .views-field-field-footer').each(function () {
@@ -26,18 +27,15 @@
 
     // adjust width of grid-9 to 960px if there is no left nav
     if ($('.panel-panel.grid-3').children().html() == "") {
-      $('.panel-panel.grid-9').css('width', '960px');
+      $('.container-12 .grid-9 ').addClass('full-width');
     }
 
+    // align the dates with the body text
     if ($('.panel-panel.grid-9').length) {
       var offset = $('.panel-panel.grid-9').offset().left;
       $('div#sbir-dates').css('margin-left', offset + 20 + 'px');
     }
 
     //$('#zone-footer-wrapper a').attr('target', '');
-
-    $('.image').each(function () {
-      $(this).css('width', $(this).find('img').css('width'));
-    });
   });
 }(jQuery));

@@ -287,13 +287,11 @@ function sbir_user_roles_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == "user_login") {
     $form['#attributes']['autocomplete'] = "off";
     $form['pass']['#attributes']['autocomplete'] = "off";
-    $form['#attached']['js'] = array(drupal_get_path('module', 'sbir_admin') . '/js/sbir_admin.js');
   }
   // disable autocomple for user profile form
   if ($form_id == "user_profile_form") {
     $form['#attributes']['autocomplete'] = "off";
     $form['account']['pass']['#attributes']['autocomplete'] = "off";
     $form['account']['current_pass']['#attributes']['autocomplete'] = "off";
-    $form['#attached']['js'] = array(drupal_get_path('module', 'sbir_admin') . '/js/sbir_admin.js');
   }
 }
