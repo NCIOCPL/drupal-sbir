@@ -130,7 +130,11 @@ div.image.center {
   clear:both;
 }
 
-div.image.styled {
+div.image.styled
+,div.left.styled
+,div.right.styled
+,div.center.styled
+{
   border-top: 4px #0c386c solid;
   border-bottom: 4px #0c386c solid;
   padding: 7px;

@@ -27,8 +27,14 @@ body {
 }
 
 /* line 11, ../scss/base/_html-elements.scss */
-p, span, div {
+p, div {
   font-size: 12px;
+  line-height: 18px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* line 17, ../scss/base/_html-elements.scss */
+span {
   line-height: 18px;
   font-family: Verdana, Arial, Helvetica, sans-serif;
 }
@@ -118,14 +124,14 @@ ul {
   padding-left:15px;
 }
 */
-/* line 104, ../scss/base/_html-elements.scss */
+/* line 109, ../scss/base/_html-elements.scss */
 a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
 
-/* line 109, ../scss/base/_html-elements.scss */
+/* line 114, ../scss/base/_html-elements.scss */
 a:visited {
   color: #421c89;
 }
@@ -1022,7 +1028,10 @@ div.image.center {
 }
 
 /* line 133, ../scss/components/_main_content.scss */
-div.image.styled {
+div.image.styled
+, div.left.styled
+, div.right.styled
+, div.center.styled {
   border-top: 4px #0c386c solid;
   border-bottom: 4px #0c386c solid;
   padding: 7px;

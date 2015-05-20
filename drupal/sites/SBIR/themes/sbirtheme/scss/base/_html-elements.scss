@@ -8,10 +8,15 @@ body {
     margin: 0!important;
 }
 
-p, span, div {
+p, div {
   font-size:12px;
   line-height:18px;
   font-family:Verdana, Arial, Helvetica, sans-serif;  
+}
+
+span {
+  line-height:18px;
+  font-family:Verdana, Arial, Helvetica, sans-serif;    
 }
 
 // PLACEHOLDERS ----------------------------------------------------------------
