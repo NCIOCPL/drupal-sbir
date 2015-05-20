@@ -34,10 +34,10 @@
       $('div#sbir-dates').css('margin-left', offset + 20 + 'px');
     }
 
-    $('#zone-footer-wrapper a').attr('target', '');
+    //$('#zone-footer-wrapper a').attr('target', '');
 
-    $('.image').each(function () {
-      $(this).css('width', $(this).find('img').css('width'));
+    $('.image').each(function (el) {
+      $(el).css('width', $(el).find('img').css('width'));
     });
   });
 }(jQuery));

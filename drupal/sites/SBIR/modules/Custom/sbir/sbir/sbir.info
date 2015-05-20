@@ -9,7 +9,6 @@ timestamp = 1426699461
 dependencies[] = captcha
 dependencies[] = context
 dependencies[] = ctools
-dependencies[] = extlink
 dependencies[] = filter
 dependencies[] = menu
 dependencies[] = menu_block

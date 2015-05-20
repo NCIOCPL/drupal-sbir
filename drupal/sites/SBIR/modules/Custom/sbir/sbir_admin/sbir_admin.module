@@ -136,11 +136,6 @@ function sbir_admin_form_alter(&$form, &$form_state, $form_id) {
   //make local copy of form_id
   $node_form_id = $form_id;
 
-  // disable autocomple for user login and user profile forms
-  if ($form_id == "user_login" ||
-      $form_id == "user_profile_form") {
-    $form['#attached']['js'] = array(drupal_get_path('module', 'sbir_admin') . '/js/sbir_admin.js');
-  }
   //overwrite all different node type forms to "node_form"
   //so only nodes will have this checkbox
   $node_form_type = '';
