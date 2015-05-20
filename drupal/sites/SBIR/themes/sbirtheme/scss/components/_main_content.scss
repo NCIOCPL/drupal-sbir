@@ -50,6 +50,7 @@
   padding-top:10px;
   h1, h2, h3, h4, h5, h6 {
     font-weight:bold;
+    clear:left;
   }
   h1 {
     font-size:24px;
@@ -115,12 +116,14 @@ div.image.right {
   float:right;
   margin-right:0;
   margin-left:15px;
+  clear:right;
 }
 
 div.image.left {
   float:left;
   margin-left:0;
   margin-right:15px;
+  clear:left;
 }
 
 div.image.center {
