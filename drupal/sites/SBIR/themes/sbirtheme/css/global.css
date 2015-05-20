@@ -662,12 +662,12 @@ a:visited {
 }
 /* line 71, ../scss/components/_home-page.scss */
 .front .grid-8 {
-  width: 550px !important;
+  width: 580px !important;
   margin: 0 30px 0 0 !important;
 }
 /* line 75, ../scss/components/_home-page.scss */
 .front .grid-4 {
-  width: 380px !important;
+  width: 350px !important;
   margin: 0;
 }
 /* line 79, ../scss/components/_home-page.scss */
@@ -964,59 +964,64 @@ h6, .pane-node-field-footer h6 {
 }
 /* line 78, ../scss/components/_main_content.scss */
 .pane-node-body
+div, .pane-node-field-footer div {
+  margin: 5px 0;
+}
+/* line 81, ../scss/components/_main_content.scss */
+.pane-node-body
 p, .pane-node-field-footer p {
   font-size: 12px;
   line-height: 18px;
 }
-/* line 82, ../scss/components/_main_content.scss */
+/* line 85, ../scss/components/_main_content.scss */
 .pane-node-body
 a, .pane-node-field-footer a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
-/* line 87, ../scss/components/_main_content.scss */
+/* line 90, ../scss/components/_main_content.scss */
 .pane-node-body
 a:visited, .pane-node-field-footer a:visited {
   color: #421c89;
 }
-/* line 91, ../scss/components/_main_content.scss */
+/* line 94, ../scss/components/_main_content.scss */
 .pane-node-body
 ul, .pane-node-field-footer ul {
   list-style-image: url("../images/uo_bullet.png");
 }
 
-/* line 96, ../scss/components/_main_content.scss */
+/* line 99, ../scss/components/_main_content.scss */
 .page-node .vertical-tabs {
   display: none;
 }
 
-/* line 101, ../scss/components/_main_content.scss */
+/* line 104, ../scss/components/_main_content.scss */
 .grid-9 .pane-node-body {
   /*padding:10px 20px;*/
 }
 
-/* line 106, ../scss/components/_main_content.scss */
+/* line 109, ../scss/components/_main_content.scss */
 .image {
   margin: 0 0 15px 0;
 }
-/* line 108, ../scss/components/_main_content.scss */
+/* line 111, ../scss/components/_main_content.scss */
 .image p {
   margin: 0;
 }
-/* line 111, ../scss/components/_main_content.scss */
+/* line 114, ../scss/components/_main_content.scss */
 .image .caption {
   font-size: 7pt;
   padding: 0 5px;
   line-height: initial;
 }
 
-/* line 119, ../scss/components/_main_content.scss */
+/* line 122, ../scss/components/_main_content.scss */
 .pane-node-body h3 p {
   clear: both;
 }
 
-/* line 124, ../scss/components/_main_content.scss */
+/* line 127, ../scss/components/_main_content.scss */
 div.image.right {
   float: right;
   margin-right: 0;
@@ -1024,7 +1029,7 @@ div.image.right {
   clear: right;
 }
 
-/* line 131, ../scss/components/_main_content.scss */
+/* line 134, ../scss/components/_main_content.scss */
 div.image.left {
   float: left;
   margin-left: 0;
@@ -1032,7 +1037,7 @@ div.image.left {
   clear: left;
 }
 
-/* line 138, ../scss/components/_main_content.scss */
+/* line 141, ../scss/components/_main_content.scss */
 div.image.center {
   text-align: center;
   margin-left: 0;
@@ -1040,7 +1045,7 @@ div.image.center {
   clear: both;
 }
 
-/* line 145, ../scss/components/_main_content.scss */
+/* line 148, ../scss/components/_main_content.scss */
 div.image.styled
 , div.left.styled
 , div.right.styled
