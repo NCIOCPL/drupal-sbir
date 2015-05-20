@@ -156,53 +156,6 @@ function basic_page_create_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sbir_basic_page-field_footer'
-  $field_instances['node-sbir_basic_page-field_footer'] = array(
-    'bundle' => 'sbir_basic_page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-      'search_index' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_footer',
-    'label' => 'Footer',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => 0,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-sbir_basic_page-field_posted_date'
   $field_instances['node-sbir_basic_page-field_posted_date'] = array(
     'bundle' => 'sbir_basic_page',
@@ -413,7 +366,6 @@ function basic_page_create_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'meta_description',
-    'formatter' => 'metatags_quick_default',
     'label' => '(Meta)Description',
     'required' => FALSE,
     'settings' => array(
@@ -457,7 +409,6 @@ function basic_page_create_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'meta_keywords',
-    'formatter' => 'metatags_quick_default',
     'label' => '(Meta)Keywords',
     'required' => FALSE,
     'settings' => array(
@@ -480,7 +431,6 @@ function basic_page_create_field_instances() {
   t('Date Display Mode');
   t('Enter a description. Limit your description to about 20 words, with a maximum of 255 characters. It should not contain any HTML tags or other formatting.');
   t('Enter a short abstract. Typically it is one sentence.');
-  t('Footer');
   t('Posted Date');
   t('Reviewed Date');
   t('Updated Date');
