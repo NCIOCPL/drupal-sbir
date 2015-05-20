@@ -1,6 +1,6 @@
 (function ($) {
   $(document).ready(function () {
-    
+
     // remove footer field from left home page block if the
     // footer is empty
     $('.home-left-block-body .views-field-field-footer').each(function () {
@@ -12,12 +12,15 @@
 
     // dropdown menu should be at least as wide
     // as the top level menu item
-    dropdown_menus = $('#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 ul');
+    dropdown_menus = $('#zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1>ul');
     $(dropdown_menus).each(function () {
-      level_one_menu_item = $(this).prev();
-      width = level_one_menu_item.css('width');
-      //console.log(width);
-      $(this).css('width', width);
+      jQuery(this).css('width', '200px');
+
+      level_one_width = $(this).parent().css('width');
+
+      if (parseInt(level_one_width) > 200) {
+        $(this).css('width', parseInt(level_one_width) + 10 + "px");
+      }
     });
 
     // massage the footer menu
