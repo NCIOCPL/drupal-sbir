@@ -220,19 +220,3 @@ function sbirtheme_preprocess_search_results(&$vars) {
     ));
   }
 }
-
-/*
- * Implements hook_menu_link_alter
- */
-
-function sbirtheme_menu_link_alter(&$item) {
-  dpm($item);
-  if ($link['link_title'] == 'Connect with us on LinkedIn') {
-    dpm($item);
-  }
-}
-/*
-function sbirtheme_menu_link__menu_footer_menu(array $variables) {
-  dpm($variables);
-}
-*/
