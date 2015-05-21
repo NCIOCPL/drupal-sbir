@@ -3,21 +3,20 @@
 /*
  * Implements hook_block_view
  */
-/*
-  function sbir_social_media_block_view_alter(&$data, $block) {
-  if ($delta == true) {
-  dpm($delta);
-  }
-  }
- */
+
+function sbir_social_media_block_view_alter(&$data, $block) {
+  //if ($delta == true) {
+    //dpm($data);
+  //}
+}
 
 /*
- * Implements hook_media_menu_link_alter
+ * Implements hook_menu_link_alter
  */
-/*
-  function sbir_social_media_menu_link_alter(&$item) {
-  if ($link['link_title'] == 'Connect with us on LinkedIn') {
-  dpm($item);
-  }
-  }
- */
+
+function sbir_social_media_menu_link_alter(&$item) {
+ //dpm($item);
+  //if ($link['link_title'] == 'Connect with us on LinkedIn') {
+   // dpm($item);
+ // }
+}
