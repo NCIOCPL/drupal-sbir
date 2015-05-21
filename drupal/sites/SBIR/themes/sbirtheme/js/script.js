@@ -26,7 +26,7 @@
     // massage the footer menu
     $('<br /><br />').insertAfter('.footer-break-point');
     $('<sup class="sup">&reg;</sup>').insertAfter('a[title="NIH ... Turning Discovery Into Health"]');
-    $('a[title="NIH ... Turning Discovery Into Health"]').parent().css('padding-top', '15px');
+    $('a[title="NIH ... Turning Discovery Into Health"]').parent().css('padding-top', '5px');
 
     // adjust width of grid-9 to 960px if there is no left nav
     if ($('.panel-panel.grid-3').children().html() == "") {
