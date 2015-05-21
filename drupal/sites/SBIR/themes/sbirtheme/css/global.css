@@ -1091,7 +1091,7 @@ div.image.styled
 }
 /* line 29, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1.first > a {
-  margin-left: 5px;
+  /*margin-left:5px;*/
 }
 /* line 32, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 > ul {
