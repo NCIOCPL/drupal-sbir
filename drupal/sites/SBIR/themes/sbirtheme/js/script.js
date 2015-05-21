@@ -19,7 +19,7 @@
       level_one_width = $(this).parent().css('width');
 
       if (parseInt(level_one_width) > 200) {
-        $(this).css('width', parseInt(level_one_width) + 10 + "px");
+        $(this).css('width', parseInt(level_one_width) + 5 + "px");
       }
     });
 
@@ -40,5 +40,11 @@
     }
 
     //$('#zone-footer-wrapper a').attr('target', '');
+    
+    // resize the width of the image div
+    // to match the with of the actual image    
+    $('.image').each(function () {
+      $(this).css('width', $(this).find('img').css('width'));
+    });    
   });
 }(jQuery));
