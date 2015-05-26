@@ -152,6 +152,17 @@ a:visited {
   display: none;
 }
 
+/* line 10, ../scss/components/_admin.scss */
+.messages.error {
+  display: none;
+}
+
+/* line 14, ../scss/components/_admin.scss */
+a[href="/admin/structure/menu"] {
+  display: none;
+}
+
+/*.page-admin-structure ul.admin-list li')*/
 /* line 2, ../scss/components/_announcement.scss */
 .view-display-id-all {
   padding: 0;
