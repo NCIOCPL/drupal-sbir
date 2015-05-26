@@ -9,14 +9,3 @@ function sbir_social_media_block_view_alter(&$data, $block) {
     //dpm($data);
   //}
 }
-
-/*
- * Implements hook_menu_link_alter
- */
-
-function sbir_social_media_menu_link_alter(&$item) {
- //dpm($item);
-  //if ($link['link_title'] == 'Connect with us on LinkedIn') {
-   // dpm($item);
- // }
-}

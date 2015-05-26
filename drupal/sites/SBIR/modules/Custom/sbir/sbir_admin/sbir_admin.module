@@ -134,6 +134,10 @@ function sbir_admin_settings_form_submit($form, &$form_state) {
 function sbir_admin_form_alter(&$form, &$form_state, $form_id) {
 
   global $user;
+  
+  // TODO remove
+  $form ['#attached']['css'] = array(drupal_get_path('module', 'sbir_admin') . '/css/sbir_admin.css');
+  $form['#attached']['js'] = array(drupal_get_path('module', 'sbir_admin') . '/js/sbir_admin.js');
 
   //make local copy of form_id
   $node_form_id = $form_id;
