@@ -956,72 +956,73 @@ h4, .pane-node-field-footer h4 {
 .pane-node-body
 h5, .pane-node-field-footer h5 {
   font-size: 14px;
+  margin-bottom: 0;
 }
-/* line 75, ../scss/components/_main_content.scss */
+/* line 76, ../scss/components/_main_content.scss */
 .pane-node-body
 h6, .pane-node-field-footer h6 {
   font-size: 13px;
 }
-/* line 78, ../scss/components/_main_content.scss */
+/* line 79, ../scss/components/_main_content.scss */
 .pane-node-body
 div, .pane-node-field-footer div {
   margin: 5px 0;
 }
-/* line 81, ../scss/components/_main_content.scss */
+/* line 82, ../scss/components/_main_content.scss */
 .pane-node-body
 p, .pane-node-field-footer p {
   font-size: 12px;
   line-height: 18px;
 }
-/* line 85, ../scss/components/_main_content.scss */
+/* line 86, ../scss/components/_main_content.scss */
 .pane-node-body
 a, .pane-node-field-footer a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
-/* line 90, ../scss/components/_main_content.scss */
+/* line 91, ../scss/components/_main_content.scss */
 .pane-node-body
 a:visited, .pane-node-field-footer a:visited {
   color: #421c89;
 }
-/* line 94, ../scss/components/_main_content.scss */
+/* line 95, ../scss/components/_main_content.scss */
 .pane-node-body
 ul, .pane-node-field-footer ul {
   list-style-image: url("../images/uo_bullet.png");
 }
 
-/* line 99, ../scss/components/_main_content.scss */
+/* line 100, ../scss/components/_main_content.scss */
 .page-node .vertical-tabs {
   display: none;
 }
 
-/* line 104, ../scss/components/_main_content.scss */
+/* line 105, ../scss/components/_main_content.scss */
 .grid-9 .pane-node-body {
   /*padding:10px 20px;*/
 }
 
-/* line 109, ../scss/components/_main_content.scss */
+/* line 110, ../scss/components/_main_content.scss */
 .image {
   margin: 0 0 15px 0;
 }
-/* line 111, ../scss/components/_main_content.scss */
+/* line 112, ../scss/components/_main_content.scss */
 .image p {
   margin: 0;
 }
-/* line 114, ../scss/components/_main_content.scss */
+/* line 115, ../scss/components/_main_content.scss */
 .image .caption {
   font-size: 7pt;
   padding: 0 5px;
   line-height: initial;
 }
 
-/* line 122, ../scss/components/_main_content.scss */
+/* line 123, ../scss/components/_main_content.scss */
 .pane-node-body h3 p {
   clear: both;
 }
 
-/* line 127, ../scss/components/_main_content.scss */
+/* line 128, ../scss/components/_main_content.scss */
 div.image.right {
   float: right;
   margin-right: 0;
@@ -1029,7 +1030,7 @@ div.image.right {
   clear: right;
 }
 
-/* line 134, ../scss/components/_main_content.scss */
+/* line 135, ../scss/components/_main_content.scss */
 div.image.left {
   float: left;
   margin-left: 0;
@@ -1037,7 +1038,7 @@ div.image.left {
   clear: left;
 }
 
-/* line 141, ../scss/components/_main_content.scss */
+/* line 142, ../scss/components/_main_content.scss */
 div.image.center {
   text-align: center;
   margin-left: 0;
@@ -1045,7 +1046,7 @@ div.image.center {
   clear: both;
 }
 
-/* line 148, ../scss/components/_main_content.scss */
+/* line 149, ../scss/components/_main_content.scss */
 div.image.styled
 , div.left.styled
 , div.right.styled
@@ -1091,7 +1092,7 @@ div.image.styled
 }
 /* line 29, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1.first > a {
-  margin-left: 5px;
+  /*margin-left:5px;*/
 }
 /* line 32, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 > ul {
@@ -1279,10 +1280,10 @@ div.image.styled
 /* line 53, ../scss/components/_search-form.scss */
 #search-block-form input[type=text] {
   float: left;
-  height: 27px;
-  width: 225px;
+  height: 26px;
+  width: 218px;
   font-size: 11px;
-  padding: 1px 4px;
+  padding: 1px 4px 1px 10px;
   box-shadow: inset 0px 0px 10px -3px #ababab;
   -webkit-box-shadow: inset 0px 0px 10px -3px #ababab;
   -moz-box-shadow: inset 0px 0px 10px -3px #ababab;
