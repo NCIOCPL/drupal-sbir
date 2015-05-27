@@ -13,4 +13,6 @@ function sbir_admin_install() {
  */
 
 function sbir_admin_enable() {
+  //drupal_add_js(drupal_get_path('module', 'sbir_admin') . '/js/sbir_admin.js');
+  //drupal_add_css(drupal_get_path('module', 'sbir_admin') . '/css/sbir_admin.css');
 }

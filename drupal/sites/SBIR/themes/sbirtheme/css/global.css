@@ -1023,7 +1023,7 @@ ul, .pane-node-field-footer ul {
 }
 /* line 115, ../scss/components/_main_content.scss */
 .image .caption {
-  font-size: 7pt;
+  font-size: 10px;
   padding: 0 5px;
   line-height: initial;
 }

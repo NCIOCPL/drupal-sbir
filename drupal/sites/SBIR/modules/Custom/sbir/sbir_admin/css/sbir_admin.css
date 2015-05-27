@@ -1,47 +1,32 @@
-.node-form {
-  .hide {
-    display:none;
-  }
-  .field-type-text-with-summary span.field-edit-link {
-    display:none;
-  }
-  #edit-field-banner {
-    display:none;
-  }
-}
-
 .node-type-sbir-basic-page #edit-body label .field-edit-link {
-  display:none;
+  display: none;
 }
-
-.node-type-sbir-basic-page .field-name-body .text-summary-wrapper {
-  display:none; 
-}
-
-.node-type-sbir-block #edit-body label .field-edit-link {
-  display:none!important;
-}
-
-.node-type-sbir-block .text-summary-wrapper {
-  display:none!important;
-}
-
 .form-type-textarea .link-edit-summary {
-  display:none!important;
+  display: none;
 }
-
 .form-type-textarea .field-edit-link {
-  display:none!important;
-
+  display: none;
 }
 
+.page-node-add .text-summary-wrapper,
+.page-node-edit .text-summary-wrapper {
+  display: none;
+}
 
+.page-node-add-sbir-announcement .text-summary-wrapper,
+.page-node-add-sbir-success-story .text-summary-wrapper,
+.page-node-add-sbir-event .text-summary-wrapper,
 .node-type-sbir-announcement .text-summary-wrapper,
 .node-type-sbir-success-story .text-summary-wrapper,
 .node-type-sbir-event .text-summary-wrapper {
-  display:block!important;
+  display: block!important;
+}
+.page-node-add .filter-wrapper,
+.page-node-edit .filter-wrapper {
+  display: none;
 }
 
-.node-type-sbir-basic-page . text-summary-wrapper {
-  display:none!important;
+.page-node-add #edit-menu .form-item-menu-description,
+.page-node-edit #edit-menu .form-item-menu-description {
+  display: none;
 }
