@@ -19,10 +19,29 @@
 }
 
 .node-type-sbir-block #edit-body label .field-edit-link {
-  display:none;
+  display:none!important;
 }
 
-.node-type-sbir-block .field-name-body .text-summary-wrapper {
-  display:none;
+.node-type-sbir-block .text-summary-wrapper {
+  display:none!important;
 }
 
+.form-type-textarea .link-edit-summary {
+  display:none!important;
+}
+
+.form-type-textarea .field-edit-link {
+  display:none!important;
+
+}
+
+
+.node-type-sbir-announcement .text-summary-wrapper,
+.node-type-sbir-success-story .text-summary-wrapper,
+.node-type-sbir-event .text-summary-wrapper {
+  display:block!important;
+}
+
+.node-type-sbir-basic-page . text-summary-wrapper {
+  display:none!important;
+}

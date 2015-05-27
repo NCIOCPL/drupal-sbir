@@ -1,8 +1,7 @@
 drush vset maintenance_mode 1
-
-drush dis error_pages -y
+drush dis sbir_error_pages -y
 drush dis sbir_admin -y
-drush dis sbir_user_roles -y
+drush dis sbir_roles_permissions -y
 drush dis sbir_search -y
 drush dis sbir_global_template -y
 drush dis sbir_home_page -y
@@ -28,5 +27,4 @@ drush en sbir -y
 drush cron
 
 drush cc all
-
 drush vset maintenance_mode 0

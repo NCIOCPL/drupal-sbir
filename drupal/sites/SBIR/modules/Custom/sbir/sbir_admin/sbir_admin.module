@@ -161,7 +161,7 @@ function sbir_admin_form_alter(&$form, &$form_state, $form_id) {
     // Add a checkbox to all node edit forms that allows user to 
     // enable/disable the menu item
     case 'node_form':
-
+//dpm($form);
       if ($form_id != 'sbir_subscription_node_form') {
         //dpm($form['menu']['link']);
         //get mlid, if mlid captured
@@ -200,10 +200,11 @@ function sbir_admin_form_alter(&$form, &$form_state, $form_id) {
         unset($form['options']['promote']);
         unset($form['options']['sticky']);
         unset($form['body']['#attributes']['class'][0]);
-        unset($form['path'])
-
-        ;
+        unset($form['path']);
       }
+     $form['meta_keywords']['und']['#description'] = 'Enter keywords separated by a comma and a space.';
+     $form['meta_keywords']['und'][0]['#description'] = 'Enter keywords separated by a comma and a space.';
+$form['meta_keywords']['und'][0]['metatags_quick']['#description'] = 'Enter keywords separated by a comma and a space.';
       break;
   }
 }
