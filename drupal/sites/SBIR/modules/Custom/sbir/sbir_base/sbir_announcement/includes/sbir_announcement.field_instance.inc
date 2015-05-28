@@ -1,7 +1,46 @@
 <?php
 
 function announcement_create_field_instances() {
-$field_instances = array();
+  $field_instances = array();
+
+  // Exported field_instance: 'node-sbir_announcement-field_short_title'
+  $field_instances['node-sbir_announcement-field_short_title'] = array(
+    'bundle' => 'sbir_announcement',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_short_title',
+    'label' => 'Short Title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -1,
+    ),
+  );
 
   // Exported field_instance: 'node-sbir_announcement-body'
   $field_instances['node-sbir_announcement-body'] = array(
@@ -225,6 +264,7 @@ $field_instances = array();
   // Included for use with string extractors like potx.
   t('(Meta)Description');
   t('(Meta)Keywords');
+  t('Short Title');  
   t('Body');
   t('Enter a description. Limit your description to about 20 words, with a maximum of 255 characters. It should not contain any HTML tags or other formatting.');
   t('Enter a short abstract. Typically it is one sentence.');

@@ -40,19 +40,11 @@
     }
 
     //$('#zone-footer-wrapper a').attr('target', '');
-    
-    jQuery('.pane-node-body img').each(function(){
-  var url = jQuery(this).attr('src');
-  url = url.replace('http://demo-project-cedricpriestley.c9.io', '');
-  url = '/sbir' + url;
-  jQuery(this).attr('src', url);
-});
-    
-    
+
     // resize the width of the image div
     // to match the with of the actual image    
     $('.image').each(function () {
       $(this).css('width', $(this).find('img').css('width'));
-    }); 
+    });
   });
 }(jQuery));

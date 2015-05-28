@@ -127,12 +127,24 @@ $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
 $handler->display->display_options['fields']['title']['field'] = 'title';
 $handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['exclude'] = TRUE;
 $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
 $handler->display->display_options['fields']['title']['alter']['text'] = '<a href="/newsevents/announcements#announcement-[nid]">[title]</a>';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Field: Content: Short Title */
+$handler->display->display_options['fields']['field_short_title']['id'] = 'field_short_title';
+$handler->display->display_options['fields']['field_short_title']['table'] = 'field_data_field_short_title';
+$handler->display->display_options['fields']['field_short_title']['field'] = 'field_short_title';
+$handler->display->display_options['fields']['field_short_title']['label'] = '';
+$handler->display->display_options['fields']['field_short_title']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['field_short_title']['alter']['text'] = '<a href="/newsevents/announcements#announcement-[nid]">[field_short_title]</a>';
+$handler->display->display_options['fields']['field_short_title']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[path]';
+$handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_short_title']['empty'] = '[title]';
 /* Field: Content: Posted Date */
 $handler->display->display_options['fields']['field_posted_date']['id'] = 'field_posted_date';
 $handler->display->display_options['fields']['field_posted_date']['table'] = 'field_data_field_posted_date';
