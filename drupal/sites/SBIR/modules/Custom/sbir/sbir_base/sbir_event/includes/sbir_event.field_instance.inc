@@ -259,7 +259,7 @@ function event_create_field_instances() {
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
-      'file_directory' => '',
+      'file_directory' => 'ics',
       'file_extensions' => 'ics',
       'max_filesize' => '',
       'user_register_form' => FALSE,
