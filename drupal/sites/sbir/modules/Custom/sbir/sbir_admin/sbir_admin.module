@@ -131,7 +131,7 @@ function sbir_admin_settings_form_submit($form, & $form_state) {
  * Implements hook_form_alter
  */
 
-function sbir_admin_form_alter( & $form, & $form_state, $form_id) {
+function sbir_admin_form_alter(& $form, & $form_state, $form_id) {
 
   global $user;
 
@@ -164,7 +164,7 @@ function sbir_admin_form_alter( & $form, & $form_state, $form_id) {
         $mlid = 0;
 
         if (isset($form['menu']['link']['mlid']['#value']) &&
-          $form['menu']['link']['mlid']['#value'] > 0) {
+            $form['menu']['link']['mlid']['#value'] > 0) {
           $mlid = $form['menu']['link']['mlid']['#value'];
           $menuItem = menu_link_load($mlid);
         }
@@ -180,7 +180,7 @@ function sbir_admin_form_alter( & $form, & $form_state, $form_id) {
         );
       }
 
-      if (!in_array('administrator', $user-> roles)) {
+      if (!in_array('administrator', $user->roles)) {
         //hide the banner upload field (we don't want content editors to upload new ones)
         $form['field_banner']['#attributes']['style'] = 'display:none';
         $form['#attached']['css'] = array(drupal_get_path('module', 'sbir_admin') . '/css/sbir_admin.css');
@@ -189,8 +189,8 @@ function sbir_admin_form_alter( & $form, & $form_state, $form_id) {
 
       //$form['menu']['link']['description']['#attributes']['style'] = 'display:none';
       if ($form['type']['#value'] == 'sbir_block' ||
-        $form['type']['#value'] == 'sbir_file' ||
-        $form['type']['#value'] == 'sbir_subscription') {
+          $form['type']['#value'] == 'sbir_file' ||
+          $form['type']['#value'] == 'sbir_subscription') {
         unset($form['menu']);
         unset($form['options']['promote']);
         unset($form['options']['sticky']);
@@ -199,6 +199,11 @@ function sbir_admin_form_alter( & $form, & $form_state, $form_id) {
       }
 
       $form['meta_keywords']['und'][0]['metatags_quick']['#description'] = 'Enter keywords separated by a comma and a space.';
+
+      if (!in_array('administrator', $user->roles)) {
+        unset($form['body']['und'][0]['summary']['#description']);
+      }
+
       break;
   }
 }
@@ -206,7 +211,7 @@ function sbir_admin_form_alter( & $form, & $form_state, $form_id) {
 /*
  * Implements hook_node_presave
  */
- 
+
 function sbir_admin_node_presave($node) {
   if (isset($node->menu['sbir_menu_item_enabled'])) {
     $node->menu['hidden'] = $node->menu['sbir_menu_item_enabled'] == 1 ? 0 : 1;
