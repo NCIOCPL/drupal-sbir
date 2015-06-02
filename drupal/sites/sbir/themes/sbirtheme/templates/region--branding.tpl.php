@@ -7,7 +7,7 @@
           <div class="logo-img">
             <a href="/" rel="home" title="">        
               <svg width="458" height="100">
-              <image alt="National Cancer Institute - SBIR Development Center" xlink:href="<?php echo $base_url; ?>/sites/SBIR/themes/sbirtheme/sbir-logo.svg" src="<?php echo $base_url; ?>/sites/SBIR/themes/sbirtheme/logo.png" width="458" height="100" />
+              <image alt="National Cancer Institute - SBIR Development Center" xlink:href="<?php echo $base_url; ?>/sites/sbir/themes/sbirtheme/sbir-logo.svg" src="<?php echo $base_url; ?>/sites/sbir/themes/sbirtheme/logo.png" width="458" height="100" />
               </svg>        
             </a>
             <?php //print $linked_logo_img; ?>
