@@ -198,6 +198,10 @@ function sbir_admin_form_alter(& $form, & $form_state, $form_id) {
         unset($form['body']['#attributes']['class'][0]);
         unset($form['path']);
       }
+      if ($form['type']['#value'] == 'sbir_announcement') {
+        unset($form['path']);
+        unset($form['menu']);
+      }
 
       $form['meta_keywords']['und'][0]['metatags_quick']['#description'] = 'Enter keywords separated by a comma and a space.';
 
