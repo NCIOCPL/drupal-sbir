@@ -43,8 +43,8 @@
 
     // resize the width of the image div
     // to match the with of the actual image    
-    $('.image').each(function () {
-      $(this).css('width', $(this).find('img').css('width'));
-    });
+    //$('.image').each(function () {
+      //$(this).css('width', $(this).find('img').css('width'));
+    //});
   });
 }(jQuery));

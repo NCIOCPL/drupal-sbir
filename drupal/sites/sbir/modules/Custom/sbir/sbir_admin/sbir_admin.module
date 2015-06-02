@@ -157,6 +157,7 @@ function sbir_admin_form_alter(& $form, & $form_state, $form_id) {
     // Add a checkbox to all node edit forms that allows user to 
     // enable/disable the menu item
     case 'node_form':
+
       if ($form_id != 'sbir_subscription_node_form') {
         //dpm($form['menu']['link']);
         //get mlid, if mlid captured

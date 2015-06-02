@@ -80,11 +80,6 @@ function _email_notification_form_submit(&$form, &$form_state) {
 
   if (isset($form_state['nid']) && is_numeric($form_state['nid'])) {
 
-    variable_set('sbir_admin_to_email', $form['email']['to']['#value']);
-    variable_set('sbir_admin_from_email', $form['email']['from']['#value']);
-    variable_set('sbir_admin_new_subject', $form['email']['change_subject']['#value']);
-    variable_set('sbir_admin_change_subject', $form['email']['new_subject']['#value']);
-
     $to = variable_get('sbir_admin_to_email', '');
     $from = variable_get('sbir_admin_from_email', '');
 

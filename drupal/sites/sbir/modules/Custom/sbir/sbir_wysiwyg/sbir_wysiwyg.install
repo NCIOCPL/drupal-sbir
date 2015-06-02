@@ -22,8 +22,14 @@ function sbir_wysiwyg_enable() {
 // Configure allowed HTML tags
   $format = 'sbir_filtered';
   $name = 'filter_html';
-  $settings = 'a:3:{s:12:"allowed_html";s:306:"<a><b><br><caption><cite><datalist><dd><dfn><div><dl><dt><em><footer><h1><h2><h3><h4><h5><h6><head><header><hr><i><iframe><img><li><mark><menu><menuitem><nav><ol><output><p><pre><q><section><small><source><span><strike><strong><sub><summary><sup><table><tbody><td><tfoot><th><thead><time><tr><track><u><ul>";s:16:"filter_html_help";i:1;s:20:"filter_html_nofollow";i:0;}';
+  $settings = 'a:3:{s:12:"allowed_html";s:313:"<a><b><br><caption><cite><datalist><dd><dfn><div><dl><dt><em><footer><h1><h2><h3><h4><h5><h6><head><header><hr><i><iframe><img><li><mark><menu><menuitem><nav><ol><output><p><pre><q><section><small><source><span><strike><strong><style><sub><summary><sup><table><tbody><td><tfoot><th><thead><time><tr><track><u><ul>";s:16:"filter_html_help";i:1;s:20:"filter_html_nofollow";i:0;}';
   sbir_wysiwyg_set_allowed_tags($format, $name, $settings);
+  
+// Configure allowed HTML tags
+  $format = 'filtered_html';
+  $name = 'filter_html';
+  $settings = 'a:3:{s:12:"allowed_html";s:313:"<a><b><br><caption><cite><datalist><dd><dfn><div><dl><dt><em><footer><h1><h2><h3><h4><h5><h6><head><header><hr><i><iframe><img><li><mark><menu><menuitem><nav><ol><output><p><pre><q><section><small><source><span><strike><strong><style><sub><summary><sup><table><tbody><td><tfoot><th><thead><time><tr><track><u><ul>";s:16:"filter_html_help";i:1;s:20:"filter_html_nofollow";i:0;}';
+  sbir_wysiwyg_set_allowed_tags($format, $name, $settings);  
   
   sbir_wysiwyg_configure_imce();
 }
