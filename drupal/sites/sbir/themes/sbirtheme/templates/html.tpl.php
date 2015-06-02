@@ -29,7 +29,7 @@
       // !/https?\:\/\/([a-zA-Z0-9\-]+\.)+gov/.test(this.href) : The href is a valid url that does not end in .gov
       jQuery(document).ready(function ($) {
 
-        var path = $('meta[name="english-linking-policy"]').attr('content');
+        var path = 'http://www.cancer.gov/policies/linking';
         var altText = 'Exit Disclaimer';
 
         $("a").filter(function () {
