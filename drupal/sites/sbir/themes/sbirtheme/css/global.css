@@ -496,6 +496,10 @@ a[href="/admin/structure/menu"] {
 .node-sbir_subscription-form {
   margin-left: 15px;
 }
+/* line 3, ../scss/components/_email_updates.scss */
+.node-sbir_subscription-form .form-item {
+  margin-top: 0;
+}
 
 /* line 2, ../scss/components/_footer.scss */
 #section-footer {
