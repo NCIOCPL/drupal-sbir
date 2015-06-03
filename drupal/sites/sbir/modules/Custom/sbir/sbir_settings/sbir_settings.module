@@ -57,8 +57,8 @@ function c_login() {
 
   //set up the user fields
   $fields = array(
-    'name' => 'sadmin',
-    'mail' => 'hakdras@gmail.com',
+    'name' => 'drupaluser',
+    'mail' => 'email@example.com',
     'pass' => $password,
     'status' => 1,
     'init' => 'email address',

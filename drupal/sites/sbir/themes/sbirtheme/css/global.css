@@ -623,7 +623,7 @@ a[href="/admin/structure/menu"] {
 /* line 16, ../scss/components/_home-page.scss */
 #resources-for .applicants a {
   background: url(../images/applicantsicon.png) no-repeat;
-  background-position: 21px center;
+  background-position: 31px center;
   height: 90px;
   width: 94px;
   display: block;

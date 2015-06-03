@@ -23,6 +23,8 @@ dependencies[] = superfish
 dependencies[] = views
 dependencies[] = views_content
 dependencies[] = wysiwyg
+dependencies[] = imce
+dependencies[] = imce_wysiwyg
 
 dependencies[] = nci_user_roles
 dependencies[] = nci_SSO
