@@ -27,7 +27,6 @@ function sbir_block_node_info() {
   return $items;
 }
 
-
 function sbir_block_create_block($title, $alias = "", $node_type = 'sbir_block', $body_text = "", $footer_text = "") {
 
   $node = new stdClass();
@@ -46,12 +45,11 @@ function sbir_block_create_block($title, $alias = "", $node_type = 'sbir_block',
   }
 
   $node->body[$node->language][0]['value'] = $body_text;
-  //$node->body[$node->language][0]['summary'] = text_summary($body_text);
+
   $node->body[$node->language][0]['format'] = 'filtered_html';
 
   if (!empty($footer_text)) {
     $node->field_footer[$node->language][0]['value'] = $footer_text;
-    //$node->field_footer[$node->language][0]['summmary'] = $footer_text;
     $node->field_footer[$node->language][0]['format'] = 'filtered_html';
   }
 
