@@ -25,7 +25,7 @@ dependencies[] = views_content
 dependencies[] = wysiwyg
 
 dependencies[] = nci_user_roles
-;dependencies[] = nci_SSO
+dependencies[] = nci_SSO
 
 dependencies[] = sbir_announcement
 dependencies[] = sbir_basic_page

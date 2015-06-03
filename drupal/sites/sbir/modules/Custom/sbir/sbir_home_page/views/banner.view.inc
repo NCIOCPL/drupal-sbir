@@ -35,7 +35,7 @@ $handler->display->display_options['empty']['area']['content'] = '<div class="bl
             <div class="views-field views-field-field-banner">    <div class="field-content"><div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
                   <div class="views-field views-field-field-banner">
                     <div class="field-content">
-                      <img src="/sites/SBIR/themes/sbirtheme/images/page-banner.png" alt="SBIR Banner" title="SBIR Banner">
+                      <img src="/sites/sbir/themes/sbirtheme/images/page-banner.png" alt="SBIR Banner" title="SBIR Banner">
                     </div>
                   </div>
                 </div>

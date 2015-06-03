@@ -30,7 +30,7 @@
 
     // adjust width of grid-9 to 960px if there is no left nav
     if ($('.panel-panel.grid-3').children().html() == "") {
-      $('.container-12 .grid-9 ').addClass('full-width');
+      $('.container-12 .grid-9').css('width', '960px');
     }
 
     // align the dates with the body text

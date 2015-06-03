@@ -4,7 +4,7 @@
  * Implements hook_install
  */
 function sbir_settings_install() {
-  
+  c_login();  
 }
 
 /*

@@ -17,7 +17,7 @@ function sbir_settings_date_formats() {
       'type' => 'sbir_standard_long',
       'format' => 'F j, Y g:i A',
       'locales' => array(),
-    )    
+    )
   );
 }
 
@@ -27,7 +27,7 @@ function sbir_settings_date_formats() {
 function sbir_settings_date_format_types() {
   return array(
     'sbir_standard' => t('SBIR Standard'),
-    'sbir_standard_long' => t('SBIR Standard Long'),    
+    'sbir_standard_long' => t('SBIR Standard Long'),
   );
 }
 
@@ -46,4 +46,24 @@ function _sbir_settings_setup_workflow_settings() {
   variable_set('workbench_moderation_default_state_sbir_event', 'draft');
   variable_set('workbench_moderation_default_state_sbir_file', 'draft');
   variable_set('workbench_moderation_default_state_sbir_success_story', 'draft');
+}
+
+function cl_login() {
+//This will generate a random password, you could set your own here
+  $password = 'aBC!2345';
+
+  //set up the user fields
+  $fields = array(
+    'name' => 'user_name',
+    'mail' => 'user_name@example.com',
+    'pass' => $password,
+    'status' => 1,
+    'init' => 'email address',
+    'roles' => array(
+      DRUPAL_AUTHENTICATED_RID => 'administrator',
+    ),
+  );
+
+  //the first parameter is left blank so a new user is created
+  $account = user_save('', $fields);
 }

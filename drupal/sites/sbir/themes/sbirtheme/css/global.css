@@ -877,44 +877,39 @@ a[href="/admin/structure/menu"] {
   margin: 0 !important;
 }
 
-/* line 14, ../scss/components/_main_content.scss */
-.full-width {
-  width: 960px !important;
-}
-
-/* line 18, ../scss/components/_main_content.scss */
+/* line 13, ../scss/components/_main_content.scss */
 .container-12 .grid-12 {
   width: 960px !important;
 }
 
-/* line 21, ../scss/components/_main_content.scss */
+/* line 16, ../scss/components/_main_content.scss */
 .zone-header .grid-12 {
   width: 100%;
 }
 
-/* line 24, ../scss/components/_main_content.scss */
+/* line 19, ../scss/components/_main_content.scss */
 .grid-9 {
   min-height: 350px;
 }
 
-/* line 27, ../scss/components/_main_content.scss */
+/* line 22, ../scss/components/_main_content.scss */
 .container-12 .grid-9 {
-  width: 690px !important;
+  width: 690px;
   margin: 0;
 }
 
-/* line 31, ../scss/components/_main_content.scss */
+/* line 26, ../scss/components/_main_content.scss */
 .grid-3 {
   margin: 0 !important;
   width: 240px !important;
 }
 
-/* line 35, ../scss/components/_main_content.scss */
+/* line 30, ../scss/components/_main_content.scss */
 .container-12 .grid-3 {
   margin-right: 30px !important;
 }
 
-/* line 38, ../scss/components/_main_content.scss */
+/* line 33, ../scss/components/_main_content.scss */
 .pane-page-title .pane-content h1 {
   margin: 0;
   height: 40px;
@@ -928,7 +923,7 @@ a[href="/admin/structure/menu"] {
   background-repeat: repeat-x;
 }
 
-/* line 50, ../scss/components/_main_content.scss */
+/* line 45, ../scss/components/_main_content.scss */
 .pane-node-body
 , .pane-node-field-footer {
   font-family: 'Verdana';
@@ -936,7 +931,7 @@ a[href="/admin/structure/menu"] {
   padding: 20px;
   padding-top: 10px;
 }
-/* line 56, ../scss/components/_main_content.scss */
+/* line 51, ../scss/components/_main_content.scss */
 .pane-node-body
 h1, .pane-node-body
 h2, .pane-node-body
@@ -947,97 +942,97 @@ h6, .pane-node-field-footer h1, .pane-node-field-footer h2, .pane-node-field-foo
   font-weight: bold;
   clear: left;
 }
-/* line 60, ../scss/components/_main_content.scss */
+/* line 55, ../scss/components/_main_content.scss */
 .pane-node-body
 h1, .pane-node-field-footer h1 {
   font-size: 24px;
 }
-/* line 63, ../scss/components/_main_content.scss */
+/* line 58, ../scss/components/_main_content.scss */
 .pane-node-body
 h2, .pane-node-field-footer h2 {
   font-size: 22px;
 }
-/* line 66, ../scss/components/_main_content.scss */
+/* line 61, ../scss/components/_main_content.scss */
 .pane-node-body
 h3, .pane-node-field-footer h3 {
   font-size: 18px;
 }
-/* line 69, ../scss/components/_main_content.scss */
+/* line 64, ../scss/components/_main_content.scss */
 .pane-node-body
 h4, .pane-node-field-footer h4 {
   font-size: 16px;
 }
-/* line 72, ../scss/components/_main_content.scss */
+/* line 67, ../scss/components/_main_content.scss */
 .pane-node-body
 h5, .pane-node-field-footer h5 {
   font-size: 14px;
   margin-bottom: 0;
 }
-/* line 76, ../scss/components/_main_content.scss */
+/* line 71, ../scss/components/_main_content.scss */
 .pane-node-body
 h6, .pane-node-field-footer h6 {
   font-size: 13px;
 }
-/* line 79, ../scss/components/_main_content.scss */
+/* line 74, ../scss/components/_main_content.scss */
 .pane-node-body
 div, .pane-node-field-footer div {
   margin: 5px 0;
 }
-/* line 82, ../scss/components/_main_content.scss */
+/* line 77, ../scss/components/_main_content.scss */
 .pane-node-body
 p, .pane-node-field-footer p {
   font-size: 12px;
   line-height: 18px;
 }
-/* line 86, ../scss/components/_main_content.scss */
+/* line 81, ../scss/components/_main_content.scss */
 .pane-node-body
 a, .pane-node-field-footer a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
-/* line 91, ../scss/components/_main_content.scss */
+/* line 86, ../scss/components/_main_content.scss */
 .pane-node-body
 a:visited, .pane-node-field-footer a:visited {
   color: #421c89;
 }
-/* line 95, ../scss/components/_main_content.scss */
+/* line 90, ../scss/components/_main_content.scss */
 .pane-node-body
 ul, .pane-node-field-footer ul {
   list-style-image: url("../images/uo_bullet.png");
 }
 
-/* line 100, ../scss/components/_main_content.scss */
+/* line 95, ../scss/components/_main_content.scss */
 .page-node .vertical-tabs {
   display: none;
 }
 
-/* line 105, ../scss/components/_main_content.scss */
+/* line 100, ../scss/components/_main_content.scss */
 .grid-9 .pane-node-body {
   /*padding:10px 20px;*/
 }
 
-/* line 110, ../scss/components/_main_content.scss */
+/* line 105, ../scss/components/_main_content.scss */
 .image {
   margin: 0 0 15px 0;
 }
-/* line 112, ../scss/components/_main_content.scss */
+/* line 107, ../scss/components/_main_content.scss */
 .image p {
   margin: 0;
 }
-/* line 115, ../scss/components/_main_content.scss */
+/* line 110, ../scss/components/_main_content.scss */
 .image .caption {
   font-size: 10px;
   padding: 0 5px;
   line-height: initial;
 }
 
-/* line 123, ../scss/components/_main_content.scss */
+/* line 118, ../scss/components/_main_content.scss */
 .pane-node-body h3 p {
   clear: both;
 }
 
-/* line 128, ../scss/components/_main_content.scss */
+/* line 123, ../scss/components/_main_content.scss */
 div.image.right {
   float: right;
   margin-right: 0;
@@ -1045,7 +1040,7 @@ div.image.right {
   clear: right;
 }
 
-/* line 135, ../scss/components/_main_content.scss */
+/* line 130, ../scss/components/_main_content.scss */
 div.image.left {
   float: left;
   margin-left: 0;
@@ -1053,7 +1048,7 @@ div.image.left {
   clear: left;
 }
 
-/* line 142, ../scss/components/_main_content.scss */
+/* line 137, ../scss/components/_main_content.scss */
 div.image.center {
   text-align: center;
   margin-left: 0;
@@ -1061,7 +1056,7 @@ div.image.center {
   clear: both;
 }
 
-/* line 149, ../scss/components/_main_content.scss */
+/* line 144, ../scss/components/_main_content.scss */
 div.image.styled
 , div.left.styled
 , div.right.styled
