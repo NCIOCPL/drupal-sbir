@@ -21,8 +21,6 @@ function sbir_search_query_alter(&$query) {
     $query->condition('n.type', 'sbir_announcement', '<>');
     
     $query->condition('n.type', 'sbir_block', '<>');
-    $query->condition('n.type', 'sbir_file', '<>');
-    $query->condition('n.type', 'sbir_image', '<>');
     $query->condition('n.type', 'sbir_subscription', '<>');
     $query->condition('n.title', '%Home Page', 'NOT LIKE');
   }

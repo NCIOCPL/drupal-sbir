@@ -266,6 +266,8 @@ function sbir_email_notifications_form_alter(&$form, &$form_state, $form_id) {
       '#captcha_type' => 'recaptcha/reCAPTCHA',
       '#weight' => 100
     );
+
+    $form['actions']['submit']['#value'] = t("Submit");
   }
 }
 
