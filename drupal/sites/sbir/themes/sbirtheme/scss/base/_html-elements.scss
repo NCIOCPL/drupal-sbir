@@ -4,8 +4,9 @@
 
 body {
   font-family:Verdana, Arial, Helvetica, sans-serif;
-    padding-top: 0;
-    margin: 0!important;
+  padding-top: 0;
+  margin: 0!important;
+  background-color: #f8f8f8;
 }
 
 p, div {
@@ -106,11 +107,15 @@ ul {
 }
 */
 
-  a {
-    text-decoration: underline;
-    color:#2664ab;
-    font-size:12px
-  }
-  a:visited {
-    color:#421c89
-  }
+a {
+  text-decoration: underline;
+  color:#2664ab;
+  font-size:12px
+}
+a:visited {
+  color:#421c89
+}
+.section
+, .zone-wrapper {
+  background-color: #fff;
+}

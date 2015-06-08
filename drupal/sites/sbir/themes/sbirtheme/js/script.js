@@ -36,7 +36,7 @@
     // align the dates with the body text
     if ($('.panel-panel.grid-9').length) {
       var offset = $('.panel-panel.grid-9').offset().left;
-      $('div#sbir-dates').css('margin-left', offset + 20 + 'px');
+      $('div#sbir-dates').css('padding-left', offset + 20 + 'px');
     }
 
     //$('#zone-footer-wrapper a').attr('target', '');

@@ -24,16 +24,17 @@ body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   padding-top: 0;
   margin: 0 !important;
+  background-color: #f8f8f8;
 }
 
-/* line 11, ../scss/base/_html-elements.scss */
+/* line 12, ../scss/base/_html-elements.scss */
 p, div {
   font-size: 12px;
   line-height: 18px;
   font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
-/* line 17, ../scss/base/_html-elements.scss */
+/* line 18, ../scss/base/_html-elements.scss */
 span {
   line-height: 18px;
   font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -124,16 +125,22 @@ ul {
   padding-left:15px;
 }
 */
-/* line 109, ../scss/base/_html-elements.scss */
+/* line 110, ../scss/base/_html-elements.scss */
 a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
 
-/* line 114, ../scss/base/_html-elements.scss */
+/* line 115, ../scss/base/_html-elements.scss */
 a:visited {
   color: #421c89;
+}
+
+/* line 118, ../scss/base/_html-elements.scss */
+.section
+, .zone-wrapper {
+  background-color: #fff;
 }
 
 /* ==========================================================================
@@ -394,11 +401,15 @@ a[href="/admin/structure/menu"] {
   font-weight: bold;
 }
 
-/* line 3, ../scss/components/_dates.scss */
+/* line 2, ../scss/components/_dates.scss */
+#sbir-dates {
+  background-color: #fff;
+}
+/* line 4, ../scss/components/_dates.scss */
 #sbir-dates .sbir-date {
   display: inline;
 }
-/* line 5, ../scss/components/_dates.scss */
+/* line 6, ../scss/components/_dates.scss */
 #sbir-dates .sbir-date span {
   font-weight: bold;
 }
@@ -505,7 +516,7 @@ a[href="/admin/structure/menu"] {
 
 /* line 2, ../scss/components/_footer.scss */
 #section-footer {
-  margin-top: 50px;
+  padding-top: 50px;
 }
 /* line 3, ../scss/components/_footer.scss */
 #section-footer span.ext {
@@ -581,7 +592,7 @@ a[href="/admin/structure/menu"] {
 #zone-header-wrapper {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 5px;
+  padding-bottom: 5px;
 }
 /* line 10, ../scss/components/_header.scss */
 #zone-header-wrapper #zone-header {
