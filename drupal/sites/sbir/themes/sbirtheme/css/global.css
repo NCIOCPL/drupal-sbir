@@ -1381,6 +1381,10 @@ div.image.styled
 .page-search #search-term {
   font-weight: normal;
 }
+/* line 32, ../scss/components/_search-results.scss */
+.page-search ul {
+  margin-bottom: 0;
+}
 
 /* line 2, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media {
