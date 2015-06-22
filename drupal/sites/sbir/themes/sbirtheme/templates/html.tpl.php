@@ -16,6 +16,18 @@
     <?php print $page; ?>
     <?php print $page_bottom; ?>
 
+    <!-- Display the HHS Clearance Disclaimer //-->
+    <?php $show_disclaimer = variable_get('hhs_clearance_disclaimer', FALSE); ?>
+    <?php if ($show_disclaimer): ?>
+      <div id="hhs-disclaimer">
+        <p>
+        This site is undergoing remediation for compliance with Section 508.
+        The remediation will be complete by August 3, 2015.</p>
+        <p>In the interim, should you require any accessibility assistance with any content, please contact NCI SBIR & STTR</p>
+        <p>at <a href="mailto:ncisbir@mail.nih.gov">ncisbir@mail.nih.gov</a>.</p>
+      </div>
+    <?php endif; ?>
+
     <?php
     global $base_url;
     $theme_path = $base_url . "/" . drupal_get_path('theme', 'sbirtheme');
@@ -44,11 +56,10 @@
     </script>
 
     <?php global $base_url; ?>
-    <?php if ($base_url == 'http://sbir.cancer.gov'
-      || $base_url == 'https://sbir.cancer.gov'
-      || $base_url == 'http://www.sbir.cancer.gov'
-      || $base_url == 'https://www.sbir.cancer.gov'        
-      ):?>
+    <?php
+    if ($base_url == 'http://sbir.cancer.gov' || $base_url == 'https://sbir.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov' || $base_url == 'https://www.sbir.cancer.gov'
+    ):
+      ?>
       <script language="JavaScript" type="text/javascript" src="http://static.cancer.gov/webanalytics/WA_SBIR_PageLoad.js"></script>
     <?php endif; ?>
   </body>

@@ -1079,6 +1079,17 @@ div.image.styled
   background-color: #eee;
 }
 
+/* line 152, ../scss/components/_main_content.scss */
+#hhs-disclaimer {
+  font-style: italic;
+  text-align: center;
+  /*background-color: #ccc;*/
+}
+/* line 156, ../scss/components/_main_content.scss */
+#hhs-disclaimer p {
+  margin: 5px;
+}
+
 /* line 2, ../scss/components/_navbar.scss */
 #zone-menu-wrapper {
   background-image: url(../images/blue_nav.png);

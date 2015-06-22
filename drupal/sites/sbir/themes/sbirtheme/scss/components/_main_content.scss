@@ -143,10 +143,17 @@ div.image.center {
 div.image.styled
 ,div.left.styled
 ,div.right.styled
-,div.center.styled
-{
+,div.center.styled {
   border-top: 4px #0c386c solid;
   border-bottom: 4px #0c386c solid;
   padding: 7px;
   background-color: #eee;
+}
+#hhs-disclaimer {
+  font-style: italic;
+  text-align:center;
+  /*background-color: #ccc;*/
+  p {
+    margin:5px;
+  }
 }
