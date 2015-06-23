@@ -575,8 +575,12 @@ a[href="/admin/structure/menu"] {
 , #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul.menu li.footer-break-point:after {
   content: "";
 }
+/* line 52, ../scss/components/_footer.scss */
+#section-footer .discovery {
+  padding-top: 15px !important;
+}
 
-/* line 53, ../scss/components/_footer.scss */
+/* line 56, ../scss/components/_footer.scss */
 .sup {
   font-size: smaller;
   vertical-align: super;
