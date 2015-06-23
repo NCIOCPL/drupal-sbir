@@ -22,7 +22,7 @@
       <div id="hhs-disclaimer">
         <p>
         This site is undergoing remediation for compliance with Section 508.
-        The remediation will be complete by August 3, 2015.</p>
+        The remediation will be complete by July 31, 2015.</p>
         <p>In the interim, should you require any accessibility assistance with any content, please contact NCI SBIR & STTR</p>
         <p>at <a href="mailto:ncisbir@mail.nih.gov">ncisbir@mail.nih.gov</a>.</p>
       </div>
