@@ -1417,29 +1417,30 @@ div.image.styled
 /* line 6, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media ul.menu {
   float: right;
+  margin-bottom: 10px !important;
 }
-/* line 9, ../scss/components/_social-media.scss */
+/* line 10, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media ul.menu li {
   width: 24px;
   float: left;
   list-style: none;
   padding: 0 !important;
 }
-/* line 15, ../scss/components/_social-media.scss */
+/* line 16, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .email-link a {
   background: url(../images/email_icon.png) no-repeat;
   text-indent: -9999px;
   display: block;
   height: 24px;
 }
-/* line 21, ../scss/components/_social-media.scss */
+/* line 22, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .linkedin-link a[target="_blank"] {
   background: url(../images/linkedin_icon.png) no-repeat;
   text-indent: -9999px;
   display: block;
   height: 24px;
 }
-/* line 32, ../scss/components/_social-media.scss */
+/* line 33, ../scss/components/_social-media.scss */
 #block-menu-menu-social-media .twitter-link a[target="_blank"] {
   background: url(../images/twitter_icon.png) no-repeat;
   text-indent: -9999px;
@@ -1447,13 +1448,13 @@ div.image.styled
   height: 24px;
 }
 
-/* line 44, ../scss/components/_social-media.scss */
+/* line 45, ../scss/components/_social-media.scss */
 #social-media {
   float: right;
   margin-top: 10px;
 }
 
-/* line 49, ../scss/components/_social-media.scss */
+/* line 50, ../scss/components/_social-media.scss */
 .follow-us-text {
   float: left;
   margin-top: 3px;
