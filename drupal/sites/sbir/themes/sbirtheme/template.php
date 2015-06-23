@@ -178,3 +178,22 @@ function sbirtheme_preprocess_search_results(&$vars) {
     ));
   }
 }
+
+/**
+ * Implements hook_search_page
+ */
+function sbirtheme_search_page($results) {
+  print "made it here";exit;
+  $output['prefix']['#markup'] = '<ol class="search-results">';
+
+  foreach ($results as $entry) {
+    $output[] = array(
+      '#theme' => 'search_result',
+      '#result' => $entry,
+      '#module' => 'sbir_search',
+    );
+  }
+  $output['suffix']['#markup'] = '</ol>' . theme('pager');
+
+  return $output;
+}

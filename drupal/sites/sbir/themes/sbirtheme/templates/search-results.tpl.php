@@ -22,6 +22,14 @@
  * @ingroup themeable
  */
 ?>
+<?php $page_number = $_GET['page']; ?>
+<?php $item_number = 1; ?>
+<?php if (isset($page_number) && is_numeric($page_number)) : ?>
+  <?php $item_number = $page_number * 10 + 1; ?>
+<?php endif; ?>
+<pre>
+  <?php print_r($params); ?>
+</pre>
 <?php if ($search_results): ?>
   <div class="panel-pane pane-page-title">
     <div class="pane-content">
@@ -29,7 +37,7 @@
     </div>
   </div>
   <h2 class="search-totals"><span id="search-total"><?php print $search_totals; ?></span><span id="search-term"><?php print $search_term; ?></span></h2>
-  <ol class="search-results <?php print $module; ?>-results">
+  <ol start="<?php print $item_number; ?>" class="search-results <?php print $module; ?>-results">
     <?php print $search_results; ?>
   </ol>
   <?php print $pager; ?>
