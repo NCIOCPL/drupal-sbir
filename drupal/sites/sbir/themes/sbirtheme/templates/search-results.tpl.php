@@ -25,11 +25,8 @@
 <?php $page_number = $_GET['page']; ?>
 <?php $item_number = 1; ?>
 <?php if (isset($page_number) && is_numeric($page_number)) : ?>
-  <?php $item_number = $page_number * 10 + 1; ?>
+  <?php $item_number = $page_number * 20 + 1; ?>
 <?php endif; ?>
-<pre>
-  <?php print_r($params); ?>
-</pre>
 <?php if ($search_results): ?>
   <div class="panel-pane pane-page-title">
     <div class="pane-content">
