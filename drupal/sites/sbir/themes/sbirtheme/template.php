@@ -135,8 +135,8 @@ function sbirtheme_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_preprocess_search_results().
  */
 function sbirtheme_preprocess_search_results(&$vars) {
-  // search.module shows 10 items per page (this isn't customizable)
-  $itemsPerPage = 10;
+  // search.module shows 20 items per page (this isn't customizable)
+  $itemsPerPage = 20;
 
   // Determine which page is being viewed
   // If $_REQUEST['page'] is not set, we are on page 1
@@ -150,9 +150,9 @@ function sbirtheme_preprocess_search_results(&$vars) {
   $searchTerm = ltrim(substr($searchTerm, strrpos($searchTerm, '/')), '/');
 
   // Determine which results are being shown ("Showing results x through y")
-  $start = (10 * $currentPage) - 9;
+  $start = (20 * $currentPage) - 19;
   // If on the last page, only go up to $total, not the total that COULD be
-  // shown on the page. This prevents things like "Displaying 11-20 of 17".
+  // shown on the page. This prevents things like "Displaying 21-40 of 27".
   $end = (($itemsPerPage * $currentPage) >= $total) ? $total : ($itemsPerPage * $currentPage);
 
   // If there is more than one page of results:
@@ -177,23 +177,4 @@ function sbirtheme_preprocess_search_results(&$vars) {
       '!term' => $searchTerm
     ));
   }
-}
-
-/**
- * Implements hook_search_page
- */
-function sbirtheme_search_page($results) {
-  print "made it here";exit;
-  $output['prefix']['#markup'] = '<ol class="search-results">';
-
-  foreach ($results as $entry) {
-    $output[] = array(
-      '#theme' => 'search_result',
-      '#result' => $entry,
-      '#module' => 'sbir_search',
-    );
-  }
-  $output['suffix']['#markup'] = '</ol>' . theme('pager');
-
-  return $output;
 }
