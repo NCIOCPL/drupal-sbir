@@ -37,3 +37,24 @@ function sbir_search_form_alter(&$form, &$form_state, $form_id) {
     $form['search_block_form']['#attributes']['placeholder'] = t('Search...');
   }
 }
+
+/**
+ * Implements hook_search_page
+ */
+/*
+function sbir_search_search_page($results) {
+  print "made it here";exit;
+  $output['prefix']['#markup'] = '<ol class="search-results">';
+
+  foreach ($results as $entry) {
+    $output[] = array(
+      '#theme' => 'search_result',
+      '#result' => $entry,
+      '#module' => 'sbir_search',
+    );
+  }
+  $output['suffix']['#markup'] = '</ol>' . theme('pager');
+
+  return $output;
+}
+ */

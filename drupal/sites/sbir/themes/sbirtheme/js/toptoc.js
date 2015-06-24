@@ -48,7 +48,6 @@
       //jQuery(topLink).insertAfter(jQuery(this).children('h2'));
     });
 
-
     // wrap each item in the toc in an anchor tag whose href targets the id of the section
     jQuery('#toptoc ul li').html(function (_, html) {
       return html.replace(jQuery(this).text(), '<span class="toptoclink" id="link_section_' + parseInt(jQuery(this).index() + 1) + '">' + jQuery(this).text() + '</span>');
