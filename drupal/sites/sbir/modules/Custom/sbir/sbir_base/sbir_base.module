@@ -297,3 +297,20 @@ function update_sbir_block($module, $delta, $title = '', $status = 0, $region = 
       ->condition('delta', $delta)
       ->execute();
 }
+
+/*
+ * This function clears the 'title' attribute from
+ * anchors to prevent screen readers from repeating
+ */
+
+function clear_menu_item_descriptions($menu_name) {
+
+  $menu_items = menu_load_links($menu_name);
+
+  foreach ($menu_items as $menu_item) {
+    if (isset($menu_item['options']['attributes']['title'])) {
+      $menu_item['options']['attributes']['title'] = '';
+      menu_link_save($menu_item);
+    }
+  }
+}

@@ -55,5 +55,5 @@ function sbir_social_media_install() {
  */
 
 function sbir_social_media_enable() {
-  
+  clear_menu_item_descriptions('menu-social-media');
 }

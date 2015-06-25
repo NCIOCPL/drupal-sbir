@@ -50,7 +50,6 @@ dependencies[] = sbir_search
 dependencies[] = workbench
 dependencies[] = workbench_moderation
 dependencies[] = sbir_admin
-dependencies[] = sbir_user_roles
 dependencies[] = sbir_error_pages
 
 

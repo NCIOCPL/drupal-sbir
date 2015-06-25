@@ -21,5 +21,5 @@ function sbir_basic_pages_install() {
  */
 
 function sbir_basic_pages_enable() {
-  
+  clear_menu_item_descriptions('main-menu');
 }

@@ -1,7 +1,9 @@
 name = SBIR User Roles
-description = This modules set permissions for various user roles.
+description = This module set permissions for various user roles.
 core = 7.x
 package = SBIR
 version = 7.x-1.0
 project = sbir_user_roles
 timestamp = 1428676162
+
+dependencies[] = sbir

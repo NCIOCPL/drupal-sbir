@@ -1,7 +1,7 @@
 drush vset maintenance_mode 1
+
 drush dis sbir_error_pages -y
 drush dis sbir_admin -y
-drush dis sbir_roles_permissions -y
 drush dis sbir_search -y
 drush dis sbir_global_template -y
 drush dis sbir_home_page -y
@@ -21,10 +21,13 @@ drush dis sbir_event -y
 drush dis sbir_block -y
 drush dis sbir_basic_page -y
 drush dis sbir_announcement -y
+drush dis sbir_user_roles -y
 
 drush en sbir -y
+drush en sbir_user_roles -y
 
 drush cron
 
 drush cc all
+
 drush vset maintenance_mode 0
