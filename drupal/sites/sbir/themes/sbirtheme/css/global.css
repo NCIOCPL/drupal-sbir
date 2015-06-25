@@ -20,6 +20,11 @@
 @import "base/normalize";
 */
 /* line 5, ../scss/base/_html-elements.scss */
+html {
+  background-color: #fff;
+}
+
+/* line 8, ../scss/base/_html-elements.scss */
 body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   padding-top: 0;
@@ -27,14 +32,14 @@ body {
   background-color: #f8f8f8;
 }
 
-/* line 12, ../scss/base/_html-elements.scss */
+/* line 15, ../scss/base/_html-elements.scss */
 p, div {
   font-size: 12px;
   line-height: 18px;
   font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
-/* line 18, ../scss/base/_html-elements.scss */
+/* line 21, ../scss/base/_html-elements.scss */
 span {
   line-height: 18px;
   font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -125,19 +130,19 @@ ul {
   padding-left:15px;
 }
 */
-/* line 110, ../scss/base/_html-elements.scss */
+/* line 113, ../scss/base/_html-elements.scss */
 a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
 
-/* line 115, ../scss/base/_html-elements.scss */
+/* line 118, ../scss/base/_html-elements.scss */
 a:visited {
   color: #421c89;
 }
 
-/* line 118, ../scss/base/_html-elements.scss */
+/* line 121, ../scss/base/_html-elements.scss */
 .section
 , .zone-wrapper {
   background-color: #fff;
