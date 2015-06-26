@@ -14,13 +14,7 @@ drush dis sbir_announcements -y
 drush dis sbir_wysiwyg -y
 drush dis sbir_settings -y
 drush dis sbir_base -y
-drush dis sbir_subscription -y
-drush dis sbir_success_story -y
-drush dis sbir_file -y
-drush dis sbir_event -y
-drush dis sbir_block -y
-drush dis sbir_basic_page -y
-drush dis sbir_announcement -y
+
 drush dis sbir_user_roles -y
 
 drush en sbir -y
