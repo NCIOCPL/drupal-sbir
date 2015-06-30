@@ -5,6 +5,7 @@
 #resources-for {
   margin-left:35px;
   text-align:center;
+  min-height:100px;
   div {
     display:inline-block;
     width:30%;
@@ -13,6 +14,7 @@
     text-decoration: none;
   }
   .applicants {
+    float:left;
     a {
       background: url(../images/applicantsicon.png) no-repeat;
       background-position:31px center;
@@ -23,6 +25,7 @@
     }
   }
   .awardees {
+    float:left;
     margin-left:25px;
     a {
       background: url(../images/awardeesicon.png) no-repeat;

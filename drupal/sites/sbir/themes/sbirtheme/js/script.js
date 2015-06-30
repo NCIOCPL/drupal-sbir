@@ -8,7 +8,6 @@
         $(this).remove();
       }
     });
-    $('#resources-for').parent().parent().css('padding', '0 20px 10px 20px');
 
     // dropdown menu should be at least as wide
     // as the top level menu item
@@ -44,8 +43,8 @@
 
     // resize the width of the image div
     // to match the with of the actual image    
-    //$('.image').each(function () {
-      //$(this).css('width', $(this).find('img').css('width'));
-    //});
+    $('.image').each(function () {
+      $(this).css('width', $(this).find('img').css('width'));
+    });
   });
 }(jQuery));

@@ -632,17 +632,22 @@ a[href="/admin/structure/menu"] {
 #resources-for {
   margin-left: 35px;
   text-align: center;
+  min-height: 100px;
 }
-/* line 8, ../scss/components/_home-page.scss */
+/* line 9, ../scss/components/_home-page.scss */
 #resources-for div {
   display: inline-block;
   width: 30%;
 }
-/* line 12, ../scss/components/_home-page.scss */
+/* line 13, ../scss/components/_home-page.scss */
 #resources-for a {
   text-decoration: none;
 }
 /* line 16, ../scss/components/_home-page.scss */
+#resources-for .applicants {
+  float: left;
+}
+/* line 18, ../scss/components/_home-page.scss */
 #resources-for .applicants a {
   background: url(../images/applicantsicon.png) no-repeat;
   background-position: 31px center;
@@ -651,11 +656,12 @@ a[href="/admin/structure/menu"] {
   display: block;
   line-height: 175px;
 }
-/* line 25, ../scss/components/_home-page.scss */
+/* line 27, ../scss/components/_home-page.scss */
 #resources-for .awardees {
+  float: left;
   margin-left: 25px;
 }
-/* line 27, ../scss/components/_home-page.scss */
+/* line 30, ../scss/components/_home-page.scss */
 #resources-for .awardees a {
   background: url(../images/awardeesicon.png) no-repeat;
   background-position: center 20px;
@@ -664,7 +670,7 @@ a[href="/admin/structure/menu"] {
   display: block;
   line-height: 175px;
 }
-/* line 37, ../scss/components/_home-page.scss */
+/* line 40, ../scss/components/_home-page.scss */
 #resources-for .investors a {
   background: url(../images/investorsicon.png) no-repeat;
   background-position: center 30px;
@@ -674,14 +680,14 @@ a[href="/admin/structure/menu"] {
   line-height: 175px;
 }
 
-/* line 50, ../scss/components/_home-page.scss */
+/* line 53, ../scss/components/_home-page.scss */
 .front .view-banner .views-field-body {
   position: relative;
   top: -191px;
   left: 112px;
   height: 0;
 }
-/* line 55, ../scss/components/_home-page.scss */
+/* line 58, ../scss/components/_home-page.scss */
 .front .view-banner .views-field-body p {
   color: #12588e;
   font-size: 16px;
@@ -690,38 +696,38 @@ a[href="/admin/structure/menu"] {
   margin-left: -17px;
   font-family: 'Montserrat', 'Avant Garde', sans-serif;
 }
-/* line 64, ../scss/components/_home-page.scss */
+/* line 67, ../scss/components/_home-page.scss */
 .front .view-banner img {
   box-shadow: 0 5px 10px #e3e3e3;
   -webkit-box-shadow: 0 5px 10px #e3e3e3;
   -moz-box-shadow: 0 5px 10px #e3e3e3;
   -o-box-shadow: 0 5px 10px #e3e3e3;
 }
-/* line 71, ../scss/components/_home-page.scss */
+/* line 74, ../scss/components/_home-page.scss */
 .front .grid-8 {
   width: 580px !important;
   margin: 0 30px 0 0 !important;
 }
-/* line 75, ../scss/components/_home-page.scss */
+/* line 78, ../scss/components/_home-page.scss */
 .front .grid-4 {
   width: 350px !important;
   margin: 0;
 }
-/* line 79, ../scss/components/_home-page.scss */
+/* line 82, ../scss/components/_home-page.scss */
 .front #block-views-banner-banner {
   display: none;
 }
 
-/* line 84, ../scss/components/_home-page.scss */
+/* line 87, ../scss/components/_home-page.scss */
 #era-commons {
   display: inline-block;
 }
-/* line 86, ../scss/components/_home-page.scss */
+/* line 89, ../scss/components/_home-page.scss */
 #era-commons #era-logo {
   float: left;
   margin-right: 25px;
 }
-/* line 89, ../scss/components/_home-page.scss */
+/* line 92, ../scss/components/_home-page.scss */
 #era-commons #era-logo a {
   background: url(../images/era_home.png) no-repeat;
   text-indent: -9999px;
@@ -729,27 +735,27 @@ a[href="/admin/structure/menu"] {
   height: 120px;
   width: 157px;
 }
-/* line 97, ../scss/components/_home-page.scss */
+/* line 100, ../scss/components/_home-page.scss */
 #era-commons #era-commons-text {
   display: inline-block;
   width: 64%;
   margin-top: 20px;
 }
-/* line 102, ../scss/components/_home-page.scss */
+/* line 105, ../scss/components/_home-page.scss */
 #era-commons #link-title {
   margin-bottom: 5px;
 }
 
-/* line 107, ../scss/components/_home-page.scss */
+/* line 110, ../scss/components/_home-page.scss */
 #icorp {
   display: inline-block;
 }
-/* line 109, ../scss/components/_home-page.scss */
+/* line 112, ../scss/components/_home-page.scss */
 #icorp #icorp-logo {
   float: left;
   margin-right: 25px;
 }
-/* line 112, ../scss/components/_home-page.scss */
+/* line 115, ../scss/components/_home-page.scss */
 #icorp #icorp-logo a {
   background: url(../images/icorp_home.png) no-repeat;
   text-indent: -9999px;
@@ -757,18 +763,18 @@ a[href="/admin/structure/menu"] {
   height: 86px;
   width: 157px;
 }
-/* line 120, ../scss/components/_home-page.scss */
+/* line 123, ../scss/components/_home-page.scss */
 #icorp #icorp-text {
   display: inline-block;
   width: 64%;
   margin-top: 5px;
 }
-/* line 125, ../scss/components/_home-page.scss */
+/* line 128, ../scss/components/_home-page.scss */
 #icorp #link-title {
   margin-bottom: 5px;
 }
 
-/* line 131, ../scss/components/_home-page.scss */
+/* line 134, ../scss/components/_home-page.scss */
 #block-sbir-home-page-home-page-banner .block-title {
   display: none;
 }
