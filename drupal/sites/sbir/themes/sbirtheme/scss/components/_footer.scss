@@ -23,6 +23,7 @@
         display:none;
       }
       ul.menu {
+
         text-align:center;
         li {
           list-style: none;
@@ -30,6 +31,8 @@
           padding:0;
           margin:0!important;
           margin-left:3px!important;
+          list-style-image:none;
+          display:inline;
           a {
             text-decoration: none;
             font-weight: normal;
@@ -51,6 +54,7 @@
   }
   .discovery {
     padding-top:15px!important;
+    display:inline-block!important;
   }
 }
 .sup {

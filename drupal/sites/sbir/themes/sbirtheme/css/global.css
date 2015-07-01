@@ -554,15 +554,17 @@ a[href="/admin/structure/menu"] {
 #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul.menu {
   text-align: center;
 }
-/* line 27, ../scss/components/_footer.scss */
+/* line 28, ../scss/components/_footer.scss */
 #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul.menu li {
   list-style: none;
   display: inline-block;
   padding: 0;
   margin: 0 !important;
   margin-left: 3px !important;
+  list-style-image: none;
+  display: inline;
 }
-/* line 33, ../scss/components/_footer.scss */
+/* line 36, ../scss/components/_footer.scss */
 #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul.menu li a {
   text-decoration: none;
   font-weight: normal;
@@ -570,22 +572,23 @@ a[href="/admin/structure/menu"] {
   font-family: 'Montserrat', 'Avant Garde', sans-serif;
   color: #888;
 }
-/* line 41, ../scss/components/_footer.scss */
+/* line 44, ../scss/components/_footer.scss */
 #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul.menu li::after {
   content: "  | ";
   color: #aaa;
 }
-/* line 45, ../scss/components/_footer.scss */
+/* line 48, ../scss/components/_footer.scss */
 #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul.menu li.last::after
 , #section-footer #zone-footer-wrapper #block-menu-menu-footer-menu ul.menu li.footer-break-point:after {
   content: "";
 }
-/* line 52, ../scss/components/_footer.scss */
+/* line 55, ../scss/components/_footer.scss */
 #section-footer .discovery {
   padding-top: 15px !important;
+  display: inline-block !important;
 }
 
-/* line 56, ../scss/components/_footer.scss */
+/* line 60, ../scss/components/_footer.scss */
 .sup {
   font-size: smaller;
   vertical-align: super;
