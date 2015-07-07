@@ -1010,64 +1010,95 @@ h6, .pane-node-field-footer h6 {
 }
 /* line 73, ../scss/components/_main_content.scss */
 .pane-node-body
+h1 > a, .pane-node-field-footer h1 > a {
+  font-size: 24px;
+}
+/* line 76, ../scss/components/_main_content.scss */
+.pane-node-body
+h2 > a, .pane-node-field-footer h2 > a {
+  font-size: 22px;
+}
+/* line 79, ../scss/components/_main_content.scss */
+.pane-node-body
+h3 > a, .pane-node-field-footer h3 > a {
+  font-size: 18px;
+}
+/* line 82, ../scss/components/_main_content.scss */
+.pane-node-body
+h4 > a, .pane-node-field-footer h4 > a {
+  font-size: 16px;
+}
+/* line 85, ../scss/components/_main_content.scss */
+.pane-node-body
+h5 > a, .pane-node-field-footer h5 > a {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+/* line 89, ../scss/components/_main_content.scss */
+.pane-node-body
+h6 > a, .pane-node-field-footer h6 > a {
+  font-size: 13px;
+}
+/* line 92, ../scss/components/_main_content.scss */
+.pane-node-body
 div, .pane-node-field-footer div {
   margin: 5px 0;
 }
-/* line 76, ../scss/components/_main_content.scss */
+/* line 95, ../scss/components/_main_content.scss */
 .pane-node-body
 p, .pane-node-field-footer p {
   font-size: 12px;
   line-height: 18px;
 }
-/* line 80, ../scss/components/_main_content.scss */
+/* line 99, ../scss/components/_main_content.scss */
 .pane-node-body
 a, .pane-node-field-footer a {
   text-decoration: underline;
   color: #2664ab;
   font-size: 12px;
 }
-/* line 85, ../scss/components/_main_content.scss */
+/* line 104, ../scss/components/_main_content.scss */
 .pane-node-body
 a:visited, .pane-node-field-footer a:visited {
   color: #421c89;
 }
-/* line 89, ../scss/components/_main_content.scss */
+/* line 108, ../scss/components/_main_content.scss */
 .pane-node-body
 ul, .pane-node-field-footer ul {
   list-style-image: url("../images/uo_bullet.png");
 }
 
-/* line 94, ../scss/components/_main_content.scss */
+/* line 113, ../scss/components/_main_content.scss */
 .page-node .vertical-tabs {
   display: none;
 }
 
-/* line 99, ../scss/components/_main_content.scss */
+/* line 118, ../scss/components/_main_content.scss */
 .grid-9 .pane-node-body {
   /*padding:10px 20px;*/
 }
 
-/* line 104, ../scss/components/_main_content.scss */
+/* line 123, ../scss/components/_main_content.scss */
 .image {
   margin: 0 0 15px 0;
 }
-/* line 106, ../scss/components/_main_content.scss */
+/* line 125, ../scss/components/_main_content.scss */
 .image p {
   margin: 0;
 }
-/* line 109, ../scss/components/_main_content.scss */
+/* line 128, ../scss/components/_main_content.scss */
 .image .caption {
   font-size: 10px;
   padding: 0 5px;
   line-height: initial;
 }
 
-/* line 117, ../scss/components/_main_content.scss */
+/* line 136, ../scss/components/_main_content.scss */
 .pane-node-body h3 p {
   clear: both;
 }
 
-/* line 122, ../scss/components/_main_content.scss */
+/* line 141, ../scss/components/_main_content.scss */
 div.image.right {
   float: right;
   margin-right: 0;
@@ -1075,7 +1106,7 @@ div.image.right {
   clear: right;
 }
 
-/* line 129, ../scss/components/_main_content.scss */
+/* line 148, ../scss/components/_main_content.scss */
 div.image.left {
   float: left;
   margin-left: 0;
@@ -1083,7 +1114,7 @@ div.image.left {
   clear: left;
 }
 
-/* line 136, ../scss/components/_main_content.scss */
+/* line 155, ../scss/components/_main_content.scss */
 div.image.center {
   text-align: center;
   margin-left: 0;
@@ -1091,7 +1122,7 @@ div.image.center {
   clear: both;
 }
 
-/* line 143, ../scss/components/_main_content.scss */
+/* line 162, ../scss/components/_main_content.scss */
 div.image.styled
 , div.left.styled
 , div.right.styled
@@ -1102,13 +1133,13 @@ div.image.styled
   background-color: #eee;
 }
 
-/* line 152, ../scss/components/_main_content.scss */
+/* line 171, ../scss/components/_main_content.scss */
 #hhs-disclaimer {
   font-style: italic;
   text-align: center;
   /*background-color: #ccc;*/
 }
-/* line 156, ../scss/components/_main_content.scss */
+/* line 175, ../scss/components/_main_content.scss */
 #hhs-disclaimer p {
   margin: 5px;
 }
