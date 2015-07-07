@@ -148,6 +148,11 @@ a:visited {
   background-color: #fff;
 }
 
+/* line 125, ../scss/base/_html-elements.scss */
+li {
+  list-style-image: none !important;
+}
+
 /* ==========================================================================
    Layout Styles
    ========================================================================== */
@@ -1139,7 +1144,7 @@ div.image.styled
 /* line 25, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1 > a {
   text-transform: uppercase;
-  padding: 13px 19px;
+  padding: 13px 18px;
 }
 /* line 29, ../scss/components/_navbar.scss */
 #zone-menu-wrapper #zone-menu #region-menu #block-superfish-1 li.sf-depth-1.first > a {
