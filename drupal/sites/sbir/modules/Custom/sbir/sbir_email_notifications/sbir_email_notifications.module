@@ -281,6 +281,7 @@ function sbir_email_notifications_form_alter(&$form, &$form_state, $form_id) {
     //$form['my_captcha_element']['und']['#title'] = 'Enter the text shown in the image below';
 
     $form['actions']['submit']['#value'] = t("Submit");
+    $form['actions']['submit']['#wieght'] = 101;
   }
 }
 
