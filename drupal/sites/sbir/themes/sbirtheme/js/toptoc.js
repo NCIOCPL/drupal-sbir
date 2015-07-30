@@ -34,13 +34,13 @@
       if (typeof prevSection.attr('id') == 'string') {
         prevSectionId = prevSection.attr('id');
         prevSectionTitle = prevSection.find('h3').first().text();
-        jQuery(this).append('<div class="toptoc-pager"><div><span class="toptoclink" id="pager_' + prevSectionId + '">&lt; Previous section</span><em> ' + prevSectionTitle + '</em></div></div>');
+        jQuery(this).append('<div class="toptoc-pager"><div><span class="toptoclink" id="pager_' + prevSectionId + '"><a href="#zone-content-wrapper">&lt; Previous section</a></span><em> ' + prevSectionTitle + '</em></div></div>');
       }
 
       if (typeof nextSection.attr('id') == 'string') {
         nextSectionId = nextSection.attr('id');
         nextSectionTitle = nextSection.find('h3').first().text();
-        jQuery(this).append('<div class="toptoc-pager"><div><span class="toptoclink" id="pager_' + nextSectionId + '">Next section &gt;</span><em> ' + nextSectionTitle + '</em></div></div>');
+        jQuery(this).append('<div class="toptoc-pager"><div><span class="toptoclink" id="pager_' + nextSectionId + '"><a href="#zone-content-wrapper">Next section &gt;</a></span><em> ' + nextSectionTitle + '</em></div></div>');
       }
 
       // insert a 'top' link next to each section
@@ -50,7 +50,7 @@
 
     // wrap each item in the toc in an anchor tag whose href targets the id of the section
     jQuery('#toptoc ul li').html(function (_, html) {
-      return html.replace(jQuery(this).text(), '<span class="toptoclink" id="link_section_' + parseInt(jQuery(this).index() + 1) + '">' + jQuery(this).text() + '</span>');
+      return html.replace(jQuery(this).text(), '<span class="toptoclink" id="link_section_' + parseInt(jQuery(this).index() + 1) + '"><a href="#zone-content-wrapper">' + jQuery(this).text() + '</a></span>');
     });
 
     // after a toc link is clicked, toggle the visibility of the sections
@@ -67,7 +67,7 @@
     });
 
     // append 'view all' link to the toc
-    jQuery('#toptoc>ul').append('<li id="toptoc-view-all"><span>View All Sections</span></li>');
+    jQuery('#toptoc>ul').append('<li id="toptoc-view-all"><span><a href="#zone-content-wrapper">View All Sections</a></span></li>');
 
     // bind click event to 'view all' link
     jQuery('#toptoc-view-all span').click(function () {

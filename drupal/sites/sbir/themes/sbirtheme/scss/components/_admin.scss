@@ -1,4 +1,5 @@
 // @admin styling goes here
+// this file only gets loaded for non-admins :-)
 #edit-field-banner {
   display:none;
 }
@@ -7,11 +8,6 @@
   display:none;
 }
 
-.messages.error {
-  display:none;
-}
-
 a[href="/admin/structure/menu"] {
   display:none;
 }
-/*.page-admin-structure ul.admin-list li')*/

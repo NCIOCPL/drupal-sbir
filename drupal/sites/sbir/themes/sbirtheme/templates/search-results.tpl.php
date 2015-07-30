@@ -22,11 +22,15 @@
  * @ingroup themeable
  */
 ?>
-<?php $page_number = $_GET['page']; ?>
-<?php $item_number = 1; ?>
-<?php if (isset($page_number) && is_numeric($page_number)) : ?>
-  <?php $item_number = $page_number * 20 + 1; ?>
+
+<?php if (isset($_GET['page']) && is_numeric($_GET['page'])) : ?>
+  <?php $page_number = $_GET['page']; ?>
+<?php else: ?>
+  <?php $page_number = 0; ?>
 <?php endif; ?>
+
+<?php $item_number = $page_number * 20 + 1; ?>
+
 <?php if ($search_results): ?>
   <div class="panel-pane pane-page-title">
     <div class="pane-content">

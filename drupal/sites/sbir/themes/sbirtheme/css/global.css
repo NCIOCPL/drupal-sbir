@@ -159,27 +159,21 @@ li {
 /* ==========================================================================
    Component Styles
    ========================================================================== */
-/* line 2, ../scss/components/_admin.scss */
+/* line 3, ../scss/components/_admin.scss */
 #edit-field-banner {
   display: none;
 }
 
-/* line 6, ../scss/components/_admin.scss */
+/* line 7, ../scss/components/_admin.scss */
 .node-form .form-item-menu-description {
   display: none;
 }
 
-/* line 10, ../scss/components/_admin.scss */
-.messages.error {
-  display: none;
-}
-
-/* line 14, ../scss/components/_admin.scss */
+/* line 11, ../scss/components/_admin.scss */
 a[href="/admin/structure/menu"] {
   display: none;
 }
 
-/*.page-admin-structure ul.admin-list li')*/
 /* line 2, ../scss/components/_announcement.scss */
 .view-display-id-all {
   padding: 0;
@@ -1328,6 +1322,7 @@ div.image.styled
   background-color: #0C2F68;
   height: 30px;
   width: 30px;
+  padding: 0;
   /*
   display: inline-block;
   top: -5px;
@@ -1364,7 +1359,7 @@ div.image.styled
     box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
     */
 }
-/* line 53, ../scss/components/_search-form.scss */
+/* line 54, ../scss/components/_search-form.scss */
 #search-block-form input[type=text] {
   float: left;
   height: 26px;
@@ -1380,14 +1375,14 @@ div.image.styled
   font-family: 'Montserrat', 'Avant Garde', sans-serif;
 }
 
-/* line 70, ../scss/components/_search-form.scss */
+/* line 71, ../scss/components/_search-form.scss */
 ::-webkit-input-placeholder {
   font-size: 11px;
   font-family: 'Montserrat', 'Avant Garde', sans-serif;
   color: #000;
 }
 
-/* line 76, ../scss/components/_search-form.scss */
+/* line 77, ../scss/components/_search-form.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   font-size: 11px;
@@ -1395,7 +1390,7 @@ div.image.styled
   color: #000;
 }
 
-/* line 82, ../scss/components/_search-form.scss */
+/* line 83, ../scss/components/_search-form.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   font-size: 11px;
@@ -1403,7 +1398,7 @@ div.image.styled
   color: #000;
 }
 
-/* line 88, ../scss/components/_search-form.scss */
+/* line 89, ../scss/components/_search-form.scss */
 :-ms-input-placeholder {
   font-size: 11px;
   font-family: 'Montserrat', 'Avant Garde', sans-serif;

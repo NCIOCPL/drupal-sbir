@@ -39,12 +39,10 @@ function sbir_email_notifications_block_view($delta = '') {
     case 'email_notification_add_block':
       $block['subject'] = 'Email Notification Add';
       $block['content'] = _load_subscription_add_form();
-      $_SESSION['sbir_email_type'] = 'new';
       break;
     case 'email_notification_update_block':
       $block['subject'] = 'Email Notification Update';
       $block['content'] = _load_subscription_update_form();
-      $_SESSION['sbir_email_type'] = 'change';
       break;
   }
   return $block;
@@ -52,23 +50,24 @@ function sbir_email_notifications_block_view($delta = '') {
 
 function _load_subscription_add_form() {
 
-  $subscription_node = _create_subscription_node();
+  $subscription_node = _init_subscription_node();
 
   module_load_include('inc', 'node', 'node.pages');
   $email_form = drupal_get_form("sbir_subscription_node_form", $subscription_node);
 
+  $email_form['field_current_email']['#attributes']['class'][] = 'not-required';
   $email_form['field_current_email']['und'][0]['value']['#required'] = 0;
   $email_form['field_current_email']['und'][0]['#required'] = 0;
   $email_form['field_current_email']['#required'] = 0;
 
-  unset($email_form['field_current_email']);
-
+  $email_form['field_current_email']['#attributes']['class'][] = 'element-invisible';
+  
   return drupal_render($email_form);
 }
 
 function _load_subscription_update_form() {
 
-  $subscription_node = _create_subscription_node();
+  $subscription_node = _init_subscription_node();
 
   module_load_include('inc', 'node', 'node.pages');
   $email_form = drupal_get_form("sbir_subscription_node_form", $subscription_node);
@@ -86,16 +85,17 @@ function _email_notification_form_submit(&$form, &$form_state) {
     $body = "";
     $line = array();
 
-    if ($_SESSION['sbir_email_type'] == 'new') {
+    $subject = "";
+
+    if ($form['#action'] == '/emailsignup') {
       $subject = variable_get('sbir_admin_new_subject', '');
     }
-
-    if ($_SESSION['sbir_email_type'] == 'change') {
+    else {
       $subject = variable_get('sbir_admin_change_subject', '');
     }
 
     foreach ($form_state['values'] as $key => $value) {
-      if ($_SESSION['sbir_email_type'] == "change") {
+      if ($form['#action'] == '/emailchange') {
         if ($key == 'field_current_email') {
           $line[-1] .= "Current Email: " . $value['und'][0]['value'];
         }
@@ -211,6 +211,7 @@ function _validate_subscription_input($form, &$form_state) {
 
   $email_address = $form_state['values']['field_email']['und'][0]['value'];
 
+  // email address has to be in the correct format
   if (filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
     $form_state['values']['title'] = $email_address;
   }
@@ -222,6 +223,7 @@ function _validate_subscription_input($form, &$form_state) {
   if ($form['#action'] == "/emailchange") {
     $current_email_address = $form_state['values']['field_current_email']['und'][0]['value'];
 
+    // email address has to be in the correct format
     if (filter_var($current_email_address, FILTER_VALIDATE_EMAIL)) {
       $form_state['values']['title'] = $current_email_address;
     }
@@ -250,9 +252,9 @@ function sbir_email_notifications_form_alter(&$form, &$form_state, $form_id) {
     $form['title']['#attributes']['style'] = 'display:none';
     $form['title']['#title'] = '';
 
-    if ($form['#action'] == "/emailsignup") {
-      $form['field_current_email']['und'][0]['value']['#required'] = 0;
-    }
+    //if ($form['#action'] == "/emailsignup") {
+    //$form['field_current_email']['und'][0]['value']['#required'] = 0;
+    //}
 
     $form['#validate'][] = '_validate_subscription_input';
     $form['actions']['submit']['#submit'][] = '_email_notification_form_submit';
@@ -261,17 +263,28 @@ function sbir_email_notifications_form_alter(&$form, &$form_state, $form_id) {
       drupal_get_path('module', 'sbir_subscription') . '/css/sbir_email_notifications.css',
     );
 
+    $form['my_captcha_element_label'] = array(
+      '#type' => 'markup',
+      '#markup' => '<label for="recaptcha_response_field">'
+      . 'Enter the text shown in the image below:'
+      . '<span class="form-required" title="This field is required.">*</span>'
+      . '</label>',
+      '#weight' => 99,
+      );
     $form['my_captcha_element'] = array(
+      //'#title' => 'Enter the text shown in the image below',
       '#type' => 'captcha',
       '#captcha_type' => 'recaptcha/reCAPTCHA',
-      '#weight' => 100
+      '#weight' => 100,
+      //'#required' => TRUE
     );
+    //$form['my_captcha_element']['und']['#title'] = 'Enter the text shown in the image below';
 
     $form['actions']['submit']['#value'] = t("Submit");
   }
 }
 
-function _create_subscription_node() {
+function _init_subscription_node() {
 
   $subscription_node = new stdClass();
 

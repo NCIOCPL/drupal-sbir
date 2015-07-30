@@ -15,7 +15,7 @@ function sbir_settings_date_formats() {
     array(
       //'title' => 'SBIR Standard',
       'type' => 'sbir_standard_long',
-      'format' => 'F j, Y g:i A',
+      'format' => 'F j, Y g:iA',
       'locales' => array(),
     )
   );

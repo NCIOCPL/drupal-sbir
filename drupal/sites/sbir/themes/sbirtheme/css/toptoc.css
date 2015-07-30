@@ -25,10 +25,11 @@
   font-weight:bold;
   padding:5px 8px;
 }
-#toptoc span {
+#toptoc span a {
   font-size:11px;
   color:#000;
   padding:0;
+  text-decoration: none;
 }
 
 #toptoc-view-all {
@@ -39,11 +40,6 @@
 
 #toptoc-view-all span {
   padding-left:20px;
-}
-
-.toptoclink:hover, #toptoc-view-all span:hover {
-  text-decoration:underline;
-  cursor:pointer;
 }
 
 .toptoc-pager .toptoclink {

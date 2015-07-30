@@ -141,7 +141,6 @@ $handler->display->display_options['fields']['field_short_title']['field'] = 'fi
 $handler->display->display_options['fields']['field_short_title']['label'] = '';
 $handler->display->display_options['fields']['field_short_title']['alter']['alter_text'] = TRUE;
 $handler->display->display_options['fields']['field_short_title']['alter']['text'] = '<a href="/newsevents/announcements#announcement-[nid]">[field_short_title]</a>';
-$handler->display->display_options['fields']['field_short_title']['alter']['make_link'] = TRUE;
 $handler->display->display_options['fields']['field_short_title']['alter']['path'] = '[path]';
 $handler->display->display_options['fields']['field_short_title']['element_label_colon'] = FALSE;
 $handler->display->display_options['fields']['field_short_title']['empty'] = '[title]';
