@@ -269,19 +269,19 @@ function sbir_email_notifications_form_alter(&$form, &$form_state, $form_id) {
       . 'Enter the text shown in the image below:'
       . '<span class="form-required" title="This field is required.">*</span>'
       . '</label>',
-      '#weight' => 99,
+      '#weight' => 50,
       );
     $form['my_captcha_element'] = array(
       //'#title' => 'Enter the text shown in the image below',
       '#type' => 'captcha',
       '#captcha_type' => 'recaptcha/reCAPTCHA',
-      '#weight' => 100,
+      '#weight' => 51,
       //'#required' => TRUE
     );
     //$form['my_captcha_element']['und']['#title'] = 'Enter the text shown in the image below';
 
     $form['actions']['submit']['#value'] = t("Submit");
-    $form['actions']['submit']['#wieght'] = 101;
+    $form['actions']['submit']['#wieght'] = 52;
   }
 }
 
