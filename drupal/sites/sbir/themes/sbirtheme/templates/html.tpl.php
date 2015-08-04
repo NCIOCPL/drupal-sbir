@@ -21,8 +21,8 @@
     <?php if ($show_disclaimer): ?>
       <div id="hhs-disclaimer">
         <p>
-        This site is undergoing remediation for compliance with Section 508.
-        The remediation will be complete by July 31, 2015.</p>
+          This site is undergoing remediation for compliance with Section 508.
+          The remediation will be complete by July 31, 2015.</p>
         <p>In the interim, should you require any accessibility assistance with any content, please contact NCI SBIR & STTR</p>
         <p>at <a href="mailto:ncisbir@mail.nih.gov">ncisbir@mail.nih.gov</a>.</p>
       </div>
@@ -57,10 +57,27 @@
 
     <?php global $base_url; ?>
     <?php
-    if ($base_url == 'http://sbir.cancer.gov' || $base_url == 'https://sbir.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov' || $base_url == 'https://www.sbir.cancer.gov'
-    ):
+    if ($base_url == 'http://sbir.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov'):
       ?>
       <script language="JavaScript" type="text/javascript" src="http://static.cancer.gov/webanalytics/WA_SBIR_PageLoad.js"></script>
+
+      <script>
+            (function (i, s, o, g, r, a, m) {
+              i['GoogleAnalyticsObject'] = r;
+              i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+              }, i[r].l = 1 * new Date();
+              a = s.createElement(o),
+                      m = s.getElementsByTagName(o)[0];
+              a.async = 1;
+              a.src = g;
+              m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-44979031-1', 'auto');
+            ga('send', 'pageview');
+
+      </script>      
     <?php endif; ?>
   </body>
 </html>
