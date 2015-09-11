@@ -54,13 +54,11 @@
 
       });
     </script>
-
+    <script language="JavaScript" type="text/javascript" src="//static.cancer.gov/webanalytics/WA_SBIR_PageLoad.js"></script>
     <?php global $base_url; ?>
     <?php
     if ($base_url == 'http://sbir.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov'):
       ?>
-      <script language="JavaScript" type="text/javascript" src="http://static.cancer.gov/webanalytics/WA_SBIR_PageLoad.js"></script>
-
       <script>
             (function (i, s, o, g, r, a, m) {
               i['GoogleAnalyticsObject'] = r;

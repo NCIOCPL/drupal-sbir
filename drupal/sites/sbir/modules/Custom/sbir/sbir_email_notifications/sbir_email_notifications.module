@@ -216,7 +216,7 @@ function _validate_subscription_input($form, &$form_state) {
     $form_state['values']['title'] = $email_address;
   }
   else {
-    form_set_error('Email Validation', "Email is not in the corrent format: jdoe@example.com");
+    form_set_error('Email Validation', "Email is not in the correct format: jdoe@example.com");
   }
 
   //if (isset($form_state['values']['field_current_email']['und'][0]['value'])) {

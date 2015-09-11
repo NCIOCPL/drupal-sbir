@@ -233,10 +233,10 @@ function _validate_email_settings_input($form, & $form_state) {
   $change_subject = check_plain($form_state['input']['change_subject']);
 
   if (!filter_var($from_email, FILTER_VALIDATE_EMAIL)) {
-    form_set_error('Email Validation', "From Address is not in the corrent format: jdoe@example.com");
+    form_set_error('Email Validation', "From Address is not in the correct format: jdoe@example.com");
   }
 
   if (!filter_var($to_email, FILTER_VALIDATE_EMAIL)) {
-    form_set_error('Email Validation', "To Address is not in the corrent format: jdoe@example.com");
+    form_set_error('Email Validation', "To Address is not in the correct format: jdoe@example.com");
   }
 }
