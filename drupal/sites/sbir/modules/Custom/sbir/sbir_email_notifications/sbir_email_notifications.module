@@ -252,9 +252,10 @@ function sbir_email_notifications_form_alter(&$form, &$form_state, $form_id) {
     $form['title']['#attributes']['style'] = 'display:none';
     $form['title']['#title'] = '';
 
-    //if ($form['#action'] == "/emailsignup") {
-    //$form['field_current_email']['und'][0]['value']['#required'] = 0;
-    //}
+	// Uncommenting to fix 'required field' error on /emailsignup
+    if ($form['#action'] == "/emailsignup") {
+      $form['field_current_email']['und'][0]['value']['#required'] = 0;
+    }
 
     $form['#validate'][] = '_validate_subscription_input';
     $form['actions']['submit']['#submit'][] = '_email_notification_form_submit';
