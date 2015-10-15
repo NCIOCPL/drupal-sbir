@@ -67,6 +67,12 @@
   }
 }
 
+#search-block-form .form-submit:focus {
+	border: dotted;
+	border-color: #fff;
+	border-width: 1px;
+}
+
 
 ::-webkit-input-placeholder {
   font-size:11px;
