@@ -1,0 +1,1176 @@
+<?php
+/**
+ * @file
+ * Enables the creation of announcement pages with a title, abstract, body, author and date.
+ *
+ * Module used to present Announcements
+ * Based on the original work documented by IBM Corp.
+ * @link http://www-128.ibm.com/developerworks/ibm/library/i-osource6/ Original module source @endlink
+ *
+ * Drupal 7 Version
+ */
+
+/**
+ * Implements hook_help().
+ *
+ * This function allows the announcement module to make documentation available
+ * to the Drupal interface.
+ *
+ * @param $path
+ *   This determines which part of the interface is requesting help content.
+ *   Here we return content for the module description under the administration
+ *   interface, 'admin/modules#description', and at the top of the form to add a
+ *   new announcement, ‘node/add#announcements’.
+ * @param $args
+ *   Further parameters passed through the URL.
+ * @return
+ *   A string containing the help content.
+ */
+function announcements_help($path, $args) {
+  switch ($path) {
+    case 'admin/modules#description':
+    case 'admin/help#announcements':
+      return t('Enables the creation of announcements that may be promoted to the home page and/or displayed in blocks.');
+
+    case 'node/add#announcements':
+      return t('An announcement is anything worthy of special note on the site. It may be displayed in a block or page, or both.');
+  }
+}
+
+/**
+ * Implements hook_permission().
+ *
+ * This function supplies the permissions that the announcement module defines.
+ *
+ * @return
+ *   An array of strings used to identify permissible actions.
+ */
+function announcements_permission() {
+  return array(
+    'access announcements' => array(
+      'title' => t('access announcements'),
+      'description' => t('View announcements'),
+    ),
+    'create announcements' => array(
+      'title' => t('create announcements'),
+      'description' => t('Create announcements'),
+    ),
+    'edit announcements' => array(
+      'title' => t('edit announcements'),
+      'description' => t('Edit announcements'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_node_info().
+ *
+ * This function is required for modules to define one or more node types. It
+ * allows Drupal to determine the names and the attributes of the announcement
+ * module node type.
+ *
+ * @return
+ *   An array of information on the module's node types.
+ */
+function announcements_node_info() {
+  return array('announcements' => array(
+    'name' => t('Announcements'),
+    'description' => t('An announcement is anything worthy of special note on the site. It may be displayed in a block or page, or both.'),
+    'base' => 'announcements',
+    ));
+}
+
+/**
+ * Implements hook_node_access().
+ *
+ * Requires to check the node type for own content type.
+ *
+ */
+function announcements_node_access($node, $op, $account) {
+  $type = is_string($node) ? $node : $node->type;
+
+  // Ignore non-Announcements node.
+  if ($type !== 'announcements') {
+    return NODE_ACCESS_IGNORE;
+  }
+
+  switch ($op) {
+    case 'create':
+      if (user_access('create announcements', $account)) {
+        return NODE_ACCESS_ALLOW;
+      }
+      break;
+    case 'view':
+      if (user_access('access announcements', $account)) {
+        return NODE_ACCESS_ALLOW;
+      }
+      break;
+    case 'update':
+    case 'delete':
+      // 'Edit own' is by default.
+      if ($account->uid == $node->uid || user_access('edit announcements', $account)) {
+        return NODE_ACCESS_ALLOW;
+      }
+      break;
+  }
+  return NODE_ACCESS_IGNORE;
+}
+
+/**
+ * Implements hook_menu().
+ *
+ * @return
+ *   An array of registered URL path objects.
+ */
+function announcements_menu() {
+  $items = array();
+
+  $items['admin/config/content/announcements'] = array(
+    'title' => 'Announcements settings',
+    'description' => 'Configure announcements module',
+    'access arguments' => array('administer site configuration'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('announcements_settings'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'announcements.admin.inc',
+  );
+
+  $items['announcements'] = array(
+    'title' => 'Announcements',
+    'description' => 'View all announcements',
+    'access arguments' => array('access announcements'),
+    'page callback' => 'announcements_all',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['announcements/%announcement_placeholder'] = array(
+    'title' => 'Announcements',
+    'description' => 'View an announcement',
+    'page callback' => 'announcements_all',
+    'page arguments' => array(1),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+
+  // Add new announcement.
+  $items['announcements/add'] = array(
+    'title' => 'Add a new announcement',
+    'page callback' => '_announcements_add',
+    'access arguments' => array('create announcements'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  // Admin settings for the site.
+  $items['announcements/settings'] = array(
+    'title' => 'Settings',
+    'page callback' => '_announcements_settings',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  return $items;
+}
+
+function _announcements_add() {
+  drupal_goto('node/add/announcements');
+}
+
+function _announcements_settings() {
+  drupal_goto('admin/config/content/announcements');
+}
+
+/**
+ * Returns NULL or $arg so to remove PHP notices.
+ */
+function announcement_placeholder_to_arg($arg) {
+  return $arg;
+}
+
+
+/**
+ * Implements hook_init().
+ */
+function announcements_init() {
+  drupal_add_css(drupal_get_path('module', 'announcements') . '/announcements.css');
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * This function allows the announcements module to check to see
+ * if any announcements have expired or are ready to be published.
+ *
+ * @return
+ *   Nothing.
+ */
+function announcements_cron() {
+  // Mark ready announcements as published.
+  /* db_query("UPDATE {node} SET status = 1 WHERE type = 'announcements' AND status = 0 AND nid IN (SELECT nid FROM {announcements} WHERE publish_date <= %d)", REQUEST_TIME) */
+  $query_result = db_update('node')
+    ->fields(array('status' => 1))
+    ->where("type = 'announcements' AND status = 0 AND nid IN (SELECT nid FROM {announcements} WHERE publish_date <= :pdate)",
+            array(':pdate' => REQUEST_TIME))
+  ->execute();
+
+  // Mark expired announcements as unpublished.
+  /* db_query("UPDATE {node} SET status = 0 WHERE type = 'announcements' AND status = 1 AND nid IN (SELECT nid FROM {announcements} WHERE expiration_date < %d)", REQUEST_TIME) */
+  $query_result = db_update('node')
+    ->fields(array('status' => 0))
+    ->where("type = 'announcements' AND status = 1 AND nid IN (SELECT nid FROM {announcements} WHERE expiration_date < :edate)",
+            array(':edate' => REQUEST_TIME))
+  ->execute();
+}
+
+/**
+ * Function for sort orders.
+ */
+function _announcements_sorts() {
+  return array(
+    'n.sticky DESC, n.changed DESC' => t('Standard - by sticky DESC, updated DESC'),
+    'n.sticky DESC, a.publish_date ASC, a.expiration_date ASC' => t('Start date - by sticky DESC, start date ASC'),
+    'n.sticky DESC, a.expiration_date ASC, a.publish_date ASC' => t('End date - by sticky DESC, end date ASC'),
+    'n.sticky DESC, a.publish_date DESC, a.expiration_date DESC' => t('Latest - by sticky DESC, start date DESC'),
+  );
+}
+
+/**
+ * Implements hook_form().
+ * This function is called to retrieve the form that is displayed when one attempts
+ * to create or edit an announcement.
+ */
+function announcements_form($node, &$form_state) {
+  $type = node_type_get_type($node);
+  $form = node_content_form($node, $form_state);
+
+  if (!isset($node->expiration_date)) {
+    $node->expiration_date = strtotime(variable_get('announcements_interval', '+1 month'));
+  }
+
+  if (!isset($node->publish_date)) {
+    $node->publish_date = REQUEST_TIME;
+  }
+
+  if (!isset($node->absfmt)) {
+    $node->absfmt = filter_fallback_format();
+  }
+
+  /* Is set by node_content_form.
+  $form['title'] = array(
+    '#type' => 'textfield',
+    '#title' => check_plain($type->title_label),
+    '#default_value' => $node->title,
+    '#description' => t('Title of the announcement'),
+    '#required' => TRUE,
+  );
+  */
+
+  $form['publication'] = array(
+    '#type' => 'fieldset',
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#title' => t('Publication dates'),
+    '#description' => t('Publication dates of the announcement'),
+    '#required' => TRUE,
+    '#weight' => -3,
+  );
+
+  $form['publication']['publish_date'] = array(
+    '#prefix' => '<div class="date_widget">',
+    '#suffix' => '</div>',
+    '#type' => 'date',
+    '#title' => t('Publication date'),
+    '#default_value' => is_array($node->publish_date) ? $node->publish_date : _announcements_unixtime2drupaldate($node->publish_date),
+  );
+
+  $form['publication']['expiration_date'] = array(
+    '#prefix' => '<div class="date_widget">',
+    '#suffix' => '</div>',
+    '#type' => variable_get('announcements_allow_expire', 1) ? 'date' : 'value',
+    '#title' => t('Expiration date'),
+    '#default_value' => is_array($node->expiration_date) ? $node->expiration_date : _announcements_unixtime2drupaldate($node->expiration_date),
+  );
+
+  if (module_exists('search')) {
+    $search_text = ' ' . t('Note that only the abstract will be indexed for search.');
+  }
+  else {
+    $search_text = NULL;
+  }
+
+  $form['abstract'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Abstract'),
+    '#default_value' => isset($node->abstract) ? $node->abstract : '',
+    '#rows' => 3,
+    '#description' => t('Short summary of the full announcement. Limited to 3,000 characters.') . $search_text,
+    '#required' => TRUE,
+    '#weight' => -1,
+    '#maxlength' => 3000,
+  );
+
+  // $form['abstract']['absfmt'] = filter_form($node->absfmt, NULL, array('absfmt'));
+  $form['abstract']['#format'] = isset($node->absfmt) ? $node->absfmt : filter_fallback_format();
+
+  $form['#submit'][] = 'announcements_submit';
+
+  return $form;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ * This function is called to provide a form-specific alteration of the form that is displayed
+ * when one attempts to create or edit an announcement.
+ */
+function announcements_form_announcements_node_form_alter(&$form, &$form_state, $form_id) {
+  if (isset($form['body'])) {
+    // There is a body field
+    $lang = $form['body']['#language'];
+    $delta = $form['body'][$lang]['#max_delta'];
+    // Copy abstract into nodes summary
+    // TODO: check if summary is empty!
+    $form['body'][$lang][$delta]['summary']['#default_value'] = $form['abstract']['#default_value'];
+    // Set 'our' body description
+    // $form['body']['#description'] = t('Full content for the announcement which is shown with the abstract on the details page');
+  }
+}
+
+
+/**
+ * Implements hook_validate().
+ * This just checks to ensure that the expiration date is after the publish date.
+ * No node attributes are set.
+ */
+function announcements_validate($node) {
+  if ($node) {
+    $publish_date = _announcements_drupaldate2unixtime($node->publish_date);
+    $expiration_date = _announcements_drupaldate2unixtime($node->expiration_date);
+    if ($publish_date >= $expiration_date) {
+      form_set_error('publish_date', t('The publish date of an announcement must be before its expiration date.'));
+    }
+  }
+}
+
+/**
+ * Implements hook_submit().
+ * This checks if the node should be marked as published.
+ */
+function announcements_submit($form, &$form_state) {
+  $publish_date = _announcements_drupaldate2unixtime($form_state['values']['publish_date']);
+  $expiration_date = _announcements_drupaldate2unixtime($form_state['values']['expiration_date']);
+
+  $now = REQUEST_TIME;
+  $form_state['values']['status'] = ($now >= $publish_date && $now < $expiration_date);
+  if ($form_state['values']['status']) {
+    drupal_set_message(t('The announcement is currently active.'));
+  }
+  else {
+    drupal_set_message(t('The announcement will become active on @date.', array('@date' => format_date($publish_date, 'short'))));
+  }
+}
+
+/**
+ * Only show those announcements that have not expired for the average user.
+ * If they have access to edit, show all announcements.
+ */
+function announcements_all($option = NULL, $action = NULL) {
+  $nodes_per_page = variable_get('announcements_per_page', variable_get('default_nodes_main', 10));
+  $output = '<div class="announcements">';
+
+  // If the optional param is numeric, assume it is a node or term id.
+  if (is_numeric($option)) {
+    if ($action == 'group') {
+      // Get all announcements with this term.
+      // TODO Change fully to a dynamic query
+      $result = db_query("SELECT n.nid FROM {node} n LEFT JOIN {taxonomy_index} tn USING (nid) WHERE n.type = :n.type AND n.status = :n.status AND tn.tid = :tn.tid", array(':n.type' => 'announcements', ':n.status' => 1, ':tn.tid' => $option));
+      foreach ($result as $nid) {
+        $announcement = node_load($nid->nid);
+        $output .= '<h2>' . check_plain($announcement->title) . '</h2>';
+        $build = node_view($announcement);
+        $output .= drupal_render($build);
+      }
+
+      return $output . '</div>';
+    }
+    else {
+      $announcement = node_load($option);
+      // If it is an announcement, ok, else ignore it.
+      if ($announcement != NULL) {
+        if ($announcement->type == 'announcements') {
+          $build = node_view($announcement, 'full');
+          // Plain node title
+          $outp = '<h2>' . check_plain($announcement->title) . '</h2>';
+          $build['#node']->title = '';  // Don't render title
+          return $outp . drupal_render($build);
+        }
+      }
+    }
+  }
+
+  if (user_access('edit announcements')) {
+    $args = array(-1);
+  }
+  else {
+    $args = array(gmdate("U"));
+  }
+
+//  $query = "SELECT n.nid FROM {node} n INNER JOIN {announcements} a ON n.nid=a.nid
+//    WHERE n.type='announcements' AND a.expiration_date > %d
+//    ORDER BY " . variable_get('announcements_page_order', 'n.sticky DESC, n.changed DESC');
+
+  $sort_order = variable_get('announcements_page_order', 'n.sticky DESC, n.changed DESC');
+  // Expand all order by clauses into single ones
+  $sort_order_dir = array_map("trim", explode(',', $sort_order));
+  for ($i = 0; $i < count($sort_order_dir); $i++)
+  {
+    $sort_orders[$i] = strtok($sort_order_dir[$i], ' ');
+    $sort_directions[$i] = strtok(' ');
+  }
+
+  $query = db_select('node', 'n');
+  $query->extend('PagerDefault')
+    ->limit($nodes_per_page);
+  $query->innerJoin('announcements', 'a', 'n.nid = a.nid');
+  $query->condition('n.type', 'announcements', '=')
+    ->condition('a.expiration_date', $args, '>')
+    ->fields('n', array('nid'));
+  for ($i = 0; $i < count($sort_order_dir); $i++)
+    $query->orderBy($sort_orders[$i], $sort_directions[$i]);
+//  $query_result = pager_query(db_rewrite_sql($query, 'n', 'nid'), $nodes_per_page, 0, NULL, $args);
+  $query_result = $query->execute();
+
+  foreach ($query_result as $nid) {
+    $announcement = node_load($nid->nid);
+    $build = node_view($announcement, $option);
+    $output .= drupal_render($build);
+  }
+
+  $output .= '</div>';
+  $output .= theme('pager', array('tags' => NULL));
+
+  return $output;
+}
+
+/**
+ * Database hooks when loading, inserting, updating or deleting an announcement.
+ */
+
+/**
+ * Implements hook_view().
+ * This function is called to allow the module a chance to format extra information to display.
+ */
+function announcements_view($node, $view_mode) {
+  node_object_prepare($node);
+  $node->content['dates'] = array(
+    '#markup' => theme('announcements_dates', array('0' => $node)),
+    '#weight' => -4,
+  );
+
+  $abstract = array(
+    '#markup' => theme('announcements_abstract', array('0' => $node)),
+    '#weight' => -2,
+  );
+
+  if ($view_mode == 'teaser') {
+    $node->content['body'] = $abstract;
+    $node->readmore = TRUE;  // In D7 this is not needed.
+  }
+  else {
+    if (variable_get('announcements_show_abstract', 1)) {
+      $node->content['abstract'] = $abstract;
+    }
+    $items = field_get_items('node', $node, 'body');
+    $node->content['body'] = array(
+      '#markup' => check_markup($items[0]['value'], $items[0]['format'], $langcode = NULL /* TODO Set this variable. */, FALSE),
+      '#weight' => -1,
+    );
+  }
+  return $node;
+}
+
+/**
+ * Implements hook_load().
+ * This function is called to allow the module a chance to load extra information that
+ * it stores about an announcement.
+ */
+function announcements_load($nodes) {
+  // note that $nodes is an array of object references, keyed by nid
+  /*
+  foreach ($nodes as $nid => &$node) {
+    $additions = db_fetch_object(db_query('SELECT * FROM {announcements} WHERE nid = :nid', array(':nid' => $node->nid)));
+    foreach ($additions as $property => &$value) {
+      $node->$property = $value;
+    }
+  }  */
+
+  // grab whatever data you need from your module tables
+  $result = db_select('announcements', 'a')
+              ->condition('a.nid', array_keys($nodes), 'IN')
+              ->fields('a')
+              ->execute();
+  // run through each result row and add in the needed attributes
+  foreach ($result as $record) {
+    $nodes[$record->nid]->abstract = $record->abstract;
+    $nodes[$record->nid]->publish_date = $record->publish_date;
+    $nodes[$record->nid]->expiration_date = $record->expiration_date;
+    $nodes[$record->nid]->absfmt = $record->absfmt;
+  }
+
+}
+
+/**
+* Implements hook_node_load().
+*/
+function announcements_node_load($nodes, $types) {
+  $result = db_query('SELECT * FROM {node} WHERE nid IN(:nids)', array(':nids' => array_keys($nodes)));
+  foreach ($result as $node) {
+    if (module_exists('taxonomy')) {
+      $tids = db_query("SELECT ti.tid FROM {taxonomy_index} as ti INNER JOIN {node} as n on n.nid=ti.nid WHERE ti.nid = :nid and n.type='announcements'", array(':nid' => $node->nid))->fetchCol();
+      if (!empty($tids)) {
+        $nodes[$node->nid]->taxonomy = array();
+        foreach ($tids as $tid) {
+          $nodes[$node->nid]->taxonomy[$tid] = $tid; // As a quick and dirty solution!
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_insert().
+ * This function is called to allow the module to take action when a new node is
+ * being inserted into the database.
+ */
+function announcements_insert($node) {
+  $node->publish_date = _announcements_drupaldate2unixtime($node->publish_date);
+  $node->expiration_date = _announcements_drupaldate2unixtime($node->expiration_date);
+
+  $now = REQUEST_TIME;
+  if ($now > $node->publish_date && $now < $node->expiration_date) {
+    $node->status = 1;
+  }
+  else {
+    $node->status = 0;
+  }
+
+  /* db_query("INSERT INTO {announcements} (nid, abstract, publish_date, expiration_date, absfmt) VALUES (%d, '%s', '%d', '%d', '%d')", $node->nid, $node->abstract, $node->publish_date, $node->expiration_date, $node->absfmt) */
+  $id = db_insert('announcements')
+  ->fields(array(
+    'nid' => $node->nid,
+    'abstract' => $node->abstract,
+    'publish_date' => $node->publish_date,
+    'expiration_date' => $node->expiration_date,
+    'absfmt' => $node->absfmt,
+  ))
+  ->execute();
+}
+
+/**
+ * Implements hook_update().
+ * As an existing node is being updated in the database, we need to do our own
+ * database updates, i.e., put info into announcement table.
+ */
+function announcements_update($node) {
+  $node->publish_date = _announcements_drupaldate2unixtime($node->publish_date);
+  $node->expiration_date = _announcements_drupaldate2unixtime($node->expiration_date);
+
+  /* db_query("UPDATE {announcements} SET abstract='%s', publish_date = '%s', expiration_date = '%s', absfmt = %d WHERE nid = %d", $node->abstract, $node->publish_date, $node->expiration_date, $node->absfmt, $node->nid) */
+  db_update('announcements')
+  ->fields(array(
+    'abstract' => $node->abstract,
+    'publish_date' => $node->publish_date,
+    'expiration_date' => $node->expiration_date,
+    'absfmt' => $node->absfmt,
+  ))
+  ->condition('nid', $node->nid, '=')
+  ->execute();
+}
+
+/**
+ *
+ */
+function _announcements_status(&$node) {
+  $node->publish_date = _announcements_drupaldate2unixtime($node->publish_date);
+  $node->expiration_date = _announcements_drupaldate2unixtime($node->expiration_date);
+
+  if (REQUEST_TIME > $node->publish_date && REQUEST_TIME < $node->expiration_date) {
+    $node->status = 1;
+  }
+  else {
+    $node->status = 0;
+  }
+}
+
+/**
+ * Implements hook_delete().
+ * This function is called to allow the module to take action when a node is
+ * being deleted from the database.
+ */
+function announcements_delete($node) {
+  /* db_query('DELETE FROM {announcements} WHERE nid = %d', $node->nid) */
+  db_delete('announcements')
+  ->condition('nid', $node->nid, '=')
+  ->execute();
+}
+
+/**
+ * Implements hook_link().
+ * Adds an "edit" link.
+ */
+function announcements_link($type, $node = NULL, $teaser = FALSE) {
+  $links = array();
+  if (variable_get('announcements_edit_link', 0)) {
+    if ($type == 'node' && $node->type == 'announcements' && user_access('edit announcements')) {
+      $links['announcements_edit_link'] = array(
+        'title' => t('Edit'),
+        'href' => 'node/' . $node->nid . '/edit',
+        'attributes' => array('title' => t('Edit this announcement')),
+      );
+    }
+  }
+  return $links;
+}
+
+/**
+ * Implements hook_block_info().
+ * Get the list of the blocks.
+ *
+ * @param
+ *   none.
+ *
+ * @return
+ *   array containing the title ("info") of the block.
+ */
+function announcements_block_info() {
+  $block = array();
+  $vids = _announcements_get_vocabularies();
+  $block['related']['info'] = t('Announcements: Related');
+  $block[0]['info'] = t('Announcements: Active');
+  if ($vids) {
+    foreach ($vids as $vid => $name) {
+      $block[$vid]['info'] = t('Announcements: In !name vocabulary', array('!name' => $name));
+    }
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_block_view().
+ * Get the output to be displayed by the block.
+ *
+ * @param
+ *   $delta - integer for the block number.
+ *
+ * @return
+ *   array containing the title ("subject") and content of the block.
+ */
+function announcements_block_view($delta) {
+  $block = $tids = array();
+
+  switch ($delta) {
+    case 'related':
+      if (arg(0) != 'node' || !is_numeric(arg(1))) {
+        return array();
+      }
+
+      if ($vocabs = taxonomy_vocabulary_machine_name_load('announcements')) {
+        // Look for a term in our vocabulary.
+        if ($node = menu_get_object()) {
+          if (isset($node->taxonomy)) {
+            $terms = taxonomy_get_tree($vocabs->vid, 0, NULL, FALSE);
+            foreach ($terms as $term) {
+              // Check if this term is in our vocabulary.
+              if (in_array($term->tid, $node->taxonomy)) {
+                $tids[] = $term->tid;
+              }
+            }
+          }
+        }
+      }
+      // Did we find any terms?
+      if (!$tids) {
+        return;
+      }
+
+      // Get our controls.
+      $limit = variable_get('announcements_block_max_list_count_related', 3);
+      $show_abstract = variable_get("announcements_block_show_abstract_related", TRUE);
+      $read_link = variable_get("announcements_block_read_link_related", FALSE);
+      $sort_order = variable_get("announcements_block_order_related", 'n.sticky DESC, a.publish_date ASC, a.expiration_date ASC');
+      // Expand all order by clauses into single ones
+      $sort_order_dir = array_map("trim", explode(',', $sort_order));
+      for ($i = 0; $i < count($sort_order_dir); $i++)
+      {
+        $sort_orders[$i] = strtok($sort_order_dir[$i], ' ');
+        $sort_directions[$i] = strtok(' ');
+      }
+      $nodes = array();
+      $output = NULL;
+
+      // $query = "SELECT n.nid, n.title, a.abstract "
+      // . "FROM {taxonomy_term_node} tn "
+      // . "INNER JOIN {node} n ON n.nid=tn.nid "
+      // . "INNER JOIN {announcements} a  ON a.nid=tn.nid "
+      // . "WHERE n.status=1 AND n.type='announcements' AND tn.tid=%d "
+      // . "ORDER BY $sort_order";
+
+      $query = db_select('taxonomy_index', 'tn');
+      $query->extend('PagerDefault')
+        ->limit($limit + 1);
+      $query->innerJoin('node', 'n', 'n.nid = tn.nid');
+      $query->innerJoin('announcements', 'a', 'a.nid = tn.nid');
+      $query->condition('n.status', 1, '=')
+        ->condition('n.type', 'announcements', '=')
+        ->condition('a.nid', $tid, '=')
+        ->fields('n', array('nid', 'title'))
+        ->fields('a', array('abstract'));
+      for ($i = 0; $i < count($sort_order_dir); $i++)
+        $query->orderBy($sort_orders[$i], $sort_directions[$i]);
+      $result = $query->execute();
+
+      // Process each term.
+      foreach ($tids as $tid) {
+        // $result = pager_query($query, $limit + 1, 0, NULL, $tid);
+        foreach ($result as $announcement) {
+//          $nodes[] = l($announcement->title, "announcements/$announcement->nid", array('attributes' => array('title' => $announcement->title)));
+          $nodes[] = $announcement;
+        }
+        if ($nodes) {
+          if (count($nodes) > $limit) {
+            unset($nodes[$limit]);
+            $more_link = '<div class="announcements-more">' . l(t('more announcements'), "announcements/$tid/group", array('attributes' => array('title' => t('Read the rest')))) . '</div>';
+          }
+          else {
+            $more_link = NULL;
+          }
+          $term = taxonomy_term_load($tid);
+          $output .= '<h3>' . t('Announcements in %name', array('%name' => $term->name)) . '</h3>'
+            . theme('announcements_block_list', array('0' => $nodes, 'show_abstract' => $show_abstract, 'read_link' => $read_link))
+            . $more_link;
+        }
+      }
+      $block['subject'] = t('Related announcements');
+      $block['content'] = $output;
+      break;
+
+    case 0:
+      // Active announcements.
+      $announcement_items  = array();
+
+      if (user_access('access announcements')) {
+        $now = REQUEST_TIME;
+        $qargs = array($now, $now);
+
+//        $q = 'SELECT n.nid FROM {node} n JOIN {announcements} a USING(nid) ' .
+//          "WHERE n.type='announcements' AND n.status=1 " .
+//          'AND a.publish_date < %d AND a.expiration_date > %d ORDER BY ' .
+//          variable_get('announcements_block_order', 'n.sticky DESC, a.publish_date ASC, a.expiration_date ASC');
+
+        $sort_order = variable_get('announcements_block_order', 'n.sticky DESC, a.publish_date ASC, a.expiration_date ASC');
+        // Expand all order by clauses into single ones
+        $sort_order_dir = array_map("trim", explode(',', $sort_order));
+        for ($i = 0; $i < count($sort_order_dir); $i++)
+        {
+          $sort_orders[$i] = strtok($sort_order_dir[$i], ' ');
+          $sort_directions[$i] = strtok(' ');
+        }
+
+        $q = db_select('node', 'n');
+        $q->innerJoin('announcements', 'a', 'n.nid = a.nid');
+        $q->condition('n.type', 'announcements', '=')
+          ->condition('n.status', 1, '=')
+          ->condition('a.publish_date', $now, '<')
+          ->condition('a.expiration_date', $now, '>')
+          ->fields('n', array('nid'));
+        for ($i = 0; $i < count($sort_order_dir); $i++)
+          $q->orderBy($sort_orders[$i], $sort_directions[$i]);
+
+        // Get one extra so we know if we need a "more" link.
+        $limit = variable_get('announcements_block_max_list_count', 3);
+        // TODO Please convert this statement to the D7 database API syntax.
+//        $result = db_query_range(db_rewrite_sql($q, 'n', 'nid'), $qargs);
+        $result = $q->execute();
+        foreach ($result as $announcement) {
+          $announcement_items[] = node_load($announcement->nid);
+        }
+        $num_found = count($announcement_items);
+        if ($num_found > $limit) {
+          $more_link = '<div class="announcements-more">' . l(t('more announcements'), 'announcements', array('attributes' => array('title' => t('Read the rest')))) . '</div>';
+          unset($announcement_items[$num_found -1]);
+        }
+        else {
+          $more_link = NULL;
+        }
+      }
+      if ($announcement_items) {
+        $read_link = variable_get("announcements_block_read_link_related", FALSE);
+        $show_abstract = variable_get("announcements_block_show_abstract", TRUE);
+        $block['content'] = theme('announcements_block_list', array('0' => $announcement_items, 'show_abstract' => $show_abstract, 'read_link' => $read_link)) . $more_link;
+      }
+      break;
+
+    default:
+      // Block for each vocabulary.
+      if (user_access('access announcements')) {
+        $vocabulary = taxonomy_vocabulary_load($delta);
+        $block['subject'] = $vocabulary->name;
+        $block['content'] = announcements_vocab_vert($vocabulary->vid);
+      }
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_block_configure().
+ * Get the extra form elements for the block.
+ *
+ * @param
+ *   $delta - integer for the block number.
+ *
+ * @return
+ *   array containing the extra form elements for the block.
+ */
+function announcements_block_configure($delta) {
+  $form = array();
+  $which = NULL;
+  switch ($delta) {
+    case 'related':
+      $which = '_related';
+
+    case 0:
+      $form['count'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Announcements shown in block'),
+        '#default_value' => variable_get("announcements_block_max_list_count$which", 3),
+        '#description' => ($delta == 'related') ? t('The maximum number of items per term listed in the block.') : t('The maximum number of items listed in the announcements block.'),
+        '#required' => FALSE,
+        '#size' => 5,
+      );
+
+      $form['abstract'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Show abstract'),
+        '#default_value' => variable_get("announcements_block_show_abstract$which", TRUE),
+        '#description' => t('If selected, the title and abstract will be displayed; if not then only the title will be displayed.'),
+        '#required' => FALSE,
+      );
+
+      $form['read_link'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Show "read" link'),
+        '#default_value' => variable_get("announcements_block_read_link$which", FALSE),
+        '#description' => t('If selected, a link to read the full announcement will be displayed.'),
+        '#required' => FALSE,
+      );
+
+      $form['order'] = array(
+        '#type' => 'radios',
+        '#options' => _announcements_sorts(),
+        '#title' => '<strong>' . t('Sort order') . '</strong>',
+        '#default_value' => variable_get("announcements_block_order$which", 'n.sticky DESC, a.publish_date ASC, a.expiration_date ASC'),
+        '#description' => t('The order of items listed in the announcements block.'),
+        '#required' => FALSE,
+        '#size' => 5,
+      );
+  }
+
+  return $form;
+}
+
+/**
+ * Process the extra form values for the block.
+ *
+ * @param
+ *   $delta - integer for the block number.
+ * @param
+ *   $edit - entered form values.
+ */
+function announcements_block_save($delta, $edit) {
+  $which = NULL;
+  switch ($delta) {
+    case 'related':
+      $which = '_related';
+
+    case 0:
+      variable_set("announcements_block_max_list_count$which", $edit['count']);
+      variable_set("announcements_block_show_abstract$which", $edit['abstract']);
+      variable_set("announcements_block_read_link$which", $edit['read_link']);
+      variable_set("announcements_block_order$which", $edit['order']);
+      break;
+  }
+}
+
+/**
+ * Adapated from the taxonomy_dhtml module.
+ */
+function announcements_vocab_vert($vocabulary_id, $op = NULL) {
+  $output = NULL;
+  $tree = taxonomy_get_tree($vocabulary_id);
+
+  // Build an array which holds all children of current term.
+  // Necessary to build a proper 'or' value in the HREF
+  foreach ($tree as $term) {
+    $url = taxonomy_term_uri($term);
+    if ($op) {
+      $url .= "/$op";
+    }
+    $link = l($term->name, $url, array("title" => check_plain($term->description)));
+    $output .= str_repeat("&nbsp;", $term->depth) . "- $link";
+    $count = announcements_term_node_count($term->tid, 'announcements', TRUE);
+    $output .= " ($count)";
+    if ($count) {
+      $output .= _announcements_by_terms($term->tid);
+    }
+    $output .= "<br />";
+  }
+  return $output;
+}
+
+/**
+ * Show all the announcements classified by this term.
+ */
+function _announcements_by_terms($tid) {
+  $output = '';
+  $nodes = taxonomy_select_nodes($tid, FALSE, FALSE);
+  foreach ($nodes as $r) {
+    // I hate having to do another query here, but we need the type.
+    $type = db_query("SELECT n.type FROM {node} n WHERE n.nid = :n.nid", array(':n.nid' => $r->nid))->fetchField();
+    if ($type == 'announcements') {
+      $url = 'announcements/' . $r->nid;
+      $output .= "<br/>&nbsp; - &nbsp;" . l($r->title, $url, array("title" => $r->title));
+    }
+  }
+  return $output;
+}
+
+/**
+ * Implements hook_node_update_index().
+ */
+function announcements_node_update_index($node) {
+  if ($node->type == 'announcements') {
+    $text = '';
+    // TODO Please convert this statement to the D7 database API syntax.
+    $q = db_query(
+          'SELECT a.abstract FROM {node} n LEFT JOIN {announcements} a ON n.nid = a.nid ' .
+          'WHERE n.nid = :nid', array(':nid' => $node->nid))->fetchObject();
+    if ($q) {
+      $text = $q->abstract;
+    }
+    return $text;
+  }
+}
+
+
+/*
+ * Theme functions
+ *
+ *  theme_announcements_abstract - Formats the abstract for display.
+ *  theme_announcements_block_list - Formats the block display.
+ *  theme_announcements_dates - Formats the start and end dates for display.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function announcements_theme() {
+  return array(
+    'announcements_abstract' => array(
+      'variables' => array('announcement' => NULL),
+    ),
+    'announcements_block_list' => array(
+      'variables' => array('announcement_list' => NULL, 'show_abstract' => TRUE, 'read_link' => FALSE),
+    ),
+    'announcements_dates' => array(
+      'variables' => array('announcement' => NULL),
+    ),
+  );
+}
+
+/**
+ * Theme the announcement dates.
+ *
+ * @param $announcement
+ *   The node object.
+ *
+ * @return
+ *   The HTML string ready to display/
+ */
+function theme_announcements_dates($variables) {
+  $announcement = $variables['0'];
+  $output = '<div class="announcement-dates">' . t('Starting') . ' ';
+  if (is_array($announcement->publish_date)) {
+    // This can happen on a preview of node/add.
+    $publish_date = _announcements_drupaldate2unixtime($announcement->publish_date);
+    $expiration_date = _announcements_drupaldate2unixtime($announcement->expiration_date);
+  }
+  else {
+    $publish_date = $announcement->publish_date;
+    $expiration_date = $announcement->expiration_date;
+  }
+  $output .= '<span class="announcement-start">' . format_date($publish_date, 'custom', 'F j, Y') . '</span>';
+  $output .= ' - ' . t('Ending') . ' ';
+  $output .= '<span class="announcement-end">' . format_date($expiration_date, 'custom', 'F j, Y') . '</span>';
+  // See if it should be marked expired.
+  if ($announcement->expiration_date < REQUEST_TIME) {
+    $output .= ' <span class="announcement-expired">' . t('Expired') . '</span>';
+  }
+  $output .= '</div>';
+  return $output;
+}
+
+/**
+ * Theme the announcements that are shown in a block.
+ *
+ * @param $announcement_list
+ *   An array of node objects.
+ * @param $show_abstract
+ *   bool to include the abstract.
+ * @param $read_link
+ *   bool to show the read link.
+ *
+ * @return
+ *   The HTML string ready to display/
+ */
+function theme_announcements_block_list($variables) {
+  $announcement_list = $variables['0'];
+  $show_abstract = $variables['show_abstract'];
+  $read_link = $variables['read_link'];
+  $output = NULL;
+  $eo = array('even', 'odd');
+  $i = 0;
+  $read = t('Read this announcement');
+  $img = '<img src="'
+    . base_path()
+    . drupal_get_path('module', 'announcements')
+    . '/goto.gif" alt="'
+    . $read
+    . '" />';
+  foreach ($announcement_list as $announcement) {
+    $j = ++$i & 1;
+    $output .= '<div class="announcements announcements-' . $announcement->nid . ' ' . $eo[$j] . '">';
+    $output .= '<div class="' . $eo[$j] . '">';
+    $output .= '<h3>';
+//    $path = "announcements/$announcement->nid";
+    $path = "node/$announcement->nid";
+    if ($read_link) {
+      $output .= l($img, $path, array('html' => TRUE, attributes => array(title => $read, 'class' => 'announcements-read')));
+    }
+    $output .= l($announcement->title, $path, array('attributes' => array('title' => $announcement->title)));
+    $output .= '</h3>';
+    if ($show_abstract) {
+      $output .= theme('announcements_abstract', array('0' => $announcement));
+    }
+    $output .= '</div></div>';
+  }
+  return $output;
+}
+
+/**
+ * Theme the announcement abstract.
+ *
+ * @param $node
+ *   The node object.
+ *
+ * @return
+ *   The HTML string ready to display.
+ */
+function theme_announcements_abstract($variables) {
+  $node = $variables['0'];
+  return '<div class="announcement-abstract clear-block">' . check_markup($node->abstract, $node->absfmt, $langcode = NULL /* TODO Set this variable. */, FALSE) . '</div>';
+}
+
+function _announcements_get_timezone() {
+  global $user;
+  if (variable_get('configurable_timezones', 1) && $user->uid && strlen($user->timezone)) {
+    // User has his/her own timezone, use that.
+    return $user->timezone;
+  }
+  return variable_get('date_default_timezone', 0);
+}
+
+function _announcements_drupaldate2unixtime($drupal_date) {
+  // Compute the time in UTC (GMT).
+  $tz_seconds = _announcements_get_timezone();
+  return gmmktime(0, 0, 0, (int) $drupal_date["month"], (int) $drupal_date["day"], (int) $drupal_date["year"]) - $tz_seconds;
+}
+
+function _announcements_unixtime2drupaldate($unixtime) {
+  $unixtime += _announcements_get_timezone();
+  return array(
+    'day' => gmdate('j', $unixtime),
+    'month' => gmdate('n', $unixtime),
+    'year' => gmdate('Y', $unixtime),
+  );
+}
+
+/*
+ * Retrieve taxonomy node count by Term ID as by taxonomy_term_count_nodes.
+ *
+ * @param tid
+ *   Term ID
+ * @param type
+ *   Node type
+ * @param child_count
+ *   TRUE - Also count all nodes in child terms (if they exists) - Default
+ *   FALSE - Count only nodes related to Term ID
+ */
+function announcements_term_node_count($tid, $type = '', $child_count = TRUE) {
+  $tids = array($tid);
+
+  if ($child_count){
+    $tids = array_merge($tids, term_get_children_ids($tid));
+  }
+
+  global $language;
+  $langs = array($language->language);
+  $langs[] = 'und';
+
+  $query = db_select('taxonomy_index', 't');
+  $query->condition('tid', $tids, 'IN');
+  $query->join('node', 'n', 't.nid = n.nid');
+  $query->condition('n.status', 1, '=');
+  if ($type <> '') {
+    $query->condition('n.type', $type, '=');
+  }
+  $query->condition('n.language', $langs, 'IN');
+
+  $count = $query->countQuery()->execute()->fetchField();
+  return $count;
+}
+
+/**
+ *  Function to get array of vocabularies that are set up for the announcements type.
+ */
+function _announcements_get_vocabularies() {
+  $vids = array();
+  $result = db_query("SELECT vid, name FROM {taxonomy_vocabulary} WHERE module='announcements'")->fetchObject();
+  if ($result) {
+    foreach ($result as $voc) {
+      $vids[$voc->vid] = $voc->name;
+    }
+  }
+  return $vids;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function announcements_views_api() {
+  return array(
+    'api' => 2,
+    'path' => drupal_get_path('module', 'announcements'),
+  );
+}
+
+/**
+ * Implements hook_views_handlers().
+ */
+function announcements_views_handlers() {
+  return array(
+    'info' => array(
+      'path' => drupal_get_path('module', 'announcements'),
+    ),
+    'handlers' => array(
+      'views_handler_field_announcements' => array('parent' => 'views_handler_field'),
+    ),
+  );
+}

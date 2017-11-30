@@ -1,0 +1,49 @@
+Announcements Module 7.x
+========================
+
+===================
+Version 7.x-1.x-dev
+===================
+
+January 24, 2013
+-----------------
+Issue #1781016 by GStegemann: Changed all database calls to D7 API syntax.
+      Admin menu links changed to admin/config/content/announcements.
+
+January 28, 2013
+-----------------
+Issue # 986894 by GStegemann: return in "variables" 1st hook arguments as key/value pairs.
+      .info file: modules configuration link added.
+      CHANGELOG.txt file added.
+
+February 10, 2013
+-----------------
+by GStegemann: Notice: Undefined offset: 1 in _menu_translate() line 776 as possibly caused in hook_menu. Fixed.
+
+March 11, 2013
+--------------
+by GStegemann: Update hook 7000 added. Changed the database column absfmt to allow NULL values and type to VARCHAR. 
+               announcements_node_access: return values corrected.
+
+March 22, 2013
+--------------
+by GStegemann: announcements_node_access: switch statement, missing breaks added.
+
+March 23, 2013
+--------------
+by GStegemann: Block configuration fixed, hook_block_list needs to be named hook_block_info.
+               Taxonomy issues fixed, more D6 API calls changed to D7 equivalents.
+               announcements.admin.inc: arguments of class arguments changed to arrays.
+
+April 17, 2013
+--------------
+by GStegemann: Issue #1972800: hook_node_access - perform only for Announcements content.
+
+April 23, 2013
+--------------
+by GStegemann: announcements_block_view - checking for own vocabulary raised a PHP error.
+
+December 11, 2014
+-----------------
+by GStegemann: Issue #2382869: orderBy calls fixed, sort criteria split into column name and sort order.
+

@@ -1,0 +1,11 @@
+name = Announcements
+description = Provides an announcements content type and management of that type.
+core = 7.x
+configure = admin/config/content/announcements
+
+; Information added by Drupal.org packaging script on 2015-01-20
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "announcements"
+datestamp = "1421745483"
+

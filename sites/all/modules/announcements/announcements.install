@@ -1,0 +1,163 @@
+<?php
+/**
+ * @file
+ * Announcements module install file.
+ * Drupal 7 version.
+ */
+
+/**
+ * Implements hook_schema().
+ *
+ * Inserts the announcement module's schema in the SQL database.
+ */
+function announcements_schema() {
+  $schema['announcements'] = array(
+    'module' => 'announcements',
+    'description' => 'Extra node data.',
+    'fields' => array(
+      'nid' => array(
+        'description' => 'Node identifier.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'disp-width' => '10',
+      ),
+      'absfmt' => array(
+        'description' => 'The {announcements}.format of the Abstract.',
+        'type' => 'varchar', // Format is a varchar now. 
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => filter_fallback_format(),
+      ),
+      'publish_date' => array(
+        'description' => 'Date announcement becomes effective.',
+        'type' => 'int',
+        'unsigned' => FALSE,
+        'not null' => TRUE,
+        'default' => 0,
+        'disp-width' => '10',
+      ),
+      'expiration_date' => array(
+        'description' => 'Date announcement no longer effective.',
+        'type' => 'int',
+        'unsigned' => FALSE,
+        'not null' => TRUE,
+        'default' => 0,
+        'disp-width' => '10',
+      ),
+      'abstract' => array(
+        'description' => 'Short summary of the announcement.',
+        'type' => 'text',
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('nid'),
+  );
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ *
+ * Add a body field.
+ */
+function announcements_install() {
+  // Ensure the announcements node type is available.
+  node_types_rebuild();
+  $types = node_type_get_types();
+  node_add_body_field($types['announcements']);
+}
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Remove the variables, nodes and schema corresponding to the FAQ module.
+ */
+function announcements_uninstall() {
+  // Remove the node type.
+  node_type_delete('announcements');
+
+  // Remove the blocks.
+  db_delete('block')
+    ->condition('module', 'announcements')
+    ->execute();
+
+  // Remove the variables.
+  variable_del('announcements_allow_expire');
+  variable_del('announcements_block_max_list_count');
+  variable_del('announcements_display_classification');
+  variable_del('announcements_display');
+  variable_del('announcements_edit_link');
+  variable_del('announcements_interval');
+  variable_del('announcements_per_page');
+}
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function announcements_update_last_removed() {
+  return 6003;
+}
+
+
+/**
+ * Abstract input format is to be changed to D7 style text filter names.
+ */
+function announcements_update_7000() {
+  // Update the database column absfmt to allow NULL values and change to VARCHAR.
+  db_change_field('announcements', 'absfmt', 'absfmt', array(
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => FALSE,
+    'description' => 'The {announcements}.format of the Abstract.',
+  ));
+
+  // Replace the abstract format with NULL if it does not already have a
+  // stored text format.
+  //
+  // In Drupal 6, "0" (the former FILTER_FORMAT_DEFAULT constant) could be used
+  // to indicate this situation, but in Drupal 7, only NULL is supported. This
+  // update therefore preserves the ability of announcements which were never
+  // given a text format to not have a particular text format assumed for 
+  // them the first time the signature is edited.
+  db_update('announcements')
+    ->fields(array('absfmt' => NULL))
+    ->condition('absfmt', 0)
+    ->execute();
+
+  // There are a number of situations in which a Drupal 6 site could store
+  // content with a nonexistent text format. This includes text formats that
+  // had later been deleted, or non-empty content stored with a value of "0"
+  // (the former FILTER_FORMAT_DEFAULT constant). Drupal 6 would filter this
+  // content using whatever the site-wide default text format was at the moment
+  // the text was being displayed.
+  //
+  // In Drupal 7, this behavior is no longer supported, and all content must be
+  // stored with an explicit text format (or it will not be displayed when it
+  // is filtered). Therefore, to preserve the behavior of the site after the
+  // upgrade, we must replace all instances described above with the current
+  // value of the (old) site-wide default format at the moment of the upgrade.
+  $existing_formats = db_query("SELECT format FROM {filter_format}")->fetchCol();
+  $default_format = filter_fallback_format();
+
+  // Since Announcments may be updated separately from Drupal core, not all format
+  // names may be numbers when running this update.
+  $numeric_formats = array();
+  foreach ($existing_formats as $format_name) {
+    if (is_numeric($format_name)) {
+      $numeric_formats[] = (int) $format_name;
+    }
+  }
+
+  $query = db_update('announcements')
+    ->fields(array('absfmt' => $default_format))
+    ->isNotNull('absfmt');
+
+  if (!empty($numeric_formats)) {
+    $query->condition('absfmt', $numeric_formats, 'NOT IN');
+  }
+  $query->execute();
+
+  drupal_set_message(t('Announcements abstract text format converted to D7 style.'));
+}
+
