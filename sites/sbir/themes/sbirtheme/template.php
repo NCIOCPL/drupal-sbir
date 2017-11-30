@@ -87,7 +87,7 @@ function sbirtheme_block_view_alter(&$data, $block) {
     }
 
     $follow_us = array(
-      '#markup' => '<span class="follow-us-text">Follow Us:</span>'
+      '#markup' => ''
     );
     // $data['content'][] = $follow_us;
     array_unshift($data['content'], $follow_us);

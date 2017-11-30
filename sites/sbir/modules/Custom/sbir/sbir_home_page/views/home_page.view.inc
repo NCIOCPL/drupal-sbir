@@ -93,3 +93,169 @@ $handler->display->display_options['allow']['path_override'] = 0;
 $handler->display->display_options['allow']['title_override'] = 'title_override';
 $handler->display->display_options['allow']['exposed_form'] = 0;
 $handler->display->display_options['allow']['fields_override'] = 0;
+
+/* Display: Right Video Block */
+$handler = $view->new_display('panel_pane', 'Right Video Block', 'panel_pane_1');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['display_description'] = 'Right Video Block';
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Relationship: Nodequeue: Queue */
+$handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
+$handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
+$handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
+$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
+$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
+  'home_page_sidebar_video' => 'home_page_sidebar_video',
+  'latest_announcements' => 0,
+  'all_success_stories' => 0,
+  'featured_success_stories' => 0,
+  'home_page_blocks' => 0,
+);
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['text'] = '<h2>[title]</h2>';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Field: Content: Edit link */
+$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['label'] = '';
+$handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
+$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['edit_node']['text'] = 'Edit Block';
+/* Field: Content: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['text'] = '<div class="pane-detail">[edit_node][body]</div>';
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['pane_category']['name'] = 'SBIR Views';
+$handler->display->display_options['pane_category']['weight'] = '0';
+$handler->display->display_options['allow']['use_pager'] = 0;
+$handler->display->display_options['allow']['items_per_page'] = 0;
+$handler->display->display_options['allow']['offset'] = 0;
+$handler->display->display_options['allow']['link_to_view'] = 0;
+$handler->display->display_options['allow']['more_link'] = 0;
+$handler->display->display_options['allow']['path_override'] = 0;
+$handler->display->display_options['allow']['title_override'] = 'title_override';
+$handler->display->display_options['allow']['exposed_form'] = 0;
+$handler->display->display_options['allow']['fields_override'] = 0;
+
+/* Display: Right Signup Block */
+$handler = $view->new_display('panel_pane', 'Right Signup Block', 'panel_pane_2');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['display_description'] = 'Right Signup Block';
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Relationship: Nodequeue: Queue */
+$handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
+$handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
+$handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
+$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
+$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
+  'home_page_sidebar_signup' => 'home_page_sidebar_signup',
+  'latest_announcements' => 0,
+  'all_success_stories' => 0,
+  'featured_success_stories' => 0,
+  'home_page_blocks' => 0,
+  'home_page_sidebar_video' => 0,
+);
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'node';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['title']['alter']['text'] = '<h2>[title]</h2>';
+$handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+$handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+/* Field: Content: Edit link */
+$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['label'] = '';
+$handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
+$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['edit_node']['text'] = 'Edit Block';
+/* Field: Content: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['text'] = '<div class="pane-detail">[edit_node][body]</div>';
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['pane_category']['name'] = 'SBIR Views';
+$handler->display->display_options['pane_category']['weight'] = '0';
+$handler->display->display_options['allow']['use_pager'] = 0;
+$handler->display->display_options['allow']['items_per_page'] = 0;
+$handler->display->display_options['allow']['offset'] = 0;
+$handler->display->display_options['allow']['link_to_view'] = 0;
+$handler->display->display_options['allow']['more_link'] = 0;
+$handler->display->display_options['allow']['path_override'] = 0;
+$handler->display->display_options['allow']['title_override'] = 'title_override';
+$handler->display->display_options['allow']['exposed_form'] = 0;
+$handler->display->display_options['allow']['fields_override'] = 0;
+
+/* Display: Signup Page */
+$handler = $view->new_display('panel_pane', 'Signup Page', 'panel_pane_3');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['display_description'] = 'Signup Page';
+$handler->display->display_options['defaults']['relationships'] = FALSE;
+/* Relationship: Nodequeue: Queue */
+$handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
+$handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
+$handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+$handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
+$handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
+$handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
+  'signup_page_form' => 'signup_page_form',
+  'latest_announcements' => 0,
+  'all_success_stories' => 0,
+  'featured_success_stories' => 0,
+  'home_page_blocks' => 0,
+  'home_page_sidebar_video' => 0,
+  'home_page_sidebar_signup' => 0,
+);
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Edit link */
+$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['label'] = '';
+$handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
+$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['edit_node']['text'] = 'Edit Block';
+/* Field: Content: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['body']['alter']['text'] = '<div class="pane-detail">[edit_node][body]</div>';
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+$handler->display->display_options['pane_category']['name'] = 'SBIR Views';
+$handler->display->display_options['pane_category']['weight'] = '0';
+$handler->display->display_options['allow']['use_pager'] = 0;
+$handler->display->display_options['allow']['items_per_page'] = 0;
+$handler->display->display_options['allow']['offset'] = 0;
+$handler->display->display_options['allow']['link_to_view'] = 0;
+$handler->display->display_options['allow']['more_link'] = 0;
+$handler->display->display_options['allow']['path_override'] = 0;
+$handler->display->display_options['allow']['title_override'] = 'title_override';
+$handler->display->display_options['allow']['exposed_form'] = 0;
+$handler->display->display_options['allow']['fields_override'] = 0;
