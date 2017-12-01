@@ -1,0 +1,12 @@
+[submodule "sites/sbir/modules/Custom/nci/nci_framework"]
+	path = sites/sbir/modules/Custom/nci/nci_framework
+	url = https://github.com/NCIOCPL/nci_framework
+	branch = sbir
+[submodule "sites/sbir/modules/Custom/nci/nci_SSO"]
+	path = sites/sbir/modules/Custom/nci/nci_SSO
+	url = https://github.com/NCIOCPL/nci_SSO
+	branch = sbir
+[submodule "sites/sbir/modules/Custom/nci/nci_user_roles"]
+	path = sites/sbir/modules/Custom/nci/nci_user_roles
+	url = https://github.com/NCIOCPL/nci_user_roles
+	branch = sbir
