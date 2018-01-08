@@ -12,6 +12,28 @@
  */
 
 /**
+* Preprocess variables for html template.
+*/
+function sbirtheme_preprocess_html(&$variables) {
+    // load the DTM js URL from a variable, allowing it to be overridden if needed
+    $js = variable_get('adobe_dtm_js', 
+        '//assets.adobedtm.com/f1bfa9f7170c81b1a9a9ecdcc6c5215ee0b03c84/satelliteLib-5ad8c106153615d0673f7263de823289c481d7df.js');
+
+    // add DTM tag
+    $element = array(
+        '#tag' => 'script', // set element as script
+        '#attributes' => array( // only needs the src attribute
+          'src' => $js, 
+        ),
+        '#suffix' => '</script>',
+        '#weight' => '-9999999', // push this script as high as possible
+      );
+
+      // add element to html head
+      drupal_add_html_head($element, 'dtm_script_head');
+}
+
+/**
  * Implements hook_breadcrumb().
  */
 function sbirtheme_breadcrumb($variables) {
