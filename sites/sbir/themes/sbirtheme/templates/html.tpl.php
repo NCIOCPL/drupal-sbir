@@ -75,7 +75,8 @@
             ga('create', 'UA-44979031-1', 'auto');
             ga('send', 'pageview');
 
-      </script>      
+      </script>
     <?php endif; ?>
+    <script type="text/javascript">_satellite.pageBottom();</script>
   </body>
 </html>

@@ -8,3 +8,7 @@ sites/*/private
 
 # Git migration artifacts
 ..bfg-report
+
+# Ignore typical symlink paths
+sites/default/**
+sites/*.dd/**
