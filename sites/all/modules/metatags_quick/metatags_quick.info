@@ -4,12 +4,12 @@ core = 7.x
 package = Meta tags (quick)
 
 dependencies[] = entity
+dependencies[] = system (>=7.22)
 files[] = metatags_quick.migrate.inc
 configure = admin/config/search/metatags_quick
 
-; Information added by Drupal.org packaging script on 2014-07-12
-version = "7.x-2.9"
+; Information added by Drupal.org packaging script on 2019-07-16
+version = "7.x-2.10"
 core = "7.x"
 project = "metatags_quick"
-datestamp = "1405184328"
-
+datestamp = "1563286712"

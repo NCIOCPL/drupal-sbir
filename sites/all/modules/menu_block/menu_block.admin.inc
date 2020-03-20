@@ -241,8 +241,8 @@ function menu_block_configure_form($form, &$form_state) {
   }
 
   // Build the standard form.
-  $form['#attached']['js'][] = drupal_get_path('module', 'menu_block') . '/menu-block.js';
-  $form['#attached']['css'][] = drupal_get_path('module', 'menu_block') . '/menu-block.admin.css';
+  $form['#attached']['js'][] = drupal_get_path('module', 'menu_block') . '/js/menu-block.js';
+  $form['#attached']['css'][] = drupal_get_path('module', 'menu_block') . '/css/menu-block.admin.css';
   $form['#attached']['library'][] = array('system', 'ui.button');
 
   $form['menu-block-wrapper-start'] = array(
@@ -279,6 +279,12 @@ function menu_block_configure_form($form, &$form_state) {
       ),
     );
   }
+  $form['display_empty'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Always display title'),
+    '#description' => t('Display the block with its title even if the block content is empty.'),
+    '#default_value' => $config['display_empty'],
+  );
   $form['admin_title'] = array(
     '#type' => 'textfield',
     '#default_value' => $config['admin_title'],
@@ -360,6 +366,17 @@ function menu_block_configure_form($form, &$form_state) {
     ),
     '#description' => t('From the starting level, specify the maximum depth of the menu tree.'),
   );
+  $form['depth_relative'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Make the maximum depth relative to the starting level while following the active menu item.'),
+    '#default_value' => $config['depth_relative'],
+    '#states' => array(
+      'visible' => array(
+        ':input[name=follow]' => array('checked' => TRUE),
+        ':input[name=depth]' => array('!value' => '0'),
+      ),
+    ),
+  );
   $form['expanded'] = array(
     '#type' => 'checkbox',
     '#title' => t('<strong>Expand all children</strong> of this tree.'),
@@ -384,10 +401,12 @@ function menu_block_configure_form($form, &$form_state) {
   $form['menu-block-wrapper-close'] = array('#markup' => '</div>');
 
   // Set visibility of advanced options.
-  foreach (array('title_link', 'follow', 'follow_parent', 'expanded', 'sort', 'parent') as $key) {
+  foreach (array('title_link', 'display_empty', 'follow', 'depth_relative', 'follow_parent', 'expanded', 'sort', 'parent') as $key) {
     $form[$key]['#states']['visible'][':input[name=display_options]'] = array('value' => 'advanced');
   }
-  if ($config['title_link'] || $follow || $config['expanded'] || $config['sort'] || $config['parent_mlid']) {
+  // depth_relative and follow_parent aren't listed below because they require
+  // $follow to be true.
+  if ($config['title_link'] || $config['display_empty'] || $follow || $config['expanded'] || $config['sort'] || $config['parent_mlid']) {
     $form['display_options']['#default_value'] = 'advanced';
   }
 
@@ -432,7 +451,9 @@ function _menu_block_block_save($delta = '', $edit = array()) {
       variable_set("menu_block_{$delta}_parent", $edit['parent']);
       variable_set("menu_block_{$delta}_level", $edit['level']);
       variable_set("menu_block_{$delta}_follow", $edit['follow']);
+      variable_set("menu_block_{$delta}_display_empty", $edit['display_empty']);
       variable_set("menu_block_{$delta}_depth", $edit['depth']);
+      variable_set("menu_block_{$delta}_depth_relative", $edit['depth_relative']);
       variable_set("menu_block_{$delta}_expanded", $edit['expanded']);
       variable_set("menu_block_{$delta}_sort", $edit['sort']);
     }
@@ -509,12 +530,9 @@ function menu_block_admin_settings_form($form, &$form_state) {
     '#markup' => '<p>' . t('The above list will <em>not</em> affect menu blocks that are configured to use a specific menu.') . '</p>',
   );
 
-  $form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Save configuration'),
-  );
+  $form['#submit'][] = 'menu_block_admin_settings_form_submit';
 
-  return $form;
+  return system_settings_form($form);
 }
 
 /**
@@ -528,20 +546,19 @@ function menu_block_admin_settings_form_submit($form, &$form_state) {
       $menu_order[$menu_name] = (int) $row['weight'];
     }
   }
+
+  // Clear menu_order before it's written to the variable table by system_settings_form_submit().
+  unset($form_state['values']['menu_order']);
+
   // Sort the keys by the weight stored in the value.
   asort($menu_order);
   foreach ($menu_order as $menu_name => $weight) {
     // Now that the array is sorted, the weight is redundant data.
     $menu_order[$menu_name] = '';
   }
-  variable_set('menu_block_menu_order', $menu_order);
-  if ($form_state['values']['menu_block_suppress_core']) {
-    variable_set('menu_block_suppress_core', 1);
-  }
-  else {
-    variable_del('menu_block_suppress_core');
-  }
-  drupal_set_message(t('The configuration options have been saved.'));
+
+  // Add the menu_order to the values.
+  $form_state['values']['menu_block_menu_order'] = $menu_order;
 }
 
 /**
