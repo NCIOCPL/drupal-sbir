@@ -225,6 +225,20 @@ function metatags_quick_page_build(&$page) {
 }
 
 /**
+ * Implements hook_preprocess_html().
+ *
+ * Overrides the head title element.
+ */
+function metatags_quick_preprocess_html(&$variables) {
+  if ($title = _metatags_quick_set_html_title()) {
+    // Override the title set by template_preprocess_html().
+    $variables['head_title_array'] = $title;
+    $variables['head_title'] = implode(' | ', $title);
+  }
+}
+
+
+/**
  * Implements hook_menu_local_tasks_alter().
  */
 function metatags_quick_menu_local_tasks_alter(&$data, $router_item, $root_path) {
@@ -277,7 +291,7 @@ function metatags_quick_menu_local_tasks_alter(&$data, $router_item, $root_path)
  * Implements hook_field_validate().
  *
  */
-function metatags_quick_field_validate($obj_type, $object, $field, $instance, $langcode, $items, &$errors) {  
+function metatags_quick_field_validate($obj_type, $object, $field, $instance, $langcode, $items, &$errors) {
   if (!isset($field['settings']['max_length'])) {
     $field['settings']['max_length'] = 255;
   }
@@ -322,6 +336,9 @@ function metatags_quick_field_formatter_info() {
     'metatags_quick_title' => array(
       'label' => t('Set page title'),
       'field types' => array('metatags_quick'),
+      'settings' => array(
+        'method' => 'set_title',
+      ),
     ),
     'metatags_quick_default' => array(
       'label' => t('Default metatags_quick formatter'),
@@ -330,6 +347,47 @@ function metatags_quick_field_formatter_info() {
     ),
   );
   return $formats;
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function metatags_quick_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $element = array();
+
+  if ($display['type'] == 'metatags_quick_title') {
+    $element['method'] = array(
+      '#type' => 'radios',
+      '#title' => t('Method'),
+      '#options' => array(
+        'set_title' => t('drupal_set_title (completely replaces the page title)'),
+        'preprocess_html' => t('preprocess_html (only sets the HTML HEAD title)'),
+      ),
+      '#description' => t('Select method for setting title. The preprocess_html method only sets the title seen by search engines and used by the browser for the window title.'),
+      '#default_value' => $settings['method'],
+    );
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function metatags_quick_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $summary = '';
+
+  if ($display['type'] == 'metatags_quick_title') {
+    $summary = t('Method: @method', array('@method' => $settings['method']));
+  }
+
+  return $summary;
 }
 
 /**
@@ -362,7 +420,12 @@ function metatags_quick_field_formatter_view($object_type, $object, $field, $ins
         $title[] = $item['metatags_quick'];
       }
       if (!empty($title)) {
-        drupal_set_title(join(' - ', $title));
+        if ($display['settings']['method'] == 'preprocess_html') {
+          _metatags_quick_set_html_title($title);
+        }
+        else {
+          drupal_set_title(join(' - ', $title));
+        }
       }
       // Hide element.
       $element = array('#markup' => '', '#printed' => TRUE);
@@ -551,15 +614,20 @@ function _metatags_quick_add_head($item = FALSE) {
             'content' => $item['content']));
         drupal_add_html_head($element, 'metatags_quick_' . $item['name']);
     }
-    if ($item['name'] == 'title') {
-      $element = array(
-        '#tag' => 'title',
-        '#value' => $item['content'],
-      );
-      drupal_add_html_head($element, 'metatags_quick_' . $item['name']);
-    }
   }
   $added_meta[$item['name']] = TRUE;
+}
+
+/**
+ * Sets the title for preprocess_html.
+ */
+function _metatags_quick_set_html_title($new_title = NULL) {
+  $title = &drupal_static(__FUNCTION__, NULL);
+  if ($new_title) {
+    $title = $new_title;
+  }
+
+  return $title;
 }
 
 // Default settings array
