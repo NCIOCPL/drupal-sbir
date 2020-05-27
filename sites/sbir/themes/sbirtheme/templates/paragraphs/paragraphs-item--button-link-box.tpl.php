@@ -28,7 +28,7 @@
 ?>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
-    <?php print render($content['field_title']); ?>
+    <h1 class="sbir-promotional-title"><?php print render($content['field_title']); ?>
     <?php print render($content['field_text']); ?>
     <?php print render($content['field_link']); ?>
   </div>
