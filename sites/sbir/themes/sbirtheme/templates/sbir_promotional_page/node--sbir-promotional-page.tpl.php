@@ -8,15 +8,23 @@
         ?>
 
         <?php if (!empty($content['field_header_image'])): ?>
-            <?php print render($content['field_header_image']); ?>
+            <div class="responsive-image-container">
+                <?php print render($content['field_header_image']); ?>
+            </div>
         <?php endif; ?>
 
         <?php if (!empty($content['field_display_title'])): ?>
             <h1 class="sbir-promotional-h1"><?php print render($content['field_display_title']); ?></h1>
         <?php endif; ?>
 
+        <?php if (!empty($content['body'])): ?>
+            <?php print render($content['body']); ?>
+        <?php endif; ?>
+
         <?php if (!empty($content['field_button_link_box'])): ?>
-            <?php print render($content['field_button_link_box']); ?>
+            <div class=" top-and-bottom-padding-thicker">
+                <?php print render($content['field_button_link_box']); ?>
+            </div>
         <?php endif; ?>
 
         <?php if (!empty($content['field_icon_box_section'])): ?>

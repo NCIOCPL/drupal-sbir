@@ -180,8 +180,9 @@
   }
 }
 
-@mixin coloredLabel($radius:5px,$color:$white, $hovertext-color:$white,
-$background-color:$primary-button,$background-hover-color:$primary-button-hover, $font-weight: 600,
+@mixin coloredLabel($radius:$button-radius,$color:$white, $hovertext-color:$white,
+$background-color:$primary-button,$background-hover-color:$primary-button-hover,
+$font-weight: 600,
 $topBottom:$button-top-padding, $rightLeft:$button-right-left-padding,
 $topBottomTablet:$button-top-tablet-padding,
 $rightLeftTablet:$button-right-left-tablet-padding,$topBottomPhone:$button-top-phone-padding,
@@ -245,7 +246,7 @@ $active-background-color:$background-hover-color ) {
   }
 }
 
-@mixin disabledLabel($radius:5px,
+@mixin disabledLabel($radius:$button-radius,
 $font-weight: 600,
 $topBottom:$button-top-padding,
 $rightLeft:$button-right-left-padding,

@@ -7,12 +7,17 @@ $sbir-card-title-dark-gray: #393a3d;
 $sbir-bright-red: #ED145b;
 $sbir-purple: #2664ab;
 $sbir-purple-visited: #421c89;
-
+$sbir-border-gray:#D4D5D6;
 
 //sbir standard colors
 $standard-promotional-button: $sbir-bright-red;
 $standard-promotional-link: $sbir-purple;
 $standard-promotional-link-visited: $sbir-purple-visited;
+
+//box shadows
+$standard-sbir-box-shadow: 0 2px 8px 0 $sbir-border-gray;
+
+
 
 //legacy colors
 //Stylesheet colors
@@ -322,6 +327,11 @@ $primary-button-disabled-text: $amp-charcoal-gray;
 $button-box-shadow-hover: 0 2px 8px 0 $primary-button-hover;
 $button-box-shadow-active: 0 0 10px 0 rgba(186,100,81,1);
 $button-box-shadow-focus: 0 0 10px 0 $primary-button-hover;
+
+
+$button-box-shadow-hover-blank: 0 2px 8px 0 $primary-button-hover;
+$button-box-shadow-active-blank: 0 0 10px 0 rgba(186,100,81,1);
+$button-box-shadow-focus-blank: 0 0 10px 0 $primary-button-hover;
 /*
 $button-box-shadow-hover: 0 2px 8px 0 $amp-button-hover-blue;
 $button-box-shadow-active: 0 0 10px 0 rgba(186,100,81,1);

@@ -32,7 +32,10 @@
       $field_icon = strip_tags(strtolower(render($content['field_icon'])));
       $icon_class = str_replace(" ","-",$field_icon) . "-icon";
       ?>
-      <div class="<?php print render($icon_class); ?>"></div>
+      <div class="centered-container bottom-padding vertical-center-container">
+          <div class="<?php print render($icon_class); ?>"></div>
+      </div>
+
     <div class="sbir-icon-box-link"><?php print render($content['field_link']); ?></div>
   </div>
 </div>

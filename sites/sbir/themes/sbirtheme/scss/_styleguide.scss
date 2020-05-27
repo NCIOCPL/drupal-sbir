@@ -1,3 +1,27 @@
+.top-padding {
+  padding-top: 1rem;
+}
+.bottom-padding{
+  padding-bottom: 1rem;
+}
+.top-and-bottom-padding {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.top-padding-thicker {
+  padding-top: 1.5rem;
+}
+.top-and-bottom-padding-thicker {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.vertical-center-container {
+  @include flexbox();
+  @include property-prefix(align-items, center);
+  @include property-prefix(justify-content, center);
+}
+
+
 %standard-card-title {
   display: flex;
   @include property-prefix(align-items, center);
@@ -9,9 +33,58 @@
     margin: 0;
   }
 }
+
+.standard-card-title {
+  @extend %standard-card-title;
+}
+
 .dark-background-card-title {
   @extend %standard-card-title;
   background-color:$sbir-card-title-dark-gray;
+}
+
+%standard-card-field-item-width {
+  @include bp-desktop {
+    max-width: 23%;
+    min-width:23%;
+    flex-basis: 23%;
+  }
+  @include bp-tablet {
+    max-width: 30%;
+    min-width: 30%;
+    flex-basis: 30%;
+  }
+  @include bp-phone {
+    max-width: 100%;
+    @include prefix(width,fill-available);
+    @include prefix(width,available,moz);
+    flex-basis: 100%;
+    //min-width:100%;
+    //width: auto;
+    margin-right:0;
+  }
+}
+%standard-card-field-item-height {
+  @include flexbox();
+  @include property-prefix(flex-wrap, wrap);
+  flex: 1;
+}
+.standard-card-field-item-height {
+  @extend %standard-card-field-item-height;
+}
+
+
+.standard-card-field-item-width {
+  @extend %standard-card-field-item-width;
+}
+
+.responsive-image-container {
+  max-width: 100%;
+  height: auto;
+  img {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 //Buttons
@@ -27,7 +100,10 @@
   @extend %primary-button;
 }
 %red-button {
-  @include coloredLabel(5px, $white, $white, $standard-promotional-button,$standard-promotional-button);
+  @include coloredLabel($button-radius, $white, $white, $standard-promotional-button,$standard-promotional-button, 600,
+  $button-top-padding, $button-right-left-padding,
+  $button-top-tablet-padding, $button-right-left-tablet-padding,$button-top-phone-padding, $button-right-left-phone-padding,
+  'none', 'none', 'none');
   @include coloredBorder(2px,solid,$standard-promotional-button);
   &.disabled {
     @include disabledLabel();
@@ -64,7 +140,7 @@
   @extend %piggy-bank-icon;
 }
 %x-ray-icon {
-  @include standard-background-icon('x-ray@2x.png','x-ray@2x.png',70px,70px);
+  @include standard-background-icon('xray@2x.png','xray@2x.png',70px,70px);
 }
 .x-ray-icon {
   @extend %x-ray-icon;
@@ -76,5 +152,8 @@
   @extend %website-icon;
 }
 
-
+.centered-container {
+  @include flexbox;
+  @include property-prefix(justify-content, center);
+}
 

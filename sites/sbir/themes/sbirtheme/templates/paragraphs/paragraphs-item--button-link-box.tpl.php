@@ -26,10 +26,20 @@
  * @see template_process()
  */
 ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
+<div class="<?php print $classes; ?>" <?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
-    <h1 class="sbir-promotional-h1"><?php print render($content['field_title']); ?></h1>
-    <?php print render($content['field_text']); ?>
-    <div class="red-button"><?php print render($content['field_link']); ?></div>
+    <div class="sbir-button-link-box-title centered-container">
+      <h2 class="sbir-promotional-h2"><?php print render($content['field_title']); ?></h2>
+    </div>
+    <div class="sbir-button-link-box-text-container">
+      <div class="sbir-button-link-box-text">
+        <?php print render($content['field_text']); ?>
+      </div>
+      <div class="centered-container top-padding-thicker">
+        <div class="red-button">
+          <?php print render($content['field_link']); ?>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
