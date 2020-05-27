@@ -1,0 +1,80 @@
+%standard-card-title {
+  display: flex;
+  @include property-prefix(align-items, center);
+  @include property-prefix(justify-content, center);
+  height: 70px;
+  color: $white;
+  & > h3, & > h3 > a, & > h3 > div, & > h3 > span {
+    color: $white;
+    margin: 0;
+  }
+}
+.dark-background-card-title {
+  @extend %standard-card-title;
+  background-color:$sbir-card-title-dark-gray;
+}
+
+//Buttons
+%primary-button {
+  @include coloredLabel();
+  @include coloredBorder(2px,solid,$primary-button,$primary-button-hover);
+  &.disabled {
+    @include disabledLabel();
+    @include disabledBorder();
+  }
+}
+.primary-button {
+  @extend %primary-button;
+}
+%red-button {
+  @include coloredLabel(5px, $white, $white, $standard-promotional-button,$standard-promotional-button);
+  @include coloredBorder(2px,solid,$standard-promotional-button);
+  &.disabled {
+    @include disabledLabel();
+    @include disabledBorder();
+  }
+}
+.red-button {
+  @extend %red-button ;
+}
+
+//icons
+%manager-icon {
+  @include standard-background-icon('manager@2x.png','manager@2x.png',70px,70px);
+}
+.manager-icon {
+  @extend %manager-icon;
+}
+%money-arrows-icon {
+  @include standard-background-icon('money-arrows@2x.png','money-arrows@2x.png',70px,70px);
+}
+.money-arrows-icon {
+  @extend %money-arrows-icon;
+}
+%question-icon {
+  @include standard-background-icon('questions@2x.png','question@2x.png',70px,70px);
+}
+.question-icon {
+  @extend %question-icon;
+}
+%piggy-bank-icon {
+  @include standard-background-icon('piggy-bank@2x.png','piggy-bank@2x.png',70px,70px);
+}
+.piggy-bank-icon {
+  @extend %piggy-bank-icon;
+}
+%x-ray-icon {
+  @include standard-background-icon('x-ray@2x.png','x-ray@2x.png',70px,70px);
+}
+.x-ray-icon {
+  @extend %x-ray-icon;
+}
+%website-icon {
+  @include standard-background-icon('website@2x.png','website@2x.png',70px,70px);
+}
+.website-icon {
+  @extend %website-icon;
+}
+
+
+

@@ -28,9 +28,7 @@
 ?>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
-    <h3><?php print render($content['field_title']); ?></h3>
-      <div class="icon-box-container">
-          <?php print render($content['field_icon_box']); ?>
-      </div>
+    <h2 class="sbir-promotional-h2"><?php print render($content['field_title']); ?></h2>
+    <?php print render($content['field_icon_box']); ?>
   </div>
 </div>

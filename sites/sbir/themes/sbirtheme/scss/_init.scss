@@ -1,0 +1,48 @@
+// Now we add our custom helper mixins.
+@import "mixins";
+
+
+//font stacks
+$verdana: Verdana, Arial, Helvetica, sans-serif;
+//Page Widths
+//$standard-width: 80%;
+$standard-width: 85%;
+$standard-split-width: 42.5%;
+//Main Menu Width
+$standard-main-menu-width: 93%;
+$standard-constrained-main-menu-width: 100%;
+//$responsive-container-constrained-width: 1440px;
+$responsive-container-constrained-width: 1150px;
+$responsive-split-container-constrained-width: $responsive-container-constrained-width/2;
+
+
+$desktop-wide-min-width: 1824px;
+$desktop-mid-max-width: 1823px;
+$desktop-mid-min-width: 1440px;
+$desktop-normal-max-width: 1399px;
+$desktop-min-width: 1100px;
+$tablet-max-width: 1099px;
+$tablet-narrow-width: 1024px;
+$tablet-min-width: 768px;
+$phone-max-width: 767px;
+$phone-wide-min-width: 480px;
+$phone-narrow-cutoff-width: 479px;
+$phone-narrow-max-width: 360px;
+$desktop-normal-max-container-width: 1119px;
+$tablet-max-container-width: 919px;
+$phone-max-container-width: 727px;
+
+//fonts
+$promotional-font: $verdana;
+
+//buttons
+$base-font-buttons: $verdana;
+//Button Text Size
+$button-text-size: 16px;
+$button-line-height: 20px;
+$button-top-padding: 14px;
+$button-top-tablet-padding: 14px;
+$button-top-phone-padding: 14px;
+$button-right-left-padding: 25px;
+$button-right-left-tablet-padding: 25px;
+$button-right-left-phone-padding: 25p;

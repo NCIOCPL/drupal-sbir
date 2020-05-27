@@ -28,8 +28,8 @@
 ?>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
-    <h1 class="sbir-promotional-title"><?php print render($content['field_title']); ?>
+    <h1 class="sbir-promotional-h1"><?php print render($content['field_title']); ?></h1>
     <?php print render($content['field_text']); ?>
-    <?php print render($content['field_link']); ?>
+    <div class="red-button"><?php print render($content['field_link']); ?></div>
   </div>
 </div>

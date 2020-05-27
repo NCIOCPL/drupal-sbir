@@ -1,3 +1,365 @@
+//Breakpoint Mixins
+//Unused at present
+@mixin bp-retina {
+  @media
+  all and (-webkit-min-device-pixel-ratio: 2),
+  all and (   min--moz-device-pixel-ratio: 2),
+  all and (     -o-min-device-pixel-ratio: 2/1),
+  all and (        min-device-pixel-ratio: 2),
+  all and (                min-resolution: 192dpi),
+  all and (                min-resolution: 2dppx){
+    @content;
+  }
+
+}
+@mixin bp-desktop-wide {
+  @media all and (min-width: $desktop-wide-min-width){
+    @content;
+  }
+}
+//Used for unlimited width right now
+@mixin bp-desktop-mid {
+  @media all and (min-width: $desktop-mid-min-width) {
+    @content;
+  }
+}
+
+@mixin bp-desktop {
+  @media all and (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin bp-desktop-constrained {
+  @media all and (min-width: $desktop-min-width) and (max-width: $desktop-normal-max-width){
+    @content;
+  }
+}
+@mixin bp-desktop-constrained-tablet-and-phone {
+  @media all and (max-width: $desktop-normal-max-width){
+    @content;
+  }
+}
+@mixin bp-tablet-and-desktop {
+  @media all and (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin bp-tablet {
+  @media all and (min-width: $tablet-min-width) and (max-width: $tablet-max-width){
+    @content;
+  }
+}
+
+@mixin bp-phone-and-tablet {
+  @media all and (min-width:0em) and (max-width: $tablet-max-width){
+    @content;
+  }
+}
+
+@mixin bp-phone-wide {
+  @media all and (min-width: $phone-wide-min-width) and (max-width: $phone-max-width) {
+    @content;
+  }
+}
+@mixin bp-phone-small {
+  @media all and (max-width: $phone-narrow-cutoff-width) {
+    @content;
+  }
+}
+@mixin bp-phone-and-narrow-tablet {
+  @media all and (min-width: 0em) and (max-width: $tablet-narrow-width) {
+    @content;
+  }
+}
+@mixin bp-phone-narrow {
+  @media all and (min-width: 0em) and (max-width: $phone-narrow-max-width) {
+    @content;
+  }
+}
+
+@mixin bp-phone {
+  @media all and (min-width: 0em) and (max-width: $phone-max-width){
+    @content;
+  }
+}
+//Vendor prefixes
+@mixin prefix($property, $value, $vendors: webkit moz ms o) {
+  @if $vendors {
+    @each $vendor in $vendors {
+      #{$property}: #{"-" + $vendor + "-" + $value};
+    }
+  }
+  #{$property}: #{$value};
+}
+
+@mixin property-prefix($property, $value, $vendors: webkit moz ms o) {
+  @if $vendors {
+    @each $vendor in $vendors {
+      #{"-" + $vendor + "-" + $property}: #{$value};
+    }
+  }
+  #{$property}: #{$value};
+}
+@mixin svg-circle-mask($radius, $svgUrl) {
+  // -webkit-clip-path: circle(r=$radius);
+  clip-path: circle(r=$radius);
+  // -webkit-clip-path: url($svgUrl);
+  clip-path: url($svgUrl);
+}
+//text and link
+@mixin hover-colors($textColor:$button-blue,$backgroundColor:transparent) {
+  color: $textColor;
+  background-color:$backgroundColor;
+}
+//Misc utility mixins
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin backgroundColors($backgroundColor:transparent,
+                        $textColor:$standard-text-color,
+                        $overflow:hidden,
+                        $hovertext-color:$black){
+  //@include text-and-link-colors($textColor, $backgroundColor, $hovertext-color, $backgroundColor);
+  color:$textColor;
+  background-color: $backgroundColor;
+  overflow: $overflow;
+}
+
+
+@mixin text-and-link-colors($color:$black, $background-color:transparent, $hovertext-color:$button-blue,$background-hover-color:$background-color) {
+  color: $color;
+  background-color:$background-color;
+  &:hover {
+    //@include hover-colors($hovertext-color,$background-hover-color);
+    //background-color: $background-hover-color;
+  }
+  a, a:visited, a:link, h1, h2, h3, h4, .herobannertitle, .photocredit, .posttitlethumb {
+    //color:$color;
+  }
+  h1, h2, h3, .herobannertitle, .photocredit, .posttitlethumb {
+    //color:$color;
+  }
+  h1, .photocredit {
+    color:$color;
+  }
+  a, a:visited, a:link, a:hover {
+    color:$hovertext-color;
+    //background-color: $background-hover-color;
+  }
+}
+
+//Buttons and labels
+@mixin simpleButtonLabel($radius:38px) {
+  padding: .5em 1.5em .5em 1.5em;
+  display:table;
+  border-radius: $radius;
+}
+@mixin buttonLink($radius:38px) {
+  @include simpleButtonLabel($radius);
+  font-family: $base-font-buttons;
+  font-size: $button-text-size;
+  line-height: $button-line-height;
+  font-weight: normal;
+  cursor: pointer;
+  :hover {
+    @include hover-colors;
+    text-decoration:none;
+  }
+}
+@mixin buttonPadding($topBottom:0.8em, $rightLeft:2em,$topBottomTablet:0.6em, $rightLeftTablet:1.4em,$topBottomPhone:0.4em, $rightLeftPhone:0.8em) {
+  padding: $topBottom $rightLeft;
+  @include bp-tablet {
+    padding: $topBottomTablet $rightLeftTablet;
+  }
+  @include bp-phone {
+    padding: $topBottomPhone $rightLeftPhone;
+  }
+}
+
+@mixin coloredLabel($radius:5px,$color:$white, $hovertext-color:$white,
+$background-color:$primary-button,$background-hover-color:$primary-button-hover, $font-weight: 600,
+$topBottom:$button-top-padding, $rightLeft:$button-right-left-padding,
+$topBottomTablet:$button-top-tablet-padding,
+$rightLeftTablet:$button-right-left-tablet-padding,$topBottomPhone:$button-top-phone-padding,
+$rightLeftPhone:$button-right-left-phone-padding,
+$box-shadow-hover: $button-box-shadow-hover, $box-shadow-active: $button-box-shadow-active,
+$box-shadow-focus:$button-box-shadow-focus,
+$active-end-gradient-color:$background-color,
+$disabled-background-color:$primary-button-disabled,
+$disabled-text-color:$primary-button-disabled-text,
+$focus-border-color: $button-focus-border-color,
+$active-background-color:$background-hover-color ) {
+  @include buttonLink($radius);
+  //@include centerObject;
+  @include buttonPadding($topBottom, $rightLeft,$topBottomTablet, $rightLeftTablet,$topBottomPhone, $rightLeftPhone);
+  @include text-and-link-colors($color, $background-color, $hovertext-color,$background-hover-color);
+  font-weight: $font-weight;
+  a, a:visited, a:link {
+    color: $color;
+    font-weight: $font-weight;
+    text-decoration:none;
+  }
+  a:hover {
+    color: $hovertext-color;
+    background-color: $background-hover-color;
+    text-decoration:none;
+  }
+  &:active {
+    box-shadow: $box-shadow-active;
+    background-color: $active-background-color;
+    background: linear-gradient(45deg, $active-background-color 0%, $active-end-gradient-color 100%);
+    text-decoration:none;
+  }
+  &:focus {
+    box-shadow: $box-shadow-focus;
+    background-color: $background-hover-color;
+    border: 1px solid $focus-border-color;
+    text-decoration:none;
+  }
+  &:disabled, &:disabled:hover, a.disabled {
+    background-color: $disabled-background-color;
+    color: $disabled-text-color;
+    border-color:$disabled-background-color;
+    box-shadow:none;
+    cursor: unset;
+    text-decoration:none;
+  }
+  &:hover {
+    background-color: $background-hover-color;
+    color: $hovertext-color;
+    text-decoration:none;
+    box-shadow: $box-shadow-hover;
+    a {
+      color: $hovertext-color;
+    }
+  }
+}
+@mixin coloredBorder($border-thickness:2px,$border-style:solid,$border-color:$primary-purple,$border-hover-color: $border-color) {
+  border: $border-thickness $border-style $border-color;
+  &:hover {
+    border-color: $border-hover-color;
+  }
+}
+
+@mixin disabledLabel($radius:5px,
+$font-weight: 600,
+$topBottom:$button-top-padding,
+$rightLeft:$button-right-left-padding,
+$topBottomTablet:$button-top-tablet-padding,
+$rightLeftTablet:$button-right-left-tablet-padding,
+$topBottomPhone:$button-top-phone-padding,
+$rightLeftPhone:$button-right-left-phone-padding,
+$disabled-background-color:$primary-button-disabled,
+$disabled-text-color:$primary-button-disabled-text
+) {
+  @include buttonLink($radius);
+  //@include centerObject;
+  @include buttonPadding($topBottom, $rightLeft,$topBottomTablet, $rightLeftTablet,$topBottomPhone, $rightLeftPhone);
+  @include text-and-link-colors($disabled-text-color, $disabled-background-color, $disabled-text-color,$disabled-background-color);
+  font-weight: $font-weight;
+  background-color: $disabled-background-color;
+  color: $disabled-text-color;
+  border-color:$disabled-background-color;
+  box-shadow:none;
+  cursor: unset;
+  a, a:visited, a:link, a:hover,&:active,&:focus,&:hover,&:disabled, &:disabled:hover {
+    background-color: $disabled-background-color;
+    color: $disabled-text-color;
+    border-color:$disabled-background-color;
+    box-shadow:none;
+    cursor: unset;
+    text-decoration:none;
+  }
+}
+@mixin disabledBorder($border-thickness:2px,$border-style:solid,$border-color:$primary-button-disabled,$border-hover-color: $primary-button-disabled) {
+  border: $border-thickness $border-style $border-color;
+  &:hover {
+    border-color: $border-hover-color;
+  }
+}
+
+//background images
+//Image background
+@mixin background-icon($image,$width,$height, $tablet-width:$width, $tablet-height:$height,$phone-width:$width, $phone-height:$height, $displayStyle:inline-block, $background-position:initial, $background-repeat: no-repeat,
+$container-height:$height,$container-tablet-height:$tablet-height,$container-phone-height: $phone-height ) {
+  background-image: url("../images/" + $image);
+  background-size: $width $height;
+  background-repeat: $background-repeat;
+  background-position: $background-position;
+  display:  $displayStyle;
+  content:" ";
+  height:$container-height;
+  //width:$width;
+  @include bp-tablet {
+    background-size:$tablet-width $tablet-height;
+    height:$container-tablet-height;
+  }
+  @include bp-phone {
+    background-size: $phone-width $phone-height;
+    height:$container-phone-height;
+  }
+}
+@mixin standard-background-icon($standard-image, $retina-image,$width,$height, $tablet-width:$width,
+$tablet-height:$height,$phone-width:$width, $phone-height:$height, $displayStyle:inline-block,
+$background-position:initial,
+$container-height:$height,$container-tablet-height:$tablet-height,$container-phone-height: $phone-height,
+$background-repeat: no-repeat, $no-width:false) {
+  @include background-icon($standard-image,$width,$height,$tablet-width,$tablet-height,$phone-width,$phone-height,$displayStyle,$background-position,$background-repeat,
+          $container-height,$container-tablet-height,$container-phone-height );
+  @include bp-retina {
+    @include background-icon($retina-image,$width,$height,$tablet-width,$tablet-height,$phone-width,$phone-height,$displayStyle,$background-position,$background-repeat,
+            $container-height,$container-tablet-height,$container-phone-height);
+  }
+  @if $no-width == false {
+    @include bp-desktop {
+      width: $width;
+    }
+    @include bp-tablet {
+      width: $tablet-width;
+    }
+    @include bp-phone {
+      width: $phone-width;
+    }
+    margin-right: auto;
+    margin-left:auto;
+  }
+}
+
+
+@mixin background-image-url($image) {
+  background-image: url("../images/" + $image);
+}
+
+@mixin background-icon-format($width,$height, $tablet-width:$width, $tablet-height:$height,$phone-width:$width, $phone-height:$height, $displayStyle:inline-block, $background-position:initial, $background-repeat: no-repeat) {
+  background-size: $width $height;
+  background-repeat: $background-repeat;
+  background-position: $background-position;
+  display:  $displayStyle;
+  content:" ";
+  height:$height;
+  @include bp-desktop {
+    width:$width;
+  }
+  //width:$width;
+  @include bp-tablet {
+    background-size:$tablet-width $tablet-height;
+    height:$tablet-height;
+    width: $tablet-width;
+  }
+  @include bp-phone {
+    background-size: $phone-width $phone-height;
+    height:$phone-height;
+    width: $phone-width;
+  }
+  margin-left: auto;
+  margin-right:auto;
+}
+
+//Flex
 @mixin flexbox() {
   display: -webkit-box;
   display: -moz-box;

@@ -4,3 +4,29 @@
 .field-name-field-icon-box > .field-items > .field-item {
 
  }
+
+.sbir-promotional-h1 {
+  font-family: $promotional-font;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: $black;
+}
+
+.sbir-promotional-h2 {
+  font-family: $promotional-font;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: $black;
+}
+
+.sbir-icon-box-link {
+  a, a:active, a:hover {
+    font-family: $promotional-font;
+    color: $standard-promotional-link;
+  }
+  a:visited {
+    color: $standard-promotional-link-visited;
+  }
+}

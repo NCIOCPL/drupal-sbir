@@ -12,7 +12,7 @@
         <?php endif; ?>
 
         <?php if (!empty($content['field_display_title'])): ?>
-            <h2><?php print render($content['field_display_title']); ?></h2>
+            <h1 class="sbir-promotional-h1"><?php print render($content['field_display_title']); ?></h1>
         <?php endif; ?>
 
         <?php if (!empty($content['field_button_link_box'])): ?>
