@@ -893,6 +893,11 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   justify-content: center;
 }
 
+/* line 160, ../scss/_styleguide.scss */
+.centered-text {
+  text-align: center;
+}
+
 /*
  * WARNING
  *
@@ -2281,43 +2286,48 @@ div.image.styled
   font-size: 22px;
   line-height: 26px;
 }
+/* line 27, ../scss/components/_promotional-page.scss */
+.sbir-promotional-h1 p, .sbir-promotional-h1 div p {
+  font-size: 22px;
+  line-height: 26px;
+}
 
-/* line 30, ../scss/components/_promotional-page.scss */
+/* line 34, ../scss/components/_promotional-page.scss */
 .sbir-promotional-h2, .sbir-promotional-h2 div {
   font-size: 18px;
   line-height: 22px;
 }
 
-/* line 42, ../scss/components/_promotional-page.scss */
+/* line 46, ../scss/components/_promotional-page.scss */
 .paragraphs-item-button-link-box .red-button a {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 18.66px;
 }
 
-/* line 47, ../scss/components/_promotional-page.scss */
+/* line 51, ../scss/components/_promotional-page.scss */
 .sbir-button-link-box-title {
   color: #fff;
   background-color: #393a3d;
   height: 50px;
 }
-/* line 51, ../scss/components/_promotional-page.scss */
+/* line 55, ../scss/components/_promotional-page.scss */
 .sbir-button-link-box-title h2, .sbir-button-link-box-title .sbir-promotional-h2, .sbir-button-link-box-title h2.sbir-promotional-h2, .sbir-button-link-box-title .sbir-promotional-h2 div {
   color: #fff;
 }
 
-/* line 55, ../scss/components/_promotional-page.scss */
+/* line 59, ../scss/components/_promotional-page.scss */
 .sbir-button-link-box-text-container {
   padding: 25px 30px;
 }
 
-/* line 58, ../scss/components/_promotional-page.scss */
+/* line 62, ../scss/components/_promotional-page.scss */
 .sbir-button-link-box-text, .sbir-button-link-box-text div {
   font-size: 17px;
   line-height: 24px;
   color: #000;
 }
 
-/* line 63, ../scss/components/_promotional-page.scss */
+/* line 67, ../scss/components/_promotional-page.scss */
 .field-name-field-button-link-box > .field-items,
 .field-name-field-icon-box > .field-items {
   display: -webkit-box;
@@ -2338,7 +2348,7 @@ div.image.styled
   flex-wrap: wrap;
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 63, ../scss/components/_promotional-page.scss */
+  /* line 67, ../scss/components/_promotional-page.scss */
   .field-name-field-button-link-box > .field-items,
   .field-name-field-icon-box > .field-items {
     -webkit-flex-direction: column;
@@ -2349,38 +2359,38 @@ div.image.styled
   }
 }
 
-/* line 68, ../scss/components/_promotional-page.scss */
+/* line 72, ../scss/components/_promotional-page.scss */
 .field-name-field-button-link-box > .field-items > .field-item,
 .field-name-field-icon-box > .field-items > .field-item {
   border: 1px solid #D4D5D6;
   box-shadow: 0 2px 8px 0 #D4D5D6;
 }
 
-/* line 75, ../scss/components/_promotional-page.scss */
+/* line 79, ../scss/components/_promotional-page.scss */
 .field-name-field-icon-box > .field-items > .field-item {
   margin: 0 18px 18px 0;
   padding: 25px;
 }
 
-/* line 80, ../scss/components/_promotional-page.scss */
+/* line 84, ../scss/components/_promotional-page.scss */
 .field-name-field-icon-box > .field-items > .field-item > div {
   flex: 1;
 }
 
-/* line 88, ../scss/components/_promotional-page.scss */
+/* line 92, ../scss/components/_promotional-page.scss */
 .sbir-icon-box-text, .sbir-icon-box-text div {
   font-size: 17px;
   line-height: 24px;
   color: #000;
 }
 
-/* line 94, ../scss/components/_promotional-page.scss */
+/* line 98, ../scss/components/_promotional-page.scss */
 .sbir-icon-box-link a, .sbir-icon-box-link a:active, .sbir-icon-box-link a:hover, .sbir-icon-box-link div a, .sbir-icon-box-link div a:active, .sbir-icon-box-link div a:hover {
   color: #2664ab;
   font-size: 16px;
   line-height: 24px;
 }
-/* line 99, ../scss/components/_promotional-page.scss */
+/* line 103, ../scss/components/_promotional-page.scss */
 .sbir-icon-box-link a:visited, .sbir-icon-box-link div a:visited {
   color: #421c89;
 }

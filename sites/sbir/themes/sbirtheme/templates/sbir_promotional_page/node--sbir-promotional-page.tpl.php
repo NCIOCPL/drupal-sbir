@@ -18,7 +18,7 @@
         <?php endif; ?>
 
         <?php if (!empty($content['field_long_display_title'])): ?>
-            <div class="centered-container">
+            <div class="centered-text">
                 <h1 class="sbir-promotional-h1"><?php print render($content['field_long_display_title']); ?></h1>
             </div>
         <?php endif; ?>
