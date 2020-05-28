@@ -36,7 +36,7 @@
         <?php print render($content['field_text']); ?>
       </div>
       <div class="centered-container top-padding-thicker">
-        <div class="red-button">
+        <div class="red-button sbir-button-link-box-button">
           <?php print render($content['field_link']); ?>
         </div>
       </div>
