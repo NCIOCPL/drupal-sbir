@@ -17,6 +17,12 @@
             <h1 class="sbir-promotional-h1"><?php print render($content['field_display_title']); ?></h1>
         <?php endif; ?>
 
+        <?php if (!empty($content['field_long_display_title'])): ?>
+            <div class="centered-container">
+                <h1 class="sbir-promotional-h1"><?php print render($content['field_long_display_title']); ?></h1>
+            </div>
+        <?php endif; ?>
+
         <?php if (!empty($content['body'])): ?>
             <?php print render($content['body']); ?>
         <?php endif; ?>
