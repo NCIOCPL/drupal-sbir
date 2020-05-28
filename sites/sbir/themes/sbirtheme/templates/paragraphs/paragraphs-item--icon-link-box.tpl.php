@@ -31,11 +31,13 @@
       <?php
       $field_icon = strip_tags(strtolower(render($content['field_icon'])));
       $icon_class = str_replace(" ","-",$field_icon) . "-icon";
+      $card_identifier_raw = strip_tags(strtolower(render($content['field_link'])));
+      $card_identifier = str_replace(" ","-",$card_identifier_raw) . rand();
       ?>
       <div class="centered-container bottom-padding vertical-center-container">
           <div class="<?php print render($icon_class); ?>"></div>
       </div>
 
-    <div class="sbir-icon-box-link"><?php print render($content['field_link']); ?></div>
+    <div class="sbir-icon-box-link" id="<?php print $card_identifier; ?>"><?php print render($content['field_link']); ?></div>
   </div>
 </div>
