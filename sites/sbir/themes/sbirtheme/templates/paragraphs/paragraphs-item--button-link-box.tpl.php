@@ -34,7 +34,7 @@ if (isset($field_email_subject) || isset($field_email_body)) {
   $card_url .= '?';
   if (isset($field_email_subject)) {
       $card_link_subject =$field_email_subject[0]['safe_value'];
-      $card_url .= 'subject=' . urlencode($card_link_subject);
+      $card_url .= 'subject=' . $card_link_subject;
 } else
     {
       $card_link_subject ='';
@@ -42,12 +42,12 @@ if (isset($field_email_subject) || isset($field_email_body)) {
 if (isset($field_email_body)) {
   $card_link_body = $field_email_body[0]['safe_value'];
   $card_url .= '&body=' . urlencode($card_link_body);
+  $card_url = str_replace('+', ' ', $card_url);
 } else
 {
   $card_link_body ='';
 };
     }
-
 
 
 
