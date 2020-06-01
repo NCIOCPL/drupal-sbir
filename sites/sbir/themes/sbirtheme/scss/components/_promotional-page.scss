@@ -69,6 +69,14 @@
   @include flexcontainer();
   @include property-prefix(flex-wrap, wrap);
 }
+
+.field-name-field-icon-box-section {
+  .sbir-promotional-h2 {
+    text-align:center;
+  }
+}
+
+
 .field-name-field-button-link-box > .field-items > .field-item,
 .field-name-field-icon-box > .field-items > .field-item {
   @extend %standard-card-field-item-height;
@@ -95,6 +103,12 @@
   color: $black;
 }
 .sbir-icon-box-link, .sbir-icon-box-link div {
+  a, a:active, a:visited, a:link {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration:underline;
+  }
   a, a:active, a:hover {
     color: $standard-promotional-link;
     font-size: 16px;

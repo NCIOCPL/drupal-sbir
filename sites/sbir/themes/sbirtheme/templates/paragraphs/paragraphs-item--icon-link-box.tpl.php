@@ -26,6 +26,12 @@
  * @see template_process()
  */
 ?>
+<?php
+$card_url = $field_link[0]['url'];
+$card_link_text = $field_link[0]['title'];
+$card_link_attributes = $field_link['attributes'];
+?>
+<a href="<?php print $card_url ?>" class="hoveer-underline">
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
       <?php
@@ -38,6 +44,9 @@
           <div class="<?php print render($icon_class); ?>"></div>
       </div>
 
-    <div class="sbir-icon-box-link" id="<?php print $card_identifier; ?>"><?php print render($content['field_link']); ?></div>
+    <div class="sbir-icon-box-link" id="<?php print $card_identifier; ?>">
+        <a href="<?php print $card_url; ?>"  <?php print $card_link_attributes; ?>><?php print $card_link_text; ?></a>
+    </div>
   </div>
 </div>
+</a>

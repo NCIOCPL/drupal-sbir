@@ -26,20 +26,48 @@
  * @see template_process()
  */
 ?>
-<div class="<?php print $classes; ?>" <?php print $attributes; ?>>
-  <div class="content"<?php print $content_attributes; ?>>
-    <div class="sbir-button-link-box-title centered-container">
-      <h2 class="sbir-promotional-h2"><?php print render($content['field_title']); ?></h2>
-    </div>
-    <div class="sbir-button-link-box-text-container">
-      <div class="sbir-button-link-box-text">
-        <?php print render($content['field_text']); ?>
+<?php
+$card_url = $field_link[0]['url'];
+$card_link_text = $field_link[0]['title'];
+$card_link_attributes = $field_link['attributes'];
+if (isset($field_email_subject) || isset($field_email_body)) {
+  $card_url .= '?';
+  if (isset($field_email_subject)) {
+      $card_link_subject =$field_email_subject[0]['safe_value'];
+      $card_url .= 'subject=' . urlencode($card_link_subject);
+} else
+    {
+      $card_link_subject ='';
+    };
+if (isset($field_email_body)) {
+  $card_link_body = $field_email_body[0]['safe_value'];
+  $card_url .= '&body=' . urlencode($card_link_body);
+} else
+{
+  $card_link_body ='';
+};
+    }
+
+
+
+
+?>
+  <div class="<?php print $classes; ?>" <?php print $attributes; ?>>
+    <div class="content"<?php print $content_attributes; ?>>
+      <div class="sbir-button-link-box-title centered-container">
+        <h2 class="sbir-promotional-h2"><?php print render($content['field_title']); ?></h2>
       </div>
-      <div class="centered-container top-padding-thicker">
-        <div class="red-button sbir-button-link-box-button">
-          <?php print render($content['field_link']); ?>
+      <div class="sbir-button-link-box-text-container">
+        <div class="sbir-button-link-box-text">
+          <?php print render($content['field_text']); ?>
+        </div>
+        <div class="centered-container top-padding">
+          <div class="red-button sbir-button-link-box-button">
+            <a href="<?php print $card_url; ?>" <?php print $card_link_attributes; ?>>
+              <?php print $card_link_text; ?>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
