@@ -54,11 +54,12 @@
 
       });
     </script>
-    <script language="JavaScript" type="text/javascript" src="//static.cancer.gov/webanalytics/WA_SBIR_PageLoad.js"></script>
+
     <?php global $base_url; ?>
     <?php
     if ($base_url == 'http://sbir.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov'):
       ?>
+
       <script>
             (function (i, s, o, g, r, a, m) {
               i['GoogleAnalyticsObject'] = r;
@@ -77,6 +78,19 @@
 
       </script>
     <?php endif; ?>
+    <?php
+    $static_path = '/webanalytics/WA_SBIR_PageLoad.js';
+    if ($base_url == 'http://sbir-dev.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov'):
+      $static_url = '//static-dev.cancer.gov' . $static_path;
+    elseif ($base_url == 'http://sbir-qa.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov'):
+      $static_url = '//static-qa.cancer.gov' . $static_path;
+    elseif ($base_url == 'http://sbir.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov'):
+      $static_url = '//static.cancer.gov/webanalytics' . $static_path;
+    else:
+      $static_url = '//static.cancer.gov/webanalytics' . $static_path;
+    endif;
+    ?>
+    <script language="JavaScript" type="text/javascript" src='<?php print $static_url ?>'></script>
     <script type="text/javascript">_satellite.pageBottom();</script>
   </body>
 </html>
