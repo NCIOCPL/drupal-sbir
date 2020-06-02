@@ -85,9 +85,9 @@
     elseif ($base_url == 'http://sbir-qa.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov'):
       $static_url = '//static-qa.cancer.gov' . $static_path;
     elseif ($base_url == 'http://sbir.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov'):
-      $static_url = '//static.cancer.gov/webanalytics' . $static_path;
+      $static_url = '//static.cancer.gov' . $static_path;
     else:
-      $static_url = '//static.cancer.gov/webanalytics' . $static_path;
+      $static_url = '//static.cancer.gov' . $static_path;
     endif;
     ?>
     <script language="JavaScript" type="text/javascript" src='<?php print $static_url ?>'></script>
