@@ -68,6 +68,7 @@
 .field-name-field-icon-box > .field-items {
   @include flexcontainer();
   @include property-prefix(flex-wrap, wrap);
+  overflow: visible;
 }
 
 .field-name-field-icon-box-section {
@@ -83,7 +84,9 @@
   border: 1px solid $sbir-border-gray;
   box-shadow: $standard-sbir-box-shadow;
 }
-
+.field-name-field-button-link-box > .field-items > .field-item > div {
+  width: 100%;
+}
 .field-name-field-icon-box > .field-items > .field-item {
   @extend %standard-card-field-item-width;
   margin: 0 18px 18px 0;

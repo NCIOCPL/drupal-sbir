@@ -2363,6 +2363,7 @@ div.image.styled
   -ms-flex-wrap: wrap;
   -o-flex-wrap: wrap;
   flex-wrap: wrap;
+  overflow: visible;
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
   /* line 67, ../scss/components/_promotional-page.scss */
@@ -2376,12 +2377,12 @@ div.image.styled
   }
 }
 
-/* line 74, ../scss/components/_promotional-page.scss */
+/* line 75, ../scss/components/_promotional-page.scss */
 .field-name-field-icon-box-section .sbir-promotional-h2 {
   text-align: center;
 }
 
-/* line 80, ../scss/components/_promotional-page.scss */
+/* line 81, ../scss/components/_promotional-page.scss */
 .field-name-field-button-link-box > .field-items > .field-item,
 .field-name-field-icon-box > .field-items > .field-item {
   border: 1px solid #D4D5D6;
@@ -2389,38 +2390,43 @@ div.image.styled
 }
 
 /* line 87, ../scss/components/_promotional-page.scss */
+.field-name-field-button-link-box > .field-items > .field-item > div {
+  width: 100%;
+}
+
+/* line 90, ../scss/components/_promotional-page.scss */
 .field-name-field-icon-box > .field-items > .field-item {
   margin: 0 18px 18px 0;
   padding: 25px;
 }
 
-/* line 92, ../scss/components/_promotional-page.scss */
+/* line 95, ../scss/components/_promotional-page.scss */
 .field-name-field-icon-box > .field-items > .field-item > div {
   flex: 1;
 }
 
-/* line 100, ../scss/components/_promotional-page.scss */
+/* line 103, ../scss/components/_promotional-page.scss */
 .sbir-icon-box-text, .sbir-icon-box-text div {
   font-size: 17px;
   line-height: 24px;
   color: #000;
 }
 
-/* line 106, ../scss/components/_promotional-page.scss */
+/* line 109, ../scss/components/_promotional-page.scss */
 .sbir-icon-box-link a, .sbir-icon-box-link a:active, .sbir-icon-box-link a:visited, .sbir-icon-box-link a:link, .sbir-icon-box-link div a, .sbir-icon-box-link div a:active, .sbir-icon-box-link div a:visited, .sbir-icon-box-link div a:link {
   text-decoration: none;
 }
-/* line 109, ../scss/components/_promotional-page.scss */
+/* line 112, ../scss/components/_promotional-page.scss */
 .sbir-icon-box-link a:hover, .sbir-icon-box-link div a:hover {
   text-decoration: underline;
 }
-/* line 112, ../scss/components/_promotional-page.scss */
+/* line 115, ../scss/components/_promotional-page.scss */
 .sbir-icon-box-link a, .sbir-icon-box-link a:active, .sbir-icon-box-link a:hover, .sbir-icon-box-link div a, .sbir-icon-box-link div a:active, .sbir-icon-box-link div a:hover {
   color: #2664ab;
   font-size: 16px;
   line-height: 24px;
 }
-/* line 117, ../scss/components/_promotional-page.scss */
+/* line 120, ../scss/components/_promotional-page.scss */
 .sbir-icon-box-link a:visited, .sbir-icon-box-link div a:visited {
   color: #421c89;
 }
