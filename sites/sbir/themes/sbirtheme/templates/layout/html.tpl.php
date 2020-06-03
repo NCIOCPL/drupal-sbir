@@ -78,9 +78,9 @@
 
       </script>
  <?php endif; ?>
-    <!--<script language="JavaScript" type="text/javascript" src='//static.cancer.gov/webanalytics/WA_SBIR_PageLoad.js'></script>
--->
-    <script language="JavaScript" type="text/javascript" src='<?php print $theme_path ?>/js/WA_SBIR_PageLoad.js'></script>
+    <script language="JavaScript" type="text/javascript" src='//static.cancer.gov/webanalytics/WA_SBIR_PageLoad.js'></script>
+
+    <!-- <script language="JavaScript" type="text/javascript" src='< ? php # print $theme_path ?>/js/WA_SBIR_PageLoad.js'></script> -->
 
     <script type="text/javascript">_satellite.pageBottom();</script>
   </body>

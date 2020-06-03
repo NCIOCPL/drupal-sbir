@@ -18,13 +18,13 @@ document.head.appendChild(preScriptElement);
 document.head.appendChild(scodeScriptElement);
 document.head.appendChild(postScriptElement);
 */
-document.write('<script type="text/javascript" src="/sites/sbir/themes/sbirtheme/js/WA_SBIR_Pre.js" ></script>');
-document.write('<script type="text/javascript" src="/sites/sbir/themes/sbirtheme/js/s_code.js" ></script>');
-document.write('<script type="text/javascript" src="/sites/sbir/themes/sbirtheme/js/WA_SBIR_Post.js" ></script>');
+//document.write('<script type="text/javascript" src="/sites/sbir/themes/sbirtheme/js/WA_SBIR_Pre.js" ></script>');
+//document.write('<script type="text/javascript" src="/sites/sbir/themes/sbirtheme/js/s_code.js" ></script>');
+//document.write('<script type="text/javascript" src="/sites/sbir/themes/sbirtheme/js/WA_SBIR_Post.js" ></script>');
 
-//document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/WA_SBIR_Pre.js" ></script>');
-//document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/s_code.js" ></script>');
-//document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/WA_SBIR_Post.js" ></script>');
+document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/WA_SBIR_Pre.js" ></script>');
+document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/s_code.js" ></script>');
+document.write('<script type="text/javascript" src="//static.cancer.gov/webanalytics/WA_SBIR_Post.js" ></script>');
 
 var s = document.createElement('script');
 s.type='text/javascript';
