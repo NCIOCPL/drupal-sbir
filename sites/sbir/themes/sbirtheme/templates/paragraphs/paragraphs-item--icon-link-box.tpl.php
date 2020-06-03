@@ -31,22 +31,19 @@
 $card_url = $field_link[0]['url'];
 $card_link_text = $field_link[0]['title'];
 $card_link_attributes = $field_link['attributes'];
+$field_icon = strip_tags(strtolower(render($content['field_icon'])));
+$icon_class = str_replace(" ","-",$field_icon) . "-icon";
+$card_identifier_raw = strip_tags(strtolower(render($content['field_link'])));
+//$card_identifier = str_replace(" ","-",$card_identifier_raw) . rand();
+$card_identifier = str_replace("?","",str_replace(" ","-",$card_identifier_raw));
 ?>
-<a href="<?php print $card_url ?>" class="sbir-icon-box-link-hover-underline" <?php print $card_link_attributes; ?>>
+<a href="<?php print $card_url ?>" class="sbir-icon-box-link-hover-underline" id="<?php print $card_identifier; ?>" <?php print $card_link_attributes; ?>>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
-      <?php
-      $field_icon = strip_tags(strtolower(render($content['field_icon'])));
-      $icon_class = str_replace(" ","-",$field_icon) . "-icon";
-      $card_identifier_raw = strip_tags(strtolower(render($content['field_link'])));
-      //$card_identifier = str_replace(" ","-",$card_identifier_raw) . rand();
-      $card_identifier = str_replace("?","",str_replace(" ","-",$card_identifier_raw));
-      ?>
       <div class="centered-container bottom-padding vertical-center-container">
           <div class="<?php print render($icon_class); ?>"></div>
       </div>
-
-    <div class="sbir-icon-box-link" id="<?php print $card_identifier; ?>">
+    <div class="sbir-icon-box-link">
         <?php print $card_link_text; ?>
     </div>
   </div>
