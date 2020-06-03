@@ -108,6 +108,7 @@ var NCIAnalytics = {
         jQuery('.sbir-button-link-box-button').bind("click", function(event){
             s.linkTrackVars='events,prop66,prop67';
             s.events='event17';
+            s.linkTrackEvents='event17';
             s.prop66 = 'welanding_emailbutton';
             //s.prop67 = document.URL;
             s.prop67="D=pageName";
@@ -117,9 +118,10 @@ var NCIAnalytics = {
         });
         jQuery('.sbir-icon-box-link-hover-underline').bind("click", function(event){
             s.linkTrackVars='events,prop66,prop67';
-            var boxId = event.target.id;
+            var boxId = event.currentTarget.id;
             window.console&&console.log('event.target.id', event.target.id, "event",event);
             s.events='event27';
+            s.linkTrackEvents='event27';
             s.prop66 = 'welanding_' + boxId;
             //s.prop67 = document.URL;
             s.prop67="D=pageName";
