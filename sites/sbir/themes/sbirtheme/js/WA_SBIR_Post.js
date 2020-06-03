@@ -105,8 +105,6 @@ var NCIAnalytics = {
 
 
     PromotionalLinks : function(){
-
-
         jQuery('.sbir-button-link-box-button').bind("click", function(event){
             s.linkTrackVars='events,prop66,prop67';
             s.events='event17';
@@ -114,18 +112,19 @@ var NCIAnalytics = {
             //s.prop67 = document.URL;
             s.prop67="D=pageName";
             s.tl(this,'o','Promotional Contact Button');
-            window.console&&console.log('box-link clicked','s.events ', s.events,"s.prop66",s.prop66,"s.prop67 ",s.prop67);
+            window.console&&console.log('button link box-link clicked','s.events ', s.events,"s.prop66",s.prop66,"s.prop67 ",s.prop67);
             return true;
         });
         jQuery('.sbir-icon-box-link-hover-underline').bind("click", function(event){
             s.linkTrackVars='events,prop66,prop67';
             var boxId = event.target.id;
+            window.console&&console.log('event.target.id', event.target.id, "event",event);
             s.events='event27';
             s.prop66 = 'welanding_' + boxId;
             //s.prop67 = document.URL;
             s.prop67="D=pageName";
             s.tl(this,'o','Promotional Icon Box');
-            window.console&&console.log('box-link clicked', 's.events ', s.events,"s.prop66",s.prop66,"s.prop67 ",s.prop67);
+            window.console&&console.log('icon box-link clicked', 's.events ', s.events,"s.prop66",s.prop66,"s.prop67 ",s.prop67);
             return true;
         });
     },
