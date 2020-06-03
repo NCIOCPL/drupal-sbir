@@ -7,7 +7,7 @@
 /**
  * Implements hook_wysiwyg_default_profiles().
  */
-function wysywyg_wysiwyg_default_profiles() {
+function sbir_wysiwyg_default_profiles() {
   $profiles = array();
 
   // Exported profile: filtered_html.

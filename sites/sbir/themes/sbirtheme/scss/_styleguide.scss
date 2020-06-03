@@ -146,7 +146,7 @@
   @extend %money-arrows-icon;
 }
 %question-icon {
-  @include standard-background-icon('questions@2x.png','question@2x.png',70px,70px);
+  @include standard-background-icon('question@2x.png','question@2x.png',70px,70px);
 }
 .question-icon {
   @extend %question-icon;

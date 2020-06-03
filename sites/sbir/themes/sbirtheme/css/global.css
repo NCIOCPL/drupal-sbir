@@ -613,7 +613,7 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
 
 /* line 148, ../scss/_styleguide.scss */
 .question-icon {
-  background-image: url("../images/questions@2x.png");
+  background-image: url("../images/question@2x.png");
   background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: initial;
