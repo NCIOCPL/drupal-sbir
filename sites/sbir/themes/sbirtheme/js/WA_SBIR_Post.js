@@ -112,7 +112,7 @@ var NCIAnalytics = {
             s.events='event17';
             s.prop66 = 'welanding_emailbutton';
             //s.prop67 = document.URL;
-            s.prop67="D=s.pageName";
+            s.prop67="D=pageName";
             s.tl(this,'o','Promotional Contact Button');
             window.console&&console.log('box-link clicked','s.events ', s.events,"s.prop66",s.prop66,"s.prop67 ",s.prop67);
             return true;
@@ -123,7 +123,7 @@ var NCIAnalytics = {
             s.events='event27';
             s.prop66 = 'welanding_' + boxId;
             //s.prop67 = document.URL;
-            s.prop67="D=s.pageName";
+            s.prop67="D=pageName";
             s.tl(this,'o','Promotional Icon Box');
             window.console&&console.log('box-link clicked', 's.events ', s.events,"s.prop66",s.prop66,"s.prop67 ",s.prop67);
             return true;
