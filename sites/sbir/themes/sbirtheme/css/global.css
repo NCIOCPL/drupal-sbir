@@ -37,22 +37,22 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
 }
 
 /* line 19, ../scss/_styleguide.scss */
-.hover-underline, a.hover-underline {
+.sbir-icon-box-link-hover-underline, a.sbir-icon-box-link-hover-underline {
   text-decoration: none;
   color: #2664ab;
   font-size: 16px;
   line-height: 24px;
 }
 /* line 24, ../scss/_styleguide.scss */
-.hover-underline:hover, .hover-underline a:hover, a.hover-underline:hover, a.hover-underline a:hover {
+.sbir-icon-box-link-hover-underline:hover, .sbir-icon-box-link-hover-underline a:hover, a.sbir-icon-box-link-hover-underline:hover, a.sbir-icon-box-link-hover-underline a:hover {
   text-decoration: underline;
 }
 /* line 26, ../scss/_styleguide.scss */
-.hover-underline:hover a, .hover-underline a:hover a, a.hover-underline:hover a, a.hover-underline a:hover a {
+.sbir-icon-box-link-hover-underline:hover a, .sbir-icon-box-link-hover-underline a:hover a, a.sbir-icon-box-link-hover-underline:hover a, a.sbir-icon-box-link-hover-underline a:hover a {
   text-decoration: underline;
 }
 /* line 30, ../scss/_styleguide.scss */
-.hover-underline:visited, .hover-underline a:visited, a.hover-underline:visited, a.hover-underline a:visited {
+.sbir-icon-box-link-hover-underline:visited, .sbir-icon-box-link-hover-underline a:visited, a.sbir-icon-box-link-hover-underline:visited, a.sbir-icon-box-link-hover-underline a:visited {
   color: #421c89;
 }
 
