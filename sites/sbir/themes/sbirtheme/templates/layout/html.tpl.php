@@ -77,20 +77,11 @@
             ga('send', 'pageview');
 
       </script>
-    <?php endif; ?>
-    <?php
-    $static_path = '/webanalytics/WA_SBIR_PageLoad.js';
-    if ($base_url == 'http://sbir-dev.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov'):
-      $static_url = '//static-dev.cancer.gov' . $static_path;
-    elseif ($base_url == 'http://sbir-qa.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov'):
-      $static_url = '//static-qa.cancer.gov' . $static_path;
-    elseif ($base_url == 'http://sbir.cancer.gov' || $base_url == 'http://www.sbir.cancer.gov'):
-      $static_url = '//static.cancer.gov' . $static_path;
-    else:
-      $static_url = '//static.cancer.gov' . $static_path;
-    endif;
-    ?>
-    <script language="JavaScript" type="text/javascript" src='<?php print $static_url ?>'></script>
+ <?php endif; ?>
+    <!--<script language="JavaScript" type="text/javascript" src='//static.cancer.gov/webanalytics/WA_SBIR_PageLoad.js'></script>
+-->
+    <script language="JavaScript" type="text/javascript" src='<?php print $theme_path ?>/js/WA_SBIR_PageLoad.js'></script>
+
     <script type="text/javascript">_satellite.pageBottom();</script>
   </body>
 </html>

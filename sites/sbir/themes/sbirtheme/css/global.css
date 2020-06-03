@@ -39,21 +39,24 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
 /* line 19, ../scss/_styleguide.scss */
 .hover-underline, a.hover-underline {
   text-decoration: none;
+  color: #2664ab;
+  font-size: 16px;
+  line-height: 24px;
 }
-/* line 21, ../scss/_styleguide.scss */
-.hover-underline:hover, a.hover-underline:hover {
+/* line 24, ../scss/_styleguide.scss */
+.hover-underline:hover, .hover-underline a:hover, a.hover-underline:hover, a.hover-underline a:hover {
   text-decoration: underline;
 }
-/* line 23, ../scss/_styleguide.scss */
-.hover-underline:hover a, a.hover-underline:hover a {
+/* line 26, ../scss/_styleguide.scss */
+.hover-underline:hover a, .hover-underline a:hover a, a.hover-underline:hover a, a.hover-underline a:hover a {
   text-decoration: underline;
 }
-/* line 27, ../scss/_styleguide.scss */
-.hover-underline a:hover, a.hover-underline a:hover {
-  text-decoration: underline;
+/* line 30, ../scss/_styleguide.scss */
+.hover-underline:visited, .hover-underline a:visited, a.hover-underline:visited, a.hover-underline a:visited {
+  color: #421c89;
 }
 
-/* line 32, ../scss/_styleguide.scss */
+/* line 36, ../scss/_styleguide.scss */
 .vertical-center-container {
   display: -webkit-box;
   display: -moz-box;
@@ -72,7 +75,7 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   justify-content: center;
 }
 
-/* line 39, ../scss/_styleguide.scss */
+/* line 43, ../scss/_styleguide.scss */
 .standard-card-title, .dark-background-card-title {
   display: flex;
   -webkit-align-items: center;
@@ -88,19 +91,19 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   height: 70px;
   color: #fff;
 }
-/* line 45, ../scss/_styleguide.scss */
+/* line 49, ../scss/_styleguide.scss */
 .standard-card-title > h3, .dark-background-card-title > h3, .standard-card-title > h3 > a, .dark-background-card-title > h3 > a, .standard-card-title > h3 > div, .dark-background-card-title > h3 > div, .standard-card-title > h3 > span, .dark-background-card-title > h3 > span {
   color: #fff;
   margin: 0;
 }
 
-/* line 55, ../scss/_styleguide.scss */
+/* line 59, ../scss/_styleguide.scss */
 .dark-background-card-title {
   background-color: #393a3d;
 }
 
 @media all and (min-width: 1100px) {
-  /* line 60, ../scss/_styleguide.scss */
+  /* line 64, ../scss/_styleguide.scss */
   .standard-card-field-item-width, .field-name-field-icon-box > .field-items > .field-item {
     max-width: 23%;
     min-width: 23%;
@@ -108,7 +111,7 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   }
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 60, ../scss/_styleguide.scss */
+  /* line 64, ../scss/_styleguide.scss */
   .standard-card-field-item-width, .field-name-field-icon-box > .field-items > .field-item {
     max-width: 30%;
     min-width: 30%;
@@ -116,7 +119,7 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 60, ../scss/_styleguide.scss */
+  /* line 64, ../scss/_styleguide.scss */
   .standard-card-field-item-width, .field-name-field-icon-box > .field-items > .field-item {
     max-width: 100%;
     width: -webkit-fill-available;
@@ -131,7 +134,7 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   }
 }
 
-/* line 81, ../scss/_styleguide.scss */
+/* line 85, ../scss/_styleguide.scss */
 .standard-card-field-item-height, .field-name-field-button-link-box > .field-items > .field-item,
 .field-name-field-icon-box > .field-items > .field-item {
   display: -webkit-box;
@@ -147,18 +150,18 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   flex: 1;
 }
 
-/* line 95, ../scss/_styleguide.scss */
+/* line 99, ../scss/_styleguide.scss */
 .responsive-image-container {
   max-width: 100%;
   height: auto;
 }
-/* line 98, ../scss/_styleguide.scss */
+/* line 102, ../scss/_styleguide.scss */
 .responsive-image-container img {
   height: 100%;
   width: 100%;
 }
 
-/* line 105, ../scss/_styleguide.scss */
+/* line 109, ../scss/_styleguide.scss */
 .primary-button {
   padding: .5em 1.5em .5em 1.5em;
   display: table;
@@ -181,13 +184,13 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   text-decoration: none;
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 105, ../scss/_styleguide.scss */
+  /* line 109, ../scss/_styleguide.scss */
   .primary-button {
     padding: 14px 25px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 105, ../scss/_styleguide.scss */
+  /* line 109, ../scss/_styleguide.scss */
   .primary-button {
     padding: 14px 25p;
   }
@@ -250,7 +253,7 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
 .primary-button:hover {
   border-color: #093596;
 }
-/* line 108, ../scss/_styleguide.scss */
+/* line 112, ../scss/_styleguide.scss */
 .disabled.primary-button {
   padding: .5em 1.5em .5em 1.5em;
   display: table;
@@ -278,13 +281,13 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   text-decoration: none;
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 108, ../scss/_styleguide.scss */
+  /* line 112, ../scss/_styleguide.scss */
   .disabled.primary-button {
     padding: 14px 25px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 108, ../scss/_styleguide.scss */
+  /* line 112, ../scss/_styleguide.scss */
   .disabled.primary-button {
     padding: 14px 25p;
   }
@@ -311,7 +314,7 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   border-color: #dcdcdc;
 }
 
-/* line 116, ../scss/_styleguide.scss */
+/* line 120, ../scss/_styleguide.scss */
 .red-button {
   padding: .5em 1.5em .5em 1.5em;
   display: table;
@@ -334,13 +337,13 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   text-decoration: none;
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 116, ../scss/_styleguide.scss */
+  /* line 120, ../scss/_styleguide.scss */
   .red-button {
     padding: 14px 25px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 116, ../scss/_styleguide.scss */
+  /* line 120, ../scss/_styleguide.scss */
   .red-button {
     padding: 14px 25p;
   }
@@ -403,7 +406,7 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
 .red-button:hover {
   border-color: #ED145b;
 }
-/* line 122, ../scss/_styleguide.scss */
+/* line 126, ../scss/_styleguide.scss */
 .disabled.red-button {
   padding: .5em 1.5em .5em 1.5em;
   display: table;
@@ -431,13 +434,13 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   text-decoration: none;
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 122, ../scss/_styleguide.scss */
+  /* line 126, ../scss/_styleguide.scss */
   .disabled.red-button {
     padding: 14px 25px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 122, ../scss/_styleguide.scss */
+  /* line 126, ../scss/_styleguide.scss */
   .disabled.red-button {
     padding: 14px 25p;
   }
@@ -464,7 +467,7 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   border-color: #dcdcdc;
 }
 
-/* line 132, ../scss/_styleguide.scss */
+/* line 136, ../scss/_styleguide.scss */
 .manager-icon {
   background-image: url("../images/manager@2x.png");
   background-size: 70px 70px;
@@ -477,21 +480,21 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   margin-left: auto;
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 132, ../scss/_styleguide.scss */
+  /* line 136, ../scss/_styleguide.scss */
   .manager-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 132, ../scss/_styleguide.scss */
+  /* line 136, ../scss/_styleguide.scss */
   .manager-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2), all and (min--moz-device-pixel-ratio: 2), all and (-o-min-device-pixel-ratio: 2 / 1), all and (min-device-pixel-ratio: 2), all and (min-resolution: 192dpi), all and (min-resolution: 2dppx) {
-  /* line 132, ../scss/_styleguide.scss */
+  /* line 136, ../scss/_styleguide.scss */
   .manager-icon {
     background-image: url("../images/manager@2x.png");
     background-size: 70px 70px;
@@ -503,14 +506,14 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (min--moz-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 768px) and (max-width: 1099px), all and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1099px), all and (min-resolution: 2dppx) and (min-width: 768px) and (max-width: 1099px) {
-  /* line 132, ../scss/_styleguide.scss */
+  /* line 136, ../scss/_styleguide.scss */
   .manager-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (min--moz-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 0em) and (max-width: 767px), all and (min-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (min-resolution: 192dpi) and (min-width: 0em) and (max-width: 767px), all and (min-resolution: 2dppx) and (min-width: 0em) and (max-width: 767px) {
-  /* line 132, ../scss/_styleguide.scss */
+  /* line 136, ../scss/_styleguide.scss */
   .manager-icon {
     background-size: 70px 70px;
     height: 70px;
@@ -518,25 +521,25 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
 }
 
 @media all and (min-width: 1100px) {
-  /* line 132, ../scss/_styleguide.scss */
+  /* line 136, ../scss/_styleguide.scss */
   .manager-icon {
     width: 70px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 132, ../scss/_styleguide.scss */
+  /* line 136, ../scss/_styleguide.scss */
   .manager-icon {
     width: 70px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 132, ../scss/_styleguide.scss */
+  /* line 136, ../scss/_styleguide.scss */
   .manager-icon {
     width: 70px;
   }
 }
 
-/* line 138, ../scss/_styleguide.scss */
+/* line 142, ../scss/_styleguide.scss */
 .money-arrows-icon {
   background-image: url("../images/money-arrows@2x.png");
   background-size: 70px 70px;
@@ -549,21 +552,21 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   margin-left: auto;
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 138, ../scss/_styleguide.scss */
+  /* line 142, ../scss/_styleguide.scss */
   .money-arrows-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 138, ../scss/_styleguide.scss */
+  /* line 142, ../scss/_styleguide.scss */
   .money-arrows-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2), all and (min--moz-device-pixel-ratio: 2), all and (-o-min-device-pixel-ratio: 2 / 1), all and (min-device-pixel-ratio: 2), all and (min-resolution: 192dpi), all and (min-resolution: 2dppx) {
-  /* line 138, ../scss/_styleguide.scss */
+  /* line 142, ../scss/_styleguide.scss */
   .money-arrows-icon {
     background-image: url("../images/money-arrows@2x.png");
     background-size: 70px 70px;
@@ -575,14 +578,14 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (min--moz-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 768px) and (max-width: 1099px), all and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1099px), all and (min-resolution: 2dppx) and (min-width: 768px) and (max-width: 1099px) {
-  /* line 138, ../scss/_styleguide.scss */
+  /* line 142, ../scss/_styleguide.scss */
   .money-arrows-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (min--moz-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 0em) and (max-width: 767px), all and (min-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (min-resolution: 192dpi) and (min-width: 0em) and (max-width: 767px), all and (min-resolution: 2dppx) and (min-width: 0em) and (max-width: 767px) {
-  /* line 138, ../scss/_styleguide.scss */
+  /* line 142, ../scss/_styleguide.scss */
   .money-arrows-icon {
     background-size: 70px 70px;
     height: 70px;
@@ -590,25 +593,25 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
 }
 
 @media all and (min-width: 1100px) {
-  /* line 138, ../scss/_styleguide.scss */
+  /* line 142, ../scss/_styleguide.scss */
   .money-arrows-icon {
     width: 70px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 138, ../scss/_styleguide.scss */
+  /* line 142, ../scss/_styleguide.scss */
   .money-arrows-icon {
     width: 70px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 138, ../scss/_styleguide.scss */
+  /* line 142, ../scss/_styleguide.scss */
   .money-arrows-icon {
     width: 70px;
   }
 }
 
-/* line 144, ../scss/_styleguide.scss */
+/* line 148, ../scss/_styleguide.scss */
 .question-icon {
   background-image: url("../images/questions@2x.png");
   background-size: 70px 70px;
@@ -621,21 +624,21 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   margin-left: auto;
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 144, ../scss/_styleguide.scss */
+  /* line 148, ../scss/_styleguide.scss */
   .question-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 144, ../scss/_styleguide.scss */
+  /* line 148, ../scss/_styleguide.scss */
   .question-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2), all and (min--moz-device-pixel-ratio: 2), all and (-o-min-device-pixel-ratio: 2 / 1), all and (min-device-pixel-ratio: 2), all and (min-resolution: 192dpi), all and (min-resolution: 2dppx) {
-  /* line 144, ../scss/_styleguide.scss */
+  /* line 148, ../scss/_styleguide.scss */
   .question-icon {
     background-image: url("../images/question@2x.png");
     background-size: 70px 70px;
@@ -647,14 +650,14 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (min--moz-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 768px) and (max-width: 1099px), all and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1099px), all and (min-resolution: 2dppx) and (min-width: 768px) and (max-width: 1099px) {
-  /* line 144, ../scss/_styleguide.scss */
+  /* line 148, ../scss/_styleguide.scss */
   .question-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (min--moz-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 0em) and (max-width: 767px), all and (min-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (min-resolution: 192dpi) and (min-width: 0em) and (max-width: 767px), all and (min-resolution: 2dppx) and (min-width: 0em) and (max-width: 767px) {
-  /* line 144, ../scss/_styleguide.scss */
+  /* line 148, ../scss/_styleguide.scss */
   .question-icon {
     background-size: 70px 70px;
     height: 70px;
@@ -662,25 +665,25 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
 }
 
 @media all and (min-width: 1100px) {
-  /* line 144, ../scss/_styleguide.scss */
+  /* line 148, ../scss/_styleguide.scss */
   .question-icon {
     width: 70px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 144, ../scss/_styleguide.scss */
+  /* line 148, ../scss/_styleguide.scss */
   .question-icon {
     width: 70px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 144, ../scss/_styleguide.scss */
+  /* line 148, ../scss/_styleguide.scss */
   .question-icon {
     width: 70px;
   }
 }
 
-/* line 150, ../scss/_styleguide.scss */
+/* line 154, ../scss/_styleguide.scss */
 .piggy-bank-icon {
   background-image: url("../images/piggy-bank@2x.png");
   background-size: 70px 70px;
@@ -693,21 +696,21 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   margin-left: auto;
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 150, ../scss/_styleguide.scss */
+  /* line 154, ../scss/_styleguide.scss */
   .piggy-bank-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 150, ../scss/_styleguide.scss */
+  /* line 154, ../scss/_styleguide.scss */
   .piggy-bank-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2), all and (min--moz-device-pixel-ratio: 2), all and (-o-min-device-pixel-ratio: 2 / 1), all and (min-device-pixel-ratio: 2), all and (min-resolution: 192dpi), all and (min-resolution: 2dppx) {
-  /* line 150, ../scss/_styleguide.scss */
+  /* line 154, ../scss/_styleguide.scss */
   .piggy-bank-icon {
     background-image: url("../images/piggy-bank@2x.png");
     background-size: 70px 70px;
@@ -719,14 +722,14 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (min--moz-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 768px) and (max-width: 1099px), all and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1099px), all and (min-resolution: 2dppx) and (min-width: 768px) and (max-width: 1099px) {
-  /* line 150, ../scss/_styleguide.scss */
+  /* line 154, ../scss/_styleguide.scss */
   .piggy-bank-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (min--moz-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 0em) and (max-width: 767px), all and (min-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (min-resolution: 192dpi) and (min-width: 0em) and (max-width: 767px), all and (min-resolution: 2dppx) and (min-width: 0em) and (max-width: 767px) {
-  /* line 150, ../scss/_styleguide.scss */
+  /* line 154, ../scss/_styleguide.scss */
   .piggy-bank-icon {
     background-size: 70px 70px;
     height: 70px;
@@ -734,25 +737,25 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
 }
 
 @media all and (min-width: 1100px) {
-  /* line 150, ../scss/_styleguide.scss */
+  /* line 154, ../scss/_styleguide.scss */
   .piggy-bank-icon {
     width: 70px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 150, ../scss/_styleguide.scss */
+  /* line 154, ../scss/_styleguide.scss */
   .piggy-bank-icon {
     width: 70px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 150, ../scss/_styleguide.scss */
+  /* line 154, ../scss/_styleguide.scss */
   .piggy-bank-icon {
     width: 70px;
   }
 }
 
-/* line 156, ../scss/_styleguide.scss */
+/* line 160, ../scss/_styleguide.scss */
 .x-ray-icon {
   background-image: url("../images/xray@2x.png");
   background-size: 70px 70px;
@@ -765,21 +768,21 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   margin-left: auto;
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 156, ../scss/_styleguide.scss */
+  /* line 160, ../scss/_styleguide.scss */
   .x-ray-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 156, ../scss/_styleguide.scss */
+  /* line 160, ../scss/_styleguide.scss */
   .x-ray-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2), all and (min--moz-device-pixel-ratio: 2), all and (-o-min-device-pixel-ratio: 2 / 1), all and (min-device-pixel-ratio: 2), all and (min-resolution: 192dpi), all and (min-resolution: 2dppx) {
-  /* line 156, ../scss/_styleguide.scss */
+  /* line 160, ../scss/_styleguide.scss */
   .x-ray-icon {
     background-image: url("../images/xray@2x.png");
     background-size: 70px 70px;
@@ -791,14 +794,14 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (min--moz-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 768px) and (max-width: 1099px), all and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1099px), all and (min-resolution: 2dppx) and (min-width: 768px) and (max-width: 1099px) {
-  /* line 156, ../scss/_styleguide.scss */
+  /* line 160, ../scss/_styleguide.scss */
   .x-ray-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (min--moz-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 0em) and (max-width: 767px), all and (min-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (min-resolution: 192dpi) and (min-width: 0em) and (max-width: 767px), all and (min-resolution: 2dppx) and (min-width: 0em) and (max-width: 767px) {
-  /* line 156, ../scss/_styleguide.scss */
+  /* line 160, ../scss/_styleguide.scss */
   .x-ray-icon {
     background-size: 70px 70px;
     height: 70px;
@@ -806,25 +809,25 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
 }
 
 @media all and (min-width: 1100px) {
-  /* line 156, ../scss/_styleguide.scss */
+  /* line 160, ../scss/_styleguide.scss */
   .x-ray-icon {
     width: 70px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 156, ../scss/_styleguide.scss */
+  /* line 160, ../scss/_styleguide.scss */
   .x-ray-icon {
     width: 70px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 156, ../scss/_styleguide.scss */
+  /* line 160, ../scss/_styleguide.scss */
   .x-ray-icon {
     width: 70px;
   }
 }
 
-/* line 162, ../scss/_styleguide.scss */
+/* line 166, ../scss/_styleguide.scss */
 .website-icon {
   background-image: url("../images/website@2x.png");
   background-size: 70px 70px;
@@ -837,21 +840,21 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   margin-left: auto;
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 162, ../scss/_styleguide.scss */
+  /* line 166, ../scss/_styleguide.scss */
   .website-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 162, ../scss/_styleguide.scss */
+  /* line 166, ../scss/_styleguide.scss */
   .website-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2), all and (min--moz-device-pixel-ratio: 2), all and (-o-min-device-pixel-ratio: 2 / 1), all and (min-device-pixel-ratio: 2), all and (min-resolution: 192dpi), all and (min-resolution: 2dppx) {
-  /* line 162, ../scss/_styleguide.scss */
+  /* line 166, ../scss/_styleguide.scss */
   .website-icon {
     background-image: url("../images/website@2x.png");
     background-size: 70px 70px;
@@ -863,14 +866,14 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (min--moz-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 768px) and (max-width: 1099px), all and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1099px), all and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1099px), all and (min-resolution: 2dppx) and (min-width: 768px) and (max-width: 1099px) {
-  /* line 162, ../scss/_styleguide.scss */
+  /* line 166, ../scss/_styleguide.scss */
   .website-icon {
     background-size: 70px 70px;
     height: 70px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (min--moz-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 0em) and (max-width: 767px), all and (min-device-pixel-ratio: 2) and (min-width: 0em) and (max-width: 767px), all and (min-resolution: 192dpi) and (min-width: 0em) and (max-width: 767px), all and (min-resolution: 2dppx) and (min-width: 0em) and (max-width: 767px) {
-  /* line 162, ../scss/_styleguide.scss */
+  /* line 166, ../scss/_styleguide.scss */
   .website-icon {
     background-size: 70px 70px;
     height: 70px;
@@ -878,25 +881,25 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
 }
 
 @media all and (min-width: 1100px) {
-  /* line 162, ../scss/_styleguide.scss */
+  /* line 166, ../scss/_styleguide.scss */
   .website-icon {
     width: 70px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 1099px) {
-  /* line 162, ../scss/_styleguide.scss */
+  /* line 166, ../scss/_styleguide.scss */
   .website-icon {
     width: 70px;
   }
 }
 @media all and (min-width: 0em) and (max-width: 767px) {
-  /* line 162, ../scss/_styleguide.scss */
+  /* line 166, ../scss/_styleguide.scss */
   .website-icon {
     width: 70px;
   }
 }
 
-/* line 169, ../scss/_styleguide.scss */
+/* line 173, ../scss/_styleguide.scss */
 .centered-container {
   display: -webkit-box;
   display: -moz-box;
@@ -910,7 +913,7 @@ $button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
   justify-content: center;
 }
 
-/* line 174, ../scss/_styleguide.scss */
+/* line 178, ../scss/_styleguide.scss */
 .centered-text {
   text-align: center;
 }
@@ -2412,21 +2415,26 @@ div.image.styled
   color: #000;
 }
 
-/* line 109, ../scss/components/_promotional-page.scss */
+/* line 108, ../scss/components/_promotional-page.scss */
+.sbir-icon-box-link, .sbir-icon-box-link div {
+  font-size: 16px;
+  line-height: 24px;
+}
+/* line 111, ../scss/components/_promotional-page.scss */
 .sbir-icon-box-link a, .sbir-icon-box-link a:active, .sbir-icon-box-link a:visited, .sbir-icon-box-link a:link, .sbir-icon-box-link div a, .sbir-icon-box-link div a:active, .sbir-icon-box-link div a:visited, .sbir-icon-box-link div a:link {
   text-decoration: none;
 }
-/* line 112, ../scss/components/_promotional-page.scss */
+/* line 114, ../scss/components/_promotional-page.scss */
 .sbir-icon-box-link a:hover, .sbir-icon-box-link div a:hover {
   text-decoration: underline;
 }
-/* line 115, ../scss/components/_promotional-page.scss */
+/* line 117, ../scss/components/_promotional-page.scss */
 .sbir-icon-box-link a, .sbir-icon-box-link a:active, .sbir-icon-box-link a:hover, .sbir-icon-box-link div a, .sbir-icon-box-link div a:active, .sbir-icon-box-link div a:hover {
   color: #2664ab;
   font-size: 16px;
   line-height: 24px;
 }
-/* line 120, ../scss/components/_promotional-page.scss */
+/* line 122, ../scss/components/_promotional-page.scss */
 .sbir-icon-box-link a:visited, .sbir-icon-box-link div a:visited {
   color: #421c89;
 }

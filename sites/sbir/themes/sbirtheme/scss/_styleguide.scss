@@ -18,15 +18,19 @@
 
 .hover-underline, a.hover-underline {
   text-decoration: none;
-  &:hover {
+  color: $standard-promotional-link;
+  font-size: 16px;
+  line-height: 24px;
+  &:hover, a:hover {
     text-decoration: underline;
     a {
       text-decoration: underline;
     }
   }
-  a:hover {
-    text-decoration: underline;
+  &:visited, a:visited {
+    color: $standard-promotional-link-visited;
   }
+
 }
 
 .vertical-center-container {
