@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_enable().
+ */
+function sbir_promotional_page_enable() {
+  
+}
+
+/**
+ * Implements hook_install().
+ */
+function sbir_promotional_page_install() {
+
+
+}

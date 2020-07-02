@@ -1,0 +1,125 @@
+.node-sbir-promotional-page {
+  font-family: $promotional-font;
+  color: $black;
+  p {
+    font-size: 14px;
+    line-height: 19px;
+    color: $black;
+  }
+
+}
+.node-type-sbir-promotional-page {
+  h2.pane-title {
+    display:none;
+  }
+}
+.sbir-promotional-h1, .sbir-promotional-h1 div,
+.sbir-promotional-h2, .sbir-promotional-h2 div
+{
+  font-weight: bold;
+  color: $black;
+}
+
+.sbir-promotional-h1, .sbir-promotional-h1 div {
+
+  font-size: 22px;
+  line-height: 26px;
+  p {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+}
+
+.sbir-promotional-h2, .sbir-promotional-h2 div {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.paragraphs-item-button-link-box,
+.paragraphs-item-icon-link-box
+{
+}
+
+
+.paragraphs-item-button-link-box {
+  .red-button a {
+    font-family: $promotional-font;
+    font-size: 18.66px;
+  }
+}
+.sbir-button-link-box-title {
+  color: $white;
+  background-color: $sbir-card-title-dark-gray;
+  height: 50px;
+  h2, .sbir-promotional-h2, h2.sbir-promotional-h2, .sbir-promotional-h2 div {
+    color: $white;
+  }
+}
+.sbir-button-link-box-text-container {
+  padding: 25px 30px;
+}
+.sbir-button-link-box-text, .sbir-button-link-box-text div {
+  font-size: 17px;
+  line-height: 24px;
+  color: $black;
+}
+.field-name-field-button-link-box > .field-items,
+.field-name-field-icon-box > .field-items {
+  @include flexcontainer();
+  @include property-prefix(flex-wrap, wrap);
+  overflow: visible;
+}
+
+.field-name-field-icon-box-section {
+  .sbir-promotional-h2 {
+    text-align:center;
+  }
+}
+
+
+.field-name-field-button-link-box > .field-items > .field-item,
+.field-name-field-icon-box > .field-items > .field-item {
+  @extend %standard-card-field-item-height;
+  border: 1px solid $sbir-border-gray;
+  box-shadow: $standard-sbir-box-shadow;
+}
+.field-name-field-button-link-box > .field-items > .field-item > div {
+  width: 100%;
+}
+.field-name-field-icon-box > .field-items > .field-item {
+  @extend %standard-card-field-item-width;
+  margin: 0 18px 18px 0;
+  padding: 25px;
+}
+.field-name-field-icon-box > .field-items > .field-item > div {
+  flex:1;
+}
+
+.paragraphs-item-icon-link-box {
+
+}
+
+.sbir-icon-box-text, .sbir-icon-box-text div {
+  font-size: 17px;
+  line-height: 24px;
+  color: $black;
+}
+.sbir-icon-box-link, .sbir-icon-box-link div {
+  font-size: 16px;
+  line-height: 24px;
+  a, a:active, a:visited, a:link {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration:underline;
+  }
+  a, a:active, a:hover {
+    color: $standard-promotional-link;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  a:visited {
+    color: $standard-promotional-link-visited;
+  }
+}

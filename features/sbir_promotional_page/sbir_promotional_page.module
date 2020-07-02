@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Promotional Page feature.
+ */
+
+include_once 'sbir_promotional_page.features.inc';

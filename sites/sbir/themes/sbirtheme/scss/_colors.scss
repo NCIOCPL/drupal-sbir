@@ -1,0 +1,448 @@
+//Standard Colors
+$black:       #000;
+$white:       #fff;
+
+//sbir colors
+$sbir-card-title-dark-gray: #393a3d;
+$sbir-bright-red: #ED145b;
+$sbir-purple: #2664ab;
+$sbir-purple-visited: #421c89;
+$sbir-border-gray:#D4D5D6;
+
+//sbir standard colors
+$standard-promotional-button: $sbir-bright-red;
+$standard-promotional-link: $sbir-purple;
+$standard-promotional-link-visited: $sbir-purple-visited;
+
+//box shadows
+$standard-sbir-box-shadow: 0 2px 8px 0 $sbir-border-gray;
+
+
+
+//legacy colors
+//Stylesheet colors
+$amp-twilight-blue: #3461c4;
+$amp-dark-twilight-blue: #093596;
+$amp-admiral-blue: #18206a;
+$amp-midnight-blue: #1e2446;
+$amp-plum-purple: #83086a;
+$amp-twilight-magenta: #ae3395;
+$amp-seafoam-green: #1ea4a2;
+$amp-early-dawn-yellow: #fff591;
+$amp-charcoal-gray: #707070 ;
+$amp-silver-streak-gray: #9f9f9f;
+$amp-sidewalk-gray: #dcdcdc;
+$amp-full-moon-gray: #f4f5f5;
+
+$amp-news-header-gray: #253245;
+$amp-alternate-purple: #be2da1;
+$amp-alternate-cyan: #0099d0;
+
+$amp-card-title-dark-blue: #1E2347;
+$amp-alt-seafoam-green: #009b99;
+$amp-alt-dark-blue-title: #191f3c;
+$amp-alt-purple-title: #7a005d;
+$amp-alt-text-dark-gray: #343434;
+$amp-table-border: #808080;
+
+$amp-alternate-table-striping-gray: #eceef1;
+
+$amp-news-box-shadow-gray: #d4d4d4;
+$amp-news-box-border: #fabff;
+
+$amp-form-border-gray: #D8D8D8;
+$amp-form-error-border-red: #d0021b;
+$amp-form-box-shadow-blue: #2d57bc;
+$amp-form-box-shadow-red: #ca001a;
+
+$amp-button-focus-border: $amp-alternate-cyan;
+$amp-button-hover-blue: #bac8e6;
+$amp-button-focus-blue: #a3d5e8;
+$amp-header-gray: #1e2446;
+$amp-active-button-teal: #058EBE;
+
+$amp-current-stage-text-blue: #141C47;
+$amp-current-stage-yellow: #FFF591;
+$amp-overlay: rgba(0,0,0,0.4);
+$amp-dark-slate-gray: #56668B;
+$amp-text-gray: #1c1f2a;
+$amp-homepage-gold: #e0da88;
+$amp-link-blue: #50609F;
+$amp-carousel-button-blue-inactive: #005093;
+$amp-carousel-button-blue-active: #00022c;
+
+$amp-blue-gradient-1-start: #171f69;
+$amp-blue-gradient-1-end: $amp-twilight-blue;
+$amp-blue-gradient-2-start: $amp-dark-twilight-blue;
+$amp-blue-gradient-2-end: $amp-twilight-blue;
+$amp-purple-gradient-start: $amp-alternate-purple;
+$amp-purple-gradient-end: #690856;
+$amp-silver-gradient-start: $amp-sidewalk-gray;
+$amp-silver-gradient-end: $white;
+
+$amp-menu-purple-gradient-start: $amp-plum-purple;
+$amp-menu-purple-gradient-end: $amp-alternate-purple;
+
+$amp-ocean-blue-gradient-start: #1b9999;
+$amp-ocean-blue-gradient-end: #0984b5;
+$amp-ocean-blue-blue-gradient-start: #1c9696;
+$amp-ocean-blue-blue-gradient-end: #172160;
+$amp-blue-purple-gradient-start: #3b58aa;
+$amp-blue-purple-gradient-end: #a12e8b;
+
+$amp-ocean-blue-purple-gradient-start: #0b80b3;
+$amp-ocean-blue-purple-gradient-end: #77336d;
+
+
+
+
+$fitbir-green: #009344;
+$fitbir-green-end: #6c937e;
+$fitbir-dark-green: #2a9152;
+$fitbir-blue: #1c75bc;
+$fitbir-blue-end: #27b6dd;
+$footer-dark-gray: #353535;
+$fitbir-footer-gray: #1e3747;
+$fitbir-footer-disclaimer: #142b3a;
+$brics-gray-header: #616265;
+$primary-brics-blue: #1c259d;
+$primary-blue: #0288d1;
+$brics-yellow: #ffd700;
+$news-red: #bf0d2e;
+$very-dark-gray: #4a4a4a;
+$blue-border: #13196c;
+$light-grey-background: #f2f2f2;
+$secondary-blue: #8caac4;
+$tertiary-blue: #102d66;
+$button-blue:     #3885ca;
+$button-blue-dark:  #144571;
+$button-blue-hover: #144571;
+$primary-gray: #e4e3e3;
+$primary-red: #990000;
+$blockquote-gray:  #f0eeee;
+$darker-gray: #232526;
+$menu-gray-expanded: #EFEFEF;
+$menu-gray: #fcfcfc;
+$light-blue-border: #3c86c7;
+$light-blue-background: #d7e7f4;
+$black-header:    #333;
+$dark-gray: #575b5e;
+$secondary-gray: #f4f4f4;
+$primary-purple: #751d9a;
+$primary-violet: #303f9f;
+$banner-grey: #676767;
+$grey-header:    #999;
+$dark-gray-title: #666;
+$red-background: #aa0202;
+
+//Applied Colors
+//Header Colors
+$header-start: $amp-blue-gradient-1-start;
+$header-end: $amp-blue-gradient-1-end;
+//$header-start: $fitbir-blue;
+//$header-end: $fitbir-blue-end;
+
+//Active Link Borders
+$active-link-border: $amp-full-moon-gray;
+//$active-link-border: $amp-seafoam-green;
+//$active-link-border: $fitbir-green;
+//Footer Background Color
+//$footer-background: $amp-admiral-blue;
+$footer-background: $amp-midnight-blue;
+//$footer-background: $footer-dark-gray;
+$footer-disclaimer-background: $fitbir-footer-disclaimer;
+//General Background colors:
+$dark-blue-background: $tertiary-blue;
+
+
+$standard-whats-on-page-background: $amp-full-moon-gray;
+//Text Color
+//$standard-text-color: $very-dark-gray;
+//$standard-text-color: $amp-charcoal-gray;
+$standard-text-color: $amp-text-gray;
+//Banner Text Color
+$standard-banner-text-color: $amp-charcoal-gray;
+//$standard-banner-text-color: $banner-grey;
+$standard-source-text-color: $amp-charcoal-gray;
+//Current Stage color
+$standard-current-stage-color: $amp-current-stage-yellow;
+$standard-current-stage-text-color: $amp-current-stage-text-blue;
+//Menu Background colors
+$standard-main-menu-background-color: $amp-midnight-blue;
+$standard-phone-and-tablet-background-color: $white;
+$standard-active-phone-and-tablet-background-color:$amp-full-moon-gray;
+
+$expanded-phone-and-tablet-background-color: $white;
+$expanded-submenu-phone-and-tablet-background-color: $white;
+//Menu Box Shadow
+$standard-main-menu-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.12);
+
+//Menu mobile borders
+$standard-main-menu-mobile-border: 1px solid $amp-sidewalk-gray;
+//Menu Text Color
+$standard-top-menu-text-color: $white;
+//$standard-top-menu-text-color: $amp-header-gray;
+
+//SubMenu Text Color
+$standard-mobile-sub-menu-text-color: $amp-midnight-blue;
+$standard-sub-menu-text-color: $grey-header;
+
+//Header Text color
+$standard-header-text-color: $amp-text-gray;
+$secondary-header-text-color: $black-header;
+$sub-header-text-color: $dark-gray;
+//$standard-header-color: $amp-header-gray;
+$standard-header-color: $amp-text-gray;
+$news-archive-title-color: $amp-news-header-gray;
+//title border color
+$standard-title-border-color: $amp-sidewalk-gray;
+
+//Image box shado
+$standard-image-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.5);
+//News Carousel
+$standard-news-carousel-box-shadow: 0px 0px 15px 1px $amp-news-box-shadow-gray;
+$standard-news-carousel-text-border: $amp-news-box-border;
+//dashboard background color
+$standard-dashboard-background-color: $menu-gray-expanded;
+//dashboard box shadow
+$standard-dashboard-box-shadow: 0 0 10px 0 rgba(220,220,220,0.5);
+//dashboard table borders
+$standard-table-border: $amp-silver-streak-gray 1px solid;
+$white-table-border: $white 1px solid;
+//Form element border color:
+$standard-form-input-border-color: $amp-sidewalk-gray;
+$standard-form-border-color: $amp-form-border-gray;
+//Form element error colo
+$standard-form-element-error-color: $amp-form-error-border-red;
+
+//Form lable text color
+$standard-form-label-color: $amp-midnight-blue;
+//Active form box shadow
+$standard-form-element-active-box-shadow: 0 0 4px 0 $amp-form-box-shadow-blue;
+$standard-form-element-error-box-shadow: 0 0 4px 0 $amp-form-box-shadow-red;
+
+//Header Background Colors
+
+$flat-header-background-color: $light-blue-background;
+$flat-dark-header-background-color: $dark-blue-background;
+//Accordion Title Color
+$standard-accordion-title: $amp-midnight-blue;
+$standard-active-accordion-title: $white;
+//Accordion Title Background Color
+$standard-accordion-background: $amp-full-moon-gray;
+$standard-active-accordion-background:$amp-plum-purple;
+
+//Table alternate row background
+$standard-striped-table-background: $amp-full-moon-gray;
+$alternate-striped-table-background: $amp-alternate-table-striping-gray;
+//Feature Content Background color
+$standard-featured-content-background-color: $amp-full-moon-gray;
+//Navigable Content Background Color
+//$standard-navigable-content-background-color: $amp-sidewalk-gray;
+$standard-navigable-content-background-color: $amp-full-moon-gray;
+//Participants Icon Background Color
+$standard-participants-icon-background-color:  $light-grey-background;
+//Participants Icon Border Color
+$participant-icon-border-color: $primary-purple;
+
+//Search Background color
+$standard-search-background-color: $white;
+//Search submit Button color
+$search-submit-button-color: $fitbir-blue;
+
+//Views Row Baackground Color
+$standard-views-row-background-color: $secondary-gray;
+//Link Colors
+$standard-link: $amp-twilight-blue;
+//$standard-link: $amp-link-blue;
+$standard-link-hover: $amp-dark-twilight-blue;
+
+$standard-main-submenu-link: $amp-twilight-blue;
+$standard-main-submenu-link-hover: $white;
+$standard-main-hover-background: $amp-twilight-blue;
+
+$standard-main-menu-child-menu-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+//$standard-link: $fitbir-blue;
+//$standard-link-hover: $fitbir-dark-green;
+//$standard-link: $primary-brics-blue;
+//$standard-link-hover: $news-red;
+$standard-link-disabled: $amp-charcoal-gray;
+//Footer links
+$standard-footer-link: $white;
+$standard-footer-link-hover:$white;
+$standard-footer-link-active: $amp-early-dawn-yellow;
+//Glossary Container
+//$standard-glossary-container: #164278;
+$standard-glossary-container: $amp-twilight-blue;
+$standard-node-modal-container: $white;
+//Carousel Button Color
+$carousel-button-color: $amp-carousel-button-blue-inactive;
+$carousel-button-active-color: $amp-carousel-button-blue-active;
+//Glossary Hover Color
+$standard-glossary-hover-background-color: $amp-plum-purple;
+//Error Message Background Color
+$standard-error-message-background-color: $red-background;
+//Column Border color
+$standard-column-border-color: $amp-charcoal-gray;
+
+//Alternate Colors
+//Other Background Color Sets
+$blue-header-start: $fitbir-blue;
+//$blue-header-start:$primary-brics-blue;
+$blue-header-end: $fitbir-blue-end;
+//$blue-header-end: #2878b6;
+$fitbir-blue-header-start: $fitbir-blue;
+$fitbir-blue-header-end: $fitbir-blue-end;
+$fitbir-green-header-start: $fitbir-green;
+$fitbir-green-header-end: $fitbir-green-end;
+$purple-header-start: #7b1fa2;
+$purple-header-end: $primary-blue;
+$cyan-header-start: #27e9d8;
+$cyan-header-end: #0078bf;
+$orange-header-start:#ffa338;
+$orange-header-end: #ff0662;
+
+//Other Active Link Border Colors
+$yellow-active-link-border: $brics-yellow;
+$green-active-link-border: #13AC9E;
+$red-active-link-border: $news-red;
+$blue-active-link-border: $blue-border;
+
+
+//Primary Button colors
+$primary-button:$amp-twilight-blue;
+$primary-button-hover: $amp-dark-twilight-blue;
+$primary-button-active: $amp-active-button-teal;
+
+$inverse-button-hover: $amp-full-moon-gray;
+$inverse-active-button: $amp-sidewalk-gray;
+$button-focus-border-color: $amp-button-focus-border;
+//Disabled buttone colors
+$primary-button-disabled:$amp-sidewalk-gray;
+$primary-button-disabled-text: $amp-charcoal-gray;
+
+
+//Button box shadows
+
+$button-box-shadow-hover: 0 2px 8px 0 $primary-button-hover;
+$button-box-shadow-active: 0 0 10px 0 rgba(186,100,81,1);
+$button-box-shadow-focus: 0 0 10px 0 $primary-button-hover;
+
+
+$button-box-shadow-hover-blank: 0 2px 8px 0 $primary-button-hover;
+$button-box-shadow-active-blank: 0 0 10px 0 rgba(186,100,81,1);
+$button-box-shadow-focus-blank: 0 0 10px 0 $primary-button-hover;
+/*
+$button-box-shadow-hover: 0 2px 8px 0 $amp-button-hover-blue;
+$button-box-shadow-active: 0 0 10px 0 rgba(186,100,81,1);
+$button-box-shadow-focus: 0 0 10px 0 $amp-button-focus-blue;
+*/
+/*
+$button-box-shadow-hover: 0 2px 8px 0 rgba(221,73,70,0.60);
+$button-box-shadow-active: 0 0 10px 0 rgba(186,100,81,1);
+$button-box-shadow-focus: 0 0 10px 0 rgba(186,100,81,1);
+*/
+//Carousel Button active shadow
+$carousel-button-active: 0 0 0 3px rgba(221,73,70,0.60);
+
+
+//Accordion Title Hover, Footer Social Media BAckground color
+
+//Primary Hover
+
+$primary-purple-hover: #4d1166;
+$primary-blue-hover: $blue-border;
+
+//Expanded
+$expanded-orange: #f44336;
+$expanded-red: #e91e63;
+$expanded-turqoise: #00bcd4;
+$expanded-green: #009688;
+$expanded-fitbir-green: $fitbir-green;
+$expanded-light-green: #4caf50;
+$expanded-yellow: #ffc107;
+$expanded-orange: #ff9800;
+
+//Miscellaneous
+
+
+
+
+$red-header:    #900;
+$gray-light:    #ddd;
+$disabled-grey: #bcbcbc;
+$light-grey-text: #a8a8a8;
+$medium-grey-text: #afafaf;
+$grey-border:    #a5a5a5;
+$light-grey-border: #979797;
+$featured-gray-border: #d2d9e1;
+$dark-gray-line: #aeafb0;
+//was #104b7d;
+$blue-visited:    #336;
+$yellow-hover:    #fff2b3;
+
+
+$medium-blue-background: #1e91d4;
+$light-blue-underline: #296eab;
+$pale-blue-background: #eaf3fa;
+$bright-blue-background: #1d8ed0;
+$pale-blue-darker-white-background: #f1f7fb;
+$pale-blue-white-background: #f2f7fb;
+
+$aqua-blue-background:#498fcd;
+$light-gray-background: #f1f1f1;
+
+$banner-promotion-grey: #f5f6f5;
+$banner-promotion-blue-title: #1C578B;
+$banner-promotion-red-title: #ae304d;
+$darker-grey-background: #d7d7d7;
+
+$dark-red-button: #850920;
+$darker-red-button: #590716;
+$banner-background: #E8E8E8;
+
+//$brics-yellow: #e3a90a;
+
+$sv-green: #1c6071;
+$sv-blue: #1c2b49;
+$sv-orange: #dc752e;
+$sv-red: #bb2440;
+
+$training-second-blue: #B4CDE1;
+$training-third-blue: #79A1BD;
+$training-fourth-blue: #497090;
+$training-fifth-blue: #25557F;
+$training-sixth-blue: #183852;
+
+//Colors used in HEI
+//$primary-blue: #1a568c;
+
+
+
+
+
+$turqoise-partnering: #3f4358;
+$dark-turqoise-hei-events: #307484;
+
+$blue-violet-hei-news: #2f4c73;
+$blue-violet-hei-events: #5f0f40;
+
+$green-blue-hei-partnering: #f6c163;
+$green-blue-hei-news: #0c5fa7;
+$green-blue-hei-events: $light-blue-background;
+$green-blue-standard-button: #93c648;
+
+$yellow-turqoise-hei-news: #99c7da;
+$yellow-turqoise-hei-events: $dark-turqoise-hei-events;
+$yellow-turqoise-standard-button:#ecaa46;
+
+$hei-text-background:rgba(0,0,0,0.6);
+
+//Goal Card colors
+$red-goal:#C5203E;
+$green-goal:#006F7E;
+$orange-goal:#E17325;
+$blue-goal:#1E2F53;
+// alert messages:
+$very-light-green: #e7f4e2;
+$ppg-blue-background: #1e578a;

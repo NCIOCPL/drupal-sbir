@@ -14,3 +14,18 @@ function sbir_install() {
 
 function sbir_enable() {
 }
+
+/**
+ * Implements hook_update_N
+ * Enable module1 and module2.
+ */
+function sbir_update_7101() {
+
+    // Array of module names.
+    $modules = ['paragraphs', 'sbir_promotional_page'];
+
+    // Whether or not to enable dependant modules.
+    $enable_dependencies = TRUE;
+
+    module_enable($modules, $enable_dependencies);
+}
